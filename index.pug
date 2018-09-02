@@ -1,0 +1,44 @@
+doctype html
+html(lang='en')
+    head
+        include header.pug
+
+    body
+        div.gradientLeft
+        div.gradientBottom
+        div.gradientRight
+
+        div.container
+            div.links
+                a(href='login.html') Логин
+                br
+                a(href='signup.html') Регистрация
+                br
+                a(href='forgotPassword.html') Забыли пароль
+                br
+                a(href='forgotPasswordCheckEmail.html') Забыли пароль &mdash; проверка почты
+                br
+
+                a(href='passwordRecovery.html') Установить новый пароль
+                br
+
+                a(href='messageAccountVerified.html') Сообщение &mdash; аккаунт успешно подтвержден
+                br
+
+                a(href='messageAccountRejected.html') Сообщение &mdash; верификация отклонена
+                br
+
+                hr 
+
+
+                a(href='cabinetIco1.html') Кабинет &mdash; ICO 
+                br
+
+                a(href='cabinetKYC.html') Кабинет &mdash; KYC
+                br
+
+
+        
+
+
+        include footerScripts.pug

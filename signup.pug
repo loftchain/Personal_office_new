@@ -1,0 +1,46 @@
+doctype html
+html(lang='en')
+    head
+        include header.pug
+
+    body
+        div.gradientLeft
+        div.gradientBottom
+        div.gradientRight
+
+        
+        div.login.modalFrame
+            div.modalFrame__title Sign up
+            
+            form(class="loginForm icoForm" action="#")
+
+                div.formControl
+                    label.icoForm__label Your name
+                    input(type="text" name="login" class="icoForm__input"  required)
+
+
+                div.formControl
+                    label.icoForm__label E-mail
+                    input(type="email" name="login" class="icoForm__input"  required)
+
+                div.formControl
+                    label.icoForm__label Password
+                    input(type="password" name="password" class="icoForm__input"  required)
+
+                div.formControl
+                    label.icoForm__label Repeat password
+                    input(type="password" name="password" class="icoForm__input"  required)                    
+                
+                   
+
+                div.formControl
+                    button(name="submit" class="btn") Sign in
+
+           
+                
+            div.formRegText Have an account?&nbsp;
+                a(href="#" class="link") Login
+        
+
+
+        include footerScripts.pug

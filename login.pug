@@ -1,0 +1,43 @@
+doctype html
+html(lang='en')
+    head
+        include header.pug
+
+    body
+        div.gradientLeft
+        div.gradientBottom
+        div.gradientRight
+
+        
+        div.login.modalFrame
+            div.modalFrame__title Welcome Back
+            div.modalFrame__subtitle enter your account to view your orders
+            form(class="loginForm icoForm" action="#")
+                div.formControl
+                    label.icoForm__label E-mail
+                    input(type="email" name="login" class="icoForm__input"  required)
+
+                div.formControl
+                    label.icoForm__label Password
+                    input(type="password" name="password" class="icoForm__input"  required)
+                
+                    div.icoForm__linkContainer.text-right 
+                        a(href="#" class="link") Forgot your password?
+
+                div.formControl
+                    button(name="submit" class="btn") Sign in
+
+            div.textSeparator or
+
+            div.row
+                div.col-md-6  
+                    a(href="#" class="btnSecondary btnSecondary--googleLogin") Sign in with Gmail
+                div.col-md-6  
+                    a(href="#" class="btnSecondary btnSecondary--facebookLogin") Sign in with Facebook
+                
+            div.formRegText Do not have account?&nbsp;
+                a(href="#" class="link") Register
+        
+
+
+        include footerScripts.pug

@@ -1,0 +1,73 @@
+doctype html
+html(lang='en')
+    head
+        include header.pug
+
+    body
+        div.gradientLeft
+        div.gradientBottom
+        div.gradientRight
+
+        
+        div.container
+            div.forSlideMenu
+                div.cabinetHolder
+                    div.sidebar.jsSidebar
+                        div.userInfo
+                            div.userInfo__avatar
+                                a(href='#' class='userInfo__avatarLink')
+                                    img(src='img/avatar.jpg' alt='Name Surname' class='userInfo__avatarImage')
+
+                            div.userInfo__text
+                                div.userInfo__textItem Name Surname
+                                div.userInfo__textItem Status: Not verified
+                                div.userInfo__textItem Token amount: 876 LSD
+
+                        div.mainMenu 
+                            ul.mainMenu__list
+                                li.mainMenu__item
+                                    a(href='#' class='mainMenu__link') ICO
+
+                                li.mainMenu__item.mainMenu__item--active
+                                    a(href='#' class='mainMenu__link') Verification
+
+                                li.mainMenu__item
+                                    a(href='#' class='mainMenu__link') Buy tokens
+                                
+                                li.mainMenu__item
+                                    a(href='#' class='mainMenu__link') Referral Program
+
+                                li.mainMenu__item
+                                    a(href='#' class='mainMenu__link') Settings
+
+                                
+
+
+
+                    div.workArea.jsWorkArea
+                        div.mobileMenuBtn
+                            button.cmn-toggle-switch.cmn-toggle-switch__htx
+                                span toggle menu
+
+                        div.messageTop Unfortunately your profile is not verified yet.
+
+                        div.scrollHolder
+                            div.content
+                                
+                                
+                                div.blockHolder
+                                    div.raisedContainer 
+                                        div.basicBlock.basicBlock--single
+                                            div.basicBlock__content 
+                                                div.basicBlock__title.text-center WHITE PAPER CONDITIONS
+                                                div.basicBlock__subtitle.text-center please read the white paper and agree to the proposed conditions
+                                                div.btnConainer.text-center
+                                                    a.btn.btn--whitePaper.btn--small(href='#' target='_blank') Read the white paper
+
+
+                                                div.agreement
+                                                    
+                                                
+
+                                               
+        include footerScripts.pug
