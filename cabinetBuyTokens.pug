@@ -1,0 +1,117 @@
+doctype html
+html(lang='en')
+    head
+        include blocks/header.pug
+
+    body
+        div.gradientLeft
+        div.gradientBottom
+        div.gradientRight
+
+        
+        div.container
+            div.forSlideMenu
+                div.cabinetHolder
+                    
+                    include blocks/sidebar.pug
+
+                    div.workArea.jsWorkArea
+                        div.mobileMenuBtn
+                            button.cmn-toggle-switch.cmn-toggle-switch__htx
+                                span toggle menu
+
+                        div.messageTop Unfortunately your profile is not verified yet.
+
+                        div.scrollHolder
+                            div.content#buyTokens
+                                
+                                
+                                div.blockHolder
+                                    div.raisedContainer 
+                                        div.basicBlock.basicBlock--single
+                                            div.basicBlock__content 
+                                                div.basicBlock__title.text-center Purchase of tokens
+                                                div.basicBlock__subtitle.text-center Choose which currency you want to invest in
+                                                .cryptoSelector
+                                                    button.cryptoSelector__item.cryptoSelector__item--active Etherium
+                                                    button.cryptoSelector__item Bitcoin
+
+                                div.blockHolder 
+                                    div.raisedContainer 
+                                        div.basicBlock
+                                            div.basicBlock__content
+                                              
+                                                form(class="loginForm icoForm" action="#")
+                                                    div.formControl
+                                                        label.icoForm__label ETH wallet  for investing and receiving tokens
+                                                        input(type="text" name="ethWallet" class="icoForm__input icoForm__input--pencil")
+                                                        span.icoForm__pencil
+
+                                                    div.formControl
+                                                        label.icoForm__label Enter your BTC wallet for investment
+                                                        input(type="text" name="btcWallet" class="icoForm__input icoForm__input--pencil")
+                                                        span.icoForm__pencil
+
+                                    div.raisedContainer
+                                        div.basicBlock.basicBlock
+                                            div.basicBlock__content
+                                                form(class="loginForm icoForm" action="#")
+                                                        .row
+                                                            .col-md-3.align-self-top.text-center
+                                                                img.qrCode(alt='qr' src='img/qr.jpg')
+                                                            .col-md-9.align-self-top
+                                                                div.formControl.formControl--noMargin
+                                                                    
+                                                                    input(type="text" v-model="invsetmentWalletETH" name="ethWallet" id="ethWallet" class="icoForm__input icoForm__input--canCopy")
+                                                                    span.icoForm__copy(v-on:click="copyToBuffer") 
+                                                                .minumudDeposit Minimum deposit amount: {{minumumDeposit}} ETH
+                                                                .setGas Set GAS: {{gas}}
+                                
+                                
+                                
+                                div.blockHolder
+                                    div.raisedContainer 
+                                        div.basicBlock.basicBlock--single
+                                            div.basicBlock__content 
+                                                div.basicBlock__title.text-center tRANSACTIONS
+                                                div.basicBlock__subtitle.text-center Thank you for your participation! You can see your transactions
+                                                .infoBtn
+                                                    a.btn.btn--small(href='#') h5723882302832cn8399c2
+                                                div.dataTable
+                                                    table.dataTable__list
+                                                        tr
+                                                            th Date
+                                                            th Currency
+                                                            th Token
+                                                            th Status
+
+                                                        tr.dataTable__error
+                                                            td 21.09.2018
+                                                            td -10 ETH
+                                                            td +34000 LTD
+                                                            td False
+
+                                                        tr.dataTable__success
+                                                            td 21.09.2018
+                                                            td -10 ETH
+                                                            td +34000 LTD
+                                                            td Success
+
+                                                        tr.dataTable__summary 
+                                                            
+                                                            td(colspan='2')
+                                                                 
+                                                                span.dataTable__address <strong>To</strong>: h5723882302832cn8399c2
+                                                            td(colspan='2')
+                                                                strong Info: 
+                                                                a.dataTable__link(href='#') h5723882302832cn8399c2
+
+                                               
+
+                                
+                                                        
+                                                    
+                                                
+
+                                               
+        include blocks/footerScripts.pug
