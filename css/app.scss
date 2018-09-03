@@ -1245,6 +1245,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
     &__item {
         &:active,
         &:focus {
@@ -1302,6 +1303,8 @@ body {
 
 .dataTable {
     padding: 37px 0;
+    max-width: 100%;
+    overflow-x: auto;
     &__list {
         width: 100%;
         background: #fff;
@@ -1366,4 +1369,12 @@ body {
 .infoBtn {
     margin: 20px 0;
     text-align: center;
+
+    .btn {
+        @media(max-width: 767px) {
+            padding-left: 10px;
+            padding-right: 10px;
+            font-size: 12px;
+        }
+    }
 }

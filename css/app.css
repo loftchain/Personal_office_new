@@ -1187,7 +1187,9 @@ body {
   align-items: center;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
-  justify-content: center; }
+  justify-content: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
   .cryptoSelector__item {
     cursor: pointer;
     margin: 10px 20px;
@@ -1242,7 +1244,9 @@ body {
   color: #F2C94C; }
 
 .dataTable {
-  padding: 37px 0; }
+  padding: 37px 0;
+  max-width: 100%;
+  overflow-x: auto; }
   .dataTable__list {
     width: 100%;
     background: #fff; }
@@ -1295,5 +1299,10 @@ body {
 .infoBtn {
   margin: 20px 0;
   text-align: center; }
+  @media (max-width: 767px) {
+    .infoBtn .btn {
+      padding-left: 10px;
+      padding-right: 10px;
+      font-size: 12px; } }
 
 /*# sourceMappingURL=app.css.map */
