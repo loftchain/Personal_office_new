@@ -1,14 +1,7 @@
 (function () {
 
   "use strict";
-  $(".scrollHolder").niceScroll({
-    cursorwidth:4,
-    cursoropacitymin:0.4,
-    cursorcolor:'#FEC808',
-    cursorborder:'none',
-    cursorborderradius:4,
-    autohidemode:'leave'
-    });
+
   
   
   var drop = $("#files");
@@ -235,3 +228,6 @@ var buyTokensApp = new Vue({
   }
 });
 
+
+
+                                                                    

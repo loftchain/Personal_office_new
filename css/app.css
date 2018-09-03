@@ -691,6 +691,14 @@ body {
   background: rgba(164, 164, 165, 0.03); }
   .basicBlock__content {
     padding: 12px 20px; }
+  .basicBlock__bonusText {
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
+    font-size: 18px;
+    margin: 10px 0;
+    color: #F2C94C; }
   .basicBlock:before {
     content: '';
     display: block;

@@ -717,6 +717,15 @@ body {
     &__content {
         padding: 12px 20px;
     }
+    &__bonusText {
+        font-family: Rubik;
+        font-style: normal;
+        font-weight: bold;
+        line-height: normal;
+        font-size: 18px;
+        margin: 10px 0;
+        color: #F2C94C;
+    }
     &:before {
         content: '';
         display: block;
@@ -1369,7 +1378,6 @@ body {
 .infoBtn {
     margin: 20px 0;
     text-align: center;
-
     .btn {
         @media(max-width: 767px) {
             padding-left: 10px;
