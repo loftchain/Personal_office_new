@@ -3,7 +3,45 @@
   "use strict";
 
   
-  
+  Vue.config.devtools = true;
+
+
+
+var buyTokensApp = new Vue({
+  el: '#buyTokens',
+  data: {
+    name: 'buyTokens',
+    invsetmentWalletETH: 'cjsdxhnaa634a345623564v2x5237zb646',
+    minumumDeposit: '0,1',
+    gas: '199 000',
+  },
+  // определяйте методы в объекте `methods`
+  methods: {
+    copyToBuffer: function (event) {
+      console.log('ok');
+      var copyText = document.getElementById("ethWallet");
+      copyText.select();
+
+      /* Copy the text inside the text field */
+      document.execCommand("copy");
+
+      /* Alert the copied text */
+      alert("Copied: " + copyText.value);
+
+
+    },
+
+    onCopy: function (e) {
+      alert('You just copied: ' + e.text)
+    },
+    onError: function (e) {
+      alert('Failed to copy texts')
+    }
+  }
+});
+
+
+
   var drop = $("#files");
   drop.on('dragenter', function (e) {
     $(".drop").css({
@@ -22,6 +60,18 @@
       "color": "#8E99A5"
     });
   });
+
+
+  $('.jsChangePassword').click(function() {
+    $('.changeEmail').hide();
+    $('.changePassword').show();
+    
+  })
+
+  $('.jsChangeEmail').click(function() {
+    $('.changePassword').hide();
+    $('.changeEmail').show();
+  })
 
 
 
@@ -191,43 +241,4 @@
 
 })();
 
-Vue.config.devtools = true;
 
-
-
-var buyTokensApp = new Vue({
-  el: '#buyTokens',
-  data: {
-    name: 'buyTokens',
-    invsetmentWalletETH: 'cjsdxhnaa634a345623564v2x5237zb646',
-    minumumDeposit: '0,1',
-    gas: '199 000',
-  },
-  // определяйте методы в объекте `methods`
-  methods: {
-    copyToBuffer: function (event) {
-      console.log('ok');
-      var copyText = document.getElementById("ethWallet");
-      copyText.select();
-
-      /* Copy the text inside the text field */
-      document.execCommand("copy");
-
-      /* Alert the copied text */
-      alert("Copied: " + copyText.value);
-
-
-    },
-
-    onCopy: function (e) {
-      alert('You just copied: ' + e.text)
-    },
-    onError: function (e) {
-      alert('Failed to copy texts')
-    }
-  }
-});
-
-
-
-                                                                    

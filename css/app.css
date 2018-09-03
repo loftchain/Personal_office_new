@@ -273,7 +273,12 @@ body {
     width: 100%;
     line-height: 40px;
     padding: 0 10px;
-    background: transparent; }
+    background: transparent;
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    color: #4F4F4F; }
     .icoForm__input:focus {
       border-color: #FFC701; }
   .icoForm__input--pencil, .icoForm__input--canCopy {
@@ -1312,5 +1317,78 @@ body {
       padding-left: 10px;
       padding-right: 10px;
       font-size: 12px; } }
+
+.avatarSettings__uploadBtn {
+  cursor: pointer;
+  position: absolute;
+  bottom: -8px;
+  height: 50px;
+  width: 100%;
+  background: url(../img/pencil-edit-button.svg) no-repeat 50% 50% rgba(224, 224, 224, 0.93);
+  background-size: 20px; }
+
+.avatarSettings__image {
+  width: 100%; }
+
+.avatarSettings__imageHolder {
+  position: relative;
+  overflow: hidden; }
+
+.avatarSettings__note {
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 27px;
+  font-size: 14px;
+  color: #BDBDBD; }
+
+.hiddenInput {
+  display: none; }
+
+.icoForm--noMargin {
+  margin: 0;
+  padding: 0; }
+
+.settingsActions__link {
+  display: block;
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  font-size: 14px;
+  -webkit-text-decoration-line: underline;
+  text-decoration-line: underline;
+  color: #F2C94C;
+  margin: 7px 0; }
+
+.settingsActions__langSelector {
+  margin-top: 40px; }
+
+.settingsActions__langSelectorBtn {
+  background: #E0E0E0;
+  display: inline-block;
+  margin: 0 5px;
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  font-size: 14px;
+  color: #BDBDBD;
+  padding: 3px 6px;
+  text-transform: uppercase;
+  cursor: pointer; }
+
+.settingsActions__langSelectorBtn--active {
+  background: #F2C94C;
+  color: #fff; }
+
+.basicBlock--settings {
+  min-width: 66%; }
+  @media (max-width: 767px) {
+    .basicBlock--settings {
+      min-width: 0; } }
+
+.hidden {
+  display: none; }
 
 /*# sourceMappingURL=app.css.map */
