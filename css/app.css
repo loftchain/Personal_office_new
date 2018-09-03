@@ -164,7 +164,8 @@ body {
       padding: 30px; } }
 
 .formControl {
-  margin: 20px 0; }
+  margin: 20px 0;
+  position: relative; }
 
 .link {
   font-family: Rubik;
@@ -186,6 +187,8 @@ body {
   box-shadow: 0px 0px 30px #FFF16E;
   border-radius: 100px;
   display: inline-block;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
   width: 100%;
   padding: 13px 20px;
   font-family: Rubik;
@@ -194,7 +197,7 @@ body {
   font-size: 14px;
   color: #FFFFFF;
   cursor: pointer;
-  border: 2px solid transparent; }
+  border: none; }
   .btn:hover {
     color: #FFC701;
     background: #fff;
@@ -231,15 +234,13 @@ body {
 .btn--small {
   width: auto;
   padding: 13px 50px;
-  border: none;
-  border: 2px solid transparent; }
+  border: none; }
   .btn--small:hover {
     color: #FFC701;
     background: #fff;
     -webkit-transition: none;
     -o-transition: none;
-    transition: none;
-    border: 2px solid #FFC701; }
+    transition: none; }
 
 .btnSecondary--googleLogin {
   background: url(../img/google-favicon-logo.svg) no-repeat 20px 50% transparent;
@@ -257,6 +258,10 @@ body {
     .btnSecondary--facebookLogin {
       margin: 10px 0; } }
 
+.formControl--noMargin {
+  margin-top: 0;
+  margin-bottom: 0; }
+
 .icoForm {
   padding: 16px 0; }
   .icoForm__input {
@@ -267,9 +272,40 @@ body {
     display: block;
     width: 100%;
     line-height: 40px;
-    padding: 0 10px; }
+    padding: 0 10px;
+    background: transparent; }
     .icoForm__input:focus {
       border-color: #FFC701; }
+  .icoForm__input--pencil, .icoForm__input--canCopy {
+    padding-right: 30px; }
+  .icoForm__pencil {
+    background: url(../img/pencil-edit-button.svg) no-repeat 0 0 transparent;
+    width: 13px;
+    height: 13px;
+    position: absolute;
+    bottom: 14px;
+    right: 10px;
+    cursor: pointer; }
+  .icoForm__input--canCopy {
+    border-radius: 100px;
+    border: 1px solid #F2C94C;
+    background: transparent;
+    height: 28px;
+    line-height: 28px;
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    font-size: 14px;
+    color: #F2C94C; }
+  .icoForm__copy {
+    background: url(../img/copy.svg) no-repeat 0 0 transparent;
+    width: 13px;
+    height: 13px;
+    position: absolute;
+    bottom: 8px;
+    right: 10px;
+    cursor: pointer; }
   .icoForm__label {
     font-family: Rubik;
     font-style: normal;
@@ -1141,5 +1177,123 @@ body {
   height: 75px;
   border: 1px solid #323a44;
   margin: 10px 5px 0 0; }
+
+.cryptoSelector {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+  .cryptoSelector__item {
+    cursor: pointer;
+    margin: 10px 20px;
+    border-radius: 100px;
+    border: none;
+    -webkit-box-shadow: 0 0 0 2px #FDCA0E;
+    box-shadow: 0 0 0 2px #FDCA0E;
+    background: transparent;
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    font-size: 14px;
+    height: 45px;
+    padding: 10px 60px;
+    color: #4F4F4F; }
+    .cryptoSelector__item:active, .cryptoSelector__item:focus {
+      outline: none; }
+    .cryptoSelector__item:hover {
+      background: -webkit-gradient(linear, left top, right top, from(#FDCA0E), color-stop(76.95%, #FFE139));
+      background: -webkit-linear-gradient(left, #FDCA0E 0%, #FFE139 76.95%);
+      background: -o-linear-gradient(left, #FDCA0E 0%, #FFE139 76.95%);
+      background: linear-gradient(90deg, #FDCA0E 0%, #FFE139 76.95%);
+      color: #fff; }
+  .cryptoSelector__item--active {
+    background: -webkit-gradient(linear, left top, right top, from(#FDCA0E), color-stop(76.95%, #FFE139));
+    background: -webkit-linear-gradient(left, #FDCA0E 0%, #FFE139 76.95%);
+    background: -o-linear-gradient(left, #FDCA0E 0%, #FFE139 76.95%);
+    background: linear-gradient(90deg, #FDCA0E 0%, #FFE139 76.95%);
+    color: #fff; }
+
+.qrCode {
+  max-width: 200px;
+  width: 100%; }
+
+.minumudDeposit {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  font-size: 14px;
+  color: #4F4F4F;
+  margin: 8px 0; }
+
+.setGas {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #F2C94C; }
+
+.dataTable {
+  padding: 37px 0; }
+  .dataTable__list {
+    width: 100%;
+    background: #fff; }
+  .dataTable th {
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
+    font-size: 14px;
+    color: #4F4F4F; }
+  .dataTable td {
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 14px; }
+  .dataTable__error {
+    color: #CF0032; }
+  .dataTable__success {
+    color: #F2C94C; }
+  .dataTable__address {
+    font-family: Ubuntu;
+    font-style: normal;
+    line-height: normal;
+    font-size: 14px;
+    color: #4F4F4F; }
+  .dataTable strong {
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
+    font-size: 14px; }
+  .dataTable__link {
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 14px;
+    color: #F2C94C; }
+    .dataTable__link:hover {
+      color: #F2C94C; }
+  .dataTable td,
+  .dataTable th {
+    border: 1px solid #F2F2F2;
+    padding: 15px 10px;
+    text-align: center; }
+  .dataTable tr {
+    border-bottom: 3px solid #F2F2F2; }
+
+.infoBtn {
+  margin: 20px 0;
+  text-align: center; }
 
 /*# sourceMappingURL=app.css.map */

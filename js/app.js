@@ -189,3 +189,40 @@ $('#files').change(handleFileSelect);
 
 })();
 
+Vue.config.devtools = true;
+
+
+
+var buyTokensApp = new Vue({
+  el: '#buyTokens',
+  data: {
+    name: 'buyTokens',
+    invsetmentWalletETH: 'cjsdxhnaa634a345623564v2x5237zb646',
+    minumumDeposit: '0,1',
+    gas: '199 000',
+  },
+  // определяйте методы в объекте `methods`
+  methods: {
+    copyToBuffer: function (event) {
+      console.log('ok');
+      var copyText = document.getElementById("ethWallet");
+      copyText.select();
+
+      /* Copy the text inside the text field */
+      document.execCommand("copy");
+    
+      /* Alert the copied text */
+      alert("Copied: " + copyText.value);
+
+     
+    },
+
+    onCopy: function (e) {
+      alert('You just copied: ' + e.text)
+    },
+    onError: function (e) {
+      alert('Failed to copy texts')
+    }
+  }
+});
+
