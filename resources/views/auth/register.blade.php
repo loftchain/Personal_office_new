@@ -7,7 +7,7 @@
     <div class="gradientRight"></div>
     <div class="login modalFrame">
         <div class="modalFrame__title">Sign up</div>
-        <form class="loginForm icoForm" action="{{ route('register') }}" method="post">
+        <form class="loginForm icoForm" id="demo-form" action="{{ route('register') }}" method="post">
             {{ csrf_field() }}
             <div class="formControl">
                 <label class="icoForm__label">Your name</label>
@@ -25,13 +25,15 @@
                 <label class="icoForm__label">Repeat password</label>
                 <input class="icoForm__input" type="password" name="password_confirmation" required>
             </div>
+
+            @captcha
+
             <div class="formControl">
-                <button class="btn" name="submit">Sign in</button>
+                <button class="btn" type="submit">Sign in</button>
             </div>
         </form>
         <div class="formRegText">Have an account?&nbsp;<a class="link" href="{{ route('login') }}">Login</a></div>
     </div>
-
 {{--<div class="container">--}}
     {{--<div class="row justify-content-center">--}}
         {{--<div class="col-md-8">--}}
