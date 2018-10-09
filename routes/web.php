@@ -19,11 +19,12 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+//------------------------Forgot Your password---------------------------------------------
+Route::post('/sendResetLink', 'Auth\ForgotPasswordController@sendResetLinkEmailCustom')->name('sendResetLinkEmail');
+
+//-----------------------------------------------------------------------------------
+
 Route::group(['prefix' => 'social', 'as' => 'social.'], function () {
     Route::get('redirect/{provider}', 'Auth\SocialAuthController@redirect')->name('redirect');
     Route::get('callback/{provider}', 'Auth\SocialAuthController@callback')->name('callback');
-});
-
-Route::get('/test', function (){
-   return view('test');
 });

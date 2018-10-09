@@ -15,10 +15,23 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('admin')->default(0);
             $table->string('name');
             $table->string('email')->unique()->nullable();
-            $table->timestamp('email_verified_at')->nullable();
             $table->string('password')->nullable();
+            $table->integer('valid_step')->default(0);
+            $table->integer('kyc_step')->default(1);
+            $table->text('kyc_token')->nullable();
+            $table->timestamp('valid_at')->nullable();
+            $table->string('token')->nullable();
+            $table->string('ip_token')->nullable();
+            $table->integer('confirmed')->default(0);
+            $table->integer('referred_by')->nullable();
+            $table->timestamp('confirmed_at')->nullable();
+            $table->integer('reg_attempts')->default(0);
+            $table->integer('reset_attempts')->default(0);
+            $table->string('provider')->nullable();
+            $table->string('provider_id')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

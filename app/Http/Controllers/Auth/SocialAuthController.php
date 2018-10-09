@@ -18,17 +18,19 @@ class SocialAuthController extends Controller
     public function callback($provider)
     {
         $user = Socialite::driver($provider)->user();
-        $authUser = $this->firstOrCreateUser($user);
+        $authUser = $this->firstOrCreateUser($user, $provider);
         Auth::login($authUser, true);
 
         return redirect()->route('home');
     }
 
-    protected function firstOrCreateUser($user)
+    protected function firstOrCreateUser($user, $provider)
     {
-        $authUser = User::where('email', $user->email)->firstOrCreate([
+        $authUser = User::where([['provider', $provider], ['provider_id', $user->id]])->firstOrCreate([
             'name' => $user->name,
             'email' => $user->email,
+            'provider' => $provider,
+            'provider_id' => $user->id
         ]);
 
         return $authUser;
