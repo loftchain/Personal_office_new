@@ -55,6 +55,7 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
+            'name' => 'required|string|max:255',
             'email' => 'required|string|email|min:7|max:255|unique:users',
             'password' => 'required|string|min:3|max:255',
             'g-recaptcha-response' => 'required'
@@ -75,10 +76,12 @@ class RegisterController extends Controller
         $referred_by = User::where('token', Cookie::get('referral'))->first();
 
         $user = User::create([
+            'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
             'referred_by'   => $referred_by->id ?? null
         ]);
+
         return $user;
     }
 
