@@ -1,10 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
-    <div class="gradientLeft"></div>
-    <div class="gradientBottom"></div>
-    <div class="gradientRight"></div>
     <div class="login modalFrame">
         <div class="modalFrame__title">Sign up</div>
         <form class="loginForm icoForm" id="demo-form" action="{{ route('register') }}" method="post">

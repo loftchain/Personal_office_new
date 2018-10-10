@@ -36,10 +36,9 @@ Route::post('/change/email', 'Auth\ChangeEmailController@reset_email')->name('em
 
 Route::group(['prefix' => 'home', 'as' => 'home.', 'middleware' => ['isEmail']], function (){
     Route::get('/', 'HomeController@index')->name('index');
+    Route::get('/kyc', function (){
+        return view('home.kyc');
+    })->name('kyc');
 });
 
 Route::get('settings', 'HomeController@settings')->name('home.settings');
-
-Route::get('/test', function (){
-   return view('home.settings');
-});

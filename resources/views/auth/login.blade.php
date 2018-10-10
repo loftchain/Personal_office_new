@@ -1,9 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="gradientLeft"></div>
-    <div class="gradientBottom"></div>
-    <div class="gradientRight"></div>
     <div class="login modalFrame">
         <div class="modalFrame__title">Welcome Back</div>
         <div class="modalFrame__subtitle">enter your account to view your orders</div>

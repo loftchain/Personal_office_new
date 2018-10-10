@@ -1,123 +1,219 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="gradientLeft"></div>
-    <div class="gradientBottom"></div>
-    <div class="gradientRight"></div>
-    <div class="container">
-        <div class="forSlideMenu">
-            <div class="cabinetHolder">
-                <div class="sidebar jsSidebar">
-                    <div class="userInfo">
-                        <div class="userInfo__avatar"><a class="userInfo__avatarLink" href="#"><img class="userInfo__avatarImage" src="img/avatar.jpg" alt="Name Surname"></a></div>
-                        <div class="userInfo__text">
-                            <div class="userInfo__textItem">{{ Auth::user()->name }}</div>
-                            <div class="userInfo__textItem">Status: Not verified</div>
-                            <div class="userInfo__textItem">Token amount: 876 LSD</div>
+    {{--<div class="gradientLeft"></div>--}}
+    {{--<div class="gradientBottom"></div>--}}
+    {{--<div class="gradientRight"></div>--}}
+    {{--<div class="container">--}}
+        {{--<div class="forSlideMenu">--}}
+            {{--<div class="cabinetHolder">--}}
+                {{--<div class="sidebar jsSidebar">--}}
+                    {{--<div class="userInfo">--}}
+                        {{--<div class="userInfo__avatar"><a class="userInfo__avatarLink" href="#"><img class="userInfo__avatarImage" src="img/avatar.jpg" alt="Name Surname"></a></div>--}}
+                        {{--<div class="userInfo__text">--}}
+                            {{--<div class="userInfo__textItem">{{ Auth::user()->name }}</div>--}}
+                            {{--<div class="userInfo__textItem">Status: Not verified</div>--}}
+                            {{--<div class="userInfo__textItem">Token amount: 876 LSD</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                    {{--<div class="mainMenu">--}}
+                        {{--<ul class="mainMenu__list">--}}
+                            {{--<li class="mainMenu__item"><a class="mainMenu__link" href="cabinetIco1.html">ICO</a></li>--}}
+                            {{--<li class="mainMenu__item mainMenu__item--active"><a class="mainMenu__link" href="cabinetKYC.html">Verification</a></li>--}}
+                            {{--<li class="mainMenu__item"><a class="mainMenu__link" href="cabinetBuyTokens.html">Buy tokens</a></li>--}}
+                            {{--<li class="mainMenu__item"><a class="mainMenu__link" href="cabinetReferral.html">Referral Program</a></li>--}}
+                            {{--<li class="mainMenu__item"><a class="mainMenu__link" href="cabinetSettings.html">Settings</a></li>--}}
+                        {{--</ul>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+    <div class="workArea jsWorkArea">
+        <div class="mobileMenuBtn">
+            <button class="cmn-toggle-switch cmn-toggle-switch__htx"><span>toggle menu</span></button>
+        </div>
+        <div class="messageTop">Unfortunately your profile is not verified yet.</div>
+        <div class="scrollHolder">
+            <div class="content">
+                <div class="blockHolder">
+                    <div class="timerContainer">
+                        <div class="basicBlock">
+                            <div class="basicBlock__content">
+                                <div class="basicBlock__title">pre-sale ends in</div>
+                                <div class="timer">
+                                    <div class="timer__number jsTimerDays">
+                                        <div class="timer__numberValue" id="timer_days">00</div>
+                                        <div class="timer__numberTitle">days</div>
+                                    </div>
+                                    <div class="timer__dots"> </div>
+                                    <div class="timer__number jsTimerHours">
+                                        <div class="timer__numberValue" id="timer_hours">00</div>
+                                        <div class="timer__numberTitle">hours</div>
+                                    </div>
+                                    <div class="timer__dots">                                                       </div>
+                                    <div class="timer__number jsTimerHours">
+                                        <div class="timer__numberValue" id="timer_min">00</div>
+                                        <div class="timer__numberTitle">min</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="mainMenu">
-                        <ul class="mainMenu__list">
-                            <li class="mainMenu__item"><a class="mainMenu__link" href="cabinetIco1.html">ICO</a></li>
-                            <li class="mainMenu__item mainMenu__item--active"><a class="mainMenu__link" href="cabinetKYC.html">Verification</a></li>
-                            <li class="mainMenu__item"><a class="mainMenu__link" href="cabinetBuyTokens.html">Buy tokens</a></li>
-                            <li class="mainMenu__item"><a class="mainMenu__link" href="cabinetReferral.html">Referral Program</a></li>
-                            <li class="mainMenu__item"><a class="mainMenu__link" href="cabinetSettings.html">Settings</a></li>
-                        </ul>
+                    <div class="raisedContainer">
+                        <div class="basicBlock">
+                            <div class="basicBlock__content">
+                                <div class="basicBlock__title">totalLy raised</div>
+                                <div class="percentBar" data-percent="{{ number_format($data['totalUSDCollected'] / (env('ICO_HARD_CAP') / 100), 0, '.', ' ') }}"> <span class="percentBar__fill"></span><span class="percentBar__marker"></span><span class="percentBar__number"> </span></div>
+                                <div class="raisedSlider">
+                                    <div class="owl-carousel owl-theme">
+                                        <div class="raisedSlider__item"><img class="raisedSlider__itemImage" src="img/eth.svg" alt="eth"><span class="raisedSlider__itemValue">{{ number_format($data['ethCurrentAmount']['currency'], 2, '.', ' ') }}</span></div>
+                                        <div class="raisedSlider__item"><img class="raisedSlider__itemImage" src="img/btc.svg" alt="btc"><span class="raisedSlider__itemValue">{{ number_format($data['btcCurrentAmount']['currency'], 2, '.', ' ') }}</span></div>
+                                        <div class="raisedSlider__item"><img class="raisedSlider__itemImage" src="img/paypal.svg" alt="paypal"><span class="raisedSlider__itemValue">{{ number_format($data['totalUSDCollected'], 0, '.', ' ') }} $</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="workArea jsWorkArea">
-                    <div class="mobileMenuBtn">
-                        <button class="cmn-toggle-switch cmn-toggle-switch__htx"><span>toggle menu</span></button>
+                <div class="blockHolder">
+                    <div class="raisedContainer">
+                        <div class="basicBlock basicBlock--single">
+                            <div class="basicBlock__content basicBlock__content--preICO">
+                                <div class="basicBlock__title text-center basicBlock__title--vertical">pre-ico starts at 27.09.18</div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="messageTop">Unfortunately your profile is not verified yet.</div>
-                    <div class="scrollHolder">
-                        <div class="content" id="buyTokens">
-                            <div class="blockHolder">
-                                <div class="raisedContainer">
-                                    <div class="basicBlock basicBlock--single">
-                                        <div class="basicBlock__content">
-                                            <div class="basicBlock__title text-center">Purchase of tokens</div>
-                                            <div class="basicBlock__subtitle text-center">Choose which currency you want to invest in</div>
-                                            <div class="cryptoSelector">
-                                                <button class="cryptoSelector__item cryptoSelector__item--active">Etherium</button>
-                                                <button class="cryptoSelector__item">Bitcoin</button>
+                </div>
+                <div class="blockHolder">
+                    <div class="raisedContainer">
+                        <div class="basicBlock basicBlock--single">
+                            <div class="basicBlock__content">
+                                <div class="basicBlock__title text-center">pre-sale</div>
+                                <div class="percentBar" data-percent="0" id="pre-sale-precent"> <span class="percentBar__fill" id="pre-sale-fill"></span><span class="percentBar__marker" id="pre-sale-marker"></span><span class="percentBar__number"id="pre-sale-number"> </span></div>
+                                <div class="period">
+                                    <div class="period__from"> from  {{ $data['stageBegin'] }}</div>
+                                    <div class="period__to"> till  {{ $data['stageEnd'] }}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="blockHolder">
+                    <div class="raisedContainer">
+                        <div class="basicBlock basicBlock--single">
+                            <div class="basicBlock__content">
+                                <div class="basicBlock__title text-center">ico is finished</div>
+                                <div class="percentBar" data-percent="100"> <span class="percentBar__fill"></span><span class="percentBar__marker"></span><span class="percentBar__number"> </span></div>
+                                <div class="period">
+                                    <div class="period__from"> from  23.08.2018</div>
+                                    <div class="period__to"> till  23.08.2018</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="blockHolder">
+                    <div class="raisedContainer">
+                        <div class="basicBlock basicBlock--single">
+                            <div class="basicBlock__content">
+                                <div class="basicBlock__title">totalLy raised</div>
+                                <div class="percentBar" data-percent="90"> <span class="percentBar__fill"></span><span class="percentBar__marker"></span><span class="percentBar__number"> </span></div>
+                                <div class="raisedSlider">
+                                    <div class="owl-carousel owl-theme">
+                                        <div class="raisedSlider__item"><img class="raisedSlider__itemImage" src="img/eth.svg" alt="eth"><span class="raisedSlider__itemValue">78 ETH</span></div>
+                                        <div class="raisedSlider__item"><img class="raisedSlider__itemImage" src="img/btc.svg" alt="btc"><span class="raisedSlider__itemValue">26 BTC</span></div>
+                                        <div class="raisedSlider__item"><img class="raisedSlider__itemImage" src="img/paypal.svg" alt="paypal"><span class="raisedSlider__itemValue">702 000 000 $</span></div>
+                                        <div class="raisedSlider__item"><img class="raisedSlider__itemImage" src="img/eth.svg" alt="eth"><span class="raisedSlider__itemValue">78 ETH</span></div>
+                                        <div class="raisedSlider__item"><img class="raisedSlider__itemImage" src="img/btc.svg" alt="btc"><span class="raisedSlider__itemValue">26 BTC</span></div>
+                                        <div class="raisedSlider__item"><img class="raisedSlider__itemImage" src="img/paypal.svg" alt="paypal"><span class="raisedSlider__itemValue">702 000 000 $</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="blockHolder">
+                    <div class="timerContainer">
+                        <div class="basicBlock">
+                            <div class="basicBlock__content">
+                                <div class="basicBlock__title">Round info</div>
+                                <div class="basicBlock__text">
+                                    <p>Cap: 250 ETH</p>
+                                    <p>Hard Cap: 770 ETH</p>
+                                    <p>Minimum deposit amount: 0.1 ETH</p><br>
+                                    <p>1 ETH = 13000 TGF</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="raisedContainer">
+                        <div class="basicBlock">
+                            <div class="basicBlock__content">
+                                <div class="basicBlock__title">raised during pre-sale</div>
+                                <div class="raisedSlider">
+                                    <div class="owl-carousel owl-theme">
+                                        <div class="raisedSlider__item"><img class="raisedSlider__itemImage" src="img/eth.svg" alt="eth"><span class="raisedSlider__itemValue">78 ETH</span></div>
+                                        <div class="raisedSlider__item"><img class="raisedSlider__itemImage" src="img/btc.svg" alt="btc"><span class="raisedSlider__itemValue">26 BTC</span></div>
+                                        <div class="raisedSlider__item"><img class="raisedSlider__itemImage" src="img/paypal.svg" alt="paypal"><span class="raisedSlider__itemValue">702 000 000 $</span></div>
+                                        <div class="raisedSlider__item"><img class="raisedSlider__itemImage" src="img/eth.svg" alt="eth"><span class="raisedSlider__itemValue">78 ETH</span></div>
+                                        <div class="raisedSlider__item"><img class="raisedSlider__itemImage" src="img/btc.svg" alt="btc"><span class="raisedSlider__itemValue">26 BTC</span></div>
+                                        <div class="raisedSlider__item"><img class="raisedSlider__itemImage" src="img/paypal.svg" alt="paypal"><span class="raisedSlider__itemValue">702 000 000 $</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="blockHolder">
+                    <div class="raisedContainer">
+                        <div class="basicBlock basicBlock--single">
+                            <div class="basicBlock__content">
+                                <div class="basicBlock__title text-center">deposit amount Bonuses</div>
+                                <div class="bonuses">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="bonuses__item">
+                                                <div class="bonuses__itemTitle">1 ETH</div>
+                                                <div class="bonuses__itemCaption"> Bonus</div>
+                                                <div class="bonuses__itemValue">10% </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="bonuses__item">
+                                                <div class="bonuses__itemTitle">4 ETH</div>
+                                                <div class="bonuses__itemCaption"> Bonus</div>
+                                                <div class="bonuses__itemValue">15% </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="bonuses__item">
+                                                <div class="bonuses__itemTitle">8 ETH</div>
+                                                <div class="bonuses__itemCaption"> Bonus</div>
+                                                <div class="bonuses__itemValue">20% </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="bonuses__item">
+                                                <div class="bonuses__itemTitle">10 ETH</div>
+                                                <div class="bonuses__itemCaption"> Bonus</div>
+                                                <div class="bonuses__itemValue">25%</div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="blockHolder">
-                                <div class="raisedContainer">
-                                    <div class="basicBlock">
-                                        <div class="basicBlock__content">
-                                            <form class="loginForm icoForm" action="#">
-                                                <div class="formControl">
-                                                    <label class="icoForm__label">ETH wallet  for investing and receiving tokens</label>
-                                                    <input class="icoForm__input icoForm__input--pencil" type="text" name="ethWallet"><span class="icoForm__pencil"></span>
-                                                </div>
-                                                <div class="formControl">
-                                                    <label class="icoForm__label">Enter your BTC wallet for investment</label>
-                                                    <input class="icoForm__input icoForm__input--pencil" type="text" name="btcWallet"><span class="icoForm__pencil"></span>
-                                                </div>
-                                            </form>
-                                        </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="blockHolder">
+                    <div class="raisedContainer">
+                        <div class="basicBlock basicBlock--single">
+                            <div class="basicBlock__content">
+                                <div class="basicBlock__title text-center">Token Distribution</div>
+                                <div class="row">
+                                    <div class="col-lg-8 align-self-center">
+                                        <canvas id="tokenChart"></canvas>
                                     </div>
-                                </div>
-                                <div class="raisedContainer">
-                                    <div class="basicBlock basicBlock">
-                                        <div class="basicBlock__content">
-                                            <form class="loginForm icoForm" action="#">
-                                                <div class="row">
-                                                    <div class="col-md-3 align-self-top text-center"><img class="qrCode" alt="qr" src="img/qr.jpg"></div>
-                                                    <div class="col-md-9 align-self-top">
-                                                        <div class="formControl formControl--noMargin">
-                                                            <input class="icoForm__input icoForm__input--canCopy" type="text" v-model="invsetmentWalletETH" name="ethWallet" id="ethWallet"><span class="icoForm__copy" v-on:click="copyToBuffer"> </span>
-                                                        </div>
-                                                        <div class="minumudDeposit">Minimum deposit amount: minumumDeposit ETH</div>
-                                                        <div class="setGas">Set GAS: gas</div>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="blockHolder">
-                                <div class="raisedContainer">
-                                    <div class="basicBlock basicBlock--single">
-                                        <div class="basicBlock__content">
-                                            <div class="basicBlock__title text-center">tRANSACTIONS</div>
-                                            <div class="basicBlock__subtitle text-center">Thank you for your participation! You can see your transactions</div>
-                                            <div class="infoBtn"><a class="btn btn--small" href="#">h5723882302832cn8399c2</a></div>
-                                            <div class="dataTable">
-                                                <table class="dataTable__list">
-                                                    <tr>
-                                                        <th>Date</th>
-                                                        <th>Currency</th>
-                                                        <th>Token</th>
-                                                        <th>Status</th>
-                                                    </tr>
-                                                    <tr class="dataTable__error">
-                                                        <td>21.09.2018</td>
-                                                        <td>-10 ETH</td>
-                                                        <td>+34000 LTD</td>
-                                                        <td>False</td>
-                                                    </tr>
-                                                    <tr class="dataTable__success">
-                                                        <td>21.09.2018</td>
-                                                        <td>-10 ETH</td>
-                                                        <td>+34000 LTD</td>
-                                                        <td>Success</td>
-                                                    </tr>
-                                                    <tr class="dataTable__summary">
-                                                        <td colspan="2"><span class="dataTable__address"><strong>To</strong>: h5723882302832cn8399c2</span></td>
-                                                        <td colspan="2"><strong>Info: </strong><a class="dataTable__link" href="#">h5723882302832cn8399c2</a></td>
-                                                    </tr>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <div class="col-lg-4 align-self-center">
+                                        <div id="js-legend" class="legend-con chart-legend"></div></div>
                                 </div>
                             </div>
                         </div>
@@ -126,6 +222,9 @@
             </div>
         </div>
     </div>
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</div>--}}
 {{--<div class="container">--}}
     {{--<div class="row justify-content-center">--}}
         {{--<div class="col-md-8">--}}
