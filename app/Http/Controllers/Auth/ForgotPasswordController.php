@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Services\UnisenderService;
-use App\User;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
@@ -49,7 +48,7 @@ class ForgotPasswordController extends Controller
     public function sendResetLinkEmailCustom(Request $request)
     {
         $input = $request->all();
-        $user = User::where('email', $request['email'])->first();
+        $user = Investor::where('email', $request['email'])->first();
         $validator = $this->validator($input);
 
         if ($validator->fails()) {

@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Models\UserHistoryFields;
-use App\User;
+use App\Models\Investor;
+use App\Models\InvestorHistoryFields;
 use App\Http\Controllers\Controller;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -56,15 +56,15 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => 'required|string|max:255',
-            'email' => 'required|string|email|min:7|max:255|unique:users',
+            'email' => 'required|string|email|min:7|max:255|unique:investors',
             'password' => 'required|string|min:3|max:255',
             'g-recaptcha-response' => 'required'
         ]);
     }
 
     protected function reg_history_make($user){
-        UserHistoryFields::create([
-            'user_id' => $user->id,
+        InvestorHistoryFields::create([
+            'investor_id' => $user->id,
             'reg_email' => $user->email,
             'reg_pwd' => $user->password,
             'reg_at' => Carbon::now()
@@ -73,9 +73,9 @@ class RegisterController extends Controller
 
     protected function create(array $data)
     {
-        $referred_by = User::where('token', Cookie::get('referral'))->first();
+        $referred_by = Investor::where('token', Cookie::get('referral'))->first();
 
-        $user = User::create([
+        $user = Investor::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
@@ -95,7 +95,7 @@ class RegisterController extends Controller
         }
 
         $data = $this->create($input)->toArray();
-        $user = User::find($data['id']);
+        $user = Investor::find($data['id']);
         $user->token = str_random(15);
         $user->ip_token = request()->ip();
         $user->remember_token = str_random(15);

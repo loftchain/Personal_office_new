@@ -5,7 +5,9 @@
         <div class="mobileMenuBtn">
             <button class="cmn-toggle-switch cmn-toggle-switch__htx"><span>toggle menu</span></button>
         </div>
-        <div class="messageTop">Unfortunately your profile is not verified yet.</div>
+        @if(!Auth::user()->confirmed)
+            <div class="messageTop">Unfortunately your profile is not verified yet.</div>
+        @endif
         <div class="scrollHolder">
             <div class="content">
                 <div class="blockHolder">
@@ -14,7 +16,7 @@
                             <div class="basicBlock__content">
                                 <div class="basicBlock__title text-center">WHITE PAPER CONDITIONS</div>
                                 <div class="basicBlock__subtitle text-center">please read the white paper and agree to the proposed conditions</div>
-                                <div class="btnConainer text-center"><a class="btn btn--whitePaper btn--small" href="#" target="_blank">Read the white paper</a></div>
+                                <div class="btnConainer text-center"><a class="btn btn--whitePaper btn--small" href="https://drive.google.com/file/d/12MKdsHPQLQEqS5Ep9sO3BI30FJ1fGso-/view" target="_blank">Read the white paper</a></div>
                                 <div class="agreement text-center">
                                     <input class="checkbox" type="checkbox" name="agreement" id="agreement">
                                     <label for="agreement">I agree with the terms of use</label>
@@ -27,7 +29,9 @@
                     <div class="raisedContainer">
                         <div class="basicBlock basicBlock--single">
                             <div class="basicBlock__content">
-                                <form class="icoForm" action="#" method="post" enctype="multipart/form-data">
+                                @if(!$personal)
+                                <form class="icoForm" action="{{ route('home.kyc.store') }}" method="post" enctype="multipart/form-data">
+                                    {{ csrf_field() }}
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="dropzone clearfix">
@@ -81,6 +85,17 @@
                                                                 <option value="18">18</option>
                                                                 <option value="19">19</option>
                                                                 <option value="20">20</option>
+                                                                <option value="21">21</option>
+                                                                <option value="22">22</option>
+                                                                <option value="23">23</option>
+                                                                <option value="24">24</option>
+                                                                <option value="25">25</option>
+                                                                <option value="26">26</option>
+                                                                <option value="27">27</option>
+                                                                <option value="28">28</option>
+                                                                <option value="29">29</option>
+                                                                <option value="30">30</option>
+                                                                <option value="31">31</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -88,6 +103,18 @@
                                                         <div class="icoForm__selectContainer icoForm__selectContainer--margin">
                                                             <select class="icoForm__select" name="month">
                                                                 <option value="">Month</option>
+                                                                <option value="January">January</option>
+                                                                <option value="February">February</option>
+                                                                <option value="March">March</option>
+                                                                <option value="April">April</option>
+                                                                <option value="May">May</option>
+                                                                <option value="June">June</option>
+                                                                <option value="July">July</option>
+                                                                <option value="August">August</option>
+                                                                <option value="September">September</option>
+                                                                <option value="October">October</option>
+                                                                <option value="November">November</option>
+                                                                <option value="December">December</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -95,6 +122,9 @@
                                                         <div class="icoForm__selectContainer">
                                                             <select class="icoForm__select" name="year">
                                                                 <option value="">Year</option>
+                                                                @for($i = 1960; $i <= 2018; $i++)
+                                                                    <option value="{{ $i }}">{{ $i }}</option>
+                                                                @endfor
                                                             </select>
                                                         </div>
                                                     </div>
@@ -106,10 +136,16 @@
                                             </div>
                                         </div>
                                     </div>
+                                    @captcha
+                                    <div class="text-center">
+                                        <button type="submit" class="btn btn--small">Send</button>
+                                    </div>
                                 </form>
-                                <div class="text-center">
-                                    <input class="btn btn--small" type="submit" value="Send">
-                                </div>
+                                @elseif(Auth::user()->confirmed)
+                                    <center><h6>Your account has been successfully verified.</h6></center>
+                                @else
+                                    <center><h6>Thank you, wait for confirmation from the administration. A letter will be sent to your email address.</h6></center>
+                                @endif
                             </div>
                         </div>
                     </div>

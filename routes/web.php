@@ -36,9 +36,9 @@ Route::post('/change/email', 'Auth\ChangeEmailController@reset_email')->name('em
 
 Route::group(['prefix' => 'home', 'as' => 'home.', 'middleware' => ['isEmail']], function (){
     Route::get('/', 'HomeController@index')->name('index');
-    Route::get('/kyc', function (){
-        return view('home.kyc');
-    })->name('kyc');
+    Route::get('/verification', 'KycController@index')->name('kyc');
+    Route::post('/verification', 'KycController@store')->name('kyc.store');
+    Route::get('/buy/tokens', 'TokensController@index')->name('tokens');
 });
 
 Route::get('settings', 'HomeController@settings')->name('home.settings');

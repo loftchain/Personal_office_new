@@ -69,8 +69,8 @@ class WidgetService
 
     public function getUserByWallet($wallet)
     {
-        $user = DB::table('users')
-            ->select('users.id', 'users.referred_by')
+        $user = DB::table('investors')
+            ->select('investors.id', 'investors.referred_by')
             ->join('user_wallet_fields', 'user_wallet_fields.user_id', '=', 'users.id')
             ->where('user_wallet_fields.wallet', '=', $wallet)
             ->where('user_wallet_fields.type', 'like', '%from%')

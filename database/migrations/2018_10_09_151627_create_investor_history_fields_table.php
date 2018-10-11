@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUserHistoryFieldsTable extends Migration
+class CreateInvestorHistoryFieldsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateUserHistoryFieldsTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_history_fields', function (Blueprint $table) {
+        Schema::create('investor_history_fields', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned()->nullable();
+            $table->integer('investor_id')->unsigned()->nullable();
             $table->string('reg_email')->nullable();
             $table->string('reg_pwd')->nullable();
             $table->timestamp('reg_at')->nullable();
@@ -38,8 +38,8 @@ class CreateUserHistoryFieldsTable extends Migration
             $table->timestamps();
         });
 
-        Schema::table('user_history_fields', function ($table) {
-            $table->foreign('user_id')->references('id')->on('users');
+        Schema::table('investor_history_fields', function ($table) {
+            $table->foreign('investor_id')->references('id')->on('investors');
         });
     }
 
@@ -50,6 +50,6 @@ class CreateUserHistoryFieldsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_history_fields');
+        Schema::dropIfExists('investor_history_fields');
     }
 }

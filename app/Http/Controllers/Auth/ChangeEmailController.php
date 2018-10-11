@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Models\UserHistoryFields;
-use App\User;
+use App\Models\InvestorHistoryFields;
+use App\Models\Investor;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -41,7 +41,7 @@ class ChangeEmailController extends Controller
         ];
 
         if ($old_email && $new_email) {
-            UserHistoryFields::where('user_id', Auth::id())->update($chm);
+            InvestorHistoryFields::where('investor_id', Auth::id())->update($chm);
         }
     }
 
@@ -50,7 +50,7 @@ class ChangeEmailController extends Controller
         $input = $request->all();
         $validator = $this->validator($input);
         $user = $request->user();
-        $possible_user = User::where('email', $input['email'])->first();
+        $possible_user = Investor::where('email', $input['email'])->first();
 
         if(Auth::user()->password){
             $passwordIsVerified = password_verify($request['password'], $user->password);

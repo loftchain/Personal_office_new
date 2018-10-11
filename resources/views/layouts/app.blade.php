@@ -28,7 +28,7 @@
                             </div>
                             <div class="userInfo__text">
                                 <div class="userInfo__textItem">{{ Auth::user()->name }}</div>
-                                <div class="userInfo__textItem">Status: Not verified</div>
+                                <div class="userInfo__textItem">Status: {{ !Auth::user()->confirmed ? 'Not ' : ''}} verified</div>
                                 <div class="userInfo__textItem">Token amount: 876 LSD</div>
                             </div>
                         </div>
@@ -39,7 +39,7 @@
                                 <li class="mainMenu__item"><a class="mainMenu__link"
                                                                                      href="{{ route('home.kyc') }}">Verification</a>
                                 </li>
-                                <li class="mainMenu__item"><a class="mainMenu__link" href="cabinetBuyTokens.html">Buy
+                                <li class="mainMenu__item"><a class="mainMenu__link" href="{{ route('home.tokens') }}">Buy
                                         tokens</a></li>
                                 <li class="mainMenu__item"><a class="mainMenu__link" href="cabinetReferral.html">Referral
                                         Program</a></li>
@@ -111,5 +111,6 @@
     @endauth
 </div>
 @include('layouts.scripts')
+@stack('scripts')
 </body>
 </html>

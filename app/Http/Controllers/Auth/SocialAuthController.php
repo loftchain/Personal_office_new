@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -26,7 +25,7 @@ class SocialAuthController extends Controller
 
     protected function firstOrCreateUser($user, $provider)
     {
-        $authUser = User::where([['provider', $provider], ['provider_id', $user->id]])->firstOrCreate([
+        $authUser = Investor::where([['provider', $provider], ['provider_id', $user->id]])->firstOrCreate([
             'name' => $user->name,
             'email' => $user->email,
             'provider' => $provider,
