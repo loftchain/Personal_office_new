@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('root');
 
 Auth::routes();
 
@@ -34,11 +34,14 @@ Route::group(['prefix' => 'social', 'as' => 'social.'], function () {
 Route::post('/change/email', 'Auth\ChangeEmailController@reset_email')->name('email.reset');
 //--------------------------------------------------------------------------------
 
-Route::group(['prefix' => 'home', 'as' => 'home.', 'middleware' => ['isEmail']], function (){
+Route::group(['prefix' => 'home', 'as' => 'home.', 'middleware' => ['auth', 'isEmail']], function (){
     Route::get('/', 'HomeController@index')->name('index');
     Route::get('/verification', 'KycController@index')->name('kyc');
     Route::post('/verification', 'KycController@store')->name('kyc.store');
-    Route::get('/buy/tokens', 'TokensController@index')->name('tokens');
+    Route::get('/tokens/buy', 'TokensController@index')->name('tokens');
+    Route::post('/tokens/buy', 'TokensController@store_wallet')->name('tokens.store');
+    Route::get('/tokens/get/wallets', 'TokensController@current_wallets')->name('current_wallets');
+    Route::get('/description_view/{currency}', 'TokensController@description_view')->name('description_view');
 });
 
 Route::get('settings', 'HomeController@settings')->name('home.settings');

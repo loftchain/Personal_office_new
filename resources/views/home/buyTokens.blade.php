@@ -27,17 +27,44 @@
                 <div class="blockHolder">
                     <div class="raisedContainer">
                         <div class="basicBlock">
-                            <div class="basicBlock__content">
-                                <form class="loginForm icoForm" action="#">
+                            <div class="basicBlock__content" id="formWallets">
+                                {{--<form class="loginForm icoForm" action="{{ route('home.tokens.store') }}" method="post">--}}
+                                    {{--{{ csrf_field() }}--}}
+                                    {{--<input type="hidden" name="type" value="from">--}}
+                                    {{--<div class="formControl">--}}
+                                        {{--<label class="icoForm__label">ETH wallet  for investing and receiving tokens</label>--}}
+                                        {{--<input class="icoForm__input icoForm__input--pencil" type="text" name="ethWallet"><span class="icoForm__pencil"></span>--}}
+                                    {{--</div>--}}
+                                    {{--<div class="formControl">--}}
+                                        {{--<label class="icoForm__label">Enter your BTC wallet for investment</label>--}}
+                                        {{--<input class="icoForm__input icoForm__input--pencil" type="text" name="btcWallet"><span class="icoForm__pencil"></span>--}}
+                                    {{--</div>--}}
+                                    {{--<button type="submit" class="btn btn--small">Send</button>--}}
+                                {{--</form>                                --}}
+                                <div class="loginForm icoForm">
+                                <form id="formETH" action="{{ route('home.tokens.store') }}" method="post">
+                                    {{ csrf_field() }}
                                     <div class="formControl">
+                                        <input type="hidden" name="type" class="type" value="from">
+                                        <input type="hidden" name="currency" class="currency" value="ETH">
                                         <label class="icoForm__label">ETH wallet  for investing and receiving tokens</label>
-                                        <input class="icoForm__input icoForm__input--pencil" type="text" name="ethWallet"><span class="icoForm__pencil"></span>
+                                        <input id="wallet1" data-currency="ETH" class="wallet icoForm__input icoForm__input--pencil" type="text" name="wallet">
+                                        <span class="icoForm__pencil"></span>
                                     </div>
-                                    <div class="formControl">
-                                        <label class="icoForm__label">Enter your BTC wallet for investment</label>
-                                        <input class="icoForm__input icoForm__input--pencil" type="text" name="btcWallet"><span class="icoForm__pencil"></span>
-                                    </div>
+                                    <div class="error-message wallet"></div>
                                 </form>
+                                <form id="formBTC" action="{{ route('home.tokens.store') }}" method="post">
+                                    {{ csrf_field() }}
+                                    <div class="formControl">
+                                        <input type="hidden" name="type" class="type" value="to">
+                                        <input type="hidden" name="currency" class="currency" value="BTC">
+                                        <label class="icoForm__label">Enter your BTC wallet for investment</label>
+                                        <input id="wallet2" data-currency="BTC"  class="wallet icoForm__input icoForm__input--pencil" type="text" name="wallet">
+                                        <span class="icoForm__pencil"></span>
+                                    </div>
+                                    <div class="error-message wallet"></div>
+                                </form>
+                                </div>
                             </div>
                         </div>
                     </div>

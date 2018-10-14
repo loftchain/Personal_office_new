@@ -16,7 +16,7 @@ class CheckEmail
      */
     public function handle($request, Closure $next)
     {
-        if(Auth::user()->email == null){
+        if(Auth::user() && Auth::user()->email == null){
             return redirect()->route('home.settings');
         }
 
