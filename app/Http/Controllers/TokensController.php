@@ -24,12 +24,11 @@ class TokensController extends Controller
 
     public function index()
     {
-        return view('home.buyTokens');
-    }
+        $transactions = Auth::user()->transactions()->paginate(10);
 
-    public function store(Request $request)
-    {
-        dd($request->all());
+        return view('home.buyTokens', [
+            'transactions' => $transactions
+        ]);
     }
 
     protected function create(array $data)
@@ -44,7 +43,7 @@ class TokensController extends Controller
 
     protected function wallet_history_make($method, $wallet, $history)
     {
-        if($method == 'store wallet'){
+        if ($method == 'store wallet') {
             $h = [
                 'wallet_currency_new' => $wallet['name_of_wallet_invest_from'],
                 'wallet_invest_from_new' => $wallet['wallet_invest_from'],
@@ -74,7 +73,7 @@ class TokensController extends Controller
             'wallet' => 'required|string|min:25|max:45|unique:investor_wallet_fields',
         ]);
         if ($validator->fails()) {
-            return response()->json(['validation_error'=>$validator->errors()]);
+            return response()->json(['validation_error' => $validator->errors()]);
         }
 
         $wallet = $this->create($request->all());
@@ -91,11 +90,13 @@ class TokensController extends Controller
         return response()->json(['currentWallets' => $walletData]);
     }
 
-    public function description_view($currency){
+    public function description_view($currency)
+    {
         return view('home.wallet_help.description')->with('currency', $currency);
     }
 
-    public function send_usd_proposal(Request $request){
+    public function send_usd_proposal(Request $request)
+    {
         $user = Auth::user();
         $userPersonal = InvestorPersonalFields::where('investor_id', $user->id)->first();
         $wallet = InvestorWalletFields::where('investor_id', $user->id)->where('type', 'to')->first();
@@ -111,7 +112,7 @@ class TokensController extends Controller
         ];
 //          todo Уточнить
 //        Mail::to(env('OWNER_EMAIL'))->send(new SendFiatRequest($mailData));
-        return response()->json(['usd_request_sent' => 'good']);
 
+        return response()->json(['usd_request_sent' => 'good']);
     }
 }

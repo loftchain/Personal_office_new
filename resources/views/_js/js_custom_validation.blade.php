@@ -38,6 +38,7 @@
                     }
 
                     $.each(data.validation_error, (key, value) => {
+                        console.log(key, value)
                         if (_this.children('.error-message.' + key).prev().hasClass('x-input')) {
                             _this.children('.error-message.' + key).prev().addClass('isError');
                         }

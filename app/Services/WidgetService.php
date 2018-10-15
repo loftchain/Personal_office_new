@@ -71,9 +71,9 @@ class WidgetService
     {
         $user = DB::table('investors')
             ->select('investors.id', 'investors.referred_by')
-            ->join('user_wallet_fields', 'user_wallet_fields.user_id', '=', 'users.id')
-            ->where('user_wallet_fields.wallet', '=', $wallet)
-            ->where('user_wallet_fields.type', 'like', '%from%')
+            ->join('investor_wallet_fields', 'investor_wallet_fields.investor_id', '=', 'investors.id')
+            ->where('investor_wallet_fields.wallet', '=', $wallet)
+            ->where('investor_wallet_fields.type', 'like', '%from%')
             ->first();
 
         return $user ?? null;

@@ -41,7 +41,7 @@
                                 </li>
                                 <li class="mainMenu__item"><a class="mainMenu__link" href="{{ route('home.tokens') }}">Buy
                                         tokens</a></li>
-                                <li class="mainMenu__item"><a class="mainMenu__link" href="cabinetReferral.html">Referral
+                                <li class="mainMenu__item"><a class="mainMenu__link" href="{{ route('home.referral') }}">Referral
                                         Program</a></li>
                                 <li class="mainMenu__item"><a class="mainMenu__link" href="{{ route('home.settings') }}">Settings</a>
                                 </li>

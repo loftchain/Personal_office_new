@@ -104,18 +104,18 @@
                                             <th>Token</th>
                                             <th>Status</th>
                                         </tr>
+                                        @forelse($transactions as $transaction)
+                                        <tr class="{{ $transaction->status == 'true' ? "dataTable__success" : 'dataTable__error' }}">
+                                            <td>{{ $transaction->date }}</td>
+                                            <td>{{ $transaction->amount }}</td>
+                                            <td>{{ $transaction->amount_tokens }}</td>
+                                            <td>{{ $transaction->status }}</td>
+                                        </tr>
+                                        @empty
                                         <tr class="dataTable__error">
-                                            <td>21.09.2018</td>
-                                            <td>-10 ETH</td>
-                                            <td>+34000 LTD</td>
-                                            <td>False</td>
+                                            <td colspan="4"><h3>No transactions</h3></td>
                                         </tr>
-                                        <tr class="dataTable__success">
-                                            <td>21.09.2018</td>
-                                            <td>-10 ETH</td>
-                                            <td>+34000 LTD</td>
-                                            <td>Success</td>
-                                        </tr>
+                                        @endforelse
                                         <tr class="dataTable__summary">
                                             <td colspan="2"><span class="dataTable__address"><strong>To</strong>: h5723882302832cn8399c2</span></td>
                                             <td colspan="2"><strong>Info: </strong><a class="dataTable__link" href="#">h5723882302832cn8399c2</a></td>
@@ -130,6 +130,6 @@
         </div>
     </div>
     @push('scripts')
-        @include('_js.js_wallet')
+{{--        @include('_js.js_wallet')--}}
     @endpush
 @endsection

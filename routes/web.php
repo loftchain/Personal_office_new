@@ -42,6 +42,7 @@ Route::group(['prefix' => 'home', 'as' => 'home.', 'middleware' => ['auth', 'isE
     Route::post('/tokens/buy', 'TokensController@store_wallet')->name('tokens.store');
     Route::get('/tokens/get/wallets', 'TokensController@current_wallets')->name('current_wallets');
     Route::get('/description_view/{currency}', 'TokensController@description_view')->name('description_view');
+    Route::get('/referrals', 'ReferralController@index')->name('referral');
 });
 
 Route::get('settings', 'HomeController@settings')->name('home.settings');

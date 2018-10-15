@@ -10,11 +10,13 @@
                 <label class="icoForm__label">E-mail</label>
                 <input class="icoForm__input" type="email" name="email" required>
             </div>
+            <div class="error-message error-message0 email not_confirmed failed"></div>
             <div class="formControl">
                 <label class="icoForm__label">Password</label>
                 <input class="icoForm__input" type="password" name="password" required>
                 <div class="icoForm__linkContainer text-right"><a class="link" href="{{ route('password.request') }}">Forgot your password?</a></div>
             </div>
+            <div class="error-message error-message1 password pwd_not_match"></div>
             <div class="formControl">
                 <button class="btn" name="submit">Sign in</button>
             </div>

@@ -45,4 +45,9 @@ class Investor extends Authenticatable
     {
         return $this->hasMany(InvestorWalletFields::class);
     }
+
+    public function transactions()
+    {
+        return $this->hasMany(Transaction::class);
+    }
 }
