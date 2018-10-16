@@ -23,8 +23,8 @@
                 <div class="cabinetHolder">
                     <div class="sidebar jsSidebar">
                         <div class="userInfo">
-                            <div class="userInfo__avatar"><a class="userInfo__avatarLink" href="#"><img
-                                            class="userInfo__avatarImage" src="{{ asset('img/avatar.jpg') }}" alt="Name Surname"></a>
+                            <div class="userInfo__avatar" ><a class="userInfo__avatarLink" href="{{ route('home.settings') }}" ><img
+                                            class="userInfo__avatarImage" src="{{ Auth::user()->img ? asset('storage/' . Auth::user()->img) : asset('img/avatar.png') }}" style="width: 75px; height: 75px" alt="Name Surname"></a>
                             </div>
                             <div class="userInfo__text">
                                 <div class="userInfo__textItem">{{ Auth::user()->name }}</div>

@@ -17,8 +17,8 @@
                                 <div class="basicBlock__title text-center">Purchase of tokens</div>
                                 <div class="basicBlock__subtitle text-center">Choose which currency you want to invest in</div>
                                 <div class="cryptoSelector">
-                                    <button class="cryptoSelector__item cryptoSelector__item--active">Etherium</button>
-                                    <button class="cryptoSelector__item">Bitcoin</button>
+                                    <button class="cryptoSelector__item cryptoSelector__item--active" id="buttonEth">Etherium</button>
+                                    <button class="cryptoSelector__item" id="buttonBtc">Bitcoin</button>
                                 </div>
                             </div>
                         </div>
@@ -42,28 +42,35 @@
                                     {{--<button type="submit" class="btn btn--small">Send</button>--}}
                                 {{--</form>                                --}}
                                 <div class="loginForm icoForm">
-                                <form id="formETH" action="{{ route('home.tokens.store') }}" method="post">
-                                    {{ csrf_field() }}
-                                    <div class="formControl">
-                                        <input type="hidden" name="type" class="type" value="from">
-                                        <input type="hidden" name="currency" class="currency" value="ETH">
-                                        <label class="icoForm__label">ETH wallet  for investing and receiving tokens</label>
-                                        <input id="wallet1" data-currency="ETH" class="wallet icoForm__input icoForm__input--pencil" type="text" name="wallet">
-                                        <span class="icoForm__pencil"></span>
+                                    <div id="formEth">
+                                        @include('modals.eth_form')
                                     </div>
-                                    <div class="error-message wallet"></div>
-                                </form>
-                                <form id="formBTC" action="{{ route('home.tokens.store') }}" method="post">
-                                    {{ csrf_field() }}
-                                    <div class="formControl">
-                                        <input type="hidden" name="type" class="type" value="to">
-                                        <input type="hidden" name="currency" class="currency" value="BTC">
-                                        <label class="icoForm__label">Enter your BTC wallet for investment</label>
-                                        <input id="wallet2" data-currency="BTC"  class="wallet icoForm__input icoForm__input--pencil" type="text" name="wallet">
-                                        <span class="icoForm__pencil"></span>
+
+                                    <div id="formBtc" style="display: none">
+                                        @include('modals.btc_form')
                                     </div>
-                                    <div class="error-message wallet"></div>
-                                </form>
+                                {{--<form action="{{ route('home.tokens.store') }}" method="post">--}}
+                                    {{--{{ csrf_field() }}--}}
+                                    {{--<div class="formControl">--}}
+                                        {{--<input type="hidden" name="type" class="type" value="from">--}}
+                                        {{--<input type="hidden" name="currency" class="currency" value="ETH">--}}
+                                        {{--<label class="icoForm__label">ETH wallet  for investing and receiving tokens</label>--}}
+                                        {{--<input id="wallet1" data-currency="ETH" class="wallet icoForm__input icoForm__input--pencil" type="text" name="wallet">--}}
+                                        {{--<span class="icoForm__pencil"></span>--}}
+                                    {{--</div>--}}
+                                    {{--<div class="error-message wallet"></div>--}}
+                                {{--</form>--}}
+                                {{--<form action="{{ route('home.tokens.store') }}" method="post">--}}
+                                    {{--{{ csrf_field() }}--}}
+                                    {{--<div class="formControl">--}}
+                                        {{--<input type="hidden" name="type" class="type" value="to">--}}
+                                        {{--<input type="hidden" name="currency" class="currency" value="BTC">--}}
+                                        {{--<label class="icoForm__label">Enter your BTC wallet for investment</label>--}}
+                                        {{--<input id="wallet2" data-currency="BTC"  class="wallet icoForm__input icoForm__input--pencil" type="text" name="wallet">--}}
+                                        {{--<span class="icoForm__pencil"></span>--}}
+                                    {{--</div>--}}
+                                    {{--<div class="error-message wallet"></div>--}}
+                                {{--</form>--}}
                                 </div>
                             </div>
                         </div>
@@ -89,6 +96,7 @@
                         </div>
                     </div>
                 </div>
+                @if(Auth::user()->wallets()->first())
                 <div class="blockHolder">
                     <div class="raisedContainer">
                         <div class="basicBlock basicBlock--single">
@@ -126,10 +134,12 @@
                         </div>
                     </div>
                 </div>
+                    @endif
             </div>
         </div>
     </div>
     @push('scripts')
 {{--        @include('_js.js_wallet')--}}
+        @include('_js.js_test')
     @endpush
 @endsection

@@ -76,7 +76,7 @@
                     break;
                 case !$.isEmptyObject(data.success_register):
                     console.log('testtesttesttesttesttesttesttest')
-                    window.location.replace("{{ route('root') . '/agreement' }}");
+                    window.location.replace("{{ route('home.index') }}");
                     break;
                 case !$.isEmptyObject(data.success_login):
                     window.location.replace("{{ route('root') . '/home' }}");

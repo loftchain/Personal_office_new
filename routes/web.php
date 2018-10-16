@@ -32,6 +32,7 @@ Route::group(['prefix' => 'social', 'as' => 'social.'], function () {
 
 //------------------------ChangeEmail/ChangePassword------------------------------
 Route::post('/change/email', 'Auth\ChangeEmailController@reset_email')->name('email.reset');
+Route::post('/change/password', 'Auth\ChangePasswordController@renew_password')->name('password.change');
 //--------------------------------------------------------------------------------
 
 Route::group(['prefix' => 'home', 'as' => 'home.', 'middleware' => ['auth', 'isEmail']], function (){
@@ -43,6 +44,7 @@ Route::group(['prefix' => 'home', 'as' => 'home.', 'middleware' => ['auth', 'isE
     Route::get('/tokens/get/wallets', 'TokensController@current_wallets')->name('current_wallets');
     Route::get('/description_view/{currency}', 'TokensController@description_view')->name('description_view');
     Route::get('/referrals', 'ReferralController@index')->name('referral');
+    Route::post('/settings/avatar/upload', 'SettingsController@uploadAvatar')->name('settings.upload.avatar');
 });
 
 Route::get('settings', 'HomeController@settings')->name('home.settings');

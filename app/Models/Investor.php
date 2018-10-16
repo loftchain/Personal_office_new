@@ -19,7 +19,7 @@ class Investor extends Authenticatable
 
     protected $fillable = [
         'name', 'email', 'password', 'valid_step', 'valid_at', 'confirmed', 'confirmed_at', 'reg_attempts', 'reset_attempts', 'token',  'referred_by',
-        'kyc_step', 'kyc_token', 'provider', 'provider_id'
+        'kyc_step', 'kyc_token', 'provider', 'provider_id', 'img'
     ];
 
     /**

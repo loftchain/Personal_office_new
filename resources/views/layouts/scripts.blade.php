@@ -1,4 +1,7 @@
 <script src="{{ asset('js/jquery/jquery.min.js') }}"></script>
+<script src="{{ asset('js/jquery/jquery.js') }}"></script>
+<script src="{{ asset('js/jquery/jquery.ui.widget.js') }}"></script>
+<script src="{{ asset('js/jquery/jquery.fileupload.js') }}"></script>
 <script src="{{ asset('js/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <script src="{{ asset('js/owl-carousel/owl.carousel.min.js') }}"></script>
 <script src="{{ asset('js/fancybox/jquery.fancybox.min.js') }}"></script>

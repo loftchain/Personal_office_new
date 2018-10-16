@@ -23,11 +23,15 @@
                                         <div class="row">
                                             <div class="col-md-4">
                                                 <div class="avatarSettings">
-                                                    <div class="avatarSettings__imageHolder"><img class="avatarSettings__image" src="../img/avatar-big.jpg">
-                                                        <form class="icoForm icoForm--noMargin" action="#" method="post" enctype="multipart/form-data">
-                                                            <label class="avatarSettings__uploadBtn" for="avatarUpload">
-                                                                <input class="hiddenInput" type="file" id="avatarUpload" name="avatarUpload" value="">
-                                                            </label>
+                                                    <div class="avatarSettings__imageHolder"><img class="avatarSettings__image" src="{{ Auth::user()->img ? asset('storage/' . Auth::user()->img) :  asset('img/avatar.png') }}">
+                                                        <form id="upload" class="icoForm icoForm--noMargin" action="{{ route('home.settings.upload.avatar') }}" method="post" enctype="multipart/form-data">
+                                                            {{ csrf_field() }}
+                                                            <div id="drop">
+
+                                                                <label class="avatarSettings__uploadBtn" for="avatarUpload">
+                                                                    <input class="hiddenInput" type="file" id="avatarUpload" name="avatar" multiple />
+                                                                </label>
+                                                            </div>
                                                         </form>
                                                     </div>
                                                     <div class="avatarSettings__note">Upload photo not more than 1mb </div>
@@ -37,7 +41,7 @@
                                                 <form class="icoForm icoForm--noMargin" action="#">
                                                     <div class="formControl formControl--noMargin">
                                                         <label class="icoForm__label">Name</label>
-                                                        <input class="icoForm__input" type="text" name="name" value="{{ Auth::user()->name }}">
+                                                        <input class="icoForm__input" type="text" name="name" disabled value="{{ Auth::user()->name }}">
                                                     </div>
                                                     <div class="formControl">
                                                         <label class="icoForm__label">Email</label>
@@ -49,20 +53,26 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
-                                                <form class="icoForm changePassword icoForm--noMargin hidden" action="#">
+                                                <form class="icoForm changePassword icoForm--noMargin hidden" action="{{ route('password.change') }}" method="post">
+                                                    {{ csrf_field() }}
                                                     <div class="formControl formControl--noMargin">
                                                         <label class="icoForm__label">Old password</label>
-                                                        <input class="icoForm__input" type="password" name="name" value="Name Name">
+                                                        <input class="icoForm__input" type="password" name="old_password" placeholder="Your old password">
                                                     </div>
+                                                    <div class="error-message error-message1 password1 pwd_not_match not_equal"></div>
                                                     <div class="formControl">
                                                         <label class="icoForm__label">New password</label>
-                                                        <input class="icoForm__input" type="password" name="name" value="Name Name">
+                                                        <input class="icoForm__input" type="password" name="password" placeholder="Your new password">
                                                     </div>
                                                     <div class="formControl">
                                                         <label class="icoForm__label">Repeat password</label>
-                                                        <input class="icoForm__input" type="password" name="name" value="Name Name">
+                                                        <input class="icoForm__input" type="password" name="password_confirmation" placeholder="Repeat new password">
                                                     </div>
+                                                    <div class="error-message error-message2 password2 not_equal"></div>
+                                                    <div class="error-message error-message2 password"></div>
+                                                    <button type="submit" class="btn btn--small">Edit</button>
                                                 </form>
+
                                                 <form class="icoForm changeEmail icoForm--noMargin hidden" action="{{ route('email.reset') }}" method="post">
                                                     {{ csrf_field() }}
 
@@ -89,4 +99,7 @@
                     </div>
                 </div>
             </div>
-    @endsection
+            @push('scripts')
+                @include('_js.js_img_upload')
+            @endpush
+@endsection

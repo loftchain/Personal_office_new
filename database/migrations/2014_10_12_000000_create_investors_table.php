@@ -30,6 +30,7 @@ class CreateInvestorsTable extends Migration
             $table->timestamp('confirmed_at')->nullable();
             $table->integer('reg_attempts')->default(0);
             $table->integer('reset_attempts')->default(0);
+            $table->string('img')->nullable();
             $table->string('provider')->nullable();
             $table->string('provider_id')->nullable();
             $table->rememberToken();

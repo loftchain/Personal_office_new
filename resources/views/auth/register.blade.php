@@ -22,7 +22,7 @@
                 <input class="icoForm__input" type="password" name="password_confirmation" required>
             </div>
 
-            @captcha
+            {{--@captcha--}}
 
             <div class="formControl">
                 <button class="btn" type="submit">Sign in</button>

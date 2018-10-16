@@ -5,7 +5,9 @@
         <div class="mobileMenuBtn">
             <button class="cmn-toggle-switch cmn-toggle-switch__htx"><span>toggle menu</span></button>
         </div>
-        <div class="messageTop">Unfortunately your profile is not verified yet.</div>
+        @if(!Auth::user()->confirmed)
+            <div class="messageTop">Unfortunately your profile is not verified yet.</div>
+        @endif
         <div class="scrollHolder">
             <div class="content" id="buyTokens">
                 <div class="blockHolder">
@@ -17,6 +19,7 @@
                                     veniam, quis nostrud exercitation ullamco laboris
                                 </div>
                                 <div class="basicBlock__bonusText">Referral bonus: 5.00%</div>
+                                @if(Auth::user()->wallets()->first())
                                 <div class="dataTable">
                                     <table class="dataTable__list">
                                         <tr>
@@ -42,6 +45,9 @@
                                         @endif
                                     </table>
                                 </div>
+                                    @else
+                                <h4>To participate in the referral program, add a wallet</h4>
+                                    @endif
                             </div>
                         </div>
                     </div>

@@ -18,7 +18,7 @@
                                 <div class="basicBlock__subtitle text-center">please read the white paper and agree to the proposed conditions</div>
                                 <div class="btnConainer text-center"><a class="btn btn--whitePaper btn--small" href="https://drive.google.com/file/d/12MKdsHPQLQEqS5Ep9sO3BI30FJ1fGso-/view" target="_blank">Read the white paper</a></div>
                                 <div class="agreement text-center">
-                                    <input class="checkbox" type="checkbox" name="agreement" id="agreement">
+                                    <input class="checkbox" type="checkbox" name="agreement" id="agreement" {{ $personal ? 'checked' : '' }}>
                                     <label for="agreement">I agree with the terms of use</label>
                                 </div>
                             </div>
@@ -28,9 +28,9 @@
                 <div class="blockHolder">
                     <div class="raisedContainer">
                         <div class="basicBlock basicBlock--single">
-                            <div class="basicBlock__content">
+                            <div class="basicBlock__content" id="divContent">
                                 @if(!$personal)
-                                <form class="icoForm" action="{{ route('home.kyc.store') }}" method="post" enctype="multipart/form-data">
+                                <form id="formKyc" class="icoForm" action="{{ route('home.kyc.store') }}" method="post" enctype="multipart/form-data">
                                     {{ csrf_field() }}
                                     <div class="row">
                                         <div class="col-md-4">
@@ -153,4 +153,7 @@
             </div>
         </div>
     </div>
+    @push('scripts')
+        @include('_js.js_verification')
+    @endpush
 @endsection
