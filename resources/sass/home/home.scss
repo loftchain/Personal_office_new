@@ -1,0 +1,232 @@
+.timer {
+  display: flex;
+  justify-content: space-between;
+  @media(max-width: 1200px) {
+    justify-content: center;
+  }
+  &__number {
+    text-align: center;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    margin: 0 7px;
+    @media(max-width: 992px) {
+      margin: 0 7px;
+    }
+  }
+  &__numberValue {
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    font-size: 30px;
+    color: #828282;
+    padding: 21px 21px 15px 21px;
+    align-self: center;
+    @media(max-width: 992px) {
+      padding: 10px;
+      font-size: 18px;
+    }
+  }
+  &__numberTitle {
+    background: rgba(242, 242, 242, 0.47);
+    border-radius: 0 0 10px 10px;
+    width: 100%;
+  }
+  &__dots {
+    align-self: center;
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #828282;
+    }
+    &:before {
+      margin-top: -8px;
+    }
+    &:after {
+      margin-top: 8px;
+    }
+    @media(max-width: 767px) {
+      margin: 0 7px;
+    }
+  }
+}
+
+.timerContainer {
+  flex: 1 1 auto;
+  margin: 10px;
+  max-width: 350px;
+  @media(max-width: 1200px) {
+    max-width: none;
+  }
+}
+
+.percentBar {
+  width: 100%;
+  height: 28px;
+  line-height: 28px;
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: 500;
+  position: relative;
+  font-size: 14px;
+  color: #FFFFFF;
+  text-align: center;
+  border: 1px solid rgba(242, 201, 76, 0.29);
+  border-radius: 100px;
+  &__number {
+    z-index: 15;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    left: 0;
+    top: 0;
+  }
+  &__marker {
+    height: 28px;
+    width: 28px;
+    display: block;
+    top: 0;
+    box-shadow: -4px 0px 5px #F4BD30;
+    position: absolute;
+    left: 0;
+    margin-left: -20px;
+    background: #FFD964;
+    border-radius: 50%;
+    transition: left 1.5s ease;
+  }
+  &__fill {
+    background: linear-gradient(90deg, rgba(255, 225, 58, 0) 0%, #FFC701 100%);
+    border-radius: 100px;
+    height: 28px;
+    display: block;
+    top: 0;
+    width: 0;
+    position: absolute;
+    transition: width 1.5s ease;
+  }
+}
+
+.raisedSlider {
+  padding: 0 10px;
+  &__item {
+    white-space: nowrap;
+    vertical-align: middle;
+    text-align: left;
+    margin: 20px 0;
+    padding: 0 20px;
+  }
+  &__itemImage {
+    height: 25px;
+    width: auto !important;
+    display: inline-block !important;
+    vertical-align: middle;
+    margin-right: 15px;
+  }
+  &__itemValue {
+    white-space: nowrap;
+    display: inline-block;
+    vertical-align: middle;
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 14px;
+    color: #BDBDBD;
+  }
+}
+
+.owl-theme .owl-nav [class*="owl-"] {
+  background: url(/img/slider-btn.svg) no-repeat 0 0 transparent;
+  width: 18px;
+  height: 18px;
+}
+
+.owl-theme .owl-nav [class*="owl-"].disabled {
+  background: url(/img/slider-btn-disabled.svg) no-repeat 0 0 transparent;
+}
+
+.owl-theme .owl-nav [class*="owl-"]:hover {
+  background-color: transparent !important;
+  background: url(/img/slider-btn.svg) no-repeat 0 0 transparent;
+}
+
+.owl-theme .owl-nav .owl-prev {
+  transform: rotate(180deg);
+}
+
+.owl-theme .owl-nav .owl-prev {
+  position: absolute;
+  top: 20px;
+  left: -20px;
+}
+
+.owl-theme .owl-nav .owl-next {
+  position: absolute;
+  top: 20px;
+  right: -28px;
+}
+
+.period {
+  padding: 10px 0 20px 0;
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  font-size: 14px;
+  color: #989DAB;
+  &__from {
+    float: left;
+    @media(max-width: 450px) {
+      float: none;
+      text-align: center;
+    }
+  }
+  &__to {
+    float: right;
+    @media(max-width: 450px) {
+      float: none;
+      text-align: center;
+    }
+  }
+}
+
+#tokenChart {
+  background: url(/img/bg-chart.png) no-repeat 50% 50% transparent;
+  background-size: contain;
+}
+
+.legend-con {
+  font-family: Ubuntu;
+  display: inline-block;
+  ul {
+    list-style: none;
+  }
+  li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4px;
+    span {
+      display: inline-block;
+    }
+    span.chart-legend {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+  }
+  .chart-legend-label-text {
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    font-size: 14px;
+    text-transform: capitalize;
+    color: #4F4F4F;
+  }
+}

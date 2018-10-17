@@ -77,7 +77,7 @@
                     </div>
                     <div class="raisedContainer">
                         <div class="basicBlock basicBlock">
-                            <div class="basicBlock__content">
+                            <div class="basicBlock__content" id="formQr">
                                 <form class="loginForm icoForm" action="#">
                                     <div class="row">
                                         <div class="col-md-3 align-self-top text-center"><img class="qrCode" alt="qr" src="{{ asset('img/qr.jpg') }}"></div>
@@ -139,7 +139,6 @@
         </div>
     </div>
     @push('scripts')
-{{--        @include('_js.js_wallet')--}}
-        @include('_js.js_test')
+        @include('_js.js_wallet')
     @endpush
 @endsection

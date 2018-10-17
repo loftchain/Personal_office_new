@@ -23,7 +23,7 @@ class KycController extends Controller
     public function index()
     {
         return view('home.kyc', [
-            'personal' => Auth::user()->has('personal')->first()
+            'personal' => Auth::user()->personal()->first()
         ]);
     }
 

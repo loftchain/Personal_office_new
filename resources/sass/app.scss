@@ -3,10 +3,25 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
 // Variables
+@import "fonts";
 @import 'variables';
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+@import "_global/global";
+
+@import "auth/auth";
+@import "auth/login";
+
+@import "home/buy_tokens";
+@import "home/home";
+@import "home/kyc";
+@import "home/settings";
+
+@import "mail/kyc_rejected";
+
+@import "menu/menu";
 
 .navbar-laravel {
   background-color: #fff;

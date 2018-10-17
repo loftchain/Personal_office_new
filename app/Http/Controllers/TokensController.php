@@ -24,10 +24,13 @@ class TokensController extends Controller
 
     public function index()
     {
-        $transactions = Auth::user()->transactions()->paginate(10);
+        $investor = Auth::user();
+        $transactions = $investor->transactions()->paginate(10);
+        $personal = $investor->personal()->first();
 
         return view('home.buyTokens', [
-            'transactions' => $transactions
+            'transactions' => $transactions,
+            'personal' => $personal
         ]);
     }
 

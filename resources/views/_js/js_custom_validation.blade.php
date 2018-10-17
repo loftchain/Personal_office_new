@@ -38,7 +38,6 @@
                     }
 
                     $.each(data.validation_error, (key, value) => {
-                        console.log(key, value)
                         if (_this.children('.error-message.' + key).prev().hasClass('x-input')) {
                             _this.children('.error-message.' + key).prev().addClass('isError');
                         }
@@ -75,7 +74,6 @@
                     v.hideSpinner();
                     break;
                 case !$.isEmptyObject(data.success_register):
-                    console.log('testtesttesttesttesttesttesttest')
                     window.location.replace("{{ route('home.index') }}");
                     break;
                 case !$.isEmptyObject(data.success_login):

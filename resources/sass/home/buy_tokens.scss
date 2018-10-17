@@ -1,0 +1,71 @@
+.cryptoSelector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  &__item {
+    &:active,
+    &:focus {
+      outline: none;
+    }
+    cursor: pointer;
+    margin: 10px 20px;
+    border-radius: 100px;
+    border: none;
+    box-shadow: 0 0 0 2px #FDCA0E;
+    background: transparent;
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    font-size: 14px;
+    height: 45px;
+    padding: 10px 60px;
+    color: #4F4F4F;
+    &:hover {
+      background: linear-gradient(90deg, #FDCA0E 0%, #FFE139 76.95%);
+      color: #fff;
+    }
+  }
+  &__item--active {
+    background: linear-gradient(90deg, #FDCA0E 0%, #FFE139 76.95%);
+    color: #fff;
+  }
+}
+
+.qrCode {
+  max-width: 200px;
+  width: 100%;
+}
+
+.minumudDeposit {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  font-size: 14px;
+  color: #4F4F4F;
+  margin: 8px 0;
+}
+
+.setGas {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #F2C94C;
+}
+
+.infoBtn {
+  margin: 20px 0;
+  text-align: center;
+  .btn {
+    @media(max-width: 767px) {
+      padding-left: 10px;
+      padding-right: 10px;
+      font-size: 12px;
+    }
+  }
+}

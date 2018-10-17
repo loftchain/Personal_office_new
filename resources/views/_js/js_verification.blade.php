@@ -3,11 +3,17 @@
         checkbox: $('#agreement'),
         form: $('#formKyc :input'),
         content: $('#divContent'),
+        personal: '{{ $personal }}'
     };
 
     $(document).ready(() => {
         ver.form.attr("disabled", true);
-        ver.content.attr('style', 'background-color: whitesmoke');
+
+        if (!ver.personal) {
+            ver.content.attr('style', 'background-color: whitesmoke');
+        }else {
+            ver.checkbox.attr('disabled', true)
+        }
     });
 
     ver.checkbox.click(() => {
