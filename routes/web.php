@@ -47,4 +47,10 @@ Route::group(['prefix' => 'home', 'as' => 'home.', 'middleware' => ['auth', 'isE
     Route::post('/settings/avatar/upload', 'SettingsController@uploadAvatar')->name('settings.upload.avatar');
 });
 
+Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['admin']], function (){
+   Route::get('/verification', 'Admin\KycController@index')->name('kyc');
+   Route::get('/verification/{investor}/confirm', 'Admin\KycController@confirm')->name('kyc.confirm');
+   Route::get('/verification/{investor}/reject', 'Admin\KycController@rejected')->name('kyc.reject');
+});
+
 Route::get('settings', 'HomeController@settings')->name('home.settings');
