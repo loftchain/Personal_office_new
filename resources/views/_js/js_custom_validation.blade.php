@@ -30,7 +30,6 @@
         },
 
         stateSelection: (data, _this) => {
-            let test = _this.children('.error-message.wallet')
             switch (true) {
                 case !$.isEmptyObject(data.validation_error):
                     if (data.validation_error['g-recaptcha-response']) {
@@ -38,8 +37,13 @@
                     }
 
                     $.each(data.validation_error, (key, value) => {
-                        if (_this.children('.error-message.' + key).prev().hasClass('x-input')) {
-                            _this.children('.error-message.' + key).prev().addClass('isError');
+                        // console.log(_this.children('.error-message.' + key).prev().children().find($('#wallet')))
+
+                        // if (_this.children('.error-message.' + key).prev().hasClass('x-input')) {
+                        //     _this.children('.error-message.' + key).prev().addClass('isError');
+                        // }
+                        if (_this.children('.error-message.' + key).prev().children().hasClass('icoForm__input')) {
+                            _this.children('.error-message.' + key).prev().children().find('.wallet').attr('style', 'border: 2px solid #FF0000;')
                         }
                         _this.children('.error-message.' + key).html(v.exclamation + value[0]);
 

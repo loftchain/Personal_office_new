@@ -1,31 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    {{--<div class="gradientLeft"></div>--}}
-    {{--<div class="gradientBottom"></div>--}}
-    {{--<div class="gradientRight"></div>--}}
-    {{--<div class="container">--}}
-        {{--<div class="forSlideMenu">--}}
-            {{--<div class="cabinetHolder">--}}
-                {{--<div class="sidebar jsSidebar">--}}
-                    {{--<div class="userInfo">--}}
-                        {{--<div class="userInfo__avatar"><a class="userInfo__avatarLink" href="#"><img class="userInfo__avatarImage" src="img/avatar.jpg" alt="Name Surname"></a></div>--}}
-                        {{--<div class="userInfo__text">--}}
-                            {{--<div class="userInfo__textItem">{{ Auth::user()->name }}</div>--}}
-                            {{--<div class="userInfo__textItem">Status: Not verified</div>--}}
-                            {{--<div class="userInfo__textItem">Token amount: 876 LSD</div>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                    {{--<div class="mainMenu">--}}
-                        {{--<ul class="mainMenu__list">--}}
-                            {{--<li class="mainMenu__item"><a class="mainMenu__link" href="cabinetIco1.html">ICO</a></li>--}}
-                            {{--<li class="mainMenu__item mainMenu__item--active"><a class="mainMenu__link" href="cabinetKYC.html">Verification</a></li>--}}
-                            {{--<li class="mainMenu__item"><a class="mainMenu__link" href="cabinetBuyTokens.html">Buy tokens</a></li>--}}
-                            {{--<li class="mainMenu__item"><a class="mainMenu__link" href="cabinetReferral.html">Referral Program</a></li>--}}
-                            {{--<li class="mainMenu__item"><a class="mainMenu__link" href="cabinetSettings.html">Settings</a></li>--}}
-                        {{--</ul>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
+
     <div class="workArea jsWorkArea">
         <div class="mobileMenuBtn">
             <button class="cmn-toggle-switch cmn-toggle-switch__htx"><span>toggle menu</span></button>
@@ -222,26 +198,4 @@
             </div>
         </div>
     </div>
-            {{--</div>--}}
-        {{--</div>--}}
-    {{--</div>--}}
-{{--<div class="container">--}}
-    {{--<div class="row justify-content-center">--}}
-        {{--<div class="col-md-8">--}}
-            {{--<div class="card">--}}
-                {{--<div class="card-header">Dashboard</div>--}}
-
-                {{--<div class="card-body">--}}
-                    {{--@if (session('status'))--}}
-                        {{--<div class="alert alert-success" role="alert">--}}
-                            {{--{{ session('status') }}--}}
-                        {{--</div>--}}
-                    {{--@endif--}}
-
-                    {{--You are logged in!--}}
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-    {{--</div>--}}
-{{--</div>--}}
 @endsection

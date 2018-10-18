@@ -70,7 +70,7 @@ class ChangeEmailController extends Controller
         }
 
         if($user->password){
-            if (!Auth::user()->passwrod && !$passwordIsVerified) {
+            if (!Auth::user()->password && !$passwordIsVerified) {
                 return response()->json(['pwd_not_match' => Lang::get('modals/modals.PwdNotMatch_ChangeEmailController')]);
             }
         }

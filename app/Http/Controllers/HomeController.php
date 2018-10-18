@@ -7,6 +7,7 @@ use App\Services\WidgetService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Storage;
 
 class HomeController extends Controller
 {
@@ -54,6 +55,10 @@ class HomeController extends Controller
 
     public function settings()
     {
-        return view('home.settings');
+        $img = Storage::get(Auth::user()->img);
+
+        return view('home.settings', [
+            'img' => $img
+        ]);
     }
 }

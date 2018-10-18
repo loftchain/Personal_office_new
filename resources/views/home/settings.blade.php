@@ -49,7 +49,8 @@
                                                     </div>
                                                 </form>
                                                 <div class="settingsActions"><a class="settingsActions__link jsChangeEmail" href="#">Change e-mail    </a><a class="settingsActions__link jsChangePassword" href="#">Change password</a>
-                                                    <div class="settingsActions__langSelector"><span class="settingsActions__langSelectorBtn">RU</span><span class="settingsActions__langSelectorBtn settingsActions__langSelectorBtn--active">ENG</span></div>
+                                                    <div class="settingsActions__langSelector"><a
+                                                                    class="settingsActions__langSelectorBtn" href="{{ route('lang.switch', 'ru') }}">RU</a><span class="settingsActions__langSelectorBtn settingsActions__langSelectorBtn--active">ENG</span></div>
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
@@ -70,7 +71,7 @@
                                                     </div>
                                                     <div class="error-message error-message2 password2 not_equal"></div>
                                                     <div class="error-message error-message2 password"></div>
-                                                    <button type="submit" class="btn btn--small">Edit</button>
+                                                    <button type="submit" class="btn btn--small"> {!! trans('modals/modals.change_btn') !!}</button>
                                                 </form>
 
                                                 <form class="icoForm changeEmail icoForm--noMargin hidden" action="{{ route('email.reset') }}" method="post">
@@ -80,15 +81,18 @@
                                                         <label class="icoForm__label">Your email</label>
                                                         <input class="icoForm__input" type="email" name="old_email" placeholder="Your email address if you have">
                                                     </div>
+                                                    <div class="error-message error-message0 old_email not_your_email not_equal"></div>
                                                     <div class="formControl">
                                                         <label class="icoForm__label">New email</label>
                                                         <input class="icoForm__input" type="email" name="email" placeholder="Your new email" required>
                                                     </div>
+                                                    <div class="error-message error-message1 email not_equal is_taken"></div>
                                                     <div class="formControl">
                                                         <label class="icoForm__label">Password</label>
                                                         <input class="icoForm__input" type="password" name="password" placeholder="Your password if you have">
                                                     </div>
-                                                    <button type="submit" class="btn btn--small">Edit</button>
+                                                    <div class="error-message error-message2 password pwd_not_match"></div>
+                                                    <button type="submit" class="btn btn--small"> {!! trans('modals/modals.change_btn') !!}</button>
                                                 </form>
                                             </div>
                                         </div>

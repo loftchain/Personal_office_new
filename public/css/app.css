@@ -10680,8 +10680,16 @@ body {
   margin-bottom: 0;
 }
 
+.isError {
+  color: #FF0000;
+}
+
 .icoForm {
   padding: 16px 0;
+}
+
+.icoForm__isError {
+  border: 2px solid #FF0000;
 }
 
 .icoForm__input {

@@ -26,41 +26,10 @@
             // either via the browse button, or via drag/drop:
             add: function (e, data) {
 
-                // var tpl = $('<li class="working"><input type="text" value="0" data-width="48" data-height="48"'+
-                //     ' data-fgColor="#0788a5" data-readOnly="1" data-bgColor="#3e4043" /><p></p><span class="trashcan-btn"></span></li>');
 
                 // Append the file name and file size
                 let fileName = (data.files[0].name.length < 15) ? data.files[0].name : data.files[0].name.trunc(15);
 
-                // tpl.find('p').text(fileName)
-                //     .append('<i>' + formatFileSize(data.files[0].size) + '</i>');
-
-                // Add the HTML to the UL element
-                // data.context = tpl.appendTo(ul);
-
-                // Initialize the knob plugin
-                // tpl.find('input').knob();
-
-                // Listen for clicks on the cancel icon
-                // tpl.find('span').click(function(){
-                //
-                //     if(tpl.hasClass('working')){
-                //         jqXHR.abort();
-                //     }
-                //
-                //     tpl.fadeOut(function(){
-                //         tpl.remove();
-                //
-                //         if (!$('.doc-container').is(':empty') && $('.terms-checkbox').is(':checked')) {
-                //             $('.a2-form__sbmt-btn').prop('disabled', false);
-                //         } else {
-                //             $('.a2-form__sbmt-btn').prop('disabled', true);
-                //         }
-                //     });
-                //
-                //
-                //
-                // });
 
                 // Automatically upload the file once it is added to the queue
                 var jqXHR = data.submit();
@@ -69,20 +38,6 @@
 
                 }, 100)
 
-            },
-
-            progress: function(e, data){
-
-                // // Calculate the completion percentage of the upload
-                // var progress = parseInt(data.loaded / data.total * 100, 10);
-                //
-                // // Update the hidden input field and trigger a change
-                // // so that the jQuery knob plugin knows to update the dial
-                // data.context.find('input').val(progress).change();
-                //
-                // if(progress == 100){
-                //     data.context.removeClass('working');
-                // }
             },
 
             fail:function(e, data){
