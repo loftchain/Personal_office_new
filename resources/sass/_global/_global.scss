@@ -435,6 +435,19 @@ body {
     background: url(/img/bg-pre-ico.png) no-repeat 0 0 transparent;
     background-size: cover;
   }
+  &__content--verification {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.76);
+    }
+  }
   &__title--vertical {
     padding: 56px 0 46px 0;
   }

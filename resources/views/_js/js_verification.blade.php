@@ -10,7 +10,7 @@
         ver.form.attr("disabled", true);
 
         if (!ver.personal) {
-            ver.content.attr('style', 'background-color: whitesmoke');
+          $($('button')[1]).hide();
         }else {
             ver.checkbox.attr('disabled', true)
         }
@@ -19,10 +19,12 @@
     ver.checkbox.click(() => {
         if(ver.checkbox.is(':checked')) {
             ver.form.attr("disabled", false);
-            ver.content.removeAttr('style');
+            ver.content.removeClass('basicBlock__content--verification');
+          $($('button')[1]).show();
         }else {
             ver.form.attr("disabled", true);
-            ver.content.attr('style', 'background-color: whitesmoke')
+            ver.content.addClass('basicBlock__content--verification');
+            $($('button')[1]).hide();
         }
     });
 </script>
