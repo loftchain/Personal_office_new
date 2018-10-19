@@ -11966,10 +11966,20 @@ body {
 }
 
 .userInfo__avatarLink {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 85px;
+  height: 85px;
   border: 2px solid #FFC701;
-  display: inline-block;
-  padding: 3px;
   border-radius: 50%;
+  overflow: hidden;
 }
 
 .userInfo__avatarImage {
