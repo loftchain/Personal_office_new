@@ -10768,15 +10768,16 @@ body {
 
 .icoForm__selectContainer:after {
   content: "\25BC";
-  padding: 0 8px;
-  font-size: 12px;
+  font-size: 11px;
   position: absolute;
-  right: 8px;
-  top: 9px;
+  right: 6px;
+  top: 40%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   z-index: 1;
   text-align: center;
-  width: 10%;
-  height: 100%;
+  width: 11px;
+  height: 7px;
   pointer-events: none;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -10791,7 +10792,7 @@ body {
   height: 40px;
   width: 100%;
   background: transparent;
-  padding-right: 25px;
+  padding-left: 9px;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
