@@ -47,6 +47,7 @@ Route::group(['prefix' => 'home', 'as' => 'home.', 'middleware' => ['auth', 'isE
     Route::get('/description_view/{currency}', 'TokensController@description_view')->name('description_view');
     Route::get('/referrals', 'ReferralController@index')->name('referral');
     Route::post('/settings/avatar/upload', 'SettingsController@uploadAvatar')->name('settings.upload.avatar');
+
 });
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['admin']], function (){
@@ -55,4 +56,5 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['admin']],
    Route::get('/verification/{investor}/reject', 'Admin\KycController@rejected')->name('kyc.reject');
 });
 
+Route::get('/storage/{path}', 'SettingsController@getAvatar')->name('settings.get.avatar');
 Route::get('settings', 'HomeController@settings')->name('home.settings');

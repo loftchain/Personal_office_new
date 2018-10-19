@@ -55,10 +55,7 @@ class HomeController extends Controller
 
     public function settings()
     {
-        $img = Storage::get(Auth::user()->img);
 
-        return view('home.settings', [
-            'img' => $img
-        ]);
+        return view('home.settings');
     }
 }

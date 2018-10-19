@@ -6,7 +6,7 @@
                     <button class="cmn-toggle-switch cmn-toggle-switch__htx"><span>toggle menu</span></button>
                 </div>
                 @if(!Auth::user()->confirmed)
-                    <div class="messageTop">Unfortunately your profile is not verified yet.</div>
+                    <div class="messageTop">{!! trans('layouts/message.messageTop') !!}</div>
                 @endif
                 <div class="scrollHolder">
                     <div class="content" id="buyTokens">
@@ -14,7 +14,7 @@
                             <div class="raisedContainer basicBlock--settings">
                                 @if(Auth::user()->email == null)
                                 <div class="alert alert-danger" role="alert">
-                                    Укажите ваш email! Только после этого вы сможете пользоваться сервисом!
+                                    {!! trans('layouts/message.messageNoEmail') !!}
                                 </div>
                                 @endif
                                 <div class="basicBlock basicBlock--single">
@@ -23,7 +23,7 @@
                                         <div class="row">
                                             <div class="col-md-4">
                                                 <div class="avatarSettings">
-                                                    <div class="avatarSettings__imageHolder"><img class="avatarSettings__image" src="{{ Auth::user()->img ? asset('storage/' . Auth::user()->img) :  asset('img/avatar.png') }}">
+                                                    <div class="avatarSettings__imageHolder"><img class="avatarSettings__image" src="{{ route('settings.get.avatar', Auth::user()->img) }}">
                                                         <form id="upload" class="icoForm icoForm--noMargin" action="{{ route('home.settings.upload.avatar') }}" method="post" enctype="multipart/form-data">
                                                             {{ csrf_field() }}
                                                             <div id="drop">
