@@ -14,8 +14,8 @@
                     <div class="raisedContainer">
                         <div class="basicBlock basicBlock--single">
                             <div class="basicBlock__content">
-                                <div class="basicBlock__title text-center">Purchase of tokens</div>
-                                <div class="basicBlock__subtitle text-center">Choose which currency you want to invest in</div>
+                                <div class="basicBlock__title text-center">{!! trans('home/buyTokens.buyTokens') !!}</div>
+                                <div class="basicBlock__subtitle text-center">{!! trans('home/buyTokens.chooseTokens') !!}</div>
                                 <div class="cryptoSelector">
                                     <button class="cryptoSelector__item cryptoSelector__item--active" id="buttonEth">Etherium</button>
                                     <button class="cryptoSelector__item" id="buttonBtc">Bitcoin</button>
@@ -51,9 +51,9 @@
                                                 <input class="icoForm__input icoForm__input--canCopy" type="text" v-model="invsetmentWalletETH" name="ethWallet" id="ethWallet"><span class="icoForm__copy" v-on:click="copyToBuffer"> </span>
                                             </div>
                                             {{--{{minumumDeposit}}--}}
-                                            <div class="minumudDeposit">Minimum deposit amount: minumumDeposit ETH</div>
+                                            <div class="minumudDeposit">{!! trans('home/buyTokens.minDep') !!}</div>
                                             {{--{{gas}}--}}
-                                            <div class="setGas">Set GAS: gas</div>
+                                            <div class="setGas">{!! trans('home/buyTokens.setGas') !!} gas</div>
                                         </div>
                                     </div>
                                 </form>
@@ -66,16 +66,16 @@
                     <div class="raisedContainer">
                         <div class="basicBlock basicBlock--single">
                             <div class="basicBlock__content">
-                                <div class="basicBlock__title text-center">tRANSACTIONS</div>
-                                <div class="basicBlock__subtitle text-center">Thank you for your participation! You can see your transactions</div>
+                                <div class="basicBlock__title text-center">{!! trans('home/buyTokens.trans') !!}</div>
+                                <div class="basicBlock__subtitle text-center">{!! trans('home/buyTokens.transText') !!}</div>
                                 <div class="infoBtn"><a class="btn btn--small" href="#">h5723882302832cn8399c2</a></div>
                                 <div class="dataTable">
                                     <table class="dataTable__list">
                                         <tr>
-                                            <th>Date</th>
-                                            <th>Currency</th>
-                                            <th>Token</th>
-                                            <th>Status</th>
+                                            <th>{!! trans('home/buyTokens.tableTransDate') !!}</th>
+                                            <th>{!! trans('home/buyTokens.tableTransCurrency') !!}</th>
+                                            <th>{!! trans('home/buyTokens.tableTransToken') !!}</th>
+                                            <th>{!! trans('home/buyTokens.tableTransStatus') !!}</th>
                                         </tr>
                                         @forelse($transactions as $transaction)
                                         <tr class="{{ $transaction->status == 'true' ? "dataTable__success" : 'dataTable__error' }}">
@@ -86,12 +86,12 @@
                                         </tr>
                                         @empty
                                         <tr class="dataTable__error">
-                                            <td colspan="4"><h3>No transactions</h3></td>
+                                            <td colspan="4"><h3>{!! trans('home/buyTokens.tableNoTrans') !!}</h3></td>
                                         </tr>
                                         @endforelse
                                         <tr class="dataTable__summary">
-                                            <td colspan="2"><span class="dataTable__address"><strong>To</strong>: h5723882302832cn8399c2</span></td>
-                                            <td colspan="2"><strong>Info: </strong><a class="dataTable__link" href="#">h5723882302832cn8399c2</a></td>
+                                            <td colspan="2"><span class="dataTable__address"><strong>{!! trans('home/buyTokens.tableSumTo') !!}</strong>: h5723882302832cn8399c2</span></td>
+                                            <td colspan="2"><strong>{!! trans('home/buyTokens.tableSumInfo') !!}: </strong><a class="dataTable__link" href="#">h5723882302832cn8399c2</a></td>
                                         </tr>
                                     </table>
                                 </div>

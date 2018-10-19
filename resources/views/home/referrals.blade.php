@@ -14,17 +14,15 @@
                     <div class="raisedContainer">
                         <div class="basicBlock">
                             <div class="basicBlock__content">
-                                <div class="basicBlock__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                    veniam, quis nostrud exercitation ullamco laboris
+                                <div class="basicBlock__text">{!! trans('home/referrals.refText') !!}
                                 </div>
-                                <div class="basicBlock__bonusText">Referral bonus: 5.00%</div>
+                                <div class="basicBlock__bonusText">{!! trans('home/referrals.refBonus') !!} 5.00%</div>
                                 @if(Auth::user()->wallets()->first())
                                 <div class="dataTable">
                                     <table class="dataTable__list">
                                         <tr>
-                                            <th>Referred person</th>
-                                            <th>Bonus</th>
+                                            <th>{!! trans('home/referrals.tableRef') !!}</th>
+                                            <th>{!! trans('home/referrals.tableBonus') !!}</th>
                                         </tr>
                                         @if(isset($referrals['stat']))
                                             @foreach($referrals['stat'] as $key => $referral)
@@ -40,13 +38,13 @@
 
                                         @else
                                             <tr class="dataTable__error">
-                                                <td colspan="2"><h3>No referrals</h3></td>
+                                                <td colspan="2"><h3>{!! trans('home/referrals.tableNoReferrals') !!}</h3></td>
                                             </tr>
                                         @endif
                                     </table>
                                 </div>
                                     @else
-                                <h4>To participate in the referral program, add a wallet</h4>
+                                <h4>{!! trans('home/referrals.tableNoWallet') !!}</h4>
                                     @endif
                             </div>
                         </div>
@@ -55,10 +53,10 @@
                         <div class="basicBlock basicBlock">
                             <div class="basicBlock__content">
                                 <form class="loginForm icoForm" action="#">
-                                    <div class="basicBlock__text"> Your referral link</div>
+                                    <div class="basicBlock__text"> {!! trans('home/referrals.refLink') !!}</div>
                                     <div class="formControl">
                                         <input class="icoForm__input icoForm__input--canCopy" type="text"
-                                               value="{{url('/').'/?ref='.Auth::user()->token}}" name="ethWallet"
+                                               value="{{url('/').'/?ref=' . Auth::user()->token}}" name="ethWallet"
                                                id="ethWallet"><span class="icoForm__copy"
                                                                     v-on:click="copyToBuffer"> </span>
                                     </div>

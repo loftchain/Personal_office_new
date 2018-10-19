@@ -31,7 +31,7 @@
         </div>
         <div class="mainMenu">
             <ul class="mainMenu__list">
-                <li class="mainMenu__item mainMenu__item--active"><a class="mainMenu__link"
+                <li class="mainMenu__item"><a class="mainMenu__link"
                                                                      href="{{ route('home.index') }}">ICO</a>
                 </li>
                 <li class="mainMenu__item"><a class="mainMenu__link"

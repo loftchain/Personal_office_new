@@ -37,20 +37,19 @@
                     }
 
                     $.each(data.validation_error, (key, value) => {
-                        // console.log(_this.children('.error-message.' + key).prev().children().find($('#wallet')))
-
                         // if (_this.children('.error-message.' + key).prev().hasClass('x-input')) {
                         //     _this.children('.error-message.' + key).prev().addClass('isError');
                         // }
                         if (_this.children('.error-message.' + key).prev().children().hasClass('icoForm__input')) {
-                            _this.children('.error-message.' + key).prev().children().find('.wallet').attr('style', 'border: 2px solid #FF0000;')
+                            _this.children('.error-message.' + key).prev().children('input').attr('style', 'border: 2px solid #FF0000;')
+                            _this.children('.error-message.' + key).addClass('isError')
                         }
                         _this.children('.error-message.' + key).html(v.exclamation + value[0]);
 
-                        if (_this.children().children('.error-message.' + key).prev().hasClass('x-input')) {
-                            _this.children().children('.error-message.' + key).prev().addClass('isError');
-                        }
-                        _this.children().children('.error-message.' + key).html(v.exclamation + value[0]);
+                        // if (_this.children().children('.error-message.' + key).prev().hasClass('x-input')) {
+                        //     _this.children().children('.error-message.' + key).prev().addClass('isError');
+                        // }
+                        // _this.children().children('.error-message.' + key).html(v.exclamation + value[0]);
                     });
                     v.hideSpinner();
                     break;
@@ -72,8 +71,8 @@
                 case !$.isEmptyObject(data.already_confirmed):
                 case !$.isEmptyObject(data.already_exists):
                     $.each(data, (key, value) => {
-                        _this.children('.error-message.' + key).prev().addClass('isError');
-                        _this.children('.error-message.' + key).html(v.exclamation + value);
+                        _this.children('.error-message.' + key).prev().children('input').attr('style', 'border: 2px solid #FF0000;');
+                        _this.children('.error-message.' + key).html(v.exclamation + value).addClass('isError');
                     });
                     v.hideSpinner();
                     break;
@@ -114,16 +113,16 @@
                     v.showNotification('{!! trans('home/wallet.added_js') !!}', 'success');
                     if (typeof wa !== 'undefined') {
                         wa.exitEditMode(_this.children('.w-input'));
-                        if(_this.children('.type') === 'to' && $('#wallet1').val() > 0){
+                        if (_this.children('.type') === 'to' && $('#wallet1').val() > 0) {
                             wa.showDescription('BTC');
                         }
 
-                        if(_this.children('.type') === 'from' && $('#wallet2').val() > 0){
+                        if (_this.children('.type') === 'from' && $('#wallet2').val() > 0) {
 
                             wa.showDescription(data.currency);
                         }
 
-                        if(_this.children('.type') === 'from_to'){
+                        if (_this.children('.type') === 'from_to') {
                             wa.showDescription(data.currency);
                         }
 
@@ -157,14 +156,14 @@
 
             switch (_this.data('currency')) {
                 case 'ETH':
-                    if(ethRegExp.test(_this.val())){
+                    if (ethRegExp.test(_this.val())) {
                         return true
                     } else {
                         _this.val('');
                     }
                     break;
                 case 'BTC':
-                    if(btcRegExp.test(_this.val())){
+                    if (btcRegExp.test(_this.val())) {
                         return true
                     } else {
                         _this.val('');
@@ -204,11 +203,11 @@
     // });
     //
     v.xInput.on('input', function () {
-        if ($(this).is(':valid')){
-            $(this).removeClass('isError');
-            $(this).next().html('');
+        if ($(this).is(':valid')) {
+            $(this).removeAttr('style');
+            $(this).parent().next().html('');
 
-            if($(this).hasClass('wallet')){
+            if ($(this).hasClass('wallet')) {
                 v.validate($(this));
             }
         }

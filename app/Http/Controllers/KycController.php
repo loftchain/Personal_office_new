@@ -46,9 +46,9 @@ class KycController extends Controller
         $images = [];
         foreach ($request->file('files') as $key => $img){
             $extension = $img->extension();
-            $path = $img->storeAs('public/img', $key . '_' . Carbon::now()->format('ymd_his') . '_investor_id_' . $investor->id . '.' . $extension);
+            $path = $img->storeAs('uploads', $key . '_' . Carbon::now()->format('ymd_his') . '_investor_id_' . $investor->id . '.' . $extension);
             $path = explode('/', $path);
-            $images[] = $path[1] . '/' . $path[2];
+            $images[] = $path[1];
         }
 
         $investor->personal()->create([
