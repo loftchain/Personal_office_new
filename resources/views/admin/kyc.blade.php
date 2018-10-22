@@ -11,6 +11,8 @@
                     <div class="raisedContainer basicBlock--settings">
                         <div class="basicBlock basicBlock--single">
                             <div class="basicBlock__content">
+                                {{--<admin-verification-table></admin-verification-table>--}}
+
                                 <div class="dataTable">
                                     <table class="dataTable__list">
                                         <tr>

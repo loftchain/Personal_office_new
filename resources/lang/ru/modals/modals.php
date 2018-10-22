@@ -17,6 +17,18 @@ return [
     'tooManyResets_LoginController' => 'Аккаунт временно заблокирован, ввиду частых попыток сброса пароля.',
     'or' => 'или',
     'enter' => 'введите свой аккаунт, чтобы просмотреть ваши заказы',
+    'not_have_account' => 'У вас нет учетной записи?',
+    'have_account' => 'У вас есть учетная запись? ',
+
+    //register
+    'reg_yourName' => 'Ваше имя',
+    'reg_email' => 'E-mail',
+    'reg_password' => 'Пароль',
+    'reg_repeatPassword' => 'Повторите пароль',
+
+    //signIn
+    'signIn_google' => 'Войти через Gmail',
+    'signIn_facebook' => 'Войти через Facebook',
 
 
     //change email

@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
     return view('welcome');
-})->name('root');
+})->name('root')->middleware('guest');
 
 Route::get('lang/{lang}', ['as'=>'lang.switch', 'uses'=>'LanguageController@switchLang']);
 
@@ -54,7 +54,10 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['admin']],
    Route::get('/verification', 'Admin\KycController@index')->name('kyc');
    Route::get('/verification/{investor}/confirm', 'Admin\KycController@confirm')->name('kyc.confirm');
    Route::get('/verification/{investor}/reject', 'Admin\KycController@rejected')->name('kyc.reject');
+   Route::get('/history', 'Admin\HistoryController@index')->name('history');
 });
 
 Route::get('/storage/{path}', 'SettingsController@getAvatar')->name('settings.get.avatar');
 Route::get('settings', 'HomeController@settings')->name('home.settings');
+
+Route::post('admin/test', 'Admin\KycController@users');

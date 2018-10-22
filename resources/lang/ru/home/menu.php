@@ -3,6 +3,8 @@
 return [
     //investor
     'status' => 'Стаус',
+    'verified1' => 'Не ',
+    'verified' => 'проверен',
     'tokenAmount' => 'Количество токенов:',
     'ico' => 'ICO',
     'verification' => 'Проверка',
@@ -11,5 +13,6 @@ return [
     'settings' => 'Настройки',
 
     //admin
-    'aVerification' => 'Проверка'
+    'aVerification' => 'Проверка',
+    'aHistory' => 'История',
 ];

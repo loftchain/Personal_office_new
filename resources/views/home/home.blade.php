@@ -17,17 +17,17 @@
                                 <div class="timer">
                                     <div class="timer__number jsTimerDays">
                                         <div class="timer__numberValue" id="timer_days">00</div>
-                                        <div class="timer__numberTitle">days</div>
+                                        <div class="timer__numberTitle">{!! trans('home/home.timer_day') !!}</div>
                                     </div>
                                     <div class="timer__dots"> </div>
                                     <div class="timer__number jsTimerHours">
                                         <div class="timer__numberValue" id="timer_hours">00</div>
-                                        <div class="timer__numberTitle">hours</div>
+                                        <div class="timer__numberTitle">{!! trans('home/home.timer_hour') !!}</div>
                                     </div>
                                     <div class="timer__dots">                                                       </div>
                                     <div class="timer__number jsTimerHours">
                                         <div class="timer__numberValue" id="timer_min">00</div>
-                                        <div class="timer__numberTitle">min</div>
+                                        <div class="timer__numberTitle">{!! trans('home/home.timer_min') !!}</div>
                                     </div>
                                 </div>
                             </div>
@@ -36,7 +36,7 @@
                     <div class="raisedContainer">
                         <div class="basicBlock">
                             <div class="basicBlock__content">
-                                <div class="basicBlock__title">totalLy raised</div>
+                                <div class="basicBlock__title">{!! trans('home/home.totally_raised') !!}</div>
                                 <div class="percentBar" data-percent="{{ number_format($data['totalUSDCollected'] / (env('ICO_HARD_CAP') / 100), 0, '.', ' ') }}"> <span class="percentBar__fill"></span><span class="percentBar__marker"></span><span class="percentBar__number"> </span></div>
                                 <div class="raisedSlider">
                                     <div class="owl-carousel owl-theme">
@@ -49,15 +49,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="blockHolder">
-                    <div class="raisedContainer">
-                        <div class="basicBlock basicBlock--single">
-                            <div class="basicBlock__content basicBlock__content--preICO">
-                                <div class="basicBlock__title text-center basicBlock__title--vertical">pre-ico starts at 27.09.18</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
                 <div class="blockHolder">
                     <div class="raisedContainer">
                         <div class="basicBlock basicBlock--single">
@@ -72,45 +64,60 @@
                         </div>
                     </div>
                 </div>
-                <div class="blockHolder">
-                    <div class="raisedContainer">
-                        <div class="basicBlock basicBlock--single">
-                            <div class="basicBlock__content">
-                                <div class="basicBlock__title text-center">ico is finished</div>
-                                <div class="percentBar" data-percent="100"> <span class="percentBar__fill"></span><span class="percentBar__marker"></span><span class="percentBar__number"> </span></div>
-                                <div class="period">
-                                    <div class="period__from"> from  23.08.2018</div>
-                                    <div class="period__to"> till  23.08.2018</div>
+
+                @if($data['stageEnd'] === $data['dateNow'])
+                    <div class="blockHolder">
+                        <div class="raisedContainer">
+                            <div class="basicBlock basicBlock--single">
+                                <div class="basicBlock__content basicBlock__content--preICO">
+                                    <div class="basicBlock__title text-center basicBlock__title--vertical">pre-ico starts at {{ $data['stageBegin'] }}</div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="blockHolder">
-                    <div class="raisedContainer">
-                        <div class="basicBlock basicBlock--single">
-                            <div class="basicBlock__content">
-                                <div class="basicBlock__title">totalLy raised</div>
-                                <div class="percentBar" data-percent="90"> <span class="percentBar__fill"></span><span class="percentBar__marker"></span><span class="percentBar__number"> </span></div>
-                                <div class="raisedSlider">
-                                    <div class="owl-carousel owl-theme">
-                                        <div class="raisedSlider__item"><img class="raisedSlider__itemImage" src="img/eth.svg" alt="eth"><span class="raisedSlider__itemValue">78 ETH</span></div>
-                                        <div class="raisedSlider__item"><img class="raisedSlider__itemImage" src="img/btc.svg" alt="btc"><span class="raisedSlider__itemValue">26 BTC</span></div>
-                                        <div class="raisedSlider__item"><img class="raisedSlider__itemImage" src="img/paypal.svg" alt="paypal"><span class="raisedSlider__itemValue">702 000 000 $</span></div>
-                                        <div class="raisedSlider__item"><img class="raisedSlider__itemImage" src="img/eth.svg" alt="eth"><span class="raisedSlider__itemValue">78 ETH</span></div>
-                                        <div class="raisedSlider__item"><img class="raisedSlider__itemImage" src="img/btc.svg" alt="btc"><span class="raisedSlider__itemValue">26 BTC</span></div>
-                                        <div class="raisedSlider__item"><img class="raisedSlider__itemImage" src="img/paypal.svg" alt="paypal"><span class="raisedSlider__itemValue">702 000 000 $</span></div>
+
+                    <div class="blockHolder">
+                        <div class="raisedContainer">
+                            <div class="basicBlock basicBlock--single">
+                                <div class="basicBlock__content">
+                                    <div class="basicBlock__title">totalLy raised</div>
+                                    <div class="percentBar" data-percent="90"> <span class="percentBar__fill"></span><span class="percentBar__marker"></span><span class="percentBar__number"> </span></div>
+                                    <div class="raisedSlider">
+                                        <div class="owl-carousel owl-theme">
+                                            <div class="raisedSlider__item"><img class="raisedSlider__itemImage" src="img/eth.svg" alt="eth"><span class="raisedSlider__itemValue">78 ETH</span></div>
+                                            <div class="raisedSlider__item"><img class="raisedSlider__itemImage" src="img/btc.svg" alt="btc"><span class="raisedSlider__itemValue">26 BTC</span></div>
+                                            <div class="raisedSlider__item"><img class="raisedSlider__itemImage" src="img/paypal.svg" alt="paypal"><span class="raisedSlider__itemValue">702 000 000 $</span></div>
+                                            <div class="raisedSlider__item"><img class="raisedSlider__itemImage" src="img/eth.svg" alt="eth"><span class="raisedSlider__itemValue">78 ETH</span></div>
+                                            <div class="raisedSlider__item"><img class="raisedSlider__itemImage" src="img/btc.svg" alt="btc"><span class="raisedSlider__itemValue">26 BTC</span></div>
+                                            <div class="raisedSlider__item"><img class="raisedSlider__itemImage" src="img/paypal.svg" alt="paypal"><span class="raisedSlider__itemValue">702 000 000 $</span></div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+
+                    <div class="blockHolder">
+                        <div class="raisedContainer">
+                            <div class="basicBlock basicBlock--single">
+                                <div class="basicBlock__content">
+                                    <div class="basicBlock__title text-center">ico is finished</div>
+                                    <div class="percentBar" data-percent="100"> <span class="percentBar__fill"></span><span class="percentBar__marker"></span><span class="percentBar__number"> </span></div>
+                                    <div class="period">
+                                        <div class="period__from"> from  23.08.2018</div>
+                                        <div class="period__to"> till  23.08.2018</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endif
+
                 <div class="blockHolder">
                     <div class="timerContainer">
                         <div class="basicBlock">
                             <div class="basicBlock__content">
-                                <div class="basicBlock__title">Round info</div>
+                                <div class="basicBlock__title">{!! trans('home/home.round_info') !!}</div>
                                 <div class="basicBlock__text">
                                     <p>Cap: 250 ETH</p>
                                     <p>Hard Cap: 770 ETH</p>
@@ -126,23 +133,21 @@
                                 <div class="basicBlock__title">raised during pre-sale</div>
                                 <div class="raisedSlider">
                                     <div class="owl-carousel owl-theme">
-                                        <div class="raisedSlider__item"><img class="raisedSlider__itemImage" src="img/eth.svg" alt="eth"><span class="raisedSlider__itemValue">78 ETH</span></div>
-                                        <div class="raisedSlider__item"><img class="raisedSlider__itemImage" src="img/btc.svg" alt="btc"><span class="raisedSlider__itemValue">26 BTC</span></div>
-                                        <div class="raisedSlider__item"><img class="raisedSlider__itemImage" src="img/paypal.svg" alt="paypal"><span class="raisedSlider__itemValue">702 000 000 $</span></div>
-                                        <div class="raisedSlider__item"><img class="raisedSlider__itemImage" src="img/eth.svg" alt="eth"><span class="raisedSlider__itemValue">78 ETH</span></div>
-                                        <div class="raisedSlider__item"><img class="raisedSlider__itemImage" src="img/btc.svg" alt="btc"><span class="raisedSlider__itemValue">26 BTC</span></div>
-                                        <div class="raisedSlider__item"><img class="raisedSlider__itemImage" src="img/paypal.svg" alt="paypal"><span class="raisedSlider__itemValue">702 000 000 $</span></div>
+                                        <div class="raisedSlider__item"><img class="raisedSlider__itemImage" src="img/eth.svg" alt="eth"><span class="raisedSlider__itemValue">{{ number_format($data['ethCurrentAmount']['currency'], 2, '.', ' ') }}</span></div>
+                                        <div class="raisedSlider__item"><img class="raisedSlider__itemImage" src="img/btc.svg" alt="btc"><span class="raisedSlider__itemValue">{{ number_format($data['btcCurrentAmount']['currency'], 2, '.', ' ') }}</span></div>
+                                        <div class="raisedSlider__item"><img class="raisedSlider__itemImage" src="img/paypal.svg" alt="paypal"><span class="raisedSlider__itemValue">{{ number_format($data['totalUSDCollected'], 0, '.', ' ') }} $</span></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
                 <div class="blockHolder">
                     <div class="raisedContainer">
                         <div class="basicBlock basicBlock--single">
                             <div class="basicBlock__content">
-                                <div class="basicBlock__title text-center">deposit amount Bonuses</div>
+                                <div class="basicBlock__title text-center">{!! trans('home/home.deposit_bonus') !!}</div>
                                 <div class="bonuses">
                                     <div class="row">
                                         <div class="col-md-3">
@@ -179,11 +184,12 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="blockHolder">
                     <div class="raisedContainer">
                         <div class="basicBlock basicBlock--single">
                             <div class="basicBlock__content">
-                                <div class="basicBlock__title text-center">Token Distribution</div>
+                                <div class="basicBlock__title text-center">{!! trans('home/home.token_distribution') !!}</div>
                                 <div class="row">
                                     <div class="col-lg-8 align-self-center">
                                         <canvas id="tokenChart"></canvas>

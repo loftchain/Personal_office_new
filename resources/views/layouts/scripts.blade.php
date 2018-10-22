@@ -1,3 +1,4 @@
+<script src="{{ asset('js/app.js') }}"></script>
 <script src="{{ asset('js/jquery/jquery.min.js') }}"></script>
 <script src="{{ asset('js/jquery/jquery.js') }}"></script>
 <script src="{{ asset('js/jquery/jquery.ui.widget.js') }}"></script>

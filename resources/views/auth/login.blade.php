@@ -23,11 +23,11 @@
         </form>
         <div class="textSeparator">{!! trans('modals/modals.or') !!}</div>
         <div class="row">
-            <div class="col-md-6"><a class="btnSecondary btnSecondary--googleLogin" href="{{ route('social.redirect', 'google') }}">Sign in with Gmail</a>
+            <div class="col-md-6"><a class="btnSecondary btnSecondary--googleLogin" href="{{ route('social.redirect', 'google') }}">{!! trans('modals/modals.signIn_google') !!}</a>
             </div>
-            <div class="col-md-6"><a class="btnSecondary btnSecondary--facebookLogin" href="{{ route('social.redirect', 'facebook') }}">Sign in with Facebook</a>
+            <div class="col-md-6"><a class="btnSecondary btnSecondary--facebookLogin" href="{{ route('social.redirect', 'facebook') }}">{!! trans('modals/modals.signIn_facebook') !!}</a>
             </div>
         </div>
-        <div class="formRegText">Do not have account?&nbsp;<a class="link" href="{{ route('register') }}">Register</a></div>
+        <div class="formRegText">{!! trans('modals/modals.not_have_account') !!} <a class="link" href="{{ route('register') }}">{!! trans('modals/modals.signUp_title') !!}</a></div>
     </div>
 @endsection

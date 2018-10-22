@@ -2,7 +2,7 @@
 
 return [
     //auth
-    'signUp_title' => 'Registration',
+    'signUp_title' => 'Register',
     'signIn_title' => 'Login',
     'resetPwd_title' => 'Password recovery',
     'enterYourEmail_label' => 'Fill in your Email',
@@ -17,6 +17,19 @@ return [
     'tooManyResets_LoginController' => 'Your account is temporary banned, due to many password resets.',
     'or' => 'or',
     'enter' => 'enter your account to view your orders',
+    'not_have_account' => 'Do not have account?',
+    'have_account' => 'You have account? ',
+
+    //register
+    'reg_yourName' => 'Your name',
+    'reg_email' => 'E-mail',
+    'reg_password' => 'Password',
+    'reg_repeatPassword' => 'Repeat password',
+
+    //signIn
+    'signIn_google' => 'Sign in with Gmail',
+    'signIn_facebook' => 'Sign in with Facebook',
+
 
     //change email
     'changeEmail_title' => 'Change Email',

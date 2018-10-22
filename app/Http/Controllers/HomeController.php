@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Services\BonusService;
 use App\Services\WidgetService;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
@@ -47,6 +48,7 @@ class HomeController extends Controller
         $data['authenticated'] = Auth::check();
         $data['confirmed'] = $user->confirmed;
         $data['admin'] = $user->admin;
+        $data['dateNow'] = Carbon::now()->format('d.m.Y');
 
         return view('home.home', [
             'data' => $data
