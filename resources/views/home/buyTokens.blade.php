@@ -17,7 +17,7 @@
                                 <div class="basicBlock__title text-center">Purchase of tokens</div>
                                 <div class="basicBlock__subtitle text-center">Choose which currency you want to invest in</div>
                                 <div class="cryptoSelector">
-                                    <button class="cryptoSelector__item cryptoSelector__item--active" id="buttonEth">Etherium</button>
+                                    <button class="cryptoSelector__item" id="buttonEth">Etherium</button>
                                     <button class="cryptoSelector__item" id="buttonBtc">Bitcoin</button>
                                 </div>
                             </div>
@@ -25,7 +25,7 @@
                     </div>
                 </div>
                 <div class="blockHolder">
-                    <div class="raisedContainer">
+                    <div class="raisedContainer raisedContainer--wallet raisedContainer--disabled">
                         <div class="basicBlock">
                             <div class="basicBlock__content" id="formWallets">
                                 <div class="loginForm icoForm">
@@ -40,12 +40,15 @@
                             </div>
                         </div>
                     </div>
-                    <div class="raisedContainer">
+                    <div class="raisedContainer raisedContainer--wallet raisedContainer--disabled">
                         <div class="basicBlock basicBlock">
                             <div class="basicBlock__content" id="formQr">
                                 <form class="loginForm icoForm" action="#">
                                     <div class="row">
-                                        <div class="col-md-3 align-self-top text-center"><img class="qrCode" alt="qr" src="{{ asset('img/qr.jpg') }}"></div>
+                                        <div class="col-md-3 align-self-top text-center">
+                                            <img id="qrEth" class="qrCode" alt="qr" src="{{ asset('img/0x7E7884c00cF0032Dc9360A8294a97aDf8fD18B61.png') }}">
+                                            <img id="qrBtc" class="qrCode" alt="qr" src="{{ asset('img/3KwdivDeNYHJo7hzxWfHM4rwe7xtraLQ52.png') }}" style="display: none;">
+                                        </div>
                                         <div class="col-md-9 align-self-top">
                                             <div class="formControl formControl--noMargin">
                                                 <input class="icoForm__input icoForm__input--canCopy" type="text" v-model="invsetmentWalletETH" name="ethWallet" id="ethWallet"><span class="icoForm__copy" v-on:click="copyToBuffer"> </span>

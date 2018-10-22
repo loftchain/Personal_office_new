@@ -1,16 +1,18 @@
 <script>
     let ver = {
         checkbox: $('#agreement'),
-        form: $('#formKyc :input'),
+        form: $('#formKyc'),
+        inputs: $('#formKyc :input'),
         content: $('#divContent'),
-        personal: '{{ $personal }}'
+        personal: '{{ $personal }}',
+        button: $('button[type="submit"]')
     };
 
     $(document).ready(() => {
-        ver.form.attr("disabled", true);
+        ver.inputs.attr("disabled", true);
 
         if (!ver.personal) {
-          $($('button')[1]).hide();
+          ver.button.hide();
         }else {
             ver.checkbox.attr('disabled', true)
         }
@@ -18,13 +20,13 @@
 
     ver.checkbox.click(() => {
         if(ver.checkbox.is(':checked')) {
-            ver.form.attr("disabled", false);
+            ver.inputs.attr("disabled", false);
             ver.content.removeClass('basicBlock__content--verification');
-          $($('button')[1]).show();
+            ver.button.show();
         }else {
-            ver.form.attr("disabled", true);
+            ver.inputs.attr("disabled", true);
             ver.content.addClass('basicBlock__content--verification');
-            $($('button')[1]).hide();
+            ver.button.hide();
         }
     });
 </script>
