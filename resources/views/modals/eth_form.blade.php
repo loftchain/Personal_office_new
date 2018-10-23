@@ -5,7 +5,7 @@
         <input type="hidden" name="currency" class="currency" value="ETH">
         <label class="icoForm__label">ETH wallet  for investing and receiving tokens</label>
         <input id="wallet" data-currency="ETH" class="wallet icoForm__input icoForm__input--pencil" type="text" name="wallet" required>
-        <span class="icoForm__pencil icoForm__pencil--disabled"></span>
+        <button class="icoForm__pencil icoForm__pencil--disabled" type="submit"></button>
     </div>
     <div class="error-message wallet"></div>
 </form>

@@ -100,10 +100,8 @@
 
     wallet.wInput.on('input', function() {
       if ($(this).is(':valid')) {
-        $('.raisedContainer--disabled').removeClass('raisedContainer--disabled');
         $(this).next().removeClass('icoForm__pencil--disabled');
       } else {
-        $('.raisedContainer--disabled').addClass('raisedContainer--disabled');
         $(this).next().addClass('icoForm__pencil--disabled');
       }
     });

@@ -10719,13 +10719,16 @@ body {
 }
 
 .icoForm__pencil {
-  background: url(/img/pencil-edit-button.svg) no-repeat 0 0 transparent;
+  background: url(/img/add.svg) no-repeat;
+  background-position: center;
+  background-size: contain;
   width: 13px;
   height: 13px;
   position: absolute;
   bottom: 14px;
   right: 10px;
   cursor: pointer;
+  border: none;
 }
 
 .icoForm__pencil--disabled {
