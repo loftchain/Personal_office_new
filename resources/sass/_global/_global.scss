@@ -441,6 +441,11 @@ body {
     background: linear-gradient(89.66deg, #FEC808 2.15%, #FFE13A 100%);
     width: 100%;
   }
+  &--without-line {
+    &::before {
+      display: none;
+    }
+  }
   &__title {
     font-family: Rubik;
     font-style: normal;
@@ -510,6 +515,13 @@ body {
       height: 100%;
       background-color: rgba(255, 255, 255, 0.76);
     }
+  }
+  &--deposit-bonus {
+    margin-bottom: 0;
+  }
+  &--token-distribution {
+    margin-top: 0;
+    margin-bottom: 0;
   }
 
   @media(max-width: 992px) {

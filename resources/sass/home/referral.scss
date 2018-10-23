@@ -1,0 +1,92 @@
+.referral__table-wrap {
+  display: none;
+  padding: 10px;
+
+  &--active {
+    display: flex;
+  }
+}
+
+.referral__table {
+  width: 49%;
+}
+
+.referral__table tr {
+  display: flex;
+}
+
+.referral__cell {
+  padding: 14px 18px;
+  border: 1px solid #F2F2F2;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.11);
+  color: #F2C94C;
+
+  &--person {
+    width: 70%;
+  }
+
+  &--bonus {
+    width: 30%;
+    text-align: center;
+  }
+
+  &--th {
+    font-weight: 700;
+    color: #4F4F4F;
+    text-align: center;
+  }
+
+  &--no-referral {
+    width: 100%;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
+    color: #CF0032;
+  }
+}
+
+.referral__message {
+  margin-left: 10px;
+  color: #F2C94C;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+@media (max-width: 1279px) {
+  .referral__cell {
+    padding: 14px 6px;
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  &--th {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .referral__table {
+    width: 100%;
+  }
+
+  .referral__cell {
+    padding: 14px 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .referral__cell {
+    padding: 14px 3px;
+
+    &--person {
+      width: 80%;
+    }
+
+    &--bonus {
+      width: 20%;
+    }
+  }
+}

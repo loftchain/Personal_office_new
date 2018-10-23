@@ -144,7 +144,7 @@
                 </div>
 
                 <div class="blockHolder">
-                    <div class="raisedContainer">
+                    <div class="raisedContainer raisedContainer--deposit-bonus">
                         <div class="basicBlock basicBlock--single">
                             <div class="basicBlock__content">
                                 <div class="basicBlock__title text-center">{!! trans('home/home.deposit_bonus') !!}</div>
@@ -186,8 +186,8 @@
                 </div>
 
                 <div class="blockHolder">
-                    <div class="raisedContainer">
-                        <div class="basicBlock basicBlock--single">
+                    <div class="raisedContainer raisedContainer--token-distribution">
+                        <div class="basicBlock basicBlock--single basicBlock--without-line">
                             <div class="basicBlock__content">
                                 <div class="basicBlock__title text-center">{!! trans('home/home.token_distribution') !!}</div>
                                 <div class="row">
@@ -195,7 +195,8 @@
                                         <canvas id="tokenChart"></canvas>
                                     </div>
                                     <div class="col-lg-4 align-self-center">
-                                        <div id="js-legend" class="legend-con chart-legend"></div></div>
+                                        <div id="js-legend" class="legend-con chart-legend"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -11023,6 +11023,10 @@ body {
   width: 100%;
 }
 
+.basicBlock--without-line::before {
+  display: none;
+}
+
 .basicBlock__title {
   font-family: Rubik;
   font-style: normal;
@@ -11100,6 +11104,15 @@ body {
   width: 100%;
   height: 100%;
   background-color: rgba(255, 255, 255, 0.76);
+}
+
+.raisedContainer--deposit-bonus {
+  margin-bottom: 0;
+}
+
+.raisedContainer--token-distribution {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 @media (max-width: 992px) {
@@ -11940,6 +11953,104 @@ body {
   left: 0;
   bottom: 0;
   right: 0;
+}
+
+.referral__table-wrap {
+  display: none;
+  padding: 10px;
+}
+
+.referral__table-wrap--active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.referral__table {
+  width: 49%;
+}
+
+.referral__table tr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.referral__cell {
+  padding: 14px 18px;
+  border: 1px solid #F2F2F2;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.11);
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.11);
+  color: #F2C94C;
+}
+
+.referral__cell--person {
+  width: 70%;
+}
+
+.referral__cell--bonus {
+  width: 30%;
+  text-align: center;
+}
+
+.referral__cell--th {
+  font-weight: 700;
+  color: #4F4F4F;
+  text-align: center;
+}
+
+.referral__cell--no-referral {
+  width: 100%;
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 500;
+  text-align: center;
+  text-transform: uppercase;
+  color: #CF0032;
+}
+
+.referral__message {
+  margin-left: 10px;
+  color: #F2C94C;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+@media (max-width: 1279px) {
+  .referral__cell {
+    padding: 14px 6px;
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  \--th {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .referral__table {
+    width: 100%;
+  }
+
+  .referral__cell {
+    padding: 14px 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .referral__cell {
+    padding: 14px 3px;
+  }
+
+  .referral__cell--person {
+    width: 80%;
+  }
+
+  .referral__cell--bonus {
+    width: 20%;
+  }
 }
 
 .avatarSettings__uploadBtn {
