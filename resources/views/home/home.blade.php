@@ -139,7 +139,7 @@
                     </div>
                 </div>
                 <div class="blockHolder">
-                    <div class="raisedContainer">
+                    <div class="raisedContainer raisedContainer--deposit-bonus">
                         <div class="basicBlock basicBlock--single">
                             <div class="basicBlock__content">
                                 <div class="basicBlock__title text-center">deposit amount Bonuses</div>
@@ -180,8 +180,8 @@
                     </div>
                 </div>
                 <div class="blockHolder">
-                    <div class="raisedContainer">
-                        <div class="basicBlock basicBlock--single">
+                    <div class="raisedContainer raisedContainer--token-distribution">
+                        <div class="basicBlock basicBlock--single basicBlock--without-line">
                             <div class="basicBlock__content">
                                 <div class="basicBlock__title text-center">Token Distribution</div>
                                 <div class="row">
