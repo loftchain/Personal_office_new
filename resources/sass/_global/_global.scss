@@ -216,6 +216,10 @@ body {
     bottom: 14px;
     right: 10px;
     cursor: pointer;
+
+    &--disabled {
+      display: none;
+    }
   }
   &__input--canCopy {
     border-radius: 100px;

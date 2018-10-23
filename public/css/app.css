@@ -10728,6 +10728,10 @@ body {
   cursor: pointer;
 }
 
+.icoForm__pencil--disabled {
+  display: none;
+}
+
 .icoForm__input--canCopy {
   border-radius: 100px;
   border: 1px solid #F2C94C;
