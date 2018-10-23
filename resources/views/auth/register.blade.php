@@ -9,6 +9,7 @@
                 <label class="icoForm__label">{!! trans('modals/modals.reg_yourName') !!}</label>
                 <input class="icoForm__input" type="text" name="name" required>
             </div>
+            <div class="error-message error-message name already_exists"></div>
             <div class="formControl">
                 <label class="icoForm__label">{!! trans('modals/modals.reg_email') !!}</label>
                 <input class="icoForm__input" type="email" name="email" required>
@@ -18,12 +19,12 @@
                 <label class="icoForm__label">{!! trans('modals/modals.reg_password') !!}</label>
                 <input class="icoForm__input" type="password" name="password" required>
             </div>
+            <div class="error-message error-message1 password"></div>
             <div class="formControl">
                 <label class="icoForm__label">{!! trans('modals/modals.reg_repeatPassword') !!}</label>
                 <input class="icoForm__input" type="password" name="password_confirmation" required>
             </div>
-            <div class="error-message error-message1 password"></div>
-
+            <div class="error-message error-message2 password"></div>
             {{--@captcha--}}
             <div class="g-recaptcha" data-sitekey="{{ env('RE_CAP_SITE') }}"></div>
             <div class="error-message error-message3 error-message-captcha g-recaptcha-response"></div>
