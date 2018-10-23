@@ -48,9 +48,14 @@
                                                         <input class="icoForm__input" type="text" name="email" disabled value="{{ Auth::user()->email }}">
                                                     </div>
                                                 </form>
-                                                <div class="settingsActions"><a class="settingsActions__link jsChangeEmail" href="#">Change e-mail    </a><a class="settingsActions__link jsChangePassword" href="#">Change password</a>
-                                                    <div class="settingsActions__langSelector"><a
-                                                                    class="settingsActions__langSelectorBtn" href="{{ route('lang.switch', 'ru') }}">RU</a><span class="settingsActions__langSelectorBtn settingsActions__langSelectorBtn--active">ENG</span></div>
+                                                <div class="settingsActions">
+                                                    <a class="settingsActions__link jsChangeEmail" href="#">Change e-mail</a>
+                                                    <a class="settingsActions__link jsChangePassword" href="#">Change password</a>
+                                                    <a class="settingsActions__link jsLogOut" href="#">Log out</a>
+                                                    <div class="settingsActions__langSelector">
+                                                        <a class="settingsActions__langSelectorBtn" href="{{ route('lang.switch', 'ru') }}">RU</a>
+                                                        <span class="settingsActions__langSelectorBtn settingsActions__langSelectorBtn--active">ENG</span>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="col-md-4">

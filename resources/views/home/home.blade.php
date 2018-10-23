@@ -189,7 +189,8 @@
                                         <canvas id="tokenChart"></canvas>
                                     </div>
                                     <div class="col-lg-4 align-self-center">
-                                        <div id="js-legend" class="legend-con chart-legend"></div></div>
+                                        <div id="js-legend" class="legend-con chart-legend"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
