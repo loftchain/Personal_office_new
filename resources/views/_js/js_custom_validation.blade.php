@@ -111,19 +111,20 @@
                     break;
                 case !$.isEmptyObject(data.wallet_added):
                     v.showNotification('{!! trans('home/wallet.added_js') !!}', 'success');
-                    if (typeof wa !== 'undefined') {
-                        wa.exitEditMode(_this.children('.w-input'));
-                        if (_this.children('.type') === 'to' && $('#wallet1').val() > 0) {
-                            wa.showDescription('BTC');
+                    if (typeof wallet !== 'undefined') {
+                        // wa.exitEditMode(_this.children('.w-input'));
+                        if(_this.children('.type').val() === 'to' && $('#wallet1').val() > 0){
+                            // wa.showDescription('BTC');
+
                         }
 
-                        if (_this.children('.type') === 'from' && $('#wallet2').val() > 0) {
+                        if(_this.children('.type').val() === 'from' && $('#wallet2').val() > 0){
 
-                            wa.showDescription(data.currency);
+                            // wa.showDescription(data.currency);
                         }
 
-                        if (_this.children('.type') === 'from_to') {
-                            wa.showDescription(data.currency);
+                        if(_this.children('.type').val() === 'from_to'){
+                            // wa.showDescription(data.currency);
                         }
 
                     }

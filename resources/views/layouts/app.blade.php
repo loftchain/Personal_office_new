@@ -10,6 +10,7 @@
     <meta name="theme-color" content="#FFD703">
     <title>{{ config('app.name', 'Laravel') }}</title>
     @include('layouts.links')
+    @stack('links')
 </head>
 <body>
 <div id="app">

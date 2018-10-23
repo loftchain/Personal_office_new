@@ -12,6 +12,7 @@
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 <script src="{{ asset('js/ico.js') }}"></script>
 @include('_js.js_custom_validation')
+@include('_js.js_main_menu')
 
 @if(isset($data) && \Illuminate\Support\Facades\Route::current()->getName() == 'home.index')
     @include('_js.js_widget')

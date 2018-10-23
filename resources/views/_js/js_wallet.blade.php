@@ -4,6 +4,8 @@
         bBtc: $('#buttonBtc'),
         fEth: $('#formEth'),
         fBtc: $('#formBtc'),
+        qrEth: $('#qrEth'),
+        qrBtc: $('#qrBtc'),
         wInput: $('.wallet'),
         personal: '{{ $personal }}',
 
@@ -56,9 +58,15 @@
 
             if(!personal) {
                 input.attr('disabled', true);
-                $('#formWallets').attr('style', 'background-color: whitesmoke');
-                $('#formQr').attr('style', 'background-color: whitesmoke');
+                // $('#formWallets').attr('style', 'background-color: whitesmoke');
+                // $('#formQr').attr('style', 'background-color: whitesmoke');
             }
+        },
+
+        removeDisabled() {
+          $('.raisedContainer--wallet').addClass('raisedContainer--disabled');
+          $('.raisedContainer--disabled').eq(0).removeClass('raisedContainer--disabled');
+          wallet.wInput.removeAttr('disabled');
         }
     };
 
@@ -75,7 +83,9 @@
         wallet.bBtc.removeClass('cryptoSelector__item--active');
         wallet.fBtc.hide();
         wallet.fEth.show();
-
+        wallet.qrBtc.hide();
+        wallet.qrEth.show();
+        wallet.removeDisabled();
     });
 
     wallet.bBtc.click(() => {
@@ -83,6 +93,17 @@
         wallet.bEth.removeClass('cryptoSelector__item--active');
         wallet.fEth.hide();
         wallet.fBtc.show();
+        wallet.qrEth.hide();
+        wallet.qrBtc.show();
+        wallet.removeDisabled();
+    });
+
+    wallet.wInput.on('input', function() {
+      if ($(this).is(':valid')) {
+        $(this).next().removeClass('icoForm__pencil--disabled');
+      } else {
+        $(this).next().addClass('icoForm__pencil--disabled');
+      }
     });
 
 
