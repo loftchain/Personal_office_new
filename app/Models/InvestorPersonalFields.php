@@ -11,6 +11,8 @@ class InvestorPersonalFields extends Model
         'name_surname',
         'phone',
         'date_place_birth',
+        'telegram',
+        'permanent_address',
         'doc_img_path'
     ];
 

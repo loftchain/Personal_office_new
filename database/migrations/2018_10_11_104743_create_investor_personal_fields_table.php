@@ -19,6 +19,8 @@ class CreateInvestorPersonalFieldsTable extends Migration
             $table->string('name_surname')->nullable();
             $table->string('phone')->nullable();
             $table->string('date_place_birth')->nullable();
+            $table->string('telegram')->nullable();
+            $table->string('permanent_address')->nullable();
             $table->longText('doc_img_path')->nullable();
             $table->timestamps();
         });
