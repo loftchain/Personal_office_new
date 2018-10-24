@@ -11252,6 +11252,29 @@ body {
   border-bottom: 3px solid #F2F2F2;
 }
 
+.welcome {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.welcome__item {
+  padding: 15px 15px 0;
+}
+
+.welcome__item--registration {
+  border-right: 1px solid #f2c94c;
+}
+
+.welcome__link {
+  color: #f2c94c;
+}
+
+.welcome__link:hover {
+  color: #f2c94c;
+  text-decoration: underline;
+}
+
 .modalFrame {
   background: #FFFFFF;
   -webkit-box-shadow: 0px 0px 70px #E0E0E0;
