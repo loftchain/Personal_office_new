@@ -6,6 +6,7 @@ use App\Helpers\ICOAPI;
 use App\Models\Investor;
 use App\Models\InvestorReferralFields;
 use App\Models\InvestorWalletFields;
+use App\Models\TempTransaction;
 use App\Models\Transaction;
 use App\Models\Transactions;
 use App\Models\UserWalletFields;
@@ -74,8 +75,9 @@ class TransactionService
 
     public function sumBonusAndTokens($tokenAmount, $amountETH)
     {
-        $discount = $this->appliedBonus($amountETH);
+        $discount = $this->bonusService->getStageInfo()['bonus'] / 100;
         $bonus = $tokenAmount * $discount;
+
         return $tokenAmount + $bonus;
     }
 
@@ -137,7 +139,15 @@ class TransactionService
         $tx = $this->getTransactions();
         $db = [];
         $rates = $this->bonusService->getLatestCurrencies();
+
         foreach ($tx as $t) {
+            if($t->status === 'true'){
+                TempTransaction::create([
+                    'status' => $t->status,
+                    'amount' => $t->amount,
+                    'currency' => $t->currency
+                ]);
+            }
             $txTimestamp = strtotime($t->date);
             $closest = null;
             $info = ($t->currency == 'ETH') ? 'etherscan.io' : 'blockchain.info';

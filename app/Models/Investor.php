@@ -50,4 +50,9 @@ class Investor extends Authenticatable
     {
         return $this->hasMany(Transaction::class);
     }
+
+    public function referral()
+    {
+        return $this->hasOne(InvestorReferralFields::class);
+    }
 }

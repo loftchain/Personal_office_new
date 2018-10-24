@@ -62,7 +62,7 @@ class ReferralService
 
         foreach ($finalReferralSumm as $frs) {
             InvestorReferralFields::create([
-                'user_id' => $frs['id'],
+                'investor_id' => $frs['id'],
                 'wallet_to' => $frs['wallet'],
                 'tokens' => $frs['token_sum']
             ]);

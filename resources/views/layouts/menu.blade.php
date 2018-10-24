@@ -9,11 +9,17 @@
         </div>
         <div class="mainMenu">
             <ul class="mainMenu__list">
-                <li class="mainMenu__item mainMenu__item--active"><a class="mainMenu__link"
+                <li class="mainMenu__item"><a class="mainMenu__link"
                                                                      href="{{ route('admin.kyc') }}">{!! trans('home/menu.aVerification') !!}</a>
                 </li>
                 <li class="mainMenu__item"><a class="mainMenu__link"
                                                                      href="{{ route('admin.history') }}">{!! trans('home/menu.aHistory') !!}</a>
+                </li>
+                <li class="mainMenu__item"><a class="mainMenu__link"
+                                                                     href="{{ route('admin.referral') }}">{!! trans('home/menu.aReferrals') !!}</a>
+                </li>
+                <li class="mainMenu__item"><a class="mainMenu__link"
+                                                                     href="{{ route('admin.transaction') }}">{!! trans('home/menu.aTransactions') !!}</a>
                 </li>
             </ul>
         </div>
@@ -29,7 +35,7 @@
             <div class="userInfo__text">
                 <div class="userInfo__textItem">{{ Auth::user()->name }}</div>
                 <div class="userInfo__textItem">{!! trans('home/menu.status') !!}: {{ !Auth::user()->confirmed ? trans('home/menu.verified1') : ''}} {!! trans('home/menu.verified') !!}</div>
-                <div class="userInfo__textItem">{!! trans('home/menu.tokenAmount') !!} 876 {{ env('TOKEN_NAME') }}</div>
+                <div class="userInfo__textItem">{!! trans('home/menu.tokenAmount') !!} {{ Auth::user()->transactions()->sum('amount_tokens') }} {{ env('TOKEN_NAME') }}</div>
             </div>
         </div>
         <div class="mainMenu">

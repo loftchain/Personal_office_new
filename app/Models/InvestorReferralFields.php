@@ -12,4 +12,9 @@ class InvestorReferralFields extends Model
         'tokens',
         'tokens_referred_by'
     ];
+
+    public function investor()
+    {
+        return $this->belongsTo(Investor::class);
+    }
 }
