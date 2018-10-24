@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+    <link rel="stylesheet" href="{{ asset('css/fine-uploader-gallery.min.css') }}">
     @push('links')
-        <link rel="stylesheet" href="{{ asset('css/fine-uploader-gallery.min.css') }}">
     @endpush
     <div class="workArea jsWorkArea">
         <div class="mobileMenuBtn">
@@ -36,14 +36,14 @@
                                 <form id="formKyc" class="icoForm" action="{{ route('home.kyc.store') }}" method="post" enctype="multipart/form-data">
                                     {{ csrf_field() }}
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-md-12">
                                             <div class="dropzone clearfix">
                                                 <div class="wrapper">
                                                     <div class="drop">
-                                                        <div class="cont">
-                                                            <div class="tit"><img src="{{ asset('img/plus.svg') }}" alt="add"></div>
-                                                            <div class="desc">Drag and drop the image of your ID accepted formats: jpg, jpeg, png, svg, pdf, zip, rar</div>
-                                                        </div>
+                                                        {{--<div class="cont">--}}
+                                                            {{--<div class="tit"><img src="{{ asset('img/plus.svg') }}" alt="add"></div>--}}
+                                                            {{--<div class="desc">Drag and drop the image of your ID accepted formats: jpg, jpeg, png, svg, pdf, zip, rar</div>--}}
+                                                        {{--</div>--}}
                                                         {{--<output id="list"></output>--}}
                                                         {{--<input id="files" multiple="true" name="files[]" type="file">--}}
                                                         <div id="fine-uploader-gallery"></div>
@@ -51,7 +51,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-6">
                                             <div class="formControl">
                                                 <label class="icoForm__label" for="full-name">{!! trans('home/kyc.kyc_fullName') !!}</label>
                                                 <input class="icoForm__input" id="full-name" type="text" name="name" required>
@@ -65,7 +65,7 @@
                                                 <input class="icoForm__input" id="permanent-address" type="text" name="address" required>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-6">
                                             <div class="formControl">
                                                 <label class="icoForm__label" for="birthday">{!! trans('home/kyc.kyc_dateOfBirth') !!}</label>
                                                 <div class="row no-gutters">
@@ -186,7 +186,8 @@
                     <span class="qq-upload-drop-area-text-selector"></span>
                 </div>
                 <div class="qq-upload-button-selector qq-upload-button">
-                    <div>Upload</div>
+                    <div>Drag and drop the image of your ID
+                        accepted formats: jpg, jpeg, png, svg, pdf, zip, rar</div>
                 </div>
                 <span class="qq-drop-processing-selector qq-drop-processing">
                 <span>Processing dropped files...</span>
