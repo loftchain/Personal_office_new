@@ -42,7 +42,6 @@
                                     <div class="owl-carousel owl-theme">
                                         <div class="raisedSlider__item"><img class="raisedSlider__itemImage" src="img/eth.svg" alt="eth"><span class="raisedSlider__itemValue">{{ number_format($data['ethCurrentAmount']['currency'], 2, '.', ' ') }}</span></div>
                                         <div class="raisedSlider__item"><img class="raisedSlider__itemImage" src="img/btc.svg" alt="btc"><span class="raisedSlider__itemValue">{{ number_format($data['btcCurrentAmount']['currency'], 2, '.', ' ') }}</span></div>
-                                        <div class="raisedSlider__item"><img class="raisedSlider__itemImage" src="img/paypal.svg" alt="paypal"><span class="raisedSlider__itemValue">{{ number_format($data['totalUSDCollected'], 0, '.', ' ') }} $</span></div>
                                     </div>
                                 </div>
                             </div>
@@ -119,7 +118,7 @@
                             <div class="basicBlock__content">
                                 <div class="basicBlock__title">{!! trans('home/home.round_info') !!}</div>
                                 <div class="basicBlock__text">
-                                    <p>Cap: 250 ETH</p>
+                                    <p>Soft Cap: 250 ETH</p>
                                     <p>Hard Cap: 770 ETH</p>
                                     <p>Minimum deposit amount: 0.1 ETH</p><br>
                                     <p>1 ETH = 13000 TGF</p>
@@ -135,7 +134,6 @@
                                     <div class="owl-carousel owl-theme">
                                         <div class="raisedSlider__item"><img class="raisedSlider__itemImage" src="img/eth.svg" alt="eth"><span class="raisedSlider__itemValue">{{ number_format($data['ethCurrentAmount']['currency'], 2, '.', ' ') }}</span></div>
                                         <div class="raisedSlider__item"><img class="raisedSlider__itemImage" src="img/btc.svg" alt="btc"><span class="raisedSlider__itemValue">{{ number_format($data['btcCurrentAmount']['currency'], 2, '.', ' ') }}</span></div>
-                                        <div class="raisedSlider__item"><img class="raisedSlider__itemImage" src="img/paypal.svg" alt="paypal"><span class="raisedSlider__itemValue">{{ number_format($data['totalUSDCollected'], 0, '.', ' ') }} $</span></div>
                                     </div>
                                 </div>
                             </div>

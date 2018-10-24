@@ -16,7 +16,7 @@
     overflow: hidden;
   }
   &__note {
-    font-family: Ubuntu;
+    font-family: 'Rubik', 'Arial', sans-serif;
     font-style: normal;
     font-weight: 300;
     line-height: 27px;
@@ -37,7 +37,7 @@
 .settingsActions {
   &__link {
     display: block;
-    font-family: Rubik;
+    font-family: 'Rubik', 'Arial', sans-serif;
     font-style: normal;
     font-weight: 300;
     line-height: normal;
@@ -53,7 +53,7 @@
     background: #E0E0E0;
     display: inline-block;
     margin: 0 5px;
-    font-family: Rubik;
+    font-family: 'Rubik', 'Arial', sans-serif;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
