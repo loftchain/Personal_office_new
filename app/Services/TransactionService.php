@@ -74,8 +74,9 @@ class TransactionService
 
     public function sumBonusAndTokens($tokenAmount, $amountETH)
     {
-        $discount = $this->appliedBonus($amountETH);
+        $discount = $this->bonusService->getStageInfo()['bonus'] / 100;
         $bonus = $tokenAmount * $discount;
+
         return $tokenAmount + $bonus;
     }
 
@@ -137,6 +138,7 @@ class TransactionService
         $tx = $this->getTransactions();
         $db = [];
         $rates = $this->bonusService->getLatestCurrencies();
+
         foreach ($tx as $t) {
             $txTimestamp = strtotime($t->date);
             $closest = null;
