@@ -1,15 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="col-md-12">
-        <div class="col-md-2">
-            <a href="{{ route('register') }}" style="font-size: 25px" class="link">{!! trans('modals/modals.signUp_title') !!}</a>
+    <div class="welcome">
+        <div class="welcome__item welcome__item--registration">
+            <a href="{{ route('register') }}" style="font-size: 25px" class="welcome__link">{!! trans('modals/modals.signUp_title') !!}</a>
         </div>
-        <hr>
-        <div class="col-md-10">
-            <a href="{{ route('login') }}" style="font-size: 25px" class="link">{!! trans('modals/modals.signIn_title') !!}</a>
+        <div class="welcome__item">
+            <a href="{{ route('login') }}" style="font-size: 25px" class="welcome__link">{!! trans('modals/modals.signIn_title') !!}</a>
             <br>
-            <a href="{{ route('password.request') }}" style="font-size: 12px" class="link">{!! trans('home/welcome.forgotPwd_a') !!}</a>
+            <a href="{{ route('password.request') }}" style="font-size: 12px" class="welcome__link">{!! trans('home/welcome.forgotPwd_a') !!}</a>
         </div>
     </div>
 @endsection

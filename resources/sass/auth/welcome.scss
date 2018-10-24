@@ -1,0 +1,20 @@
+.welcome {
+  display: flex;
+}
+
+.welcome__item {
+  padding: 15px 15px 0;
+
+  &--registration {
+    border-right: 1px solid #f2c94c;
+  }
+}
+
+.welcome__link {
+  color: #f2c94c;
+
+  &:hover {
+    color: #f2c94c;
+    text-decoration: underline;
+  }
+}

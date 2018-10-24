@@ -1,28 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css?family=Rubik:300,400,400i,500,500i,700&subset=cyrillic);@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,500);@charset "UTF-8";
-
-@font-face {
-  font-family: "PTSans";
-  src: url(/fonts/PTSansRegular.eot?80b366764bbcec9da73ff60b0e59dedf);
-  src: url(/fonts/PTSansRegular.eot?80b366764bbcec9da73ff60b0e59dedf) format("embedded-opentype"), url(/fonts/PTSansRegular.woff?2fc0b0b6e08f29b542fcebd223a11961) format("woff"), url(/fonts/PTSansRegular.ttf?27d4bc07b0918bdaef1392282e2107bf) format("truetype");
-  font-style: normal;
-  font-weight: normal;
-}
-
-@font-face {
-  font-family: "PTSans";
-  src: url(/fonts/PTSansItalic.eot?15c7b8d866a518b3b6e972ec73ac9869);
-  src: url(/fonts/PTSansItalic.eot?15c7b8d866a518b3b6e972ec73ac9869) format("embedded-opentype"), url(/fonts/PTSansItalic.woff?8c8ea298cb96f551e1fbd0964ed5e8b6) format("woff"), url(/fonts/PTSansItalic.ttf?9ce925ea24f1f65afb1da429d1212ff5) format("truetype");
-  font-style: italic;
-  font-weight: normal;
-}
-
-@font-face {
-  font-family: "PTSans";
-  src: url(/fonts/PTSansBold.eot?f7b55d1165c6f3b66d9beb23ea0d74c5);
-  src: url(/fonts/PTSansBold.eot?f7b55d1165c6f3b66d9beb23ea0d74c5) format("embedded-opentype"), url(/fonts/PTSansBold.woff?4ef47c81d85d041ee508b3a946c7b43b) format("woff"), url(/fonts/PTSansBold.ttf?6c33b423dd0f6fc8cb266417ebf6b19e) format("truetype");
-  font-style: normal;
-  font-weight: bold;
-}
+@import url(https://fonts.googleapis.com/css?family=Rubik:300,400,500,700&subset=cyrillic);@charset "UTF-8";
 
 /*!
  * Bootstrap v4.1.3 (https://getbootstrap.com/)
@@ -10607,6 +10583,7 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  font-family: 'Rubik', 'Arial', sans-serif;
 }
 
 @media (max-width: 992px) {
@@ -10621,7 +10598,7 @@ body {
 }
 
 .link {
-  font-family: Rubik;
+  font-family: 'Rubik', 'Arial', sans-serif;
   font-style: normal;
   font-weight: 300;
   line-height: normal;
@@ -10645,7 +10622,7 @@ body {
           box-sizing: border-box;
   width: 100%;
   padding: 13px 20px;
-  font-family: Rubik;
+  font-family: 'Rubik', 'Arial', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -10702,7 +10679,7 @@ body {
   line-height: 40px;
   padding: 0 10px;
   background: transparent;
-  font-family: Rubik;
+  font-family: 'Rubik', 'Arial', sans-serif;
   font-style: normal;
   font-weight: 300;
   font-size: 14px;
@@ -10741,7 +10718,7 @@ body {
   background: transparent;
   height: 28px;
   line-height: 28px;
-  font-family: Rubik;
+  font-family: 'Rubik', 'Arial', sans-serif;
   font-style: normal;
   font-weight: 300;
   line-height: normal;
@@ -10760,13 +10737,14 @@ body {
 }
 
 .icoForm__label {
-  font-family: Rubik;
+  font-family: 'Rubik', 'Arial', sans-serif;
   font-style: normal;
   font-weight: 300;
   line-height: normal;
   font-size: 14px;
   color: #4F4F4F;
   display: block;
+  cursor: pointer;
 }
 
 .icoForm__selectContainer {
@@ -10798,6 +10776,8 @@ body {
   line-height: 40px;
   height: 40px;
   width: 100%;
+  color: #4f4f4f;
+  font-weight: 300;
   background: transparent;
   padding-left: 9px;
   -webkit-appearance: none;
@@ -10897,7 +10877,7 @@ body {
   background: -webkit-gradient(linear, left top, right top, from(#FFC701), to(#FFE13A));
   background: linear-gradient(90deg, #FFC701 0%, #FFE13A 100%);
   color: #fff;
-  font-family: Rubik;
+  font-family: 'Rubik', 'Arial', sans-serif;
   font-style: normal;
   font-weight: normal;
   line-height: normal;
@@ -11006,7 +10986,7 @@ body {
 }
 
 .basicBlock__bonusText {
-  font-family: Rubik;
+  font-family: 'Rubik', 'Arial', sans-serif;
   font-style: normal;
   font-weight: bold;
   line-height: normal;
@@ -11028,7 +11008,7 @@ body {
 }
 
 .basicBlock__title {
-  font-family: Rubik;
+  font-family: 'Rubik', 'Arial', sans-serif;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
@@ -11039,7 +11019,7 @@ body {
 }
 
 .basicBlock__text {
-  font-family: Rubik;
+  font-family: 'Rubik', 'Arial', sans-serif;
   font-style: normal;
   font-weight: 300;
   line-height: normal;
@@ -11075,7 +11055,7 @@ body {
 }
 
 .basicBlock__subtitle {
-  font-family: Rubik;
+  font-family: 'Rubik', 'Arial', sans-serif;
   font-style: normal;
   font-weight: 300;
   line-height: normal;
@@ -11148,10 +11128,9 @@ body {
 }
 
 .bonuses__itemTitle {
-  font-family: Rubik;
+  font-family: 'Rubik', 'Arial', sans-serif;
   font-style: normal;
   font-weight: 500;
-  line-height: normal;
   font-size: 16px;
   text-transform: uppercase;
   color: #4F4F4F;
@@ -11175,7 +11154,7 @@ body {
   border-top: 1px solid #F2F2F2;
   margin-top: 10px;
   padding-top: 13px;
-  font-family: Ubuntu;
+  font-family: 'Rubik', 'Arial', sans-serif;
   font-style: normal;
   font-weight: 300;
   line-height: normal;
@@ -11184,7 +11163,7 @@ body {
 }
 
 .bonuses__itemValue {
-  font-family: Ubuntu;
+  font-family: 'Rubik', 'Arial', sans-serif;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
@@ -11209,7 +11188,7 @@ body {
 }
 
 .dataTable th {
-  font-family: Rubik;
+  font-family: 'Rubik', 'Arial', sans-serif;
   font-style: normal;
   font-weight: bold;
   line-height: normal;
@@ -11218,7 +11197,7 @@ body {
 }
 
 .dataTable td {
-  font-family: Rubik;
+  font-family: 'Rubik', 'Arial', sans-serif;
   font-style: normal;
   font-weight: normal;
   line-height: normal;
@@ -11234,7 +11213,7 @@ body {
 }
 
 .dataTable__address {
-  font-family: Ubuntu;
+  font-family: 'Rubik', 'Arial', sans-serif;
   font-style: normal;
   line-height: normal;
   font-size: 14px;
@@ -11242,7 +11221,7 @@ body {
 }
 
 .dataTable strong {
-  font-family: Ubuntu;
+  font-family: 'Rubik', 'Arial', sans-serif;
   font-style: normal;
   font-weight: bold;
   line-height: normal;
@@ -11250,7 +11229,7 @@ body {
 }
 
 .dataTable__link {
-  font-family: Rubik;
+  font-family: 'Rubik', 'Arial', sans-serif;
   font-style: normal;
   font-weight: normal;
   line-height: normal;
@@ -11273,6 +11252,29 @@ body {
   border-bottom: 3px solid #F2F2F2;
 }
 
+.welcome {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.welcome__item {
+  padding: 15px 15px 0;
+}
+
+.welcome__item--registration {
+  border-right: 1px solid #f2c94c;
+}
+
+.welcome__link {
+  color: #f2c94c;
+}
+
+.welcome__link:hover {
+  color: #f2c94c;
+  text-decoration: underline;
+}
+
 .modalFrame {
   background: #FFFFFF;
   -webkit-box-shadow: 0px 0px 70px #E0E0E0;
@@ -11289,14 +11291,14 @@ body {
 }
 
 .modalFrame__title {
-  font-family: SeingaltTrial;
+  font-family: 'Rubik', 'Arial', sans-serif;
   font-size: 22px;
   text-align: center;
   color: #4F4F4F;
 }
 
 .modalFrame__subtitle {
-  font-family: SeingaltTrial;
+  font-family: 'Rubik', 'Arial', sans-serif;
   font-size: 16px;
   text-align: center;
   color: #4F4F4F;
@@ -11316,7 +11318,7 @@ body {
 .formRegText {
   text-align: center;
   margin: 30px 0;
-  font-family: Rubik;
+  font-family: 'Rubik', 'Arial', sans-serif;
   font-style: normal;
   font-weight: 300;
   line-height: normal;
@@ -11341,7 +11343,7 @@ body {
   display: inline-block;
   width: 100%;
   height: 50px;
-  font-family: Rubik;
+  font-family: 'Rubik', 'Arial', sans-serif;
   font-style: normal;
   font-weight: 300;
   line-height: normal;
@@ -11389,7 +11391,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-family: Rubik;
+  font-family: 'Rubik', 'Arial', sans-serif;
   font-style: normal;
   font-weight: normal;
   line-height: normal;
@@ -11438,7 +11440,7 @@ body {
   -webkit-box-shadow: 0 0 0 2px #FDCA0E;
           box-shadow: 0 0 0 2px #FDCA0E;
   background: transparent;
-  font-family: Ubuntu;
+  font-family: 'Rubik', 'Arial', sans-serif;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
@@ -11471,7 +11473,7 @@ body {
 }
 
 .minumudDeposit {
-  font-family: Rubik;
+  font-family: 'Rubik', 'Arial', sans-serif;
   font-style: normal;
   font-weight: 300;
   line-height: normal;
@@ -11481,7 +11483,7 @@ body {
 }
 
 .setGas {
-  font-family: Rubik;
+  font-family: 'Rubik', 'Arial', sans-serif;
   font-style: normal;
   font-weight: 300;
   line-height: normal;
@@ -11536,7 +11538,6 @@ body {
 }
 
 .timer__numberValue {
-  font-family: Ubuntu;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
@@ -11558,6 +11559,7 @@ body {
   background: rgba(242, 242, 242, 0.47);
   border-radius: 0 0 10px 10px;
   width: 100%;
+  font-size: 16px;
 }
 
 .timer__dots {
@@ -11607,7 +11609,6 @@ body {
   width: 100%;
   height: 28px;
   line-height: 28px;
-  font-family: Rubik;
   font-style: normal;
   font-weight: 500;
   position: relative;
@@ -11680,7 +11681,7 @@ body {
   white-space: nowrap;
   display: inline-block;
   vertical-align: middle;
-  font-family: Rubik;
+  font-family: 'Rubik', 'Arial', sans-serif;
   font-style: normal;
   font-weight: normal;
   line-height: normal;
@@ -11722,7 +11723,7 @@ body {
 
 .period {
   padding: 10px 0 20px 0;
-  font-family: Rubik;
+  font-family: 'Rubik', 'Arial', sans-serif;
   font-style: normal;
   font-weight: 300;
   line-height: normal;
@@ -11758,11 +11759,11 @@ body {
 }
 
 .legend-con {
-  font-family: Ubuntu;
   display: inline-block;
 }
 
 .legend-con ul {
+  padding: 0;
   list-style: none;
 }
 
@@ -11788,7 +11789,7 @@ body {
 }
 
 .legend-con .chart-legend-label-text {
-  font-family: Rubik;
+  font-family: 'Rubik', 'Arial', sans-serif;
   font-style: normal;
   font-weight: 300;
   line-height: normal;
@@ -11802,7 +11803,7 @@ body {
 }
 
 .btn--whitePaper {
-  padding-left: 90px;
+  padding-left: 77px;
   max-width: 100%;
   padding-right: 40px !important;
 }
@@ -11841,7 +11842,7 @@ body {
   position: relative;
   padding: 0 0 0 28px;
   cursor: pointer;
-  font-family: Rubik;
+  font-family: 'Rubik', 'Arial', sans-serif;
   font-style: normal;
   font-weight: 300;
   line-height: normal;
@@ -11867,9 +11868,9 @@ body {
 }
 
 .dropzone {
-  height: 130px;
+  height: 210px;
   position: relative;
-  margin-top: 44px;
+  margin-top: 20px;
 }
 
 .wrapper {
@@ -11879,8 +11880,8 @@ body {
 
 .drop {
   width: 96%;
-  height: 130px;
-  border: 2px dotted #E0E0E0;
+  height: 210px;
+  border: 3px dotted #E0E0E0;
   overflow: hidden;
   text-align: center;
   background: white;
@@ -11892,10 +11893,6 @@ body {
   left: 0;
   bottom: 0;
   right: 0;
-  /*&:hover
-   * cursor: pointer
-   * background: #f5f5f5 */
-  border: 3px dashed #dadfe3;
   background: transparent none repeat scroll 0% 0%;
 }
 
@@ -11923,7 +11920,7 @@ body {
 }
 
 .drop .cont .desc {
-  font-family: Rubik;
+  font-family: 'Rubik', 'Arial', sans-serif;
   font-style: normal;
   font-weight: 300;
   line-height: normal;
@@ -11953,6 +11950,41 @@ body {
   left: 0;
   bottom: 0;
   right: 0;
+}
+
+.drop .qq-gallery.qq-uploader {
+  padding: 0;
+  border: none;
+}
+
+.drop .qq-gallery .qq-upload-button {
+  position: absolute !important;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 180px;
+  padding-top: 70px !important;
+  font-family: 'Rubik', 'Arial', sans-serif;
+  font-size: 12px;
+  line-height: 14px;
+  color: #4F4F4F;
+  background-color: transparent;
+  border: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.drop .qq-gallery .qq-upload-button::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 32px;
+  height: 32px;
+  background-image: url(/img/plus.svg);
+  background-repeat: no-repeat;
 }
 
 .referral__table-wrap {
@@ -12073,7 +12105,7 @@ body {
 }
 
 .avatarSettings__note {
-  font-family: Ubuntu;
+  font-family: 'Rubik', 'Arial', sans-serif;
   font-style: normal;
   font-weight: 300;
   line-height: 27px;
@@ -12092,7 +12124,7 @@ body {
 
 .settingsActions__link {
   display: block;
-  font-family: Rubik;
+  font-family: 'Rubik', 'Arial', sans-serif;
   font-style: normal;
   font-weight: 300;
   line-height: normal;
@@ -12111,7 +12143,7 @@ body {
   background: #E0E0E0;
   display: inline-block;
   margin: 0 5px;
-  font-family: Rubik;
+  font-family: 'Rubik', 'Arial', sans-serif;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
@@ -12176,7 +12208,7 @@ body {
 }
 
 .userInfo__text {
-  font-family: Rubik;
+  font-family: 'Rubik', 'Arial', sans-serif;
   font-style: normal;
   font-weight: 300;
   line-height: 28px;
@@ -12197,7 +12229,7 @@ body {
 .mainMenu__link {
   display: block;
   padding: 20px 0;
-  font-family: Rubik;
+  font-family: 'Rubik', 'Arial', sans-serif;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
