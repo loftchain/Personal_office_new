@@ -15,4 +15,6 @@ return [
     //admin
     'aVerification' => 'Verification',
     'aHistory' => 'History',
+    'aReferrals' => 'Referrals',
+    'aTransactions' => 'Transactions'
 ];

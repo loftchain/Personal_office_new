@@ -15,4 +15,6 @@ return [
     //admin
     'aVerification' => 'Проверка',
     'aHistory' => 'История',
+    'aReferrals' => 'Рефералы',
+    'aTransactions' => 'Транзакции'
 ];

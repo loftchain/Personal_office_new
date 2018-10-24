@@ -9,11 +9,17 @@
         </div>
         <div class="mainMenu">
             <ul class="mainMenu__list">
-                <li class="mainMenu__item mainMenu__item--active"><a class="mainMenu__link"
+                <li class="mainMenu__item"><a class="mainMenu__link"
                                                                      href="{{ route('admin.kyc') }}">{!! trans('home/menu.aVerification') !!}</a>
                 </li>
                 <li class="mainMenu__item"><a class="mainMenu__link"
                                                                      href="{{ route('admin.history') }}">{!! trans('home/menu.aHistory') !!}</a>
+                </li>
+                <li class="mainMenu__item"><a class="mainMenu__link"
+                                                                     href="{{ route('admin.referral') }}">{!! trans('home/menu.aReferrals') !!}</a>
+                </li>
+                <li class="mainMenu__item"><a class="mainMenu__link"
+                                                                     href="{{ route('admin.transaction') }}">{!! trans('home/menu.aTransactions') !!}</a>
                 </li>
             </ul>
         </div>
