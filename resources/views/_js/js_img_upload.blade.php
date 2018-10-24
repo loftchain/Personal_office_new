@@ -36,7 +36,7 @@
                 setTimeout(function () {
                     location.reload();
 
-                }, 200)
+                }, 500)
 
             },
 
