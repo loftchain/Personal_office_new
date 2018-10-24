@@ -61,8 +61,3 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['admin']],
 
 Route::get('/storage/{path}', 'SettingsController@getAvatar')->name('settings.get.avatar');
 Route::get('settings', 'HomeController@settings')->name('home.settings');
-
-Route::post('test', function (){
-    $bonus = \App\Services\BonusService::class;
-    dd($bonus->getLatestCurrencies());
-});
