@@ -53,21 +53,25 @@
                                         </div>
                                         <div class="col-md-4">
                                             <div class="formControl">
-                                                <label class="icoForm__label">{!! trans('home/kyc.kyc_fullName') !!}</label>
-                                                <input class="icoForm__input" type="text" name="name" required>
+                                                <label class="icoForm__label" for="full-name">{!! trans('home/kyc.kyc_fullName') !!}</label>
+                                                <input class="icoForm__input" id="full-name" type="text" name="name" required>
                                             </div>
                                             <div class="formControl">
-                                                <label class="icoForm__label">{!! trans('home/kyc.kyc_phone') !!}</label>
-                                                <input class="icoForm__input" type="text" name="phone" required>
+                                                <label class="icoForm__label" for="phone-number">{!! trans('home/kyc.kyc_phone') !!}</label>
+                                                <input class="icoForm__input" id="phone-number" type="text" name="phone" required>
+                                            </div>
+                                            <div class="formControl">
+                                                <label class="icoForm__label" for="permanent-address">Permanent address</label>
+                                                <input class="icoForm__input" id="permanent-address" type="text" name="address" required>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="formControl">
-                                                <label class="icoForm__label">{!! trans('home/kyc.kyc_dateOfBirth') !!}</label>
+                                                <label class="icoForm__label" for="birthday">{!! trans('home/kyc.kyc_dateOfBirth') !!}</label>
                                                 <div class="row no-gutters">
                                                     <div class="col-3">
                                                         <div class="icoForm__selectContainer">
-                                                            <select class="icoForm__select" name="day">
+                                                            <select class="icoForm__select" id="birthday" name="day">
                                                                 <option value="">{!! trans('home/kyc.kyc_day') !!}   </option>
                                                                 <option value="1">1</option>
                                                                 <option value="2">2</option>
@@ -135,8 +139,12 @@
                                                 </div>
                                             </div>
                                             <div class="formControl">
-                                                <label class="icoForm__label">{!! trans('home/kyc.kyc_zipCode') !!}</label>
-                                                <input class="icoForm__input" type="text" name="zip" required>
+                                                <label class="icoForm__label" for="zip-code">{!! trans('home/kyc.kyc_zipCode') !!}</label>
+                                                <input class="icoForm__input" id="zip-code" type="text" name="zip" required>
+                                            </div>
+                                            <div class="formControl">
+                                                <label class="icoForm__label" for="telegram">Telegram</label>
+                                                <input class="icoForm__input" id="telegram" type="text" name="telegram">
                                             </div>
                                         </div>
                                     </div>

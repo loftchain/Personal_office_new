@@ -10744,6 +10744,7 @@ body {
   font-size: 14px;
   color: #4F4F4F;
   display: block;
+  cursor: pointer;
 }
 
 .icoForm__selectContainer {
