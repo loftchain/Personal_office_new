@@ -10819,6 +10819,7 @@ body {
 }
 
 .sidebar {
+  position: relative;
   width: 318px;
   -webkit-box-shadow: -10px 0px 30px #E0E0E0;
           box-shadow: -10px 0px 30px #E0E0E0;
@@ -10853,6 +10854,24 @@ body {
   height: 100%;
   top: 53px;
   z-index: 100;
+}
+
+.sidebar__logout {
+  position: absolute;
+  bottom: 80px;
+  left: 63px;
+  font-size: 20px;
+  color: #BDBDBD;
+}
+
+.sidebar__logout:hover {
+  color: #F2C94C;
+}
+
+@media (max-width: 992px) {
+  .sidebar__logout {
+    bottom: 90px;
+  }
 }
 
 .workArea {
@@ -11252,7 +11271,70 @@ body {
   border-bottom: 3px solid #F2F2F2;
 }
 
-.welcome {
+.dropbtn {
+  background-color: transparent;
+  color: #F2C94C;
+  padding: 5px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f7ea;
+  min-width: 160px;
+  -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 10px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ffffff;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #F2C94C;
+  color: #ffffff;
+}
+
+.welcome__header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding-right: 150px;
+  padding-top: 40px;
+}
+
+.welcome__button-language {
+  color: #4f4f4f;
+}
+
+.welcome__wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11273,6 +11355,33 @@ body {
 .welcome__link:hover {
   color: #f2c94c;
   text-decoration: underline;
+}
+
+.welcome__link--password {
+  color: #4f4f4f;
+}
+
+.welcome__link--password:hover {
+  color: #4f4f4f;
+}
+
+@media (max-width: 992px) {
+  .welcome__header {
+    padding-right: 60px;
+  }
+
+  .welcome {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 100vh;
+  }
 }
 
 .modalFrame {
@@ -11333,6 +11442,15 @@ body {
 
 .formRegText .link:hover {
   text-decoration: none;
+}
+
+.g-recaptcha {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .btnSecondary {
@@ -12136,7 +12254,7 @@ body {
 }
 
 .settingsActions__langSelector {
-  margin-top: 40px;
+  margin-top: 18px;
 }
 
 .settingsActions__langSelectorBtn {
@@ -12171,6 +12289,12 @@ body {
 
 .hidden {
   display: none;
+}
+
+.settings__button-language {
+  font-size: 14px;
+  font-weight: 300;
+  padding-left: 0;
 }
 
 .modalMessage {

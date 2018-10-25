@@ -1,4 +1,19 @@
-.welcome {
+.welcome__header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 150px;
+  padding-top: 40px;
+}
+
+.welcome__button-language {
+  color: #4f4f4f;
+}
+
+.welcome__wrapper {
   display: flex;
 }
 
@@ -16,5 +31,25 @@
   &:hover {
     color: #f2c94c;
     text-decoration: underline;
+  }
+
+  &--password {
+    color: #4f4f4f;
+
+    &:hover {
+      color: #4f4f4f;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .welcome__header {
+    padding-right: 60px;
+  }
+  .welcome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
   }
 }

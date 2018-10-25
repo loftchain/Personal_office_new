@@ -47,7 +47,7 @@
     margin: 7px 0;
   }
   &__langSelector {
-    margin-top: 40px;
+    margin-top: 18px;
   }
   &__langSelectorBtn {
     background: #E0E0E0;
@@ -78,4 +78,10 @@
 
 .hidden {
   display: none;
+}
+
+.settings__button-language {
+  font-size: 14px;
+  font-weight: 300;
+  padding-left: 0;
 }

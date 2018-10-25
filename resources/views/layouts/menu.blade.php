@@ -23,7 +23,9 @@
                 </li>
             </ul>
         </div>
+        <a class="sidebar__logout" href="{{ route('logout') }}"><i class="fas fa-sign-out-alt"></i></a>
     </div>
+
 @else
     <div class="sidebar jsSidebar">
         <div class="userInfo">
@@ -52,5 +54,7 @@
                 </li>
             </ul>
         </div>
+        <a class="sidebar__logout" href="{{ route('logout') }}"><i class="fas fa-sign-out-alt"></i></a>
     </div>
+
 @endif
