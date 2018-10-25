@@ -120,7 +120,7 @@
                                 <div class="basicBlock__text">
                                     <p>Hard cap: {{ env('ICO_HARD_CAP') }}$</p>
                                     <p>Soft Cap: {{ env('ICO_SOFT_CAP') }}$</p>
-                                    <p>Current price: {{ $data['currentPrice'] ? $data['currentPrice'] : ''}}$</p>
+                                    <p>Current price: {{ isset($data['currentPrice']) ? $data['currentPrice'] . '$' : 'Not for sale'}}</p>
                                     <p>Minimum deposit amount: 0.1 ETH</p><br>
                                     <p>1 ETH = 13000 TGF</p>
                                 </div>
