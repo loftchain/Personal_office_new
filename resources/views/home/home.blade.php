@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
     <div class="workArea jsWorkArea">
         <div class="mobileMenuBtn">
             <button class="cmn-toggle-switch cmn-toggle-switch__htx"><span>toggle menu</span></button>
@@ -118,8 +117,9 @@
                             <div class="basicBlock__content">
                                 <div class="basicBlock__title">{!! trans('home/home.round_info') !!}</div>
                                 <div class="basicBlock__text">
-                                    <p>Soft Cap: 250 ETH</p>
-                                    <p>Hard Cap: 770 ETH</p>
+                                    <p>Hard cap: {{ env('ICO_HARD_CAP') }}$</p>
+                                    <p>Soft Cap: {{ env('ICO_SOFT_CAP') }}$</p>
+                                    <p>Current price: {{ isset($data['currentPrice']) ? $data['currentPrice'] . '$' : 'Not for sale'}}</p>
                                     <p>Minimum deposit amount: 0.1 ETH</p><br>
                                     <p>1 ETH = 13000 TGF</p>
                                 </div>

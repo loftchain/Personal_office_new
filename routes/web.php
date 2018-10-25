@@ -37,6 +37,8 @@ Route::post('/change/email', 'Auth\ChangeEmailController@reset_email')->name('em
 Route::post('/change/password', 'Auth\ChangePasswordController@renew_password')->name('password.change');
 //--------------------------------------------------------------------------------
 
+Route::any('/logout', 'Auth\LoginController@logout')->name('logout');
+
 Route::group(['prefix' => 'home', 'as' => 'home.', 'middleware' => ['auth', 'isEmail']], function (){
     Route::get('/', 'HomeController@index')->name('index');
     Route::get('/verification', 'KycController@index')->name('kyc');
@@ -55,9 +57,9 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['admin']],
    Route::get('/verification/{investor}/confirm', 'Admin\KycController@confirm')->name('kyc.confirm');
    Route::get('/verification/{investor}/reject', 'Admin\KycController@rejected')->name('kyc.reject');
    Route::get('/history', 'Admin\HistoryController@index')->name('history');
+   Route::get('/referral', 'Admin\ReferralController@index')->name('referral');
+   Route::get('/transaction', 'Admin\TransactionController@index')->name('transaction');
 });
 
 Route::get('/storage/{path}', 'SettingsController@getAvatar')->name('settings.get.avatar');
 Route::get('settings', 'HomeController@settings')->name('home.settings');
-
-Route::post('admin/test', 'Admin\KycController@users');

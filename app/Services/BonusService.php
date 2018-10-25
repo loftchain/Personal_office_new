@@ -43,9 +43,7 @@ class BonusService
             $stageData['stageEnd'] = \DateTime::createFromFormat('U', env('ICO_START'))->format('d.m.Y');
             $stageData['stageLabel'] = 'ICO';
             $stageData['stageTitle'] = Lang::get('home/widget.beforeStart_js') . ' ' . $stageData['stageLabel'];
-            $stageData['bonus<10'] = 0;
-            $stageData['bonus10-100'] = 0;
-            $stageData['bonus100+'] = 0;
+            $stageData['bonus'] = 0;
         } else if ($currTime < \DateTime::createFromFormat('U', env('ICO_END'))) {
             $stageData['stage'] = 1;
             $stageData['timerBegin'] = env('ICO_START');
@@ -55,32 +53,40 @@ class BonusService
             $stageData['stageEnd'] = \DateTime::createFromFormat('U', env('ICO_END'))->format('d.m.Y');
             $stageData['stageLabel'] = 'ICO';
             $stageData['stageTitle'] = Lang::get('home/widget.beforeEnd_js') . ' ' . $stageData['stageLabel'];
+            $stageData['currentPrice'] = 0.10;
 
             switch (true) {
-                case $time <= env('1_BONUS_24h'):
-                    $stageData['bonus<10'] = 20;
-                    $stageData['bonus10-100'] = 22.5;
-                    $stageData['bonus100+'] = 25;
+                case $time <= env('1_BONUS_3m_END'):
+                    $stageData['bonus'] = 30;
+                    $stageData['currentPrice'] = 0.10;
                     break;
-                case $time > env('1_BONUS_24h') && $time <= env('2_BONUS_1w'):
-                    $stageData['bonus<10'] = 15;
-                    $stageData['bonus10-100'] = 17.5;
-                    $stageData['bonus100+'] = 20;
+                case $time > env('1_BONUS_3m_END') && $time <= env('2_BONUS_1m_END'):
+                    $stageData['bonus'] = 30;
+                    $stageData['currentPrice'] = 0.14;
                     break;
-                case $time > env('2_BONUS_1w') && $time <= env('3_BONUS_2w'):
-                    $stageData['bonus<10'] = 5;
-                    $stageData['bonus10-100'] = 7.5;
-                    $stageData['bonus100+'] = 10;
+                case $time > env('2_BONUS_1m_END') && $time <= env('3_BONUS_1m_END'):
+                    $stageData['bonus'] = 25;
+                    $stageData['currentPrice'] = 0.15;
                     break;
-                case $time > env('3_BONUS_2w') && $time <= env('4_BONUS_3w'):
-                    $stageData['bonus<10'] = 1;
-                    $stageData['bonus10-100'] = 1;
-                    $stageData['bonus100+'] = 1;
+                case $time > env('3_BONUS_1m_END') && $time <= env('4_BONUS_1m_END'):
+                    $stageData['bonus'] = 20;
+                    $stageData['currentPrice'] = 0.16;
                     break;
-                case $time > env('4_BONUS_3w'):
-                    $stageData['bonus<10'] = 0;
-                    $stageData['bonus10-100'] = 0;
-                    $stageData['bonus100+'] = 0;
+                case $time > env('4_BONUS_1m_END') && $time <= env('5_BONUS_1m_END'):
+                    $stageData['bonus'] = 15;
+                    $stageData['currentPrice'] = 0.17;
+                    break;
+                case $time > env('5_BONUS_1m_END') && $time <= env('6_BONUS_1m_END'):
+                    $stageData['bonus'] = 10;
+                    $stageData['currentPrice'] = 0.18;
+                    break;
+                case $time > env('6_BONUS_1m_END') && $time <= env('7_BONUS_1m_END'):
+                    $stageData['bonus'] = 5;
+                    $stageData['currentPrice'] = 0.19;
+                    break;
+                case $time > env('7_BONUS_1m_END') && $time <= env('8_BONUS_1m_END'):
+                    $stageData['bonus'] = 0;
+                    $stageData['currentPrice'] = 0.20;
                     break;
             }
         } else {
@@ -92,9 +98,7 @@ class BonusService
             $stageData['stageEnd'] = '';
             $stageData['stageLabel'] = 'ICO';
             $stageData['stageTitle'] = Lang::get('home/widget.crowdSaleFinished_js');
-            $stageData['bonus<10'] = 0;
-            $stageData['bonus10-100'] = 0;
-            $stageData['bonus100+'] = 0;
+            $stageData['bonus'] = 0;
         }
 
         return $stageData;
