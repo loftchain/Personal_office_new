@@ -114,6 +114,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: 'Rubik', 'Arial', sans-serif;
   @media(max-width: 992px) {
     display: block;
   }
@@ -125,7 +126,7 @@ body {
 }
 
 .link {
-  font-family: Rubik;
+  font-family: 'Rubik', 'Arial', sans-serif;
   font-style: normal;
   font-weight: 300;
   line-height: normal;
@@ -145,7 +146,7 @@ body {
   box-sizing: border-box;
   width: 100%;
   padding: 13px 20px;
-  font-family: Rubik;
+  font-family: 'Rubik', 'Arial', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -194,7 +195,7 @@ body {
     line-height: 40px;
     padding: 0 10px;
     background: transparent;
-    font-family: Rubik;
+    font-family: 'Rubik', 'Arial', sans-serif;
     font-style: normal;
     font-weight: 300;
 
@@ -230,7 +231,7 @@ body {
     background: transparent;
     height: 28px;
     line-height: 28px;
-    font-family: Rubik;
+    font-family: 'Rubik', 'Arial', sans-serif;
     font-style: normal;
     font-weight: 300;
     line-height: normal;
@@ -247,13 +248,14 @@ body {
     cursor: pointer;
   }
   &__label {
-    font-family: Rubik;
+    font-family: 'Rubik', 'Arial', sans-serif;
     font-style: normal;
     font-weight: 300;
     line-height: normal;
     font-size: 14px;
     color: #4F4F4F;
     display: block;
+    cursor: pointer;
   }
   &__selectContainer {
     position: relative;
@@ -279,6 +281,8 @@ body {
     line-height: 40px;
     height: 40px;
     width: 100%;
+    color: #4f4f4f;
+    font-weight: 300;
     background: transparent;
     padding-left: 9px;
     -webkit-appearance: none;
@@ -311,6 +315,7 @@ body {
 }
 
 .sidebar {
+  position: relative;
   width: 318px;
   box-shadow: -10px 0px 30px #E0E0E0;
   background: #fff;
@@ -338,6 +343,22 @@ body {
   z-index: 100;
 }
 
+.sidebar__logout {
+  position: absolute;
+  bottom: 80px;
+  left: 63px;
+  font-size: 20px;
+  color: #BDBDBD;
+
+  &:hover {
+    color: #F2C94C;
+  }
+
+  @media(max-width: 992px) {
+    bottom: 90px;
+  }
+}
+
 .workArea {
   flex: 1 1 auto;
   display: flex;
@@ -351,7 +372,7 @@ body {
   z-index: 20;
   background: linear-gradient(90deg, #FFC701 0%, #FFE13A 100%);
   color: #fff;
-  font-family: Rubik;
+  font-family: 'Rubik', 'Arial', sans-serif;
   font-style: normal;
   font-weight: normal;
   line-height: normal;
@@ -426,7 +447,7 @@ body {
     }
   }
   &__bonusText {
-    font-family: Rubik;
+    font-family: 'Rubik', 'Arial', sans-serif;
     font-style: normal;
     font-weight: bold;
     line-height: normal;
@@ -447,7 +468,7 @@ body {
     }
   }
   &__title {
-    font-family: Rubik;
+    font-family: 'Rubik', 'Arial', sans-serif;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -457,7 +478,7 @@ body {
     margin: 0 0 12px 0;
   }
   &__text {
-    font-family: Rubik;
+    font-family: 'Rubik', 'Arial', sans-serif;
     font-style: normal;
     font-weight: 300;
     line-height: normal;
@@ -488,7 +509,7 @@ body {
     padding: 56px 0 46px 0;
   }
   &__subtitle {
-    font-family: Rubik;
+    font-family: 'Rubik', 'Arial', sans-serif;
     font-style: normal;
     font-weight: 300;
     line-height: normal;
@@ -549,10 +570,9 @@ body {
     margin: 15px 0;
   }
   &__itemTitle {
-    font-family: Rubik;
+    font-family: 'Rubik', 'Arial', sans-serif;
     font-style: normal;
     font-weight: 500;
-    line-height: normal;
     font-size: 16px;
     text-transform: uppercase;
     color: #4F4F4F;
@@ -574,7 +594,7 @@ body {
     border-top: 1px solid #F2F2F2;
     margin-top: 10px;
     padding-top: 13px;
-    font-family: Ubuntu;
+    font-family: 'Rubik', 'Arial', sans-serif;
     font-style: normal;
     font-weight: 300;
     line-height: normal;
@@ -582,7 +602,7 @@ body {
     color: #BDBDBD;
   }
   &__itemValue {
-    font-family: Ubuntu;
+    font-family: 'Rubik', 'Arial', sans-serif;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -605,7 +625,7 @@ body {
     background: #fff;
   }
   th {
-    font-family: Rubik;
+    font-family: 'Rubik', 'Arial', sans-serif;
     font-style: normal;
     font-weight: bold;
     line-height: normal;
@@ -613,7 +633,7 @@ body {
     color: #4F4F4F;
   }
   td {
-    font-family: Rubik;
+    font-family: 'Rubik', 'Arial', sans-serif;
     font-style: normal;
     font-weight: normal;
     line-height: normal;
@@ -626,21 +646,21 @@ body {
     color: #F2C94C;
   }
   &__address {
-    font-family: Ubuntu;
+    font-family: 'Rubik', 'Arial', sans-serif;
     font-style: normal;
     line-height: normal;
     font-size: 14px;
     color: #4F4F4F;
   }
   strong {
-    font-family: Ubuntu;
+    font-family: 'Rubik', 'Arial', sans-serif;
     font-style: normal;
     font-weight: bold;
     line-height: normal;
     font-size: 14px;
   }
   &__link {
-    font-family: Rubik;
+    font-family: 'Rubik', 'Arial', sans-serif;
     font-style: normal;
     font-weight: normal;
     line-height: normal;
@@ -659,4 +679,45 @@ body {
   tr {
     border-bottom: 3px solid #F2F2F2;
   }
+}
+
+.dropbtn {
+  background-color: transparent;
+  color: #F2C94C;
+  padding: 5px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f7ea;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 10px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ffffff}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #F2C94C;
+  color: #ffffff;
 }

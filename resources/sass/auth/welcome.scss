@@ -1,0 +1,55 @@
+.welcome__header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 150px;
+  padding-top: 40px;
+}
+
+.welcome__button-language {
+  color: #4f4f4f;
+}
+
+.welcome__wrapper {
+  display: flex;
+}
+
+.welcome__item {
+  padding: 15px 15px 0;
+
+  &--registration {
+    border-right: 1px solid #f2c94c;
+  }
+}
+
+.welcome__link {
+  color: #f2c94c;
+
+  &:hover {
+    color: #f2c94c;
+    text-decoration: underline;
+  }
+
+  &--password {
+    color: #4f4f4f;
+
+    &:hover {
+      color: #4f4f4f;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .welcome__header {
+    padding-right: 60px;
+  }
+  .welcome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+}
