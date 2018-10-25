@@ -148,32 +148,60 @@
                                 <div class="basicBlock__title text-center">{!! trans('home/home.deposit_bonus') !!}</div>
                                 <div class="bonuses">
                                     <div class="row">
-                                        <div class="col-md-3">
+                                        <div class="col-md-3 col-lg-4 col-xl-3">
                                             <div class="bonuses__item">
-                                                <div class="bonuses__itemTitle">1 ETH</div>
+                                                <div class="bonuses__itemTitle">29 Oct 2018 to <span>27 Jan 2019</span></div>
                                                 <div class="bonuses__itemCaption"> Bonus</div>
-                                                <div class="bonuses__itemValue">10% </div>
+                                                <div class="bonuses__itemValue">30% </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-3">
+                                        <div class="col-md-3 col-lg-4 col-xl-3">
                                             <div class="bonuses__item">
-                                                <div class="bonuses__itemTitle">4 ETH</div>
-                                                <div class="bonuses__itemCaption"> Bonus</div>
-                                                <div class="bonuses__itemValue">15% </div>
+                                                <div class="bonuses__itemTitle">28 Jan 2019 to <span>24 Feb 2019</span></div>
+                                                <div class="bonuses__itemCaption">Bonus</div>
+                                                <div class="bonuses__itemValue">30%</div>
                                             </div>
                                         </div>
-                                        <div class="col-md-3">
+                                        <div class="col-md-3 col-lg-4 col-xl-3">
                                             <div class="bonuses__item">
-                                                <div class="bonuses__itemTitle">8 ETH</div>
-                                                <div class="bonuses__itemCaption"> Bonus</div>
-                                                <div class="bonuses__itemValue">20% </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <div class="bonuses__item">
-                                                <div class="bonuses__itemTitle">10 ETH</div>
-                                                <div class="bonuses__itemCaption"> Bonus</div>
+                                                <div class="bonuses__itemTitle">25 Feb 2019 to <span>24 Mar 2019</span></div>
+                                                <div class="bonuses__itemCaption">Bonus</div>
                                                 <div class="bonuses__itemValue">25%</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-lg-4 col-xl-3">
+                                            <div class="bonuses__item">
+                                                <div class="bonuses__itemTitle">25 Mar 2019 to <span>28 Apr 2019</span></div>
+                                                <div class="bonuses__itemCaption">Bonus</div>
+                                                <div class="bonuses__itemValue">20%</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-lg-4 col-xl-3">
+                                            <div class="bonuses__item">
+                                                <div class="bonuses__itemTitle">29 Apr 2019 to <span>26 May 2019</span></div>
+                                                <div class="bonuses__itemCaption">Bonus</div>
+                                                <div class="bonuses__itemValue">15%</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-lg-4 col-xl-3">
+                                            <div class="bonuses__item">
+                                                <div class="bonuses__itemTitle">27 May 2019 to <span>23 June 2019</span></div>
+                                                <div class="bonuses__itemCaption">Bonus</div>
+                                                <div class="bonuses__itemValue">10%</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-lg-4 col-xl-3">
+                                            <div class="bonuses__item">
+                                                <div class="bonuses__itemTitle">24 June 2019 to <span>28 Jul 2019</span></div>
+                                                <div class="bonuses__itemCaption">Bonus</div>
+                                                <div class="bonuses__itemValue">5%</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-lg-4 col-xl-3">
+                                            <div class="bonuses__item">
+                                                <div class="bonuses__itemTitle">29 Jul 2019 to <span>25 Aug 2019</span></div>
+                                                <div class="bonuses__itemCaption">Bonus</div>
+                                                <div class="bonuses__itemValue">no bonus</div>
                                             </div>
                                         </div>
                                     </div>

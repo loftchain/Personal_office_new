@@ -11155,18 +11155,10 @@ body {
   color: #4F4F4F;
   line-height: 25px;
   position: relative;
-  padding-left: 25px;
 }
 
-.bonuses__itemTitle:before {
-  content: '';
-  width: 15px;
-  margin-left: -25px;
-  height: 25px;
-  position: absolute;
-  display: inline-block;
-  background: url(/img/eth.svg) no-repeat 0 0 transparent;
-  background-size: contain;
+.bonuses__itemTitle span {
+  display: block;
 }
 
 .bonuses__itemCaption {
@@ -11186,7 +11178,7 @@ body {
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-  font-size: 40px;
+  font-size: 31px;
   color: #F9CD2B;
   margin: 10px 0;
 }
