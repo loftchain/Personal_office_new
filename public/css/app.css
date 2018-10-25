@@ -10819,6 +10819,7 @@ body {
 }
 
 .sidebar {
+  position: relative;
   width: 318px;
   -webkit-box-shadow: -10px 0px 30px #E0E0E0;
           box-shadow: -10px 0px 30px #E0E0E0;
@@ -10853,6 +10854,24 @@ body {
   height: 100%;
   top: 53px;
   z-index: 100;
+}
+
+.sidebar__logout {
+  position: absolute;
+  bottom: 80px;
+  left: 63px;
+  font-size: 20px;
+  color: #BDBDBD;
+}
+
+.sidebar__logout:hover {
+  color: #F2C94C;
+}
+
+@media (max-width: 992px) {
+  .sidebar__logout {
+    bottom: 90px;
+  }
 }
 
 .workArea {
