@@ -11335,6 +11335,15 @@ body {
   text-decoration: none;
 }
 
+.g-recaptcha {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .btnSecondary {
   border: 1px solid #FFD826;
   -webkit-box-sizing: border-box;
