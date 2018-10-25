@@ -11255,7 +11255,7 @@ body {
 .dropbtn {
   background-color: transparent;
   color: #F2C94C;
-  padding: 16px;
+  padding: 5px;
   font-size: 16px;
   border: none;
   cursor: pointer;
@@ -11269,7 +11269,7 @@ body {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f5f5f5;
+  background-color: #f9f7ea;
   min-width: 160px;
   -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
@@ -12270,6 +12270,12 @@ body {
 
 .hidden {
   display: none;
+}
+
+.settings__button-language {
+  font-size: 14px;
+  font-weight: 300;
+  padding-left: 0;
 }
 
 .modalMessage {

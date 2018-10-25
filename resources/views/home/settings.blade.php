@@ -17,7 +17,7 @@
                                     {!! trans('layouts/message.messageNoEmail') !!}
                                 </div>
                                 @endif
-                                <div class="basicBlock basicBlock--single">
+                                <div class="basicBlock basicBlock--single settings">
                                     <div class="basicBlock__content">
                                         <div class="basicBlock__title text-left">{!! trans('home/settings.title') !!}</div>
                                         <div class="row">
@@ -53,8 +53,18 @@
                                                     <a class="settingsActions__link jsChangePassword" href="#">Change password</a>
                                                     <a class="settingsActions__link jsLogOut" href="#">Log out</a>
                                                     <div class="settingsActions__langSelector">
-                                                        <a class="settingsActions__langSelectorBtn" href="{{ route('lang.switch', 'ru') }}">RU</a>
-                                                        <span class="settingsActions__langSelectorBtn settingsActions__langSelectorBtn--active">ENG</span>
+                                                        <div class="dropdown">
+                                                            <button class="dropbtn settings__button-language">Languages</button>
+                                                            <div class="dropdown-content">
+                                                                <a href="#">English</a>
+                                                                <a href="#">Russian</a>
+                                                                <a href="#">Mandarin(Chinise)</a>
+                                                                <a href="#">Spanish</a>
+                                                                <a href="#">Japanese</a>
+                                                            </div>
+                                                        </div>
+                                                        {{--<a class="settingsActions__langSelectorBtn" href="{{ route('lang.switch', 'ru') }}">RU</a>--}}
+                                                        {{--<span class="settingsActions__langSelectorBtn settingsActions__langSelectorBtn--active">ENG</span>--}}
                                                     </div>
                                                 </div>
                                             </div>
