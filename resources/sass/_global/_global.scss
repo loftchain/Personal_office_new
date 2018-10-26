@@ -345,10 +345,11 @@ body {
 
 .sidebar__logout {
   position: absolute;
-  bottom: 80px;
+  bottom: 50px;
   left: 63px;
   font-size: 20px;
   color: #BDBDBD;
+  transform: rotate(180deg);
 
   &:hover {
     color: #F2C94C;

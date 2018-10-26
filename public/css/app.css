@@ -10858,10 +10858,12 @@ body {
 
 .sidebar__logout {
   position: absolute;
-  bottom: 80px;
+  bottom: 50px;
   left: 63px;
   font-size: 20px;
   color: #BDBDBD;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 
 .sidebar__logout:hover {
