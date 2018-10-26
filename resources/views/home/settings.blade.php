@@ -5,9 +5,7 @@
                 <div class="mobileMenuBtn">
                     <button class="cmn-toggle-switch cmn-toggle-switch__htx"><span>toggle menu</span></button>
                 </div>
-                @if(!Auth::user()->confirmed)
-                    <div class="messageTop">{!! trans('layouts/message.messageTop') !!}</div>
-                @endif
+                    <div class="messageTop"></div>
                 <div class="scrollHolder">
                     <div class="content" id="buyTokens">
                         <div class="blockHolder">

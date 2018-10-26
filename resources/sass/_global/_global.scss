@@ -374,7 +374,7 @@ body {
   padding: 18px;
   min-height: 56px;
   z-index: 20;
-  background: linear-gradient(90deg, #FFC701 0%, #FFE13A 100%);
+  background: rgba(224, 224, 224, 0.93);
   color: #fff;
   font-family: 'Rubik', 'Arial', sans-serif;
   font-style: normal;
@@ -395,6 +395,7 @@ body {
     border-radius: 0;
     text-overflow: ellipsis;
     white-space: nowrap;
+    background: rgba(224, 224, 224, 0.93);
   }
 }
 
@@ -570,6 +571,20 @@ body {
       background-color: rgba(255, 255, 255, 0.76);
     }
   }
+  //&--wallet {
+  //  position: relative;
+  //
+  //  &::after {
+  //    content: "";
+  //    position: absolute;
+  //    top: 0;
+  //    left: 0;
+  //    width: 100%;
+  //    height: 100%;
+  //    background-color: rgba(255, 255, 255, 0.76);
+  //  }
+  //}
+
   &--deposit-bonus {
     margin-bottom: 0;
   }
@@ -586,6 +601,10 @@ body {
 .blockHolder {
   display: flex;
   flex-wrap: wrap;
+
+  &--hide {
+    display: none;
+  }
 }
 
 .basicBlock--single {

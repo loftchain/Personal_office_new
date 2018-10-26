@@ -6,7 +6,6 @@
             <button class="cmn-toggle-switch cmn-toggle-switch__htx"><span>toggle menu</span></button>
         </div>
         <div class="messageTop">
-            <button class="messageTop__button">Закрыть</button>
         </div>
         <div class="scrollHolder">
             <div class="content">

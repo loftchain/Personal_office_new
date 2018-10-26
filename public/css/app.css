@@ -10902,8 +10902,7 @@ body {
   padding: 18px;
   min-height: 56px;
   z-index: 20;
-  background: -webkit-gradient(linear, left top, right top, from(#FFC701), to(#FFE13A));
-  background: linear-gradient(90deg, #FFC701 0%, #FFE13A 100%);
+  background: rgba(224, 224, 224, 0.93);
   color: #fff;
   font-family: 'Rubik', 'Arial', sans-serif;
   font-style: normal;
@@ -10928,6 +10927,7 @@ body {
     border-radius: 0;
     text-overflow: ellipsis;
     white-space: nowrap;
+    background: rgba(224, 224, 224, 0.93);
   }
 }
 
@@ -11165,6 +11165,10 @@ body {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+}
+
+.blockHolder--hide {
+  display: none;
 }
 
 .basicBlock--single {

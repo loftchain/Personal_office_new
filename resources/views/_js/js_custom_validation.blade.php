@@ -11,8 +11,10 @@
         bg: {
             success: 'green',
             danger: 'red',
-            normal: 'linear-gradient(90deg, #FFC701 0%, #FFE13A 100%)',
+            warning: 'linear-gradient(90deg, #FFC701 0%, #FFE13A 100%)',
+            normal: 'rgba(224, 224, 224, 0.93)'
         },
+        userConfirmed: '{{ Auth::user()->confirmed }}',
 
         resetModal: () => {
             v.xInput.removeClass('isError');
@@ -35,14 +37,16 @@
             message.html(text + '<button class="messageTop__button"><span></span></button>');
             message.css('background', bgColor);
 
-            let closeButton = $('.messageTop button');
-          closeButton.click(function() {
-            $(this).parent().css('background', v.bg.normal);
-            $(this).parent().text('');
-            $(this).remove();
-
-            console.log($(this).prev());
-          });
+            let closeButton = $('.messageTop__button');
+            closeButton.click(function() {
+                $(this).parent().css('background', v.bg.normal);
+                if (v.userConfirmed == '0') {
+                  $(this).parent().text('Unfortunately your profile is not verified yet.');
+                }   else {
+                  $(this).parent().text('');
+                } // temporary
+                $(this).remove();
+            });
 
         },
 
