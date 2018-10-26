@@ -143,9 +143,13 @@ class TransactionService
         foreach ($tx as $t) {
             if($t->status === 'true'){
                 TempTransaction::create([
+                    'transaction_id' => $t->txId,
                     'status' => $t->status,
                     'amount' => $t->amount,
-                    'currency' => $t->currency
+                    'currency' => $t->currency,
+                    'from' => $t->from,
+                    'date' => $t->date
+
                 ]);
             }
             $txTimestamp = strtotime($t->date);
