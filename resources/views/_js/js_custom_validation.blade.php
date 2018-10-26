@@ -100,6 +100,7 @@
                     v.showNotification('{!! trans('modals/modals.emailChanged_js') !!}', 'success');
                     break;
                 case !$.isEmptyObject(data.success_changed_pwd):
+                    _this.find('.icoForm__input').val('');
                     v.closeModal();
                     v.showNotification('{!! trans('modals/modals.pwdChanged_js') !!}', 'success');
                     break;
