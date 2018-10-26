@@ -368,8 +368,11 @@ body {
 }
 
 .messageTop {
+  display: flex;
+  justify-content: space-between;
   width: 100%;
   padding: 18px;
+  min-height: 56px;
   z-index: 20;
   background: linear-gradient(90deg, #FFC701 0%, #FFE13A 100%);
   color: #fff;
@@ -378,9 +381,11 @@ body {
   font-weight: normal;
   line-height: normal;
   font-size: 14px;
+  line-height: 18px;
   color: #FFFFFF;
   border-top-right-radius: 10px;
   flex: 0 0 auto;
+
   @media(max-width: 992px) {
     padding-left: 50px;
     padding-right: 50px;
@@ -390,6 +395,33 @@ body {
     border-radius: 0;
     text-overflow: ellipsis;
     white-space: nowrap;
+  }
+}
+
+.messageTop__button {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  border: none;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 3px;
+    top: 8px;
+    left: 0;
+    background: #ffffff;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(135deg);
   }
 }
 

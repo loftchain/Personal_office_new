@@ -10892,8 +10892,15 @@ body {
 }
 
 .messageTop {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   width: 100%;
   padding: 18px;
+  min-height: 56px;
   z-index: 20;
   background: -webkit-gradient(linear, left top, right top, from(#FFC701), to(#FFE13A));
   background: linear-gradient(90deg, #FFC701 0%, #FFE13A 100%);
@@ -10903,6 +10910,7 @@ body {
   font-weight: normal;
   line-height: normal;
   font-size: 14px;
+  line-height: 18px;
   color: #FFFFFF;
   border-top-right-radius: 10px;
   -webkit-box-flex: 0;
@@ -10921,6 +10929,35 @@ body {
     text-overflow: ellipsis;
     white-space: nowrap;
   }
+}
+
+.messageTop__button {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  border: none;
+}
+
+.messageTop__button::before,
+.messageTop__button::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 3px;
+  top: 8px;
+  left: 0;
+  background: #ffffff;
+}
+
+.messageTop__button::before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.messageTop__button::after {
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
 }
 
 .scrollHolder {

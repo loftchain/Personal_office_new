@@ -33,6 +33,7 @@
                     case 'from':
                         if (currency.val() === wallet.currency) {
                             _this.val(wallet_val);
+                            $('.raisedContainer--disabled').removeClass('raisedContainer--disabled');
                         }
                         break;
                     default:
@@ -40,10 +41,12 @@
 
                             if (wallet.type === 'from_to') {
                                 _this.val(wallet_val);
+                                $('.raisedContainer--disabled').removeClass('raisedContainer--disabled');
                             }
 
                             if (wallet.type === 'to') {
                                 _this.val(wallet_val);
+                                $('.raisedContainer--disabled').removeClass('raisedContainer--disabled');
                             }
 
                         }

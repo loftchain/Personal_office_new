@@ -8,6 +8,11 @@
         modalBtn: $('.modal-btn'),
         grayBorderColor: '#E0E0E0',
         exclamation: '<i class="fa fa-exclamation-circle fa-lg" aria-hidden="true"></i>&nbsp',
+        bg: {
+            success: 'green',
+            danger: 'red',
+            normal: 'linear-gradient(90deg, #FFC701 0%, #FFE13A 100%)',
+        },
 
         resetModal: () => {
             v.xInput.removeClass('isError');
@@ -19,10 +24,26 @@
             $('.modal-backdrop').remove();
         },
 
-        showNotification: (text, type) => {
-            $.notify(text, {
-                type: type
-            });
+        // showNotification: (text, type) => {
+        //     $.notify(text, {
+        //         type: type
+        //     });
+        // },
+
+        showMessage(text, bgColor) {
+            let message = $('.messageTop');
+            message.html(text + '<button class="messageTop__button"><span></span></button>');
+            message.css('background', bgColor);
+
+            let closeButton = $('.messageTop button');
+          closeButton.click(function() {
+            $(this).parent().css('background', v.bg.normal);
+            $(this).parent().text('');
+            $(this).remove();
+
+            console.log($(this).prev());
+          });
+
         },
 
         hideSpinner: () => {
@@ -84,11 +105,13 @@
                     localStorage.setItem('success_login', '+');
                     break;
                 case !$.isEmptyObject(data.success_reset_email_sent):
-                    v.showNotification('{!! trans('auth/resetPwd.letterSent_js') !!}', 'success');
+                    v.showMessage('{!! trans('auth/resetPwd.letterSent_js') !!}', v.bg.success);
+                    {{--v.showNotification('{!! trans('auth/resetPwd.letterSent_js') !!}', 'success');--}}
                     v.closeModal();
                     break;
                 case !$.isEmptyObject(data.error_reset_email_sent):
-                    v.showNotification('{!! trans('auth/resetPwd.letterSentError_js') !!}', 'danger');
+                    v.showMessage('{!! trans('auth/resetPwd.letterSentError_js') !!}', v.bg.danger);
+                    {{--v.showNotification('{!! trans('auth/resetPwd.letterSentError_js') !!}', 'danger');--}}
                     v.closeModal();
                     break;
                 case !$.isEmptyObject(data.success_reset_pwd):
@@ -97,12 +120,14 @@
                     break;
                 case !$.isEmptyObject(data.success_changed_email):
                     v.closeModal();
-                    v.showNotification('{!! trans('modals/modals.emailChanged_js') !!}', 'success');
+                    v.showMessage('{!! trans('modals/modals.emailChanged_js') !!}', v.bg.success);
+                    {{--v.showNotification('{!! trans('modals/modals.emailChanged_js') !!}', 'success');--}}
                     break;
                 case !$.isEmptyObject(data.success_changed_pwd):
                     _this.find('.icoForm__input').val('');
                     v.closeModal();
-                    v.showNotification('{!! trans('modals/modals.pwdChanged_js') !!}', 'success');
+                    v.showMessage('{!! trans('modals/modals.pwdChanged_js') !!}', v.bg.success);
+                    {{--v.showNotification('{!! trans('modals/modals.pwdChanged_js') !!}', 'success');--}}
                     break;
                 case !$.isEmptyObject(data.goto2):
                     window.location.replace("{{ route('root') }}");
@@ -111,37 +136,43 @@
                     console.log('test error')
                     break;
                 case !$.isEmptyObject(data.wallet_added):
-                    v.showNotification('{!! trans('home/wallet.added_js') !!}', 'success');
+                    v.showMessage('{!! trans('home/wallet.added_js') !!}', v.bg.success);
+                    console.log(_this.children('.formControl').children('.type').val());
+                    {{--v.showNotification('{!! trans('home/wallet.added_js') !!}', 'success');--}}
                     if (typeof wallet !== 'undefined') {
                         // wa.exitEditMode(_this.children('.w-input'));
-                        if(_this.children('.type').val() === 'to' && $('#wallet1').val() > 0){
+                        if(_this.children('.formControl').children('.type').val() === 'to' && $('#wallet1').val() > 0){
                             // wa.showDescription('BTC');
-
+                            $('.raisedContainer--disabled').removeClass('raisedContainer--disabled');
                         }
 
-                        if(_this.children('.type').val() === 'from' && $('#wallet2').val() > 0){
-
+                        if(_this.children('.formControl').children('.type').val() === 'from' && $('#wallet2').val() > 0){
+                            $('.raisedContainer--disabled').removeClass('raisedContainer--disabled');
                             // wa.showDescription(data.currency);
                         }
 
-                        if(_this.children('.type').val() === 'from_to'){
+                        if(_this.children('.formControl').children('.type').val() === 'from_to'){
                             // wa.showDescription(data.currency);
+                          $('.raisedContainer--disabled').removeClass('raisedContainer--disabled');
                         }
 
                     }
                     break;
                 case !$.isEmptyObject(data.usd_request_sent):
-                    v.showNotification('{!! trans('home/wallet.requestWasSent_js') !!}', 'success');
+                    v.showMessage('{!! trans('home/wallet.requestWasSent_js') !!}', v.bg.success);
+                    {{--v.showNotification('{!! trans('home/wallet.requestWasSent_js') !!}', 'success');--}}
                     v.hideSpinner();
                     break;
                 case !$.isEmptyObject(data.wallet_edited):
-                    v.showNotification('{!! trans('home/wallet.edited_js') !!}', 'success');
+                    v.showMessage('{!! trans('home/wallet.edited_js') !!}', v.bg.success);
+                    {{--v.showNotification('{!! trans('home/wallet.edited_js') !!}', 'success');--}}
                     if (typeof wa !== 'undefined') {
                         wa.exitEditMode(_this.children('.w-input'));
                     }
                     break;
                 case !$.isEmptyObject(data.confirmation_complete):
-                    v.showNotification('{!! trans('admin/confirmation.userConfirmed_js') !!}', 'success');
+                    v.showMessage('{!! trans('admin/confirmation.userConfirmed_js') !!}', v.bg.success);
+                    {{--v.showNotification('{!! trans('admin/confirmation.userConfirmed_js') !!}', 'success');--}}
                     break;
                 default:
                     console.log('js_custom_validation.blade.php default switch state');
