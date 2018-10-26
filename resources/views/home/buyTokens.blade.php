@@ -19,6 +19,7 @@
                                 <div class="cryptoSelector">
                                     <button class="cryptoSelector__item" id="buttonEth">Etherium</button>
                                     <button class="cryptoSelector__item" id="buttonBtc">Bitcoin</button>
+                                    <button class="cryptoSelector__item" id="buttonPay">PayPal</button>
                                 </div>
                             </div>
                         </div>
@@ -36,11 +37,15 @@
                                     <div id="formBtc" style="display: none">
                                         @include('modals.btc_form')
                                     </div>
+
+                                    <div id="formPay" style="display: none">
+                                        @include('modals.payPal_form')
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="raisedContainer raisedContainer--wallet raisedContainer--disabled">
+                    <div class="raisedContainer raisedContainer--wallet raisedContainer--disabled" id="qr">
                         <div class="basicBlock basicBlock">
                             <div class="basicBlock__content" id="formQr">
                                 <form class="loginForm icoForm" action="#">

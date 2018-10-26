@@ -2,8 +2,11 @@
     let wallet = {
         bEth: $('#buttonEth'),
         bBtc: $('#buttonBtc'),
+        bPay: $('#buttonPay'),
         fEth: $('#formEth'),
         fBtc: $('#formBtc'),
+        fPay: $('#formPay'),
+        dQr: $('#qr'),
         qrEth: $('#qrEth'),
         qrBtc: $('#qrBtc'),
         wInput: $('.wallet'),
@@ -81,8 +84,11 @@
     wallet.bEth.click(() => {
         wallet.bEth.addClass('cryptoSelector__item--active');
         wallet.bBtc.removeClass('cryptoSelector__item--active');
+        wallet.bPay.removeClass('cryptoSelector__item--active');
         wallet.fBtc.hide();
+        wallet.fPay.hide();
         wallet.fEth.show();
+        wallet.dQr.show();
         wallet.qrBtc.hide();
         wallet.qrEth.show();
         wallet.removeDisabled();
@@ -91,10 +97,26 @@
     wallet.bBtc.click(() => {
         wallet.bBtc.addClass('cryptoSelector__item--active');
         wallet.bEth.removeClass('cryptoSelector__item--active');
+        wallet.bPay.removeClass('cryptoSelector__item--active');
         wallet.fEth.hide();
+        wallet.fPay.hide();
         wallet.fBtc.show();
+        wallet.dQr.show();
         wallet.qrEth.hide();
         wallet.qrBtc.show();
+        wallet.removeDisabled();
+    });
+
+    wallet.bPay.click(() => {
+       wallet.bPay.addClass('cryptoSelector__item--active');
+       wallet.bEth.removeClass('cryptoSelector__item--active');
+       wallet.bBtc.removeClass('cryptoSelector__item--active');
+        wallet.fEth.hide();
+        wallet.fBtc.hide();
+        wallet.dQr.hide();
+        wallet.fPay.show();
+        wallet.qrEth.hide();
+        wallet.qrBtc.hide();
         wallet.removeDisabled();
     });
 
