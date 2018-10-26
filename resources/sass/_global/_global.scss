@@ -395,7 +395,6 @@ body {
     border-radius: 0;
     text-overflow: ellipsis;
     white-space: nowrap;
-    background: rgba(224, 224, 224, 0.93);
   }
 }
 
@@ -405,6 +404,7 @@ body {
   height: 20px;
   background: transparent;
   border: none;
+  cursor: pointer;
 
   &::before,
   &::after {

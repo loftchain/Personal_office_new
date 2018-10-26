@@ -1,11 +1,13 @@
 <script>
     let wallet = {
+        btn: $('.cryptoSelector__item'),
         bEth: $('#buttonEth'),
         bBtc: $('#buttonBtc'),
         fEth: $('#formEth'),
         fBtc: $('#formBtc'),
         block: $('.blockHolder--token'),
-        walBlock: $('.blockHolder--wallet'),
+        walBlock: $('.raisedContainer--wallet'),
+        qrBlock: $('.raisedContainer--qr'),
         blockEth: $('#blockEth'),
         blockBtc: $('#blockBtc'),
         blockFake: $('#blockFake'),
@@ -38,7 +40,7 @@
                     case 'from':
                         if (currency.val() === wallet.currency) {
                             _this.val(wallet_val);
-                            $('.raisedContainer--disabled').removeClass('raisedContainer--disabled');
+                            $('.raisedContainer--qr-2').removeClass('raisedContainer--disabled');
                         }
                         break;
                     default:
@@ -46,12 +48,12 @@
 
                             if (wallet.type === 'from_to') {
                                 _this.val(wallet_val);
-                                $('.raisedContainer--disabled').removeClass('raisedContainer--disabled');
+                                $('.raisedContainer--qr-1').removeClass('raisedContainer--disabled');
                             }
 
                             if (wallet.type === 'to') {
                                 _this.val(wallet_val);
-                                $('.raisedContainer--disabled').removeClass('raisedContainer--disabled');
+                                $('.raisedContainer--qr-2').removeClass('raisedContainer--disabled');
                             }
 
                         }
@@ -72,9 +74,10 @@
         },
 
         removeDisabled() {
-          $('.raisedContainer--wallet').addClass('raisedContainer--disabled');
-          $('.raisedContainer--disabled').eq(0).removeClass('raisedContainer--disabled');
+          wallet.btn.removeClass('cryptoSelector__item--active');
+          wallet.block.addClass('blockHolder--hide');
           wallet.wInput.removeAttr('disabled');
+          wallet.walBlock.removeClass('raisedContainer--disabled');
         }
     };
 
@@ -86,29 +89,24 @@
         wallet.isPersonal();
     });
 
-    wallet.bEth.click(() => {
-        wallet.bEth.addClass('cryptoSelector__item--active');
-        wallet.bBtc.removeClass('cryptoSelector__item--active');
-        wallet.block.addClass('blockHolder--hide');
+    wallet.bEth.click((evt) => {
+        wallet.removeDisabled(this);
+        $(evt.target).addClass('cryptoSelector__item--active');
         wallet.blockEth.removeClass('blockHolder--hide');
-        wallet.walBlock.removeClass('blockHolder--hide');
         // wallet.fBtc.hide();
         // wallet.fEth.show();
         // wallet.qrBtc.hide();
         // wallet.qrEth.show();
-        // wallet.removeDisabled();
     });
 
-    wallet.bBtc.click(() => {
-        wallet.bBtc.addClass('cryptoSelector__item--active');
-        wallet.bEth.removeClass('cryptoSelector__item--active');
-        wallet.block.addClass('blockHolder--hide');
+    wallet.bBtc.click((evt) => {
+        wallet.removeDisabled(this);
+        $(evt.target).addClass('cryptoSelector__item--active');
         wallet.blockBtc.removeClass('blockHolder--hide');
         // wallet.fEth.hide();
         // wallet.fBtc.show();
         // wallet.qrEth.hide();
         // wallet.qrBtc.show();
-        // wallet.removeDisabled();
     });
 
     wallet.wInput.on('input', function() {

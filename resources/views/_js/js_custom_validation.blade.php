@@ -145,19 +145,20 @@
                     {{--v.showNotification('{!! trans('home/wallet.added_js') !!}', 'success');--}}
                     if (typeof wallet !== 'undefined') {
                         // wa.exitEditMode(_this.children('.w-input'));
-                        if(_this.children('.formControl').children('.type').val() === 'to' && $('#wallet1').val() > 0){
-                            // wa.showDescription('BTC');
-                            $('.raisedContainer--disabled').removeClass('raisedContainer--disabled');
-                        }
-
-                        if(_this.children('.formControl').children('.type').val() === 'from' && $('#wallet2').val() > 0){
-                            $('.raisedContainer--disabled').removeClass('raisedContainer--disabled');
-                            // wa.showDescription(data.currency);
-                        }
+                        // if(_this.children('.formControl').children('.type').val() === 'to' && $('#wallet1').val() > 0){
+                        //     // wa.showDescription('BTC');
+                        // }
+                        //
+                        // if(_this.children('.formControl').children('.type').val() === 'from' && $('#wallet2').val() > 0){
+                        //     // wa.showDescription(data.currency);
+                        // }
 
                         if(_this.children('.formControl').children('.type').val() === 'from_to'){
                             // wa.showDescription(data.currency);
-                          $('.raisedContainer--disabled').removeClass('raisedContainer--disabled');
+                          $('.raisedContainer--qr-1').removeClass('raisedContainer--disabled');
+                        }
+                        if((_this.children('.formControl').children('.type').val() === 'to' || _this.children('.formControl').children('.type').val() === 'from') && $('#wallet1').val() != '' && $('#wallet2').val() != '') {
+                          $('.raisedContainer--qr-2').removeClass('raisedContainer--disabled');
                         }
 
                     }
