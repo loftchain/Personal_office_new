@@ -45,11 +45,22 @@
                             <div class="basicBlock__content" id="formQr">
                                 <form class="loginForm icoForm" action="#">
                                     <div class="row">
-                                        <div class="col-md-3 align-self-top text-center">
-                                            <img id="qrEth" class="qrCode" alt="qr" src="{{ asset('img/0x7E7884c00cF0032Dc9360A8294a97aDf8fD18B61.png') }}">
-                                            <img id="qrBtc" class="qrCode" alt="qr" src="{{ asset('img/3KwdivDeNYHJo7hzxWfHM4rwe7xtraLQ52.png') }}" style="display: none;">
+                                        <div class="col-md-4 align-self-top text-center">
+                                            <div class="dropdown dropdown--qr">
+                                                <img id="qrEth" class="qrCode" alt="qr" src="{{ asset('img/0x7E7884c00cF0032Dc9360A8294a97aDf8fD18B61.png') }}">
+                                                <div class="dropdown-content dropdown-content--qr">
+                                                    <img width="200" height="200" class="qrCode" alt="qr" src="{{ asset('img/0x7E7884c00cF0032Dc9360A8294a97aDf8fD18B61.png') }}">
+                                                </div>
+                                            </div>
+                                            <div class="dropdown dropdown--qr">
+                                                <img id="qrBtc" class="qrCode" alt="qr" src="{{ asset('img/3KwdivDeNYHJo7hzxWfHM4rwe7xtraLQ52.png') }}" style="display: none;">
+                                                <div class="dropdown-content dropdown-content--qr">
+                                                    <img width="200" height="200" class="qrCode" alt="qr" src="{{ asset('img/3KwdivDeNYHJo7hzxWfHM4rwe7xtraLQ52.png') }}">
+                                                </div>
+                                            </div>
+                                            <p class="dropdown__hint">hover and zoom</p>
                                         </div>
-                                        <div class="col-md-9 align-self-top">
+                                        <div class="col-md-8 align-self-top">
                                             <div class="formControl formControl--noMargin">
                                                 <input class="icoForm__input icoForm__input--canCopy" type="text" v-model="invsetmentWalletETH" name="ethWallet" id="ethWallet"><span class="icoForm__copy" v-on:click="copyToBuffer"> </span>
                                             </div>

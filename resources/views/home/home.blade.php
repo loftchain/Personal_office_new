@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('content')
+@section('content')qrEth
     <div class="workArea jsWorkArea">
         <div class="mobileMenuBtn">
             <button class="cmn-toggle-switch cmn-toggle-switch__htx"><span>toggle menu</span></button>
