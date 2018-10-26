@@ -162,7 +162,7 @@ class PaymentController extends Controller
                 'currency' => $transactions['amount']['currency'],
                 'from' => $wallet,
                 'amount' => $transactions['amount']['total'],
-                'amount_tokens' => $transactions['amount']['total'] / 0.10,
+                'amount_tokens' => $transactions['amount']['total'] / $currentPrice,
                 'info' => 'PayPal',
                 'date' => Carbon::now(),
             ]);
