@@ -236,15 +236,6 @@
 
         }
     };
-    //
-    // v.modal.on('hidden.bs.modal', () => {
-    //     v.resetModal();
-    // });
-    //
-    // v.modalBtn.on('click', () => {
-    //     v.loaderSpinner.fadeIn('slow');
-    // });
-    //
 
     v.xInput.on('input', function () {
         if ($(this).is(':valid')) {
@@ -259,4 +250,15 @@
     });
 
     v.form.each(v.ajax_form);
+
+    $(document).ready(() => {
+      let message = $('.messageTop');
+      if (v.userConfirmed == 0) {
+        message.text('Unfortunately your profile is not verified yet.');
+        message.css('background', v.bg.warning);
+      }   else {
+        $(this).parent().text('');
+        message.css('background', v.bg.normal);
+      }
+    });
 </script>
