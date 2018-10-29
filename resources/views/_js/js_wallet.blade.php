@@ -13,6 +13,7 @@
         qrBlock: $('.raisedContainer--qr'),
         blockEth: $('#blockEth'),
         blockBtc: $('#blockBtc'),
+        blockPay: $('#blockPay'),
         blockFake: $('#blockFake'),
         qrEth: $('#qrEth'),
         qrBtc: $('#qrBtc'),
@@ -96,33 +97,18 @@
         wallet.removeDisabled(this);
         $(evt.target).addClass('cryptoSelector__item--active');
         wallet.blockEth.removeClass('blockHolder--hide');
-        // wallet.fBtc.hide();
-        // wallet.fEth.show();
-        // wallet.qrBtc.hide();
-        // wallet.qrEth.show();
     });
 
     wallet.bBtc.click((evt) => {
         wallet.removeDisabled(this);
         $(evt.target).addClass('cryptoSelector__item--active');
         wallet.blockBtc.removeClass('blockHolder--hide');
-        // wallet.fEth.hide();
-        // wallet.fBtc.show();
-        // wallet.qrEth.hide();
-        // wallet.qrBtc.show();
     });
 
-    wallet.bPay.click(() => {
-       wallet.bPay.addClass('cryptoSelector__item--active');
-       wallet.bEth.removeClass('cryptoSelector__item--active');
-       wallet.bBtc.removeClass('cryptoSelector__item--active');
-        wallet.fEth.hide();
-        wallet.fBtc.hide();
-        wallet.dQr.hide();
-        wallet.fPay.show();
-        wallet.qrEth.hide();
-        wallet.qrBtc.hide();
-        wallet.removeDisabled();
+    wallet.bPay.click((evt) => {
+      wallet.removeDisabled(this);
+      $(evt.target).addClass('cryptoSelector__item--active');
+      wallet.blockPay.removeClass('blockHolder--hide');
     });
 
     wallet.wInput.on('input', function() {
