@@ -20,6 +20,7 @@
                                 <div class="cryptoSelector">
                                     <button class="cryptoSelector__item" id="buttonEth">Etherium</button>
                                     <button class="cryptoSelector__item" id="buttonBtc">Bitcoin</button>
+                                    <button class="cryptoSelector__item" id="buttonPay">PayPal</button>
                                 </div>
                             </div>
                         </div>
@@ -151,6 +152,10 @@
                                             </div>
                                             <div class="error-message wallet"></div>
                                         </form>
+                                    </div>
+
+                                    <div id="formPay" style="display: none">
+                                        @include('modals.payPal_form')
                                     </div>
                                 </div>
                             </div>

@@ -49,6 +49,8 @@ Route::group(['prefix' => 'home', 'as' => 'home.', 'middleware' => ['auth', 'isE
     Route::get('/description_view/{currency}', 'TokensController@description_view')->name('description_view');
     Route::get('/referrals', 'ReferralController@index')->name('referral');
     Route::post('/settings/avatar/upload', 'SettingsController@uploadAvatar')->name('settings.upload.avatar');
+    Route::post('/paypal', 'PaymentController@payWithpaypal')->name('paypal');
+    Route::get('/paypal/status', 'PaymentController@getPaymentStatus')->name('paypal.status');
 
 });
 
@@ -63,3 +65,6 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['admin']],
 
 Route::get('/storage/{path}', 'SettingsController@getAvatar')->name('settings.get.avatar');
 Route::get('settings', 'HomeController@settings')->name('home.settings');
+
+Route::get('/test', 'PaymentController@getPayment');
+Route::get('/test1', 'PaymentController@index');

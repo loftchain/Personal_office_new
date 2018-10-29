@@ -42,8 +42,9 @@ class BonusService
             $stageData['stageBegin'] = '';
             $stageData['stageEnd'] = \DateTime::createFromFormat('U', env('ICO_START'))->format('d.m.Y');
             $stageData['stageLabel'] = 'ICO';
-            $stageData['stageTitle'] = Lang::get('home/widget.beforeStart_js') . ' ' . $stageData['stageLabel'];
+            $stageData['stageTitle'] = 'PRIVATE-SALE STARTS IN'; //Lang::get('home/widget.beforeStart_js') . ' ' . $stageData['stageLabel'];
             $stageData['bonus'] = 0;
+            $stageData['currentPrice'] = 0.10;
         } else if ($currTime < \DateTime::createFromFormat('U', env('ICO_END'))) {
             $stageData['stage'] = 1;
             $stageData['timerBegin'] = env('ICO_START');
@@ -52,50 +53,84 @@ class BonusService
             $stageData['stageBegin'] = \DateTime::createFromFormat('U', env('ICO_START'))->format('d.m.Y');
             $stageData['stageEnd'] = \DateTime::createFromFormat('U', env('ICO_END'))->format('d.m.Y');
             $stageData['stageLabel'] = 'ICO';
-            $stageData['stageTitle'] = Lang::get('home/widget.beforeEnd_js') . ' ' . $stageData['stageLabel'];
+            $stageData['stageTitle'] = 'ENDS IN ';
             $stageData['currentPrice'] = 0.10;
 
             switch (true) {
                 case $time <= env('1_BONUS_3m_END'):
+                    $stageData['roundName'] = 'PRIVATE-SALE';
+                    $stageData['stageEnd'] = \DateTime::createFromFormat('U', env('1_BONUS_3m_END'))->format('d.m.Y');
+                    $stageData['timerEnd'] = env('1_BONUS_3m_END');
+                    $stageData['stageBegin'] = \DateTime::createFromFormat('U', env('ICO_START'))->format('d.m.Y');
                     $stageData['bonus'] = 30;
                     $stageData['currentPrice'] = 0.10;
                     break;
                 case $time > env('1_BONUS_3m_END') && $time <= env('2_BONUS_1m_END'):
+                    $stageData['roundName'] = 'ICO-ROUND-1';
+                    $stageData['stageEnd'] = \DateTime::createFromFormat('U', env('2_BONUS_1m_END'))->format('d.m.Y');
+                    $stageData['timerEnd'] = env('2_BONUS_1m_END');
+                    $stageData['stageBegin'] = \DateTime::createFromFormat('U', env('1_BONUS_3m_END'))->format('d.m.Y');
                     $stageData['bonus'] = 30;
                     $stageData['currentPrice'] = 0.14;
                     break;
                 case $time > env('2_BONUS_1m_END') && $time <= env('3_BONUS_1m_END'):
+                    $stageData['roundName'] = 'ICO-ROUND-2';
+                    $stageData['stageEnd'] = \DateTime::createFromFormat('U', env('3_BONUS_1m_END'))->format('d.m.Y');
+                    $stageData['timerEnd'] = env('3_BONUS_1m_END');
+                    $stageData['stageBegin'] = \DateTime::createFromFormat('U', env('2_BONUS_1m_END'))->format('d.m.Y');
                     $stageData['bonus'] = 25;
                     $stageData['currentPrice'] = 0.15;
                     break;
                 case $time > env('3_BONUS_1m_END') && $time <= env('4_BONUS_1m_END'):
+                    $stageData['roundName'] = 'ICO-ROUND-3';
+                    $stageData['stageEnd'] = \DateTime::createFromFormat('U', env('4_BONUS_1m_END'))->format('d.m.Y');
+                    $stageData['timerEnd'] = env('4_BONUS_1m_END');
+                    $stageData['stageBegin'] = \DateTime::createFromFormat('U', env('3_BONUS_1m_END'))->format('d.m.Y');
                     $stageData['bonus'] = 20;
                     $stageData['currentPrice'] = 0.16;
                     break;
                 case $time > env('4_BONUS_1m_END') && $time <= env('5_BONUS_1m_END'):
+                    $stageData['roundName'] = 'ICO-ROUND-4';
+                    $stageData['stageEnd'] = \DateTime::createFromFormat('U', env('5_BONUS_1m_END'))->format('d.m.Y');
+                    $stageData['timerEnd'] = env('5_BONUS_1m_END');
+                    $stageData['stageBegin'] = \DateTime::createFromFormat('U', env('4_BONUS_1m_END'))->format('d.m.Y');
                     $stageData['bonus'] = 15;
                     $stageData['currentPrice'] = 0.17;
                     break;
                 case $time > env('5_BONUS_1m_END') && $time <= env('6_BONUS_1m_END'):
+                    $stageData['roundName'] = 'ICO-ROUND-5';
+                    $stageData['stageEnd'] = \DateTime::createFromFormat('U', env('6_BONUS_1m_END'))->format('d.m.Y');
+                    $stageData['timerEnd'] = env('6_BONUS_1m_END');
+                    $stageData['stageBegin'] = \DateTime::createFromFormat('U', env('5_BONUS_1m_END'))->format('d.m.Y');
                     $stageData['bonus'] = 10;
                     $stageData['currentPrice'] = 0.18;
                     break;
                 case $time > env('6_BONUS_1m_END') && $time <= env('7_BONUS_1m_END'):
+                    $stageData['roundName'] = 'ICO-ROUND-6';
+                    $stageData['stageEnd'] = \DateTime::createFromFormat('U', env('7_BONUS_1m_END'))->format('d.m.Y');
+                    $stageData['timerEnd'] = env('7_BONUS_1m_END');
+                    $stageData['stageBegin'] = \DateTime::createFromFormat('U', env('6_BONUS_1m_END'))->format('d.m.Y');
                     $stageData['bonus'] = 5;
                     $stageData['currentPrice'] = 0.19;
                     break;
                 case $time > env('7_BONUS_1m_END') && $time <= env('8_BONUS_1m_END'):
+                    $stageData['roundName'] = 'ICO-ROUND-7';
+                    $stageData['stageEnd'] = \DateTime::createFromFormat('U', env('8_BONUS_1m_END'))->format('d.m.Y');
+                    $stageData['timerEnd'] = env('8_BONUS_1m_END');
+                    $stageData['stageBegin'] = \DateTime::createFromFormat('U', env('7_BONUS_1m_END'))->format('d.m.Y');
                     $stageData['bonus'] = 0;
                     $stageData['currentPrice'] = 0.20;
                     break;
             }
+
+            $stageData['stageTitle'] = $stageData['stageTitle'] . $stageData['roundName'];
         } else {
             $stageData['stage'] = 2;
             $stageData['timerBegin'] = 0;
             $stageData['timerCurrent'] = 0;
             $stageData['timerEnd'] = 0;
-            $stageData['stageBegin'] = '';
-            $stageData['stageEnd'] = '';
+            $stageData['stageBegin'] = \DateTime::createFromFormat('U', env('ICO_START'))->format('d.m.Y');
+            $stageData['stageEnd'] = \DateTime::createFromFormat('U', env('ICO_END'))->format('d.m.Y');;
             $stageData['stageLabel'] = 'ICO';
             $stageData['stageTitle'] = Lang::get('home/widget.crowdSaleFinished_js');
             $stageData['bonus'] = 0;

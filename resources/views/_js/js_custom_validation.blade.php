@@ -211,24 +211,28 @@
         },
 
         ajax_form: function () {
-            $(this).on('submit', function (e) {
-                e.preventDefault();
-                v.resetModal();
-                $.ajax({
-                    url: $(this).attr('action'),
-                    type: $(this).attr('method'),
-                    data: $(this).serialize(),
-                    dataType: 'json',
-                    success: data => {
-                        // v.loaderSpinner.hide();
-                        v.stateSelection(data, $(this));
-                    },
+                $(this).on('submit', function (e) {
+                    let isWallet = typeof wallet !== 'undefined' ? !wallet.bPay.hasClass('cryptoSelector__item--active') : true;
+                    if(isWallet) {
+                        e.preventDefault();
+                        v.resetModal();
+                        $.ajax({
+                            url: $(this).attr('action'),
+                            type: $(this).attr('method'),
+                            data: $(this).serialize(),
+                            dataType: 'json',
+                            success: data => {
+                                // v.loaderSpinner.hide();
+                                v.stateSelection(data, $(this));
+                            },
 
-                    error: data => {
-                        console.log('Error: Something wrong with ajax call ' + data.errors);
+                            error: data => {
+                                console.log('Error: Something wrong with ajax call ' + data.errors);
+                            }
+                        });
                     }
                 });
-            });
+
         }
     };
     //
@@ -240,6 +244,7 @@
     //     v.loaderSpinner.fadeIn('slow');
     // });
     //
+
     v.xInput.on('input', function () {
         if ($(this).is(':valid')) {
             $(this).removeAttr('style');

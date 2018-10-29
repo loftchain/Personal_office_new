@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Models\TempCurrency;
 use App\Models\TempTransaction;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use GuzzleHttp\Client;
 
@@ -54,6 +55,24 @@ class WidgetService
                 if ($t->currency == $currency) {
                     $amountCurrency += $t->amount;
 //                }
+            }
+        }
+
+        $amountETH = ($currency == 'ETH') ? $amountCurrency : $amountCurrency * $this->getCurrencyByPair($pair);
+        $amountToken = $amountETH;
+
+        return ['currency' => $amountCurrency, 'eth' => $amountETH, 'token' => $amountToken];
+    }
+
+    public function calcRoundCryptoAmount($currency, $pair, $start, $end)
+    {
+        $tx = TempTransaction::where([['date', '>=', Carbon::parse($start)->format('Y-m-d')], ['date', '<=', Carbon::parse($end)->format('Y-m-d')]])->get();
+
+        $amountCurrency = 0;
+
+        foreach ($tx as $t) {
+            if ($t->currency == $currency) {
+                $amountCurrency += $t->amount;
             }
         }
 

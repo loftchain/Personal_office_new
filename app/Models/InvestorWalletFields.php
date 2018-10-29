@@ -10,7 +10,8 @@ class InvestorWalletFields extends Model
         'investor_id',
         'currency',
         'type',
-        'wallet'
+        'wallet',
+        'active'
     ];
 
     public function investor()

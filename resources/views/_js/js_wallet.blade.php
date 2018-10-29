@@ -3,8 +3,11 @@
         btn: $('.cryptoSelector__item'),
         bEth: $('#buttonEth'),
         bBtc: $('#buttonBtc'),
+        bPay: $('#buttonPay'),
         fEth: $('#formEth'),
         fBtc: $('#formBtc'),
+        fPay: $('#formPay'),
+        dQr: $('#qr'),
         block: $('.blockHolder--token'),
         walBlock: $('.raisedContainer--wallet'),
         qrBlock: $('.raisedContainer--qr'),
@@ -107,6 +110,19 @@
         // wallet.fBtc.show();
         // wallet.qrEth.hide();
         // wallet.qrBtc.show();
+    });
+
+    wallet.bPay.click(() => {
+       wallet.bPay.addClass('cryptoSelector__item--active');
+       wallet.bEth.removeClass('cryptoSelector__item--active');
+       wallet.bBtc.removeClass('cryptoSelector__item--active');
+        wallet.fEth.hide();
+        wallet.fBtc.hide();
+        wallet.dQr.hide();
+        wallet.fPay.show();
+        wallet.qrEth.hide();
+        wallet.qrBtc.hide();
+        wallet.removeDisabled();
     });
 
     wallet.wInput.on('input', function() {
