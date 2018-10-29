@@ -150,7 +150,8 @@
                     console.log('test error')
                     break;
                 case !$.isEmptyObject(data.wallet_added):
-                    v.showMessage('{!! trans('home/wallet.added_js') !!}', v.bg.success);
+                    v.showMessage('{!! trans('home/buyTokens.walletAdded') !!}', v.bg.success);
+                    $('#fakeTable').show();
                     console.log(_this.children('.formControl').children('.type').val());
                     {{--v.showNotification('{!! trans('home/wallet.added_js') !!}', 'success');--}}
                     if (typeof wallet !== 'undefined') {
@@ -232,7 +233,6 @@
                             data: $(this).serialize(),
                             dataType: 'json',
                             success: data => {
-                                console.log(data.kyc_success);
                                 // v.loaderSpinner.hide();
                                 v.stateSelection(data, $(this));
                             },
