@@ -63,6 +63,13 @@
                     }
 
                     $.each(data.validation_error, (key, value) => {
+                        if(window.location.href == '{{ route('home.kyc') }}') {
+                            _this.children('.row').children().find('.error-message.' + key).prev().children('input').attr('style', 'border: 2px solid #FF0000;');
+                            _this.children('.row').children().find('.error-message.' + key).addClass('isError')
+                            _this.children('.row').children().find('.error-message.' + key).html(v.exclamation + value[0]);
+                            console.log(_this.children('.row').children().find('.error-message.' + key).prev().children('input'))
+
+                        }
                         // if (_this.children('.error-message.' + key).prev().hasClass('x-input')) {
                         //     _this.children('.error-message.' + key).prev().addClass('isError');
                         // }
@@ -180,11 +187,11 @@
                     v.showMessage('{!! trans('admin/confirmation.userConfirmed_js') !!}', v.bg.success);
                     {{--v.showNotification('{!! trans('admin/confirmation.userConfirmed_js') !!}', 'success');--}}
                     break;
+                case data.kyc_success:
+                    window.location.replace("{{ route('home.kyc') }}");
+                    break;
                 default:
                     console.log('js_custom_validation.blade.php default switch state');
-                    break;
-                case !$.isEmptyObject(data.kyc_success):
-                    window.location.replace("{{ route('home.index') }}");
                     break;
             }
         },
@@ -223,6 +230,7 @@
                             data: $(this).serialize(),
                             dataType: 'json',
                             success: data => {
+                                console.log(data.kyc_success);
                                 // v.loaderSpinner.hide();
                                 v.stateSelection(data, $(this));
                             },
