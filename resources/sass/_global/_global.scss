@@ -345,10 +345,11 @@ body {
 
 .sidebar__logout {
   position: absolute;
-  bottom: 80px;
+  bottom: 50px;
   left: 63px;
   font-size: 20px;
   color: #BDBDBD;
+  transform: rotate(180deg);
 
   &:hover {
     color: #F2C94C;
@@ -367,19 +368,24 @@ body {
 }
 
 .messageTop {
+  display: flex;
+  justify-content: space-between;
   width: 100%;
   padding: 18px;
+  min-height: 56px;
   z-index: 20;
-  background: linear-gradient(90deg, #FFC701 0%, #FFE13A 100%);
+  background: rgba(224, 224, 224, 0.93);
   color: #fff;
   font-family: 'Rubik', 'Arial', sans-serif;
   font-style: normal;
   font-weight: normal;
   line-height: normal;
   font-size: 14px;
+  line-height: 18px;
   color: #FFFFFF;
   border-top-right-radius: 10px;
   flex: 0 0 auto;
+
   @media(max-width: 992px) {
     padding-left: 50px;
     padding-right: 50px;
@@ -389,6 +395,34 @@ body {
     border-radius: 0;
     text-overflow: ellipsis;
     white-space: nowrap;
+  }
+}
+
+.messageTop__button {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 3px;
+    top: 8px;
+    left: 0;
+    background: #ffffff;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(135deg);
   }
 }
 
@@ -537,6 +571,20 @@ body {
       background-color: rgba(255, 255, 255, 0.76);
     }
   }
+  //&--wallet {
+  //  position: relative;
+  //
+  //  &::after {
+  //    content: "";
+  //    position: absolute;
+  //    top: 0;
+  //    left: 0;
+  //    width: 100%;
+  //    height: 100%;
+  //    background-color: rgba(255, 255, 255, 0.76);
+  //  }
+  //}
+
   &--deposit-bonus {
     margin-bottom: 0;
   }
@@ -553,6 +601,10 @@ body {
 .blockHolder {
   display: flex;
   flex-wrap: wrap;
+
+  &--hide {
+    display: none;
+  }
 }
 
 .basicBlock--single {
@@ -578,18 +630,21 @@ body {
     color: #4F4F4F;
     line-height: 25px;
     position: relative;
-    padding-left: 25px;
+
+    span {
+      display: block;
+    }
   }
-  &__itemTitle:before {
-    content: '';
-    width: 15px;
-    margin-left: -25px;
-    height: 25px;
-    position: absolute;
-    display: inline-block;
-    background: url(/img/eth.svg) no-repeat 0 0 transparent;
-    background-size: contain;
-  }
+  //&__itemTitle:before {
+  //  content: '';
+  //  width: 15px;
+  //  margin-left: -25px;
+  //  height: 25px;
+  //  position: absolute;
+  //  display: inline-block;
+  //  background: url(/img/eth.svg) no-repeat 0 0 transparent;
+  //  background-size: contain;
+  //}
   &__itemCaption {
     border-top: 1px solid #F2F2F2;
     margin-top: 10px;
@@ -606,7 +661,7 @@ body {
     font-style: normal;
     font-weight: 500;
     line-height: normal;
-    font-size: 40px;
+    font-size: 31px;
     color: #F9CD2B;
     margin: 10px 0;
   }
@@ -693,6 +748,15 @@ body {
 .dropdown {
   position: relative;
   display: inline-block;
+
+  &--qr {
+
+    display: block;
+
+    img {
+      cursor: pointer;
+    }
+  }
 }
 
 .dropdown-content {
@@ -702,6 +766,10 @@ body {
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
+
+  &--qr {
+    min-width: 200px;
+  }
 }
 
 .dropdown-content a {
@@ -720,4 +788,9 @@ body {
 .dropdown:hover .dropbtn {
   background-color: #F2C94C;
   color: #ffffff;
+}
+
+.dropdown__hint {
+  margin: 0;
+  font-size: 12px;
 }

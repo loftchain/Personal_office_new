@@ -5,7 +5,7 @@
         inputs: $('#formKyc :input'),
         content: $('#divContent'),
         personal: '{{ $personal }}',
-        button: $('button[type="submit"]')
+        button: $('button[type="submit"]'),
     };
 
     $(document).ready(() => {

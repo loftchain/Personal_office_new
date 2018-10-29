@@ -5,9 +5,7 @@
                 <div class="mobileMenuBtn">
                     <button class="cmn-toggle-switch cmn-toggle-switch__htx"><span>toggle menu</span></button>
                 </div>
-                @if(!Auth::user()->confirmed)
-                    <div class="messageTop">{!! trans('layouts/message.messageTop') !!}</div>
-                @endif
+                    <div class="messageTop"></div>
                 <div class="scrollHolder">
                     <div class="content" id="buyTokens">
                         <div class="blockHolder">
@@ -51,7 +49,6 @@
                                                 <div class="settingsActions">
                                                     <a class="settingsActions__link jsChangeEmail" href="#">Change e-mail</a>
                                                     <a class="settingsActions__link jsChangePassword" href="#">Change password</a>
-                                                    <a class="settingsActions__link jsLogOut" href="{{ route('logout') }}">Log out</a>
                                                     <div class="settingsActions__langSelector">
                                                         <div class="dropdown">
                                                             <button class="dropbtn settings__button-language">Languages</button>

@@ -10858,10 +10858,12 @@ body {
 
 .sidebar__logout {
   position: absolute;
-  bottom: 80px;
+  bottom: 50px;
   left: 63px;
   font-size: 20px;
   color: #BDBDBD;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 
 .sidebar__logout:hover {
@@ -10890,17 +10892,24 @@ body {
 }
 
 .messageTop {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   width: 100%;
   padding: 18px;
+  min-height: 56px;
   z-index: 20;
-  background: -webkit-gradient(linear, left top, right top, from(#FFC701), to(#FFE13A));
-  background: linear-gradient(90deg, #FFC701 0%, #FFE13A 100%);
+  background: rgba(224, 224, 224, 0.93);
   color: #fff;
   font-family: 'Rubik', 'Arial', sans-serif;
   font-style: normal;
   font-weight: normal;
   line-height: normal;
   font-size: 14px;
+  line-height: 18px;
   color: #FFFFFF;
   border-top-right-radius: 10px;
   -webkit-box-flex: 0;
@@ -10919,6 +10928,36 @@ body {
     text-overflow: ellipsis;
     white-space: nowrap;
   }
+}
+
+.messageTop__button {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.messageTop__button::before,
+.messageTop__button::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 3px;
+  top: 8px;
+  left: 0;
+  background: #ffffff;
+}
+
+.messageTop__button::before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.messageTop__button::after {
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
 }
 
 .scrollHolder {
@@ -11128,6 +11167,10 @@ body {
       flex-wrap: wrap;
 }
 
+.blockHolder--hide {
+  display: none;
+}
+
 .basicBlock--single {
   min-height: 0;
 }
@@ -11155,18 +11198,10 @@ body {
   color: #4F4F4F;
   line-height: 25px;
   position: relative;
-  padding-left: 25px;
 }
 
-.bonuses__itemTitle:before {
-  content: '';
-  width: 15px;
-  margin-left: -25px;
-  height: 25px;
-  position: absolute;
-  display: inline-block;
-  background: url(/img/eth.svg) no-repeat 0 0 transparent;
-  background-size: contain;
+.bonuses__itemTitle span {
+  display: block;
 }
 
 .bonuses__itemCaption {
@@ -11186,7 +11221,7 @@ body {
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-  font-size: 40px;
+  font-size: 31px;
   color: #F9CD2B;
   margin: 10px 0;
 }
@@ -11285,6 +11320,14 @@ body {
   display: inline-block;
 }
 
+.dropdown--qr {
+  display: block;
+}
+
+.dropdown--qr img {
+  cursor: pointer;
+}
+
 .dropdown-content {
   display: none;
   position: absolute;
@@ -11293,6 +11336,10 @@ body {
   -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
+}
+
+.dropdown-content--qr {
+  min-width: 200px;
 }
 
 .dropdown-content a {
@@ -11313,6 +11360,11 @@ body {
 .dropdown:hover .dropbtn {
   background-color: #F2C94C;
   color: #ffffff;
+}
+
+.dropdown__hint {
+  margin: 0;
+  font-size: 12px;
 }
 
 .welcome__header {
