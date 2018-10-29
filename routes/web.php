@@ -43,6 +43,7 @@ Route::group(['prefix' => 'home', 'as' => 'home.', 'middleware' => ['auth', 'isE
     Route::get('/', 'HomeController@index')->name('index');
     Route::get('/verification', 'KycController@index')->name('kyc');
     Route::post('/verification', 'KycController@store')->name('kyc.store');
+    Route::post('/verification/upload', 'KycController@upload')->name('kyc.upload');
     Route::get('/tokens/buy', 'TokensController@index')->name('tokens');
     Route::post('/tokens/buy', 'TokensController@store_wallet')->name('tokens.store');
     Route::get('/tokens/get/wallets', 'TokensController@current_wallets')->name('current_wallets');
