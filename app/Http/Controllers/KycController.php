@@ -15,7 +15,8 @@ class KycController extends Controller
             'name' => 'required|min:3|max:50',
             'phone' => 'required|min:5|max:20',
             'zip' => 'required|min:3|max:15',
-            'files' => 'required',
+            'address' => 'required|min:3|max:50',
+            'telegram' => 'required|min:3|max:20',
             'g-recaptcha-response' => 'required',
         ]);
     }
@@ -36,6 +37,7 @@ class KycController extends Controller
          }
 
         $investor = Auth::user();
+        $personal = $investor->personal()->first();
 
         $dateBirth = [];
         $dateBirth[] = $request->day;
@@ -43,21 +45,61 @@ class KycController extends Controller
         $dateBirth[] = $request->year;
         $dateBirth = implode(' ', $dateBirth);
 
-        $images = [];
-        foreach ($request->file('files') as $key => $img){
-            $extension = $img->extension();
-            $path = $img->storeAs('uploads', $key . '_' . Carbon::now()->format('ymd_his') . '_investor_id_' . $investor->id . '.' . $extension);
-            $path = explode('/', $path);
-            $images[] = $path[1];
+//        $images = [];
+//        dd($request->all());
+//        foreach ($request->file('files') as $key => $img){
+//            $extension = $img->extension();
+//            $path = $img->storeAs('uploads', $key . '_' . Carbon::now()->format('ymd_his') . '_investor_id_' . $investor->id . '.' . $extension);
+//            $path = explode('/', $path);
+//            $images[] = $path[1];
+//        }
+        if($personal){
+            $investor->personal()->update([
+                'name_surname' => $request->name,
+                'phone' => $request->phone,
+                'date_place_birth' => $dateBirth,
+            ]);
+        } else {
+            $investor->personal()->create([
+                'name_surname' => $request->name,
+                'phone' => $request->phone,
+                'date_place_birth' => $dateBirth,
+//            'doc_img_path' => $images,
+            ]);
         }
 
-        $investor->personal()->create([
-            'name_surname' => $request->name,
-            'phone' => $request->phone,
-            'date_place_birth' => $dateBirth,
-            'doc_img_path' => $images,
-        ]);
 
-        return back();
+        return [
+            'kyc_success' => true
+        ];
+    }
+
+    public function upload(Request $request)
+    {
+        $investor = Auth::user();
+        $personal = $investor->personal()->first();
+
+
+        $img = $request->file('qqfile');
+        $extension = $img->extension();
+        $path = $img->storeAs('uploads',  str_random(5) . Carbon::now()->format('_ymd_his') . '_investor_id_' . $investor->id . '.' . $extension);
+        $path = explode('/', $path);
+
+        if($personal){
+            $images = $personal->doc_img_path;
+            $images[] = $path[1];
+
+            $personal->update([
+                'doc_img_path' => $images
+            ]);
+        }else{
+            $investor->personal()->create([
+               'doc_img_path' => [$path[1]]
+            ]);
+        }
+
+        return [
+            'success' => true
+        ];
     }
 }
