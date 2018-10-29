@@ -6,7 +6,9 @@
             <button class="cmn-toggle-switch cmn-toggle-switch__htx"><span>toggle menu</span></button>
         </div>
         @if(!Auth::user()->confirmed)
-            <div class="messageTop"></div>
+            <div class="messageTop">
+                <p class="messageTop__text"></p>
+            </div>
         @endif
         <div class="scrollHolder">
             <div class="content" id="buyTokens">

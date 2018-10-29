@@ -34,16 +34,18 @@
 
         showMessage(text, bgColor) {
             let message = $('.messageTop');
-            message.html(text + '<button class="messageTop__button"><span></span></button>');
+            let messageText = $('.messageTop__text');
+            // message.html('<p class="messageTop__text">' + text + '</p>' + '<button class="messageTop__button"><span></span></button>');
+            message.append('<button class="messageTop__button"><span></span></button>');
             message.css('background', bgColor);
 
             let closeButton = $('.messageTop__button');
             closeButton.click(function() {
                 if (v.userConfirmed == 0) {
-                  $(this).parent().text('Unfortunately your profile is not verified yet.');
-                 message.css('background', v.bg.warning);
+                  messageText.html('Unfortunately your profile <span>is not verified yet.</span>');
+                  message.css('background', v.bg.warning);
                 }   else {
-                  $(this).parent().text('');
+                  messageText.text('');
                   message.css('background', v.bg.normal);
                 }
                 $(this).remove();
@@ -253,11 +255,12 @@
 
     $(document).ready(() => {
       let message = $('.messageTop');
+      let messageText = $('.messageTop__text');
       if (v.userConfirmed == 0) {
-        message.text('Unfortunately your profile is not verified yet.');
+        messageText.text('Unfortunately your profile is not verified yet.');
         message.css('background', v.bg.warning);
       }   else {
-        $(this).parent().text('');
+        messageText.text('');
         message.css('background', v.bg.normal);
       }
     });

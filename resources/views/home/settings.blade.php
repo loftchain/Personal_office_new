@@ -5,7 +5,9 @@
                 <div class="mobileMenuBtn">
                     <button class="cmn-toggle-switch cmn-toggle-switch__htx"><span>toggle menu</span></button>
                 </div>
-                    <div class="messageTop"></div>
+                    <div class="messageTop">
+                        <p class="messageTop__text"></p>
+                    </div>
                 <div class="scrollHolder">
                     <div class="content" id="buyTokens">
                         <div class="blockHolder">
