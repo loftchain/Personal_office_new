@@ -9,10 +9,10 @@
         grayBorderColor: '#E0E0E0',
         exclamation: '<i class="fa fa-exclamation-circle fa-lg" aria-hidden="true"></i>&nbsp',
         bg: {
-            success: 'green',
-            danger: 'red',
+            success: '#6fe86f',
+            danger: '#f03535',
             warning: 'linear-gradient(90deg, #FFC701 0%, #FFE13A 100%)',
-            normal: 'rgba(224, 224, 224, 0.93)'
+            normal: '#ffffff'
         },
         userConfirmed: '{{ Auth::user() ? Auth::user()->confirmed : null }}',
 
