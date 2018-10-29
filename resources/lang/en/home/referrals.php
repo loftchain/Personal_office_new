@@ -1,8 +1,7 @@
 <?php
 
 return [
-    'refText' => 'Referral fee to the owner of the referral link is 5%, based on the number of tokens purchased using 
-    the referral link. Those who bought tokens using the referral link receive an additional 3% bonus.',
+    'refText' => 'Referral fee to the owner of the referral link is 10%, based on the number of tokens purchased using the referral link.',
     'refBonus' => 'Referral bonus:',
 
     //table
