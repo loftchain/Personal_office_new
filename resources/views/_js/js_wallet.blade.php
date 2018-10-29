@@ -19,7 +19,6 @@
         qrBtc: $('#qrBtc'),
         wInput: $('.wallet'),
         personal: '{{ $personal }}',
-        confirmed: '{{ Auth::user()->confirmed }}',
 
         setWallets(_this) {
             $.ajax({
@@ -67,13 +66,14 @@
             });
         },
 
-        isConfirmed() {
-            let confirmed = wallet.confirmed;
+        isPersonal() {
+            let personal = wallet.personal,
+                input = wallet.wInput;
 
-            if(confirmed == 0) {
-                wallet.bEth.attr('disabled', true);
-                wallet.bBtc.attr('disabled', true);
-                wallet.bPay.attr('disabled', true);
+            if(!personal) {
+                input.attr('disabled', true);
+                // $('#formWallets').attr('style', 'background-color: whitesmoke');
+                // $('#formQr').attr('style', 'background-color: whitesmoke');
             }
         },
 
@@ -90,7 +90,7 @@
             wallet.setWallets($(this));
         });
 
-        wallet.isConfirmed();
+        wallet.isPersonal();
     });
 
     wallet.bEth.click((evt) => {
