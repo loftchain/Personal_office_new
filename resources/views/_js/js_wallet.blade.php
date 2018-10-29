@@ -55,7 +55,7 @@
 
                             if (wallet.type === 'from_to') {
                                 _this.val(wallet_val);
-                                // $('.raisedContainer--qr-1').removeClass('raisedContainer--disabled');
+                                $('.raisedContainer--qr-1').removeClass('raisedContainer--disabled');
                             }
 
                             if (wallet.type === 'to') {
