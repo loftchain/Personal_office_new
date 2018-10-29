@@ -35,14 +35,14 @@
         showMessage(text, bgColor) {
             let message = $('.messageTop');
             let messageText = $('.messageTop__text');
-            // message.html('<p class="messageTop__text">' + text + '</p>' + '<button class="messageTop__button"><span></span></button>');
+            messageText.text(text);
             message.append('<button class="messageTop__button"><span></span></button>');
             message.css('background', bgColor);
 
             let closeButton = $('.messageTop__button');
             closeButton.click(function() {
                 if (v.userConfirmed == 0) {
-                  messageText.html('Unfortunately your profile <span>is not verified yet.</span>');
+                  messageText.text('Unfortunately your profile is not verified yet.');
                   message.css('background', v.bg.warning);
                 }   else {
                   messageText.text('');
