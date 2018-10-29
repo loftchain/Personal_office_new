@@ -11,7 +11,7 @@
                 <div class="scrollHolder">
                     <div class="content" id="buyTokens">
                         <div class="blockHolder">
-                            <div class="raisedContainer basicBlock--settings">
+                            <div class="raisedContainer raisedContainer--full basicBlock--settings">
                                 @if(Auth::user()->email == null)
                                 <div class="alert alert-danger" role="alert">
                                     {!! trans('layouts/message.messageNoEmail') !!}

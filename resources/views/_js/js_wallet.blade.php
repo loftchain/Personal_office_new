@@ -40,11 +40,14 @@
             const type = form.find('.type');
             walletsData.currentWallets.forEach(function (wallet) {
                 let wallet_val = ($(window).width() > 555) ? wallet.wallet : wallet.wallet.trunc(20);
+              if($('#wallet1').val() != '' && $('#wallet2').val() != '') {
+                $('.raisedContainer--qr-2').removeClass('raisedContainer--disabled');
+              }
                 switch (wallet.type) {
                     case 'from':
                         if (currency.val() === wallet.currency) {
                             _this.val(wallet_val);
-                            $('.raisedContainer--qr-2').removeClass('raisedContainer--disabled');
+                            // $('.raisedContainer--qr-2').removeClass('raisedContainer--disabled');
                         }
                         break;
                     default:
@@ -57,7 +60,7 @@
 
                             if (wallet.type === 'to') {
                                 _this.val(wallet_val);
-                                $('.raisedContainer--qr-2').removeClass('raisedContainer--disabled');
+                                // $('.raisedContainer--qr-2').removeClass('raisedContainer--disabled');
                             }
 
                         }

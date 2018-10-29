@@ -52,4 +52,8 @@
 .g-recaptcha {
   display: flex;
   justify-content: center;
+
+  &--verification {
+    margin-bottom: 20px;
+  }
 }

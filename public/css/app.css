@@ -11141,6 +11141,10 @@ body {
   background: rgba(164, 164, 165, 0.03);
 }
 
+.raisedContainer--full {
+  width: 100%;
+}
+
 .raisedContainer--disabled {
   position: relative;
 }
@@ -11167,6 +11171,10 @@ body {
 @media (max-width: 992px) {
   .raisedContainer {
     width: 200px;
+  }
+
+  .raisedContainer--full {
+    width: 100%;
   }
 }
 
@@ -11514,6 +11522,10 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.g-recaptcha--verification {
+  margin-bottom: 20px;
 }
 
 .btnSecondary {
