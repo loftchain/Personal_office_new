@@ -13,7 +13,7 @@
         <div class="scrollHolder">
             <div class="content" id="buyTokens">
                 <div class="blockHolder">
-                    <div class="raisedContainer">
+                    <div class="raisedContainer raisedContainer--full">
                         <div class="basicBlock basicBlock--single">
                             <div class="basicBlock__content">
                                 <div class="basicBlock__title text-center">{!! trans('home/buyTokens.buyTokens') !!}</div>

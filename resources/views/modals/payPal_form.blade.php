@@ -1,4 +1,4 @@
-<div class="raisedContainer">
+<div class="raisedContainer raisedContainer--full">
     <div class="basicBlock basicBlock--single">
         <div class="basicBlock__content">
             <form method="POST" action="{{ route('home.paypal') }}">

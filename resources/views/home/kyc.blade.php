@@ -16,7 +16,7 @@
         <div class="scrollHolder">
             <div class="content">
                 <div class="blockHolder">
-                    <div class="raisedContainer">
+                    <div class="raisedContainer raisedContainer--full">
                         <div class="basicBlock basicBlock--single">
                             <div class="basicBlock__content">
                                 <div class="basicBlock__title text-center">WHITE PAPER CONDITIONS</div>
@@ -31,10 +31,10 @@
                     </div>
                 </div>
                 <div class="blockHolder">
-                    <div class="raisedContainer">
+                    <div class="raisedContainer raisedContainer--full">
                         <div class="basicBlock basicBlock--single">
+                            @if(!$personal)
                             <div class="basicBlock__content basicBlock__content--verification" id="divContent">
-                                @if(!$personal)
                                 <form id="formKyc" class="icoForm" action="{{ route('home.kyc.store') }}" method="post" enctype="multipart/form-data">
                                     {{ csrf_field() }}
                                     <div class="row">
@@ -157,13 +157,14 @@
                                         </div>
                                     </div>
 
-                                    <div class="g-recaptcha" data-sitekey="{{ env('RE_CAP_SITE') }}"></div>
+                                    <div class="g-recaptcha g-recaptcha--verification" data-sitekey="{{ env('RE_CAP_SITE') }}"></div>
                                     <div class="error-message error-message3 error-message-captcha g-recaptcha-response"></div>
 
                                     <div class="text-center">
                                         <button type="submit" class="btn btn--small">{!! trans('home/kyc.kyc_btnSend') !!}</button>
                                     </div>
                                 </form>
+                            </div>
                                 @elseif(Auth::user()->confirmed)
                                     <div class="basicBlock__content basicBlock__form basicBlock__form--success">
                                         <div class="basicBlock__form-text">Thank you, wait for confirmation from the administration. A letter will be sent to  your email address</div>
@@ -179,7 +180,6 @@
                                         </div>
                                     </div>
                                 @endif
-                            </div>
                         </div>
                     </div>
                 </div>
