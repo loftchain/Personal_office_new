@@ -265,7 +265,7 @@
       let message = $('.messageTop');
       let messageText = $('.messageTop__text');
       if (v.userConfirmed == 0) {
-        messageText.text('Unfortunately your profile is not verified yet.');
+        messageText.text('{!! trans('layouts/message.messageTop') !!}');
         message.css('background', v.bg.warning);
       }   else {
         messageText.text('');

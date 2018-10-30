@@ -22,7 +22,17 @@ return [
     'tableSumInfo' => 'Info',
 
     //form
-    'formEth' => 'ETH wallet  for investing and receiving tokens',
+    'formEth' => 'ETH wallet for investing and receiving tokens',
     'formBtcEth' => 'Enter your BTC wallet for investment',
-    'formBtc' => 'Enter ETH wallet to get tokens'
+    'formBtc' => 'Enter ETH wallet to get tokens',
+
+    //formPayPal
+    'formPayPal_title' => 'Payment Form',
+    'formPayPal_invest' => 'Invest in USD',
+    'formPayPal_enterAmount' => 'Enter Amount',
+    'formPayPal_enterEth' => 'Enter you ETH wallet',
+    'formPayPal_Btn' => 'Pay with PayPal',
+
+    //qr
+    'qrHover' => 'hover and zoom',
 ];

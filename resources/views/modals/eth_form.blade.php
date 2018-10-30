@@ -8,7 +8,7 @@
                         <div class="formControl">
                             <input type="hidden" name="type" class="type" value="from_to">
                             <input type="hidden" name="currency" class="currency" value="ETH">
-                            <label class="icoForm__label">ETH wallet  for investing and receiving tokens</label>
+                            <label class="icoForm__label">{!! trans('home/buyTokens.formEth') !!}</label>
                             <input id="wallet" data-currency="ETH" class="wallet icoForm__input icoForm__input--pencil" type="text" name="wallet" required>
                             <button class="icoForm__pencil icoForm__pencil--disabled" type="submit"></button>
                         </div>
@@ -31,7 +31,7 @@
                                 <img width="200" height="200" class="qrCode" alt="qr" src="{{ asset('img/0x7E7884c00cF0032Dc9360A8294a97aDf8fD18B61.png') }}">
                             </div>
                         </div>
-                        <p class="dropdown__hint">hover and zoom</p>
+                        <p class="dropdown__hint">{!! trans('home/buyTokens.qrHover') !!}</p>
                     </div>
                     <div class="col-md-8 align-self-top">
                         <div class="formControl formControl--noMargin">

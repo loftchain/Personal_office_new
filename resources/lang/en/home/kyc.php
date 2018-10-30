@@ -10,6 +10,7 @@ return [
     //kyc
     'kyc_fullName' => 'Full name',
     'kyc_phone' => 'Phone',
+    'kyc_permanentAddress' => 'Permanent address',
     'kyc_dateOfBirth' => 'Date of birth',
     'kyc_day' => 'Day',
     'kyc_month' => 'Month',
@@ -28,6 +29,16 @@ return [
     'kyc_year' => 'Year',
     'kyc_zipCode' => 'ZIP Code',
     'kyc_btnSend' => 'Send',
+
+    //qq
+    'kyc_qq_title' => 'Drag and drop the image of your ID accepted formats:',
+    'kyc_qq_processing' => 'Processing dropped files...',
+    'kyc_qq_retry' => 'Retry',
+    'kyc_qq_close' => 'Close',
+    'kyc_qq_btnNo' => 'No',
+    'kyc_qq_btnYes' => 'Yes',
+    'kyc_qq_btnCancel' => 'Cancel',
+    'kyc_qq_btnOk' => 'Ok',
 
     //vKyc (if verified)
     'vKyc_title' => 'Your account has been successfully verified.',

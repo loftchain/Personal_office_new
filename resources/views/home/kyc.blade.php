@@ -8,20 +8,18 @@
         <div class="mobileMenuBtn">
             <button class="cmn-toggle-switch cmn-toggle-switch__htx"><span>toggle menu</span></button>
         </div>
-{{--        @if(!Auth::user()->confirmed)--}}
             <div class="messageTop">
                 <p class="messageTop__text"></p>
             </div>
-        {{--@endif--}}
         <div class="scrollHolder">
             <div class="content">
                 <div class="blockHolder">
                     <div class="raisedContainer raisedContainer--full">
                         <div class="basicBlock basicBlock--single">
                             <div class="basicBlock__content">
-                                <div class="basicBlock__title text-center">WHITE PAPER CONDITIONS</div>
-                                <div class="basicBlock__subtitle text-center">please read the white paper and agree to the proposed conditions</div>
-                                <div class="btnConainer text-center"><a class="btn btn--whitePaper btn--small" href="#" target="_blank">Read the white paper</a></div>
+                                <div class="basicBlock__title text-center">{!! trans('home/kyc.whitePaper_title') !!}</div>
+                                <div class="basicBlock__subtitle text-center">{!! trans('home/kyc.whitePaper_desc') !!}</div>
+                                <div class="btnConainer text-center"><a class="btn btn--whitePaper btn--small" href="#" target="_blank">{!! trans('home/kyc.whitePaper_btn') !!}</a></div>
                                 <div class="agreement text-center">
                                     <input class="checkbox" type="checkbox" name="agreement" id="agreement" {{ $personal ? 'checked' : '' }}>
                                     <label for="agreement">{!! trans('home/kyc.whitePaper_checkBox') !!}</label>
@@ -167,14 +165,14 @@
                             </div>
                                 @elseif(Auth::user()->confirmed)
                                     <div class="basicBlock__content basicBlock__form basicBlock__form--success">
-                                        <div class="basicBlock__form-text">Thank you, wait for confirmation from the administration. A letter will be sent to  your email address</div>
+                                        <div class="basicBlock__form-text">{!! trans('home/kyc.vKyc_title') !!}</div>
                                         <div class="basicBlock__form-img basicBlock__form-img--success">
                                             <img src="{{ asset('img/form-success.svg') }}" alt="successfully verified">
                                         </div>
                                     </div>
                                 @else
                                     <div class="basicBlock__content basicBlock__form basicBlock__form--waiting">
-                                        <div class="basicBlock__form-text">Thank you, wait for confirmation from the administration. A letter will be sent to  your email address</div>
+                                        <div class="basicBlock__form-text">{!! trans('home/kyc.nKyc_title') !!}</div>
                                         <div class="basicBlock__form-img basicBlock__form-img--waiting">
                                             <img src="{{ asset('img/form-success.svg') }}" alt="wait for confirmation">
                                         </div>
@@ -197,11 +195,10 @@
                     <span class="qq-upload-drop-area-text-selector"></span>
                 </div>
                 <div class="qq-upload-button-selector qq-upload-button">
-                    <div>Drag and drop the image of your ID
-                        accepted formats: jpg, jpeg, png, svg, pdf, zip, rar</div>
+                    <div>{!! trans('home/kyc.kyc_qq_title') !!} jpg, jpeg, png, svg, pdf, zip, rar</div>
                 </div>
                 <span class="qq-drop-processing-selector qq-drop-processing">
-                <span>Processing dropped files...</span>
+                <span>{!! trans('home/kyc.kyc_qq_processing') !!}</span>
                 <span class="qq-drop-processing-spinner-selector qq-drop-processing-spinner"></span>
             </span>
                 <ul class="qq-upload-list-selector qq-upload-list" role="region" aria-live="polite" aria-relevant="additions removals">
@@ -217,7 +214,7 @@
                         {{--<button type="button" class="qq-upload-cancel-selector qq-upload-cancel">X</button>--}}
                         <button type="button" class="qq-upload-retry-selector qq-upload-retry">
                             <span class="qq-btn qq-retry-icon" aria-label="Retry"></span>
-                            Retry
+                            {!! trans('home/kyc.kyc_qq_retry') !!}
                         </button>
 
                         <div class="qq-file-info">
@@ -243,15 +240,15 @@
                 <dialog class="qq-alert-dialog-selector">
                     <div class="qq-dialog-message-selector"></div>
                     <div class="qq-dialog-buttons">
-                        <button type="button" class="qq-cancel-button-selector">Close</button>
+                        <button type="button" class="qq-cancel-button-selector">{!! trans('home/kyc.kyc_qq_close') !!}</button>
                     </div>
                 </dialog>
 
                 <dialog class="qq-confirm-dialog-selector">
                     <div class="qq-dialog-message-selector"></div>
                     <div class="qq-dialog-buttons">
-                        <button type="button" class="qq-cancel-button-selector">No</button>
-                        <button type="button" class="qq-ok-button-selector">Yes</button>
+                        <button type="button" class="qq-cancel-button-selector">{!! trans('home/kyc.kyc_qq_btnNo') !!}</button>
+                        <button type="button" class="qq-ok-button-selector">{!! trans('home/kyc.kyc_qq_btnYes') !!}</button>
                     </div>
                 </dialog>
 
@@ -259,8 +256,8 @@
                     <div class="qq-dialog-message-selector"></div>
                     <input type="text">
                     <div class="qq-dialog-buttons">
-                        <button type="button" class="qq-cancel-button-selector">Cancel</button>
-                        <button type="button" class="qq-ok-button-selector">Ok</button>
+                        <button type="button" class="qq-cancel-button-selector">{!! trans('home/kyc.kyc_qq_btnCancel') !!}</button>
+                        <button type="button" class="qq-ok-button-selector">{!! trans('home/kyc.kyc_qq_btnOk') !!}</button>
                     </div>
                 </dialog>
             </div>
