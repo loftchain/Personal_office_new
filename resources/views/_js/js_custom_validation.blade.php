@@ -133,6 +133,7 @@
                     localStorage.setItem('success_reset_pwd', '+');
                     break;
                 case !$.isEmptyObject(data.success_changed_email):
+                    _this.find('.icoForm__input').val('');
                     v.closeModal();
                     v.showMessage('{!! trans('modals/modals.emailChanged_js') !!}', v.bg.success);
                     {{--v.showNotification('{!! trans('modals/modals.emailChanged_js') !!}', 'success');--}}

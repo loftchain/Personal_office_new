@@ -60,7 +60,7 @@
                                                     <img width="200" height="200" class="qrCode" alt="qr" src="{{ asset('img/0x7E7884c00cF0032Dc9360A8294a97aDf8fD18B61.png') }}">
                                                 </div>
                                             </div>
-                                            <p class="dropdown__hint">{!! trans('home/buyTokens.qrHover') !!}</p>
+                                            {{--<p class="dropdown__hint">{!! trans('home/buyTokens.qrHover') !!}</p>--}}
                                         </div>
                                         <div class="col-md-8 align-self-top">
                                             <div class="formControl formControl--noMargin">
