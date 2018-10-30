@@ -8,7 +8,7 @@
         <div class="scrollHolder">
             <div class="content" id="buyTokens">
                 <div class="blockHolder">
-                    <div class="raisedContainer basicBlock--settings">
+                    <div class="raisedContainer raisedContainer--full basicBlock--settings">
                         <div class="basicBlock basicBlock--single">
                             <div class="basicBlock__content">
                                 {{--<admin-verification-table></admin-verification-table>--}}

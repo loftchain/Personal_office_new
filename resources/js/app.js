@@ -17,6 +17,7 @@ window.Vue = require('vue');
 
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
 Vue.component('admin-verification-table', require('./components/AdminVerificationTable.vue'));
+Vue.component('history-table', require('./components/history/index'));
 
 const app = new Vue({
     el: '#app'
