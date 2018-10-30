@@ -6,6 +6,8 @@ return [
     'minDep' => 'Minimum deposit amount: ',
     'setGas' => 'Set GAS:',
 
+    'walletAdded' => 'Wallet successfully added!',
+
     //transactions
     'trans' => 'TRANSACTIONS',
     'transText' => 'Thank you for your participation! You can see your transactions',

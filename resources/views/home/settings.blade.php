@@ -49,8 +49,8 @@
                                                     </div>
                                                 </form>
                                                 <div class="settingsActions">
-                                                    <a class="settingsActions__link jsChangeEmail" href="#">Change e-mail</a>
-                                                    <a class="settingsActions__link jsChangePassword" href="#">Change password</a>
+                                                    <a class="settingsActions__link jsChangeEmail" href="#">{!! trans('home/settings.changeEmail') !!}</a>
+                                                    <a class="settingsActions__link jsChangePassword" href="#">{!! trans('home/settings.changePassword') !!}</a>
                                                     <div class="settingsActions__langSelector">
                                                         <div class="dropdown">
                                                             <button class="dropbtn settings__button-language">Languages</button>
