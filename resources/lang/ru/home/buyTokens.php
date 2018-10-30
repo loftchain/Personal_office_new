@@ -24,5 +24,15 @@ return [
     //form
     'formEth' => 'ETH кошелек для инвестирования и получения токенов',
     'formBtc' => 'Введите свой кошелек BTC для инвестиций',
-    'formBtcEth' => 'Введите кошелек ETH для получения токенов'
+    'formBtcEth' => 'Введите кошелек ETH для получения токенов',
+
+    //formPayPal
+    'formPayPal_title' => 'Форма оплаты',
+    'formPayPal_invest' => 'Инвестировать в USD',
+    'formPayPal_enterAmount' => 'Введите сумму',
+    'formPayPal_enterEth' => 'Введите ваш ETH кошелек',
+    'formPayPal_Btn' => 'Оплата через PayPal',
+
+    //qr
+    'qrHover' => 'наведите для увеличения'
 ];

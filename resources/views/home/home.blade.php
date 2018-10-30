@@ -59,7 +59,7 @@
                         <div class="raisedContainer">
                             <div class="basicBlock basicBlock--single">
                                 <div class="basicBlock__content basicBlock__content--preICO">
-                                    <div class="basicBlock__title text-center basicBlock__title--vertical">pre-ico starts at {{ $data['stageEnd'] }}</div>
+                                    <div class="basicBlock__title text-center basicBlock__title--vertical">{!! trans('home/home.ico_stage0_start') !!} {{ $data['stageEnd'] }}</div>
                                 </div>
                             </div>
                         </div>
@@ -131,8 +131,8 @@
                                     <div class="basicBlock__text">
                                         <p>Soft Cap: {{ number_format(env('ICO_SOFT_CAP')) }}$</p>
                                         <p>Hard cap: {{ number_format(env('ICO_HARD_CAP')) }}$</p>
-                                        <p>Current price: {{ isset($data['currentPrice']) ? $data['currentPrice'] . '$' : 'Not for sale'}}</p>
-                                        <p>Minimum deposit amount: {{ env('MIN_DEP_ETH') }} ETH</p><br>
+                                        <p>{!! trans('home/home.round_currentPrice') !!} {{ isset($data['currentPrice']) ? $data['currentPrice'] . '$' : 'Not for sale'}}</p>
+                                        <p>{!! trans('home/home.round_minDeposit') !!} {{ env('MIN_DEP_ETH') }} ETH</p><br>
                                     </div>
                                 </div>
                             </div>
@@ -140,7 +140,7 @@
                         <div class="raisedContainer">
                             <div class="basicBlock">
                                 <div class="basicBlock__content">
-                                    <div class="basicBlock__title">raised during {{ $data['roundName'] }}</div>
+                                    <div class="basicBlock__title">{!! trans('home/home.round_raised') !!} {{ $data['roundName'] }}</div>
                                     <div class="raisedSlider">
                                         <div class="owl-carousel owl-theme">
                                             <div class="raisedSlider__item"><img class="raisedSlider__itemImage" src="img/eth.svg" alt="eth"><span class="raisedSlider__itemValue">{{ number_format($data['ethCurrentAmountRound']['currency'], 2, '.', ' ') }}</span></div>
@@ -159,7 +159,7 @@
                         <div class="raisedContainer">
                             <div class="basicBlock basicBlock--single">
                                 <div class="basicBlock__content">
-                                    <div class="basicBlock__title">totalLy raised</div>
+                                    <div class="basicBlock__title">{!! trans('home/home.totally_raised') !!}</div>
                                     <div class="percentBar" data-percent="{{ number_format($data['totalUSDCollected'] / (env('ICO_HARD_CAP') / 100), 0, '.', ' ') }}"> <span class="percentBar__fill"></span><span class="percentBar__marker"></span><span class="percentBar__number"> </span></div>
                                     <div class="raisedSlider">
                                         <div class="owl-carousel owl-theme">
@@ -177,7 +177,7 @@
                         <div class="raisedContainer">
                             <div class="basicBlock basicBlock--single">
                                 <div class="basicBlock__content">
-                                    <div class="basicBlock__title text-center">ico is finished</div>
+                                    <div class="basicBlock__title text-center">{!! trans('home/home.ico_finished') !!}</div>
                                     <div class="percentBar" data-percent="100"> <span class="percentBar__fill"></span><span class="percentBar__marker"></span><span class="percentBar__number"> </span></div>
                                     <div class="period">
                                         <div class="period__from"> from  {{ $data['stageBegin'] }}</div>

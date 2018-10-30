@@ -10,6 +10,7 @@ return [
     //kyc
     'kyc_fullName' => 'Ваше Ф.И.О',
     'kyc_phone' => 'Телефон',
+    'kyc_permanentAddress' => 'Постоянный адрес',
     'kyc_dateOfBirth' => 'Дата рождения',
     'kyc_day' => 'День',
     'kyc_month' => 'Месяц',
@@ -28,6 +29,16 @@ return [
     'kyc_year' => 'Год',
     'kyc_zipCode' => 'ZIP код',
     'kyc_btnSend' => 'Отправить',
+
+    //qq
+    'kyc_qq_title' => 'Перетащите изображение ваших принятых форматов:',
+    'kyc_qq_processing' => 'Обработка загруженных файлов ...',
+    'kyc_qq_retry' => 'Снова',
+    'kyc_qq_close' => 'Закрыть',
+    'kyc_qq_btnNo' => 'Нет',
+    'kyc_qq_btnYes' => 'Да',
+    'kyc_qq_btnCancel' => 'Отменить',
+    'kyc_qq_btnOk' => 'Хорошо',
 
     //vKyc (if verified)
     'vKyc_title' => 'Ваша учетная запись была успешно проверена.',
