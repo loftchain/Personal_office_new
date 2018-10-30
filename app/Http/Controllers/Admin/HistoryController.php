@@ -10,6 +10,11 @@ class HistoryController extends Controller
 {
     public function index()
     {
+        return view('admin.history');
+    }
+
+    public function get()
+    {
         $histories = InvestorHistoryFields::with('investor')->get();
 
         $histories = $histories->toArray();
@@ -49,8 +54,6 @@ class HistoryController extends Controller
             }
         }
 
-        return view('admin.history', [
-            'histories' => $data
-        ]);
+        return $data;
     }
 }

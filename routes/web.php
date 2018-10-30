@@ -60,9 +60,12 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['admin']],
    Route::get('/verification/{investor}/confirm', 'Admin\KycController@confirm')->name('kyc.confirm');
    Route::get('/verification/{investor}/reject', 'Admin\KycController@rejected')->name('kyc.reject');
    Route::get('/history', 'Admin\HistoryController@index')->name('history');
+   Route::get('/history/get', 'Admin\HistoryController@get')->name('history.get');
    Route::get('/referral', 'Admin\ReferralController@index')->name('referral');
    Route::get('/transaction', 'Admin\TransactionController@index')->name('transaction');
 });
+
+Route::get('/testtt', 'Admin\HistoryController@get');
 
 Route::get('/storage/{path}', 'SettingsController@getAvatar')->name('settings.get.avatar');
 Route::get('settings', 'HomeController@settings')->name('home.settings');
