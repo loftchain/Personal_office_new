@@ -16,7 +16,7 @@ class KycController extends Controller
             'phone' => 'required|min:5|max:20',
             'zip' => 'required|min:3|max:15',
             'address' => 'required|min:3|max:50',
-            'telegram' => 'required|min:3|max:20',
+            'telegram' => 'regex:(^(@[a-zA-Z_]+)(\d+)?$)',
             'g-recaptcha-response' => 'required',
         ]);
     }
