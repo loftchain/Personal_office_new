@@ -10,4 +10,6 @@ return [
     'rSubject' => 'Account Rejected',
     'rTitle' => 'Verification was rejected by the administration due to incorrect data',
     'rButton' => 'Re-identify',
+
+    'resetPasswordSubject_controller' => 'Forgot your password?',
 ];

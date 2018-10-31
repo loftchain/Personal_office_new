@@ -15,5 +15,6 @@ return [
 
     'failed' => '這些憑據與我們的記錄不符.',
     'throttle' => '登錄嘗試次數過多。 請再試一次 :seconds 秒.',
+    'not_found' => '对不起，找不到此用户',
 
 ];

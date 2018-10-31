@@ -58,6 +58,7 @@
         },
 
         stateSelection: (data, _this) => {
+            console.log(data)
             switch (true) {
                 case !$.isEmptyObject(data.validation_error):
                     if (data.validation_error['g-recaptcha-response']) {
@@ -119,7 +120,8 @@
                     localStorage.setItem('success_login', '+');
                     break;
                 case !$.isEmptyObject(data.success_reset_email_sent):
-                    v.showMessage('{!! trans('auth/resetPwd.letterSent_js') !!}', v.bg.success);
+                    window.location.replace("/");
+                    {{--v.showMessage('{!! trans('auth/resetPwd.letterSent_js') !!}', v.bg.success);--}}
                     {{--v.showNotification('{!! trans('auth/resetPwd.letterSent_js') !!}', 'success');--}}
                     v.closeModal();
                     break;

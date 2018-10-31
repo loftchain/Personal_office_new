@@ -12,7 +12,8 @@
                 <label class="icoForm__label">E-mail</label>
                 <input class="icoForm__input" type="email" name="email" required>
             </div>
-            @captcha
+            <div class="error-message failed"></div>
+            <div class="g-recaptcha" data-sitekey="{{ env('RE_CAP_SITE') }}"></div>
             <div class="formControl">
                 <button class="btn" type="submit">Next</button>
             </div>
