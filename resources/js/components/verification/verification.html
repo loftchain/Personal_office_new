@@ -1,0 +1,30 @@
+<div>
+  <section class="verification">
+    <div class="dataTable">
+      <table class="dataTable__list">
+        <tr>
+          <th>Photo</th>
+          <th>Investor ID</th>
+          <th>E-mail</th>
+          <th>Full name</th>
+          <th>Date or birth</th>
+          <th>KYC</th>
+        </tr>
+        <tr class="dataTable__success" v-for="investor in investors">
+          <td>
+            <img :src="investor.img ? currentUrl + '/storage/' + investor.img : currentUrl + '/img/avatar.png'"
+                 style="max-width: 75px; max-height: 75px;">
+          </td>
+          <td>{{ investor.id }}</td>
+          <td>{{ investor.email }}</td>
+          <td>{{ investor.name }}</td>
+          <td>{{ investor.personal.date_place_birth }}</td>
+          <td>
+            <button class="btn">more</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </section>
+</div>
+

@@ -11,7 +11,7 @@
             </div>
         {{--@endif--}}
         <div class="scrollHolder">
-            <div class="content" id="buyTokens">
+            <div class="content">
                 <div class="blockHolder">
                     <div class="raisedContainer raisedContainer--full">
                         <div class="basicBlock basicBlock--single">

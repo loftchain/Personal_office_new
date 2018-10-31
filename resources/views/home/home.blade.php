@@ -11,8 +11,6 @@
         <div class="scrollHolder">
             <div class="content">
 
-
-
                 @if($data['stage'] === 0)
                     <div class="blockHolder">
                         <div class="timerContainer">
