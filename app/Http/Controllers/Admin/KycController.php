@@ -51,7 +51,7 @@ class KycController extends Controller
         return back();
     }
 
-    public function users()
+    public function get()
     {
         $investors = Investor::has('personal')->with('personal')->get();
 
