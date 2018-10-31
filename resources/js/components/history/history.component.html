@@ -5,17 +5,13 @@
       <th>Action</th>
       <th>Old info</th>
       <th>New info</th>
-      <th>date</th>
+      <th>Date</th>
     </tr>
-    <div v-for="(history, investorId) in histories">
-      <tr class="dataTable__success" v-for="(action, actionKey) in history">
-        <td>{{ investorId }}</td>
-        <td>{{ actionKey }}</td>
-        <td>{{ action[0] }}</td>
-        <td>{{ action[1] }}</td>
-        <td>{{ action[2] }}</td>
-      </tr>
-    </div>
+    <tr v-for="history in sortedItems">
+      <td>{{ history.id }}</td>
+      <td>{{ history.investor_id }}</td>
+      <td>{{ history.investor_id }}</td>
+    </tr>
   </table>
 </div>
 
