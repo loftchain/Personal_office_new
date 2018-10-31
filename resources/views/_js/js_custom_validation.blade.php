@@ -151,8 +151,8 @@
                     console.log('test error')
                     break;
                 case !$.isEmptyObject(data.wallet_added):
-                    v.showMessage('{!! trans('home/wallet.added_js') !!}', v.bg.success);
-                    console.log(_this.children('.formControl').children('.type').val());
+                    v.showMessage('{!! trans('home/buyTokens.walletAdded') !!}', v.bg.success);
+                    $('#fakeTable').show();
                     {{--v.showNotification('{!! trans('home/wallet.added_js') !!}', 'success');--}}
                     if (typeof wallet !== 'undefined') {
                         // wa.exitEditMode(_this.children('.w-input'));
