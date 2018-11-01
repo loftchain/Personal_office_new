@@ -48052,7 +48052,7 @@ exports = module.exports = __webpack_require__(13)(false);
 
 
 // module
-exports.push([module.i, "\n.verification .modal[data-v-a002bb2e] {\n  z-index: 100;\n}\n.verification .modal-background[data-v-a002bb2e] {\n  background-color: rgba(255, 255, 255, 0.4);\n}\n.verification .modal-content[data-v-a002bb2e] {\n  -webkit-box-shadow: 0px 0px 70px #E0E0E0;\n          box-shadow: 0px 0px 70px #E0E0E0;\n}\n.verification .modal__header[data-v-a002bb2e] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  padding: 10px;\n}\n.verification .modal__header-user[data-v-a002bb2e] {\n  margin: 0;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n.verification .modal__header-user div[data-v-a002bb2e] {\n    margin-right: 10px;\n    border-radius: 50%;\n    overflow: hidden;\n}\n.verification .modal-close[data-v-a002bb2e] {\n  width: 40px;\n  height: 40px;\n  position: relative;\n  top: auto;\n  right: 0;\n}\n.verification .modal-close[data-v-a002bb2e]::before, .verification .modal-close[data-v-a002bb2e]::after {\n    background: black;\n}\n.verification .modal__main[data-v-a002bb2e] {\n  min-height: 500px;\n}\n.verification .swiper-container[data-v-a002bb2e] {\n  height: 400px;\n}\n.verification .swiper-slide[data-v-a002bb2e] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n", ""]);
+exports.push([module.i, "\n.verification .modal[data-v-a002bb2e] {\n  z-index: 100;\n}\n.verification .modal-background[data-v-a002bb2e] {\n  background-color: rgba(255, 255, 255, 0.4);\n}\n.verification .modal-content[data-v-a002bb2e] {\n  -webkit-box-shadow: 0px 0px 70px #E0E0E0;\n          box-shadow: 0px 0px 70px #E0E0E0;\n}\n.verification .modal__header[data-v-a002bb2e] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  padding: 10px;\n}\n.verification .modal__header-user[data-v-a002bb2e] {\n  margin: 0;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n.verification .modal__header-user div[data-v-a002bb2e] {\n    margin-right: 10px;\n    border-radius: 50%;\n    overflow: hidden;\n}\n.verification .modal-close[data-v-a002bb2e] {\n  width: 40px;\n  height: 40px;\n  position: relative;\n  top: auto;\n  right: 0;\n}\n.verification .modal-close[data-v-a002bb2e]::before, .verification .modal-close[data-v-a002bb2e]::after {\n    background: black;\n}\n.verification .modal__main[data-v-a002bb2e] {\n  min-height: 400px;\n}\n.verification .swiper-container[data-v-a002bb2e] {\n  height: 400px;\n}\n.verification .swiper-slide[data-v-a002bb2e] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n.verification .modal__footer[data-v-a002bb2e] {\n  margin: 0 auto;\n  width: 300px;\n  padding: 30px 0;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n}\n", ""]);
 
 // exports
 
@@ -48086,6 +48086,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       investors: null,
       currentUrl: window.location.origin,
       swiperOptionA: {
+        pagination: {
+          el: '.swiper-pagination'
+        },
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev'
@@ -48269,7 +48272,9 @@ var render = function() {
                             )
                           ],
                           1
-                        )
+                        ),
+                        _vm._v(" "),
+                        _vm._m(1, true)
                       ])
                     ]
                   )
@@ -48300,6 +48305,16 @@ var staticRenderFns = [
       _c("th", [_vm._v("Date or birth")]),
       _vm._v(" "),
       _c("th", [_vm._v("KYC")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("footer", { staticClass: "modal__footer" }, [
+      _c("button", { staticClass: "btn" }, [_vm._v("Apply")]),
+      _vm._v(" "),
+      _c("button", { staticClass: "btn" }, [_vm._v("Return")])
     ])
   }
 ]

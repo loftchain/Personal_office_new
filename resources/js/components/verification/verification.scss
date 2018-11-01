@@ -42,7 +42,7 @@
 }
 
 .verification .modal__main {
-  min-height: 500px;
+  min-height: 400px;
 }
 
 .verification .swiper-container {
@@ -53,4 +53,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.verification .modal__footer {
+  margin: 0 auto;
+  width: 300px;
+  padding: 30px 0;
+  display: flex;
+  justify-content: space-between;
 }
