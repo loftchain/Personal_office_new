@@ -44,30 +44,15 @@ class TokensController extends Controller
         ]);
     }
 
-    protected function wallet_history_make($method, $wallet, $history)
+    protected function wallet_history_make($wallet)
     {
-        if ($method == 'store wallet') {
-            $h = [
-                'wallet_currency_new' => $wallet['name_of_wallet_invest_from'],
-                'wallet_invest_from_new' => $wallet['wallet_invest_from'],
-                'wallet_get_tokens_new' => $wallet['wallet_get_tokens'],
-                'update_wallet_at' => Carbon::now()
-            ];
-
-            InvestorHistoryFields::where('investor_id', Auth::id())->update($h);
-        } else {
-            $uh = [
-                'wallet_currency_old' => $history['wallet_currency_new'],
-                'wallet_currency_new' => $wallet['name_of_wallet_invest_from'],
-                'wallet_invest_from_old' => $history['wallet_invest_from_new'],
-                'wallet_invest_from_new' => $wallet['wallet_invest_from'],
-                'wallet_get_tokens_old' => $history['wallet_get_tokens_new'],
-                'wallet_get_tokens_new' => $wallet['wallet_get_tokens'],
-                'update_wallet_at' => Carbon::now()
-            ];
-
-            InvestorHistoryFields::where('investor_id', Auth::id())->update($uh);
-        }
+        InvestorHistoryFields::create([
+            'investor_id' => Auth::id(),
+            'action' => 'store_wallet',
+            'info_1' => 'currency: ' . $wallet->currency . '; type: ' . $wallet->type . ';',
+            'info_2' => $wallet->wallet,
+            'date' => Carbon::now()
+        ]);
     }
 
     public function store_wallet(Request $request)
@@ -82,6 +67,8 @@ class TokensController extends Controller
         $wallet = $this->create($request->all());
         $wallet->active = '1';
         $wallet->save();
+
+        $this->wallet_history_make($request);
 
         return response()->json(['wallet_added' => 'Wallet was successfully added', 'currency' => $wallet->currency]);
     }
