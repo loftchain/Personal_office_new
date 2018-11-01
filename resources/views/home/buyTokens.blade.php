@@ -106,8 +106,8 @@
                                             <td>{{ $transaction->amount_tokens }}</td>
                                             <td>{{ $transaction->status }}</td>
                                             <td>
-                                                <i class="up-btn trans-{{ $transaction->id }} fa fa-chevron-up" dataid="{{ $transaction->id }}"></i>
-                                                <i class="dn-btn trans-{{ $transaction->id }} fa fa-chevron-down" dataid="{{ $transaction->id }}" style="display: none"></i>
+                                                <i class="up-btn trans-{{ $transaction->id }} fa fa-chevron-up" dataid="{{ $transaction->id }}" style="cursor: pointer"></i>
+                                                <i class="dn-btn trans-{{ $transaction->id }} fa fa-chevron-down" dataid="{{ $transaction->id }}" style="display: none; cursor: pointer"></i>
                                             </td>
                                         </tr>
                                             <tr class="dataTable__summary" id="data-{{ $transaction->id }}" style="display: none">
@@ -116,7 +116,7 @@
                                             </tr>
                                         @empty
                                         <tr class="dataTable__error">
-                                            <td colspan="4"><h3>{!! trans('home/buyTokens.tableNoTrans') !!}</h3></td>
+                                            <td colspan="5"><h3>{!! trans('home/buyTokens.tableNoTrans') !!}</h3></td>
                                         </tr>
                                         @endforelse
 
@@ -141,9 +141,10 @@
                                                 <th>{!! trans('home/buyTokens.tableTransCurrency') !!}</th>
                                                 <th>{!! trans('home/buyTokens.tableTransToken') !!}</th>
                                                 <th>{!! trans('home/buyTokens.tableTransStatus') !!}</th>
+                                                <th>Action</th>
                                             </tr>
                                                 <tr class="dataTable__error">
-                                                    <td colspan="4"><h3>{!! trans('home/buyTokens.tableNoTrans') !!}</h3></td>
+                                                    <td colspan="5"><h3>{!! trans('home/buyTokens.tableNoTrans') !!}</h3></td>
                                                 </tr>
                                         </table>
                                     </div>
