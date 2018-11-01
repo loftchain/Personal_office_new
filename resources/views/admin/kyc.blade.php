@@ -1,7 +1,10 @@
 @extends('layouts.app')
 
-@section('content')
 
+@section('content')
+    @push('links')
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.css">
+    @endpush
     <div  class="workArea jsWorkArea">
 
         <div class="mobileMenuBtn">

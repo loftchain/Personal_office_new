@@ -20,7 +20,33 @@
           <td>{{ investor.name }}</td>
           <td>{{ investor.personal.date_place_birth }}</td>
           <td>
-            <button class="btn">more</button>
+            <button class="btn" @click="showModal(investor.id)">more</button>
+            <div class="modal" :id="investor.id">
+              <div class="modal-background"></div>
+              <div class="modal-content">
+                <header class="modal__header">
+                  <div class="modal__header-user">
+                    <div>
+                      <img :src="investor.img ? currentUrl + '/storage/' + investor.img : currentUrl + '/img/avatar.png'"
+                           style="max-width: 75px; max-height: 75px;">
+                    </div>
+                    <span>{{ investor.name }}</span>
+                  </div>
+                  <button class="modal-close is-large" aria-label="close" @click="hideModal(investor.id)"></button>
+                </header>
+                <main class="modal__main">
+                  <swiper ref="awesomeSwiperA" :options="swiperOptionA" @set-translate="onSetTranslate">
+                    <swiper-slide v-for="item in investor.personal.doc_img_path">
+                      <img :src="currentUrl + '/storage/' + item" alt="Photo">
+                    </swiper-slide>
+                    <!-- Optional controls -->
+                    <div class="swiper-pagination" slot="pagination"></div>
+                    <div class="swiper-button-prev" slot="button-prev"></div>
+                    <div class="swiper-button-next" slot="button-next"></div>
+                  </swiper>
+                </main>
+              </div>
+            </div>
           </td>
         </tr>
       </table>

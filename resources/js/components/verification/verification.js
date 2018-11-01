@@ -1,13 +1,25 @@
 import axios from 'axios';
 
+import 'swiper/dist/css/swiper.css';
+import { swiper, swiperSlide } from 'vue-awesome-swiper';
+
 export default {
   name: 'verification',
-  components: {},
+  components: {
+    swiper,
+    swiperSlide
+  },
   props: [],
   data () {
     return {
       investors: null,
-      currentUrl: window.location.origin
+      currentUrl: window.location.origin,
+      swiperOptionA: {
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        }
+      }
     }
   },
 
@@ -15,8 +27,14 @@ export default {
     this.getUsers();
   },
 
-  computed: {
+  mounted() {
+    console.log('this is current swiper instance object', this)
+  },
 
+  computed: {
+    swiperA() {
+      return this.$refs.awesomeSwiperA.swiper
+    }
   },
 
   methods: {
@@ -25,6 +43,20 @@ export default {
         .then(res => {
           this.investors = res.data;
         });
+    },
+
+    showModal(id) {
+      let modal = document.getElementById(id);
+      modal.classList.add('is-active');
+    },
+
+    hideModal(id) {
+      let modal = document.getElementById(id);
+      modal.classList.remove('is-active');
+    },
+
+    onSetTranslate() {
+      console.log('onSetTranslate')
     }
   }
 }
