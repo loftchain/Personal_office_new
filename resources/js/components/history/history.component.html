@@ -1,16 +1,21 @@
 <div class="dataTable">
   <table class="dataTable__list">
     <tr>
-      <th>Investor ID</th>
-      <th>Action</th>
-      <th>Old info</th>
-      <th>New info</th>
-      <th>Date</th>
+      <th @click="sort('investor_id')">Investor ID</th>
+      <th @click="sort('action')">Action</th>
+      <th @click="sort('info_1')">Old info</th>
+      <th @click="sort('info_2')">New info</th>
+      <th @click="sort('date')">Date</th>
     </tr>
     <tr v-for="history in sortedItems">
-      <td>{{ history.id }}</td>
       <td>{{ history.investor_id }}</td>
-      <td>{{ history.investor_id }}</td>
+      <td>
+        {{renameAction(history.action)}}
+      </td>
+
+      <td>{{ cutInfo(history, history.action) }}</td>
+      <td>{{ history.info_2 }}</td>
+      <td>{{ history.date }}</td>
     </tr>
   </table>
 </div>

@@ -35,7 +35,7 @@
                   <button class="modal-close is-large" aria-label="close" @click="hideModal(investor.id)"></button>
                 </header>
                 <main class="modal__main">
-                  <swiper ref="awesomeSwiperA" :options="swiperOptionA" @set-translate="onSetTranslate">
+                  <swiper ref="awesomeSwiperA" :options="swiperOptionA" v-if="investor.personal.doc_img_path.length>0">
                     <swiper-slide v-for="item in investor.personal.doc_img_path">
                       <img :src="currentUrl + '/storage/' + item" alt="Photo">
                     </swiper-slide>
