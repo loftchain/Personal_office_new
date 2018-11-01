@@ -97,6 +97,7 @@
                                             <th>{!! trans('home/buyTokens.tableTransCurrency') !!}</th>
                                             <th>{!! trans('home/buyTokens.tableTransToken') !!}</th>
                                             <th>{!! trans('home/buyTokens.tableTransStatus') !!}</th>
+                                            <th>Action</th>
                                         </tr>
                                         @forelse($transactions as $transaction)
                                         <tr class="{{ $transaction->status == 'true' ? "dataTable__success" : 'dataTable__error' }}">
@@ -104,16 +105,21 @@
                                             <td>{{ $transaction->amount }}</td>
                                             <td>{{ $transaction->amount_tokens }}</td>
                                             <td>{{ $transaction->status }}</td>
+                                            <td>
+                                                <i class="up-btn trans-{{ $transaction->id }} fa fa-chevron-up" dataid="{{ $transaction->id }}"></i>
+                                                <i class="dn-btn trans-{{ $transaction->id }} fa fa-chevron-down" dataid="{{ $transaction->id }}" style="display: none"></i>
+                                            </td>
                                         </tr>
+                                            <tr class="dataTable__summary" id="data-{{ $transaction->id }}" style="display: none">
+                                                <td colspan="3"><span class="dataTable__address"><strong>{!! trans('home/buyTokens.tableSumTo') !!}</strong>: {{ $transaction->from }}</span></td>
+                                                <td colspan="2"><strong>{!! trans('home/buyTokens.tableSumInfo') !!}: </strong><a class="dataTable__link" href="#">{{ $transaction->info }}</a></td>
+                                            </tr>
                                         @empty
                                         <tr class="dataTable__error">
                                             <td colspan="4"><h3>{!! trans('home/buyTokens.tableNoTrans') !!}</h3></td>
                                         </tr>
                                         @endforelse
-                                        <tr class="dataTable__summary">
-                                            <td colspan="2"><span class="dataTable__address"><strong>{!! trans('home/buyTokens.tableSumTo') !!}</strong>: h5723882302832cn8399c2</span></td>
-                                            <td colspan="2"><strong>{!! trans('home/buyTokens.tableSumInfo') !!}: </strong><a class="dataTable__link" href="#">h5723882302832cn8399c2</a></td>
-                                        </tr>
+
                                     </table>
                                 </div>
                             </div>
@@ -152,5 +158,6 @@
     @push('scripts')
         @include('_js.js_wallet')
         @include('_js.js_copy_to_clipboard')
+        @include('_js.js_transactions')
     @endpush
 @endsection
