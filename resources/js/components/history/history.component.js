@@ -64,9 +64,23 @@ export default {
     },
 
     cutInfo(item, action) {
-      if(action === 'registration') {
-        return item.info_2.substr(0, 20);
+      let history = {};
+
+      if (action === 'registration') {
+        history['info_1'] = item.info_1;
+        history['info_2'] = item.info_2.substr(0, 15);
+      } else if(action === 'forgot_pwd') {
+        history['info_1'] = item.info_1.substr(0, 15);
+        history['info_2'] = item.info_2.substr(0, 15);
+      } else if(action === 'change_pwd') {
+        history['info_1'] = item.info_1.substr(0, 15);
+        history['info_2'] = item.info_2.substr(0, 15);
+      } else {
+        history['info_1'] = item.info_1;
+        history['info_2'] = item.info_2;
       }
+
+      return history;
     }
   }
 }

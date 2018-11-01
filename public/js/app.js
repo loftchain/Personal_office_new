@@ -47946,9 +47946,23 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
       }
     },
     cutInfo: function cutInfo(item, action) {
+      var history = {};
+
       if (action === 'registration') {
-        return item.info_2.substr(0, 20);
+        history['info_1'] = item.info_1;
+        history['info_2'] = item.info_2.substr(0, 15);
+      } else if (action === 'forgot_pwd') {
+        history['info_1'] = item.info_1.substr(0, 15);
+        history['info_2'] = item.info_2.substr(0, 15);
+      } else if (action === 'change_pwd') {
+        history['info_1'] = item.info_1.substr(0, 15);
+        history['info_2'] = item.info_2.substr(0, 15);
+      } else {
+        history['info_1'] = item.info_1;
+        history['info_2'] = item.info_2;
       }
+
+      return history;
     }
   }
 });
@@ -48040,9 +48054,13 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(_vm.cutInfo(history, history.action)))]),
+            _c("td", [
+              _vm._v(_vm._s(_vm.cutInfo(history, history.action)["info_1"]))
+            ]),
             _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(history.info_2))]),
+            _c("td", [
+              _vm._v(_vm._s(_vm.cutInfo(history, history.action)["info_2"]))
+            ]),
             _vm._v(" "),
             _c("td", [_vm._v(_vm._s(history.date))])
           ])
