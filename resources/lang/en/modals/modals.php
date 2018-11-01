@@ -53,4 +53,6 @@ return [
 
     //wallet
     'copy' => 'Copy',
+
+    'setNewPass' => 'Set new password'
 ];

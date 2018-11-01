@@ -54,4 +54,5 @@ return [
     //wallet
     'copy' => 'Копировать',
 
+    'setNewPass' => 'Сбросить пароль'
 ];
