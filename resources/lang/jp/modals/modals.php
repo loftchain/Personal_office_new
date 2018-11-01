@@ -53,4 +53,6 @@ return [
 
     //wallet
     'copy' => 'コピー',
+
+    'setNewPass' => '新しいパスワードを設定する'
 ];

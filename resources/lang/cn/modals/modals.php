@@ -53,4 +53,6 @@ return [
 
     //wallet
     'copy' => '複製',
+
+    'setNewPass' => '設置新密碼'
 ];

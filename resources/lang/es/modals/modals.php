@@ -53,4 +53,6 @@ return [
 
     //wallet
     'copy' => 'Dupdo',
+
+    'setNewPass' => 'Establecer nueva contraseña'
 ];
