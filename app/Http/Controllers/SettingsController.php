@@ -24,6 +24,10 @@ class SettingsController extends Controller
 
         $investor->img = $img[1];
         $investor->save();
+
+        return [
+            'status' => true
+        ];
     }
 
     public function getAvatar($path)
