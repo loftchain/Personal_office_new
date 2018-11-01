@@ -10821,6 +10821,8 @@ body {
 .sidebar {
   position: relative;
   width: 318px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
   -webkit-box-shadow: -10px 0px 30px #E0E0E0;
           box-shadow: -10px 0px 30px #E0E0E0;
   background: #fff;
@@ -12404,6 +12406,8 @@ body {
 
 .userInfo__avatarImage {
   border-radius: 50%;
+  width: 75px;
+  height: auto;
 }
 
 .userInfo__text {

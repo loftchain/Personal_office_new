@@ -32,7 +32,7 @@
             <div class="userInfo__avatar"><a class="userInfo__avatarLink" href="{{ route('home.settings') }}"><img
                             class="userInfo__avatarImage"
                             src="{{ Auth::user()->img ? route('settings.get.avatar', Auth::user()->img) : asset('img/avatar.png') }}"
-                            style="width: 75px; height: 75px" alt="Name Surname"></a>
+                            alt="Name Surname"></a>
             </div>
             <div class="userInfo__text">
                 <div class="userInfo__textItem">{{ Auth::user()->name }}</div>
