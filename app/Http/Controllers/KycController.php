@@ -58,12 +58,16 @@ class KycController extends Controller
                 'name_surname' => $request->name,
                 'phone' => $request->phone,
                 'date_place_birth' => $dateBirth,
+                'telegram' => $request->telegram,
+                'permanent_address' => $request->address,
             ]);
         } else {
             $investor->personal()->create([
                 'name_surname' => $request->name,
                 'phone' => $request->phone,
                 'date_place_birth' => $dateBirth,
+                'telegram' => $request->telegram,
+                'permanent_address' => $request->address,
 //            'doc_img_path' => $images,
             ]);
         }
