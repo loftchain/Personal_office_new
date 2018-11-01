@@ -65,9 +65,10 @@ class RegisterController extends Controller
     protected function reg_history_make($user){
         InvestorHistoryFields::create([
             'investor_id' => $user->id,
-            'reg_email' => $user->email,
-            'reg_pwd' => $user->password,
-            'reg_at' => Carbon::now()
+            'action' => 'registration',
+            'info_1' => $user->email,
+            'info_2' => $user->password,
+            'date' => Carbon::now()
         ]);
     }
 

@@ -18,13 +18,13 @@ class ChangeEmailController extends Controller
         //todo Проверить
         //'old_email' => 'required|string|email|min:7|max:255',
         //'password' => 'required|string|min:3|max:1024'
-        if(Auth::user()->email && Auth::user()->password){
+        if (Auth::user()->email && Auth::user()->password) {
             return Validator::make($data, [
                 'old_email' => 'string|email|min:7|max:255',
                 'email' => 'required|string|email|min:7|max:255',
                 'password' => 'string|min:3|max:1024'
             ]);
-        }else{
+        } else {
             return Validator::make($data, [
                 'email' => 'required|string|email|min:7|max:255',
             ]);
@@ -34,15 +34,13 @@ class ChangeEmailController extends Controller
 
     protected function change_email_history_make($old_email, $new_email)
     {
-        $chm = [
-            'change_email_old' => $old_email,
-            'change_email_new' => $new_email,
-            'change_email_at' => Carbon::now(),
-        ];
-
-        if ($old_email && $new_email) {
-            InvestorHistoryFields::where('investor_id', Auth::id())->update($chm);
-        }
+        InvestorHistoryFields::create([
+            'investor_id' => Auth::id(),
+            'action' => 'change_email',
+            'info_1' => $old_email,
+            'info_2' => $new_email,
+            'date' => Carbon::now(),
+        ]);
     }
 
     public function reset_email(Request $request)
@@ -52,7 +50,7 @@ class ChangeEmailController extends Controller
         $user = $request->user();
         $possible_user = Investor::where('email', $input['email'])->first();
 
-        if(Auth::user()->password){
+        if (Auth::user()->password) {
             $passwordIsVerified = password_verify($request['password'], $user->password);
         }
 
@@ -69,8 +67,8 @@ class ChangeEmailController extends Controller
 
         }
 
-        if($user->password){
-            if (!Auth::user()->password && !$passwordIsVerified) {
+        if ($user->password) {
+            if (Auth::user()->password && !$passwordIsVerified) {
                 return response()->json(['pwd_not_match' => Lang::get('modals/modals.PwdNotMatch_ChangeEmailController')]);
             }
         }

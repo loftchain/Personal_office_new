@@ -66,15 +66,13 @@ class ResetPasswordController extends Controller
 
     protected function forgot_history_make($id, $old_pwd, $new_pwd)
     {
-        $fg = [
-            'forgot_pwd_old' => $old_pwd,
-            'forgot_pwd_new' => $new_pwd,
-            'forgot_pwd_at' => Carbon::now(),
-        ];
-
-        if ($old_pwd && $new_pwd) {
-            InvestorHistoryFields::where('investor_id', $id)->update($fg);
-        }
+        InvestorHistoryFields::create([
+            'investor_id' => $id,
+            'action' => 'forgot_pwd',
+            'info_1' => $old_pwd,
+            'info_2' => $new_pwd,
+            'date' => Carbon::now()
+        ]);
     }
 
     public function reset(Request $request)

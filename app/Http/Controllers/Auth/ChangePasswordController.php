@@ -28,16 +28,15 @@ class ChangePasswordController extends Controller
         ]);
     }
 
-    protected function change_pwd_history_make($old_pwd, $new_pwd){
-        $chp = [
-            'change_pwd_old' => bcrypt($old_pwd),
-            'change_pwd_new' => bcrypt($new_pwd),
-            'change_pwd_at' => Carbon::now(),
-        ];
-
-        if($old_pwd && $new_pwd){
-            InvestorHistoryFields::where('investor_id', Auth::id())->update($chp);
-        }
+    protected function change_pwd_history_make($old_pwd, $new_pwd)
+    {
+        InvestorHistoryFields::create([
+            'investor_id' => Auth::id(),
+            'action' => 'change_pwd',
+            'info_1' => bcrypt($old_pwd),
+            'info_2' => bcrypt($new_pwd),
+            'date' => Carbon::now()
+        ]);
     }
 
     public function renew_password(Request $request)

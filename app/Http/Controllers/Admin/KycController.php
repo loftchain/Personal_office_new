@@ -37,7 +37,9 @@ class KycController extends Controller
             __('mails/mails.vSubject'),
             view('mails.account_verified')->render());
 
-        return back();
+        return [
+            'status' => true
+        ];
     }
 
     public function rejected(Investor $investor)
@@ -48,7 +50,9 @@ class KycController extends Controller
             __('mails/mails.rSubject'),
             view('mails.account_rejected')->render());
 
-        return back();
+        return [
+            'status' => true
+        ];
     }
 
     public function get()
