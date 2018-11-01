@@ -16,4 +16,17 @@ return [
     'ico_till' => 'до',
     'ico_finished' => 'ico закончен',
     'ico_stage0_start' => 'pre-ico начинается с',
+    'ico_bonus' => 'Бонус',
+    'ico_noBonus' => 'нет бонуса',
+
+    'ico_card_to' => 'до',
+    'ico_card_oct' => 'окт',
+    'ico_card_jan' => 'янв',
+    'ico_card_feb' => 'фев',
+    'ico_card_mar' => 'март',
+    'ico_card_apr' => 'апр',
+    'ico_card_may' => 'май',
+    'ico_card_june' => 'июнь',
+    'ico_card_jul' => 'июль',
+    'ico_card_aug' => 'авг',
 ];
