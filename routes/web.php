@@ -58,8 +58,8 @@ Route::group(['prefix' => 'home', 'as' => 'home.', 'middleware' => ['auth', 'isE
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['admin']], function (){
    Route::get('/verification', 'Admin\KycController@index')->name('kyc');
    Route::get('/verification/get', 'Admin\KycController@get')->name('kyc.get');
-   Route::get('/verification/{investor}/confirm', 'Admin\KycController@confirm')->name('kyc.confirm');
-   Route::get('/verification/{investor}/reject', 'Admin\KycController@rejected')->name('kyc.reject');
+   Route::post('/verification/{investor}/confirm', 'Admin\KycController@confirm')->name('kyc.confirm');
+   Route::post('/verification/{investor}/reject', 'Admin\KycController@rejected')->name('kyc.reject');
    Route::get('/history', 'Admin\HistoryController@index')->name('history');
    Route::get('/history/get', 'Admin\HistoryController@get')->name('history.get');
    Route::get('/referral', 'Admin\ReferralController@index')->name('referral');
