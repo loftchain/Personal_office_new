@@ -13,8 +13,8 @@
         {{renameAction(history.action)}}
       </td>
 
-      <td>{{ cutInfo(history, history.action) }}</td>
-      <td>{{ history.info_2 }}</td>
+      <td>{{ cutInfo(history, history.action)['info_1'] }}</td>
+      <td>{{ cutInfo(history, history.action)['info_2'] }}</td>
       <td>{{ history.date }}</td>
     </tr>
   </table>
