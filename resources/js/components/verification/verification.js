@@ -60,6 +60,17 @@ export default {
 
     onSetTranslate() {
       console.log('onSetTranslate')
+    },
+
+    async applyKyc(id) {
+      const {data} = await axios.get(`verification/${id}/confirm`, {
+        id: id
+      });
+
+    },
+
+    async returnKyc(id) {
+      const {data} = await axios.get(`verification/${id}/reject`);
     }
   }
 }
