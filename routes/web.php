@@ -39,7 +39,7 @@ Route::post('/change/password', 'Auth\ChangePasswordController@renew_password')-
 
 Route::any('/logout', 'Auth\LoginController@logout')->name('logout');
 
-Route::group(['prefix' => 'home', 'as' => 'home.', 'middleware' => ['auth', 'isEmail']], function (){
+Route::group(['prefix' => 'home', 'as' => 'home.', 'middleware' => ['auth', 'isEmail', 'isNotAdmin']], function (){
     Route::get('/', 'HomeController@index')->name('index');
     Route::get('/verification', 'KycController@index')->name('kyc');
     Route::post('/verification', 'KycController@store')->name('kyc.store');
