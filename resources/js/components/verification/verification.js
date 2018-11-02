@@ -119,5 +119,5 @@ export default {
         prevPage() {
           if(this.currentPage > 1) this.currentPage--;
         },
-    }
+      }
 }

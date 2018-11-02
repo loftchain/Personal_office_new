@@ -49335,7 +49335,12 @@ var render = function() {
                     }
                   }
                 },
-                [_vm._v("Investor ID")]
+                [
+                  _vm._v("\r\n            Investor ID\r\n            "),
+                  _c("i", { staticClass: "fas fa-arrow-down" }),
+                  _vm._v(" "),
+                  _c("i", { staticClass: "fas fa-arrow-up" })
+                ]
               ),
               _vm._v(" "),
               _c(
@@ -49349,16 +49354,31 @@ var render = function() {
                     }
                   }
                 },
-                [_vm._v("E-mail")]
+                [
+                  _vm._v("\r\n            E-mail\r\n            "),
+                  _c("i", { staticClass: "fas fa-arrow-down" }),
+                  _vm._v(" "),
+                  _c("i", { staticClass: "fas fa-arrow-up" })
+                ]
               ),
               _vm._v(" "),
               _c(
                 "div",
                 {
                   staticClass:
-                    "dataTable__cell dataTable__cell--head dataTable__cell--mid"
+                    "dataTable__cell dataTable__cell--head dataTable__cell--mid",
+                  on: {
+                    click: function($event) {
+                      _vm.sort("confirmed")
+                    }
+                  }
                 },
-                [_vm._v("Confirmed")]
+                [
+                  _vm._v("\r\n            Confirmed\r\n            "),
+                  _c("i", { staticClass: "fas fa-arrow-down" }),
+                  _vm._v(" "),
+                  _c("i", { staticClass: "fas fa-arrow-up" })
+                ]
               ),
               _vm._v(" "),
               _c(
@@ -49380,7 +49400,7 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _vm._l(_vm.investors, function(investor) {
+            _vm._l(_vm.sortedItems, function(investor) {
               return _c("div", { staticClass: "dataTable__item" }, [
                 _c(
                   "div",
@@ -49417,9 +49437,7 @@ var render = function() {
                   { staticClass: "dataTable__cell dataTable__cell--mid" },
                   [
                     _vm._v(
-                      _vm._s(
-                        investor.confirmed ? "Подтвержден" : "Не подтвержден"
-                      )
+                      _vm._s(investor.confirmed ? "Confirmed" : "Not confirmed")
                     )
                   ]
                 ),

@@ -4,20 +4,32 @@
       <div class="dataTable__list">
         <div class="dataTable__item">
           <div class="dataTable__cell dataTable__cell--head dataTable__cell--lt">Photo</div>
-          <div class="dataTable__cell dataTable__cell--head dataTable__cell--lt" @click="sort('id')">Investor ID</div>
-          <div class="dataTable__cell dataTable__cell--head dataTable__cell--big" @click="sort('email')">E-mail</div>
-          <div class="dataTable__cell dataTable__cell--head dataTable__cell--mid">Confirmed</div>
+          <div @click="sort('id')" class="dataTable__cell dataTable__cell--head dataTable__cell--lt">
+            Investor ID
+            <i class="fas fa-arrow-down"></i>
+            <i class="fas fa-arrow-up"></i>
+          </div>
+          <div @click="sort('email')" class="dataTable__cell dataTable__cell--head dataTable__cell--big">
+            E-mail
+            <i class="fas fa-arrow-down"></i>
+            <i class="fas fa-arrow-up"></i>
+          </div>
+          <div @click="sort('confirmed')" class="dataTable__cell dataTable__cell--head dataTable__cell--mid">
+            Confirmed
+            <i class="fas fa-arrow-down"></i>
+            <i class="fas fa-arrow-up"></i>
+          </div>
           <div class="dataTable__cell dataTable__cell--head dataTable__cell--lt">Verified photos</div>
           <div class="dataTable__cell dataTable__cell--head dataTable__cell--lt">KYC</div>
         </div>
-        <div class="dataTable__item" v-for="investor in investors">
+        <div class="dataTable__item" v-for="investor in sortedItems">
           <div class="dataTable__cell dataTable__cell--lt">
             <img :src="investor.img ? currentUrl + '/storage/' + investor.img : currentUrl + '/img/avatar.png'"
                  style="max-width: 75px; max-height: 75px;">
           </div>
           <div class="dataTable__cell dataTable__cell--lt">{{ investor.id }}</div>
           <div class="dataTable__cell dataTable__cell--big">{{ investor.email }}</div>
-          <div class="dataTable__cell dataTable__cell--mid">{{investor.confirmed ? 'Подтвержден' : 'Не подтвержден'}}</div>
+          <div class="dataTable__cell dataTable__cell--mid">{{investor.confirmed ? 'Confirmed' : 'Not confirmed'}}</div>
           <div class="dataTable__cell dataTable__cell--lt">
             <button class="btn" @click="showModal(investor.id)">Docs</button>
             <div class="modal" :id="investor.id">
