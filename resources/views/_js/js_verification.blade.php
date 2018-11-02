@@ -24,6 +24,7 @@
 
         inputFile.on('input', function() {
           inputText.hide();
+            ver.button.attr('disabled', false);
         });
     });
 
@@ -32,6 +33,7 @@
             ver.inputs.attr("disabled", false);
             ver.content.removeClass('basicBlock__content--verification');
             ver.button.show();
+            ver.button.attr('disabled', true);
         }else {
             ver.inputs.attr("disabled", true);
             ver.content.addClass('basicBlock__content--verification');
