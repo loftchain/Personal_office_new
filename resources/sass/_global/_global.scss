@@ -837,16 +837,45 @@ body {
 }
 
 .helpBar {
-  padding-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-top: 30px;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 5px;
+    background: linear-gradient(89.66deg, #FEC808 2.15%, #FFE13A 100%);
+    width: 100%;
+  }
 }
 
 .helpBar__buttons {
   display: flex;
   justify-content: space-between;
-  width: 260px;
+  width: 220px;
   margin-bottom: 15px;
+  padding-top: 30px;
 
   button {
-    width: 120px;
+    width: 100px;
   }
 }
+
+.helpBar__help-text {
+  padding-top: 30px;
+}
+
+.helpBar__page-select {
+  padding-top: 30px;
+}
+
+button,
+input,
+textarea,
+select {
+  outline: none;
+}
+

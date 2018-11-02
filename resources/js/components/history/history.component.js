@@ -12,6 +12,7 @@ export default {
       pageSize:5,
       currentPage:1,
       totalPages:1,
+      showIcon: true
     }
   },
 

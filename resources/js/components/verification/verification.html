@@ -54,7 +54,6 @@
           <div class="dataTable__cell dataTable__cell--lt">
             <button v-on:click="toggleAddingData(investor.id)" class="btn" data-toggle="collapse" data-target="#demo">More</button>
           </div>
-          <transition name="fade">
             <div class="dataTable__item-wrap dataTable__item-wrap--hidden" :id="'hidden-' + investor.id">
               <div class="dataTable__item-hidden">
                 <div class="dataTable__cell dataTable__cell--mid">Phone</div>
@@ -71,7 +70,6 @@
                 <div class="dataTable__cell dataTable__cell--mid">{{ investor.personal.date_place_birth }}</div>
               </div>
             </div>
-          </transition>
         </div>
       </div>
       <div class="helpBar">
@@ -84,7 +82,7 @@
           <p v-model="totalPages">total pages: {{ totalPages }}</p>
         </div>
         <div class="helpBar__page-select">
-          <label for="pageQuantity">Number of elements on the page</label>
+          <label for="pageQuantity">Number of elements<br> on the page</label>
           <select v-model="pageSize" name="pageQuantity" id="pageQuantity">
             <option value="5">5</option>
             <option value="10">10</option>
