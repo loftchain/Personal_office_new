@@ -21,7 +21,7 @@ class SocialAuthController extends Controller
         $authUser = $this->firstOrCreateUser($user, $provider);
         Auth::login($authUser, true);
 
-        return redirect()->route('home');
+        return redirect()->route('home.index');
     }
 
     protected function firstOrCreateUser($user, $provider)

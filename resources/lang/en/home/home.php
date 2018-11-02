@@ -16,4 +16,17 @@ return [
     'ico_till' => 'till',
     'ico_finished' => 'ico is finished',
     'ico_stage0_start' => 'pre-ico starts at',
+    'ico_bonus' => 'Bonus',
+    'ico_noBonus' => 'no bonus',
+
+    'ico_card_to' => 'to',
+    'ico_card_oct' => 'oct',
+    'ico_card_jan' => 'jan',
+    'ico_card_feb' => 'feb',
+    'ico_card_mar' => 'mar',
+    'ico_card_apr' => 'apr',
+    'ico_card_may' => 'may',
+    'ico_card_june' => 'june',
+    'ico_card_jul' => 'jul',
+    'ico_card_aug' => 'aug',
 ];

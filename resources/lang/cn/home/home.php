@@ -16,4 +16,17 @@ return [
     'ico_till' => '直到',
     'ico_finished' => 'ico已經完成',
     'ico_stage0_start' => 'pre-ico開始於',
+    'ico_bonus' => '獎金',
+    'ico_noBonus' => '沒有獎金',
+
+    'ico_card_to' => '至',
+    'ico_card_oct' => '十月',
+    'ico_card_jan' => '一月',
+    'ico_card_feb' => '二月',
+    'ico_card_mar' => '遊行',
+    'ico_card_apr' => '四月',
+    'ico_card_may' => '可以',
+    'ico_card_june' => '六月',
+    'ico_card_jul' => '七月',
+    'ico_card_aug' => '八月',
 ];

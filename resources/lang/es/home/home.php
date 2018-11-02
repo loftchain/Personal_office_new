@@ -16,4 +16,17 @@ return [
     'ico_till' => 'hasta que',
     'ico_finished' => 'ico esta terminado',
     'ico_stage0_start' => 'pre-ico comienza en',
+    'ico_bonus' => 'Prima',
+    'ico_noBonus' => 'sin bonificación',
+
+    'ico_card_to' => 'a',
+    'ico_card_oct' => 'oct',
+    'ico_card_jan' => 'ene',
+    'ico_card_feb' => 'feb',
+    'ico_card_mar' => 'mar',
+    'ico_card_apr' => 'abr',
+    'ico_card_may' => 'mayo',
+    'ico_card_june' => 'junio',
+    'ico_card_jul' => 'jul',
+    'ico_card_aug' => 'ago',
 ];

@@ -13,10 +13,10 @@ class KycController extends Controller
     {
         return Validator::make($data, [
             'name' => 'required|min:3|max:50',
-            'phone' => 'required|min:5|max:20',
+            'phone' => 'required|numeric',
             'zip' => 'required|min:3|max:15',
             'address' => 'required|min:3|max:50',
-            'telegram' => 'regex:(^(@[a-zA-Z_]+)(\d+)?$)',
+            'telegram' => 'nullable|regex:(^([a-zA-Z_]+)(\d+)?$)',
             'g-recaptcha-response' => 'required',
         ]);
     }

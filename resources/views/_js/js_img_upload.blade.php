@@ -26,17 +26,24 @@
             // either via the browse button, or via drag/drop:
             add: function (e, data) {
 
-
                 // Append the file name and file size
                 let fileName = (data.files[0].name.length < 15) ? data.files[0].name : data.files[0].name.trunc(15);
 
 
                 // Automatically upload the file once it is added to the queue
                 var jqXHR = data.submit();
-                setTimeout(function () {
-                    location.reload();
+                // setTimeout(function () {
+                //     location.reload();
+                //
+                // }, 900)
+                setInterval(() => {
+                    if(typeof data.jqXHR.responseJSON !== 'undefined') {
+                        if(data.jqXHR.responseJSON.status === true) {
+                            location.reload()
+                        }
+                    }
+                }, 500)
 
-                }, 900)
 
             },
 
