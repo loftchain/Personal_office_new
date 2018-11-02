@@ -49108,6 +49108,9 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
         return {
             investors: null,
             currentUrl: window.location.origin,
+            pageSize: 5,
+            currentPage: 1,
+            totalPages: 1,
             swiperOptionA: {
                 pagination: {
                     el: '.swiper-pagination'
@@ -49129,6 +49132,23 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 
 
     computed: {
+        sortedItems: function sortedItems() {
+            var _this = this;
+
+            if (this.investors !== null) {
+                return this.investors.sort(function (a, b) {
+                    var modifier = 1;
+                    if (_this.currentSortDir === 'desc') modifier = -1;
+                    if (a[_this.currentSort] < b[_this.currentSort]) return -1 * modifier;
+                    if (a[_this.currentSort] > b[_this.currentSort]) return 1 * modifier;
+                    return 0;
+                }).filter(function (row, index) {
+                    var start = (_this.currentPage - 1) * _this.pageSize;
+                    var end = _this.currentPage * _this.pageSize;
+                    if (index >= start && index < end) return true;
+                });
+            }
+        },
         swiperA: function swiperA() {
             return this.$refs.awesomeSwiperA.swiper;
         }
@@ -49136,10 +49156,10 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 
     methods: {
         getUsers: function getUsers() {
-            var _this = this;
+            var _this2 = this;
 
             __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get('verification/get').then(function (res) {
-                _this.investors = res.data;
+                _this2.investors = res.data;
             });
         },
         showModal: function showModal(id) {
@@ -49220,7 +49240,19 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
             }
 
             return returnKyc;
-        }()
+        }(),
+        sort: function sort(s) {
+            if (s === this.currentSort) {
+                this.currentSortDir = this.currentSortDir === 'asc' ? 'desc' : 'asc';
+            }
+            this.currentSort = s;
+        },
+        nextPage: function nextPage() {
+            if (this.currentPage * this.pageSize < this.investors.length) this.currentPage++;
+        },
+        prevPage: function prevPage() {
+            if (this.currentPage > 1) this.currentPage--;
+        }
     }
 });
 
@@ -49406,7 +49438,116 @@ var render = function() {
             })
           ],
           2
-        )
+        ),
+        _vm._v(" "),
+        _c("div", { staticClass: "helpBar" }, [
+          _c("div", { staticClass: "helpBar__buttons" }, [
+            _c(
+              "button",
+              {
+                staticClass: "btn",
+                on: {
+                  click: function($event) {
+                    _vm.prevPage()
+                  }
+                }
+              },
+              [_vm._v("Previous")]
+            ),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn",
+                on: {
+                  click: function($event) {
+                    _vm.nextPage()
+                  }
+                }
+              },
+              [_vm._v("Next")]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "helpBar__help-text" }, [
+            _c(
+              "p",
+              {
+                model: {
+                  value: _vm.currentPage,
+                  callback: function($$v) {
+                    _vm.currentPage = $$v
+                  },
+                  expression: "currentPage"
+                }
+              },
+              [_vm._v("current page: " + _vm._s(_vm.currentPage))]
+            ),
+            _vm._v(" "),
+            _c(
+              "p",
+              {
+                model: {
+                  value: _vm.totalPages,
+                  callback: function($$v) {
+                    _vm.totalPages = $$v
+                  },
+                  expression: "totalPages"
+                }
+              },
+              [_vm._v("total pages: " + _vm._s(_vm.totalPages))]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "helpBar__page-select" }, [
+            _c("label", { attrs: { for: "pageQuantity" } }, [
+              _vm._v("Number of elements on the page")
+            ]),
+            _vm._v(" "),
+            _c(
+              "select",
+              {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.pageSize,
+                    expression: "pageSize"
+                  }
+                ],
+                attrs: { name: "pageQuantity", id: "pageQuantity" },
+                on: {
+                  change: function($event) {
+                    var $$selectedVal = Array.prototype.filter
+                      .call($event.target.options, function(o) {
+                        return o.selected
+                      })
+                      .map(function(o) {
+                        var val = "_value" in o ? o._value : o.value
+                        return val
+                      })
+                    _vm.pageSize = $event.target.multiple
+                      ? $$selectedVal
+                      : $$selectedVal[0]
+                  }
+                }
+              },
+              [
+                _c("option", { attrs: { value: "5" } }, [_vm._v("5")]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "10" } }, [_vm._v("10")]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "15" } }, [_vm._v("15")]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "20" } }, [_vm._v("20")]),
+                _vm._v(" "),
+                _c("option", { domProps: { value: _vm.totalPages } }, [
+                  _vm._v("all, " + _vm._s(_vm.totalPages))
+                ])
+              ]
+            )
+          ])
+        ])
       ])
     ])
   ])
