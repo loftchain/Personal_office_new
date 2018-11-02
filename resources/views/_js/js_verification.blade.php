@@ -26,6 +26,17 @@
           inputText.hide();
             ver.button.attr('disabled', false);
         });
+
+
+
+        let intervalUl = setInterval(() => {
+            if(inputList.children().length > 0) {
+                inputText.hide();
+                ver.button.attr('disabled', false);
+                clearInterval(intervalUl)
+            }
+        }, 600);
+
     });
 
     ver.checkbox.click(() => {
