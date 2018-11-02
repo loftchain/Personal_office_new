@@ -14,9 +14,12 @@ export default {
         return {
             investors: null,
             currentUrl: window.location.origin,
+            currentSort:'date',
+            currentSortDir:'desc',
             pageSize:5,
             currentPage:1,
             totalPages:1,
+            show: false,
             swiperOptionA: {
                 pagination: {
                     el: '.swiper-pagination'
@@ -75,6 +78,11 @@ export default {
         hideModal(id) {
             let modal = document.getElementById(id);
             modal.classList.remove('is-active');
+        },
+
+        toggleAddingData(id) {
+          let block = document.getElementById('hidden-' + id);
+          block.classList.toggle('dataTable__item-wrap--hidden');
         },
 
         onSetTranslate() {

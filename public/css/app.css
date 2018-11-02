@@ -11262,6 +11262,57 @@ body {
   background: #fff;
 }
 
+.dataTable__item-wrap {
+  width: 100%;
+}
+
+.dataTable__item-wrap--hidden {
+  display: none;
+}
+
+.dataTable__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.dataTable__item-hidden {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.dataTable__cell {
+  border: 1px solid #F2F2F2;
+  text-align: center;
+  font-size: 14px;
+  line-height: normal;
+  padding: 5px;
+}
+
+.dataTable__cell--lt {
+  width: 14%;
+}
+
+.dataTable__cell--mid {
+  width: 19%;
+}
+
+.dataTable__cell--big {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  width: 25%;
+}
+
+.dataTable__cell--head {
+  font-weight: bold;
+  color: #4F4F4F;
+}
+
 .dataTable th {
   font-family: 'Rubik', 'Arial', sans-serif;
   font-style: normal;
