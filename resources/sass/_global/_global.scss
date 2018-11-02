@@ -876,6 +876,9 @@ button,
 input,
 textarea,
 select {
-  outline: none;
+  outline: none !important;
 }
 
+.fas {
+  cursor: pointer;
+}
