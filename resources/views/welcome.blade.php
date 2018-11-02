@@ -2,16 +2,7 @@
 
 @section('content')
     <div class="welcome__header">
-        <div class="dropdown">
-            <button class="dropbtn welcome__button-language">Languages</button>
-            <div class="dropdown-content">
-                <a href="#">English</a>
-                <a href="#">Russian</a>
-                <a href="#">Mandarin(Chinise)</a>
-                <a href="#">Spanish</a>
-                <a href="#">Japanese</a>
-            </div>
-        </div>
+        @include('modals.lang_selector')
     </div>
     <section class="welcome">
         <div class="welcome__wrapper">

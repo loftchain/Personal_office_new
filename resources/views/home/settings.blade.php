@@ -40,16 +40,7 @@
                                                     <a class="settingsActions__link jsChangeEmail" href="#">{!! trans('home/settings.changeEmail') !!}</a>
                                                     <a class="settingsActions__link jsChangePassword" href="#">{!! trans('home/settings.changePassword') !!}</a>
                                                     <div class="settingsActions__langSelector">
-                                                        <div class="dropdown">
-                                                            <button class="dropbtn settings__button-language">Languages</button>
-                                                            <div class="dropdown-content">
-                                                                <a href="{{ route('lang.switch', 'en') }}">English</a>
-                                                                <a href="{{ route('lang.switch', 'ru') }}">Russian</a>
-                                                                <a href="{{ route('lang.switch', 'cn') }}">Mandarin(Chinise)</a>
-                                                                <a href="{{ route('lang.switch', 'es') }}">Spanish</a>
-                                                                <a href="{{ route('lang.switch', 'jp') }}">Japanese</a>
-                                                            </div>
-                                                        </div>
+                                                       @include('modals.lang_selector')
                                                     </div>
                                                 </div>
                                             </div>
