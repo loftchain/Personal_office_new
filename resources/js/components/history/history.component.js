@@ -8,7 +8,10 @@ export default {
     return {
       histories: null,
       currentSort:'date',
-      currentSortDir:'desc'
+      currentSortDir:'desc',
+      pageSize:5,
+      currentPage:1,
+      totalPages:1,
     }
   },
 
@@ -25,6 +28,10 @@ export default {
           if(a[this.currentSort] < b[this.currentSort]) return -1 * modifier;
           if(a[this.currentSort] > b[this.currentSort]) return 1 * modifier;
           return 0;
+        }).filter((row, index) => {
+          let start = (this.currentPage-1)*this.pageSize;
+          let end = this.currentPage*this.pageSize;
+          if(index >= start && index < end) return true;
         });
       }
     }
@@ -81,6 +88,14 @@ export default {
       }
 
       return history;
-    }
+    },
+
+    nextPage() {
+      if((this.currentPage*this.pageSize) < this.histories.length) this.currentPage++;
+    },
+
+    prevPage() {
+      if(this.currentPage > 1) this.currentPage--;
+    },
   }
 }
