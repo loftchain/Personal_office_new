@@ -15,9 +15,6 @@ class ChangeEmailController extends Controller
 {
     protected function validator(array $data)
     {
-        //todo Проверить
-        //'old_email' => 'required|string|email|min:7|max:255',
-        //'password' => 'required|string|min:3|max:1024'
         if (Auth::user()->email && Auth::user()->password) {
             return Validator::make($data, [
                 'old_email' => 'string|email|min:7|max:255',

@@ -55,6 +55,7 @@ class LoginController extends Controller
         }
 
         $this->guard()->login($user);
+
         return response()->json(['success_login' => 'auth_success']);
     }
 

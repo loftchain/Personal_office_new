@@ -78,7 +78,6 @@ class ForgotPasswordController extends Controller
         if($emailResponse->result){
             return response()->json(['success_reset_email_sent' => $emailResponse]);
         } else {
-            Log::info(json_encode($emailResponse));
             return response()->json(['error_reset_email_sent' => json_encode($emailResponse)]);
         }
 

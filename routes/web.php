@@ -19,8 +19,6 @@ Route::get('lang/{lang}', ['as'=>'lang.switch', 'uses'=>'LanguageController@swit
 
 Auth::routes();
 
-//Route::get('/home', 'HomeController@index')->name('home');
-
 //------------------------Forgot Your password------------------------------------
 Route::post('/sendResetLink', 'Auth\ForgotPasswordController@sendResetLinkEmailCustom')->name('sendResetLinkEmail');
 //--------------------------------------------------------------------------------

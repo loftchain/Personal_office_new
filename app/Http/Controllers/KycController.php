@@ -45,14 +45,6 @@ class KycController extends Controller
         $dateBirth[] = $request->year;
         $dateBirth = implode(' ', $dateBirth);
 
-//        $images = [];
-//        dd($request->all());
-//        foreach ($request->file('files') as $key => $img){
-//            $extension = $img->extension();
-//            $path = $img->storeAs('uploads', $key . '_' . Carbon::now()->format('ymd_his') . '_investor_id_' . $investor->id . '.' . $extension);
-//            $path = explode('/', $path);
-//            $images[] = $path[1];
-//        }
         if($personal){
             $investor->personal()->update([
                 'name_surname' => $request->name,
@@ -68,7 +60,6 @@ class KycController extends Controller
                 'date_place_birth' => $dateBirth,
                 'telegram' => $request->telegram,
                 'permanent_address' => $request->address,
-//            'doc_img_path' => $images,
             ]);
         }
 
