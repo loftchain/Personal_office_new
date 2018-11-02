@@ -24,47 +24,14 @@
                     <div class="raisedContainer">
                         <div class="basicBlock basicBlock">
                             <div class="basicBlock__content">
-                                <form class="loginForm icoForm" action="#">
-                                    @if(Auth::user()->wallets()->first())
-                                        <div class="basicBlock__text">{!! trans('home/referrals.refLink') !!}</div>
-                                        <div class="formControl">
-                                            <input class="icoForm__input icoForm__input--canCopy" type="text"
-                                                   value="{{url('/').'/?ref='.Auth::user()->token}}" name="ethWallet"
-                                                   id="ethWallet"><span class="icoForm__copy"
-                                                                        v-on:click="copyToBuffer"> </span>
-                                        </div>
-                                    @else
-                                        <h4 class="referral__message">{!! trans('home/referrals.tableNoWallet') !!}</h4>
-                                    @endif
-                                </form>
+                                @include('home.referral.link')
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             @if(Auth::user()->wallets()->first())
-                <div class="referral__table-wrap referral__table-wrap--active">
-                    <table class="referral__table">
-                        <tr>
-                            <th class="referral__cell referral__cell--person referral__cell--th">{!! trans('home/referrals.tableRef') !!}</th>
-                            <th class="referral__cell referral__cell--bonus referral__cell--th">{!! trans('home/referrals.tableBonus') !!}</th>
-                        </tr>
-                        @if(isset($referrals['stat']))
-                            @foreach($referrals['stat'] as $key => $referral)
-                                <tr>
-                                    <td class="referral__cell referral__cell--person">{{ $key }}</td>
-                                    <td class="referral__cell referral__cell--bonus">{{ $referral['token_sum'] }}</td>
-                                </tr>
-                            @endforeach
-
-                        @else
-                            <tr>
-                                <td class="referral__cell referral__cell--person">No</td>
-                                <td class="referral__cell referral__cell--bonus">0</td>
-                            </tr>
-                        @endif
-                    </table>
-                </div>
+                @include('home.referral.table')
             @else
 
             @endif
