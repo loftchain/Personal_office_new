@@ -683,6 +683,43 @@ body {
     width: 100%;
     background: #fff;
   }
+  &__item-wrap {
+    width: 100%;
+
+    &--hidden {
+      display: none;
+    }
+  }
+  &__item {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__item-hidden {
+    display: flex;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.2);
+  }
+  &__cell {
+    border: 1px solid #F2F2F2;
+    text-align: center;
+    font-size: 14px;
+    line-height: normal;
+    padding: 5px;
+    &--lt {
+      width: 14%;
+    }
+    &--mid {
+      width: 19%;
+    }
+    &--big {
+      flex-shrink: 0;
+      width: 25%;
+    }
+    &--head {
+      font-weight: bold;
+      color: #4F4F4F;
+    }
+  }
   th {
     font-family: 'Rubik', 'Arial', sans-serif;
     font-style: normal;
@@ -800,16 +837,48 @@ body {
 }
 
 .helpBar {
-  padding-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-top: 30px;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 5px;
+    background: linear-gradient(89.66deg, #FEC808 2.15%, #FFE13A 100%);
+    width: 100%;
+  }
 }
 
 .helpBar__buttons {
   display: flex;
   justify-content: space-between;
-  width: 260px;
+  width: 220px;
   margin-bottom: 15px;
+  padding-top: 30px;
 
   button {
-    width: 120px;
+    width: 100px;
   }
+}
+
+.helpBar__help-text {
+  padding-top: 30px;
+}
+
+.helpBar__page-select {
+  padding-top: 30px;
+}
+
+button,
+input,
+textarea,
+select {
+  outline: none !important;
+}
+
+.fas {
+  cursor: pointer;
 }

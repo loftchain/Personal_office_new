@@ -1,11 +1,31 @@
 <div class="dataTable">
   <table class="dataTable__list">
     <tr>
-      <th @click="sort('investor_id')">Investor ID</th>
-      <th @click="sort('action')">Action</th>
-      <th @click="sort('info_1')">Old info</th>
-      <th @click="sort('info_2')">New info</th>
-      <th @click="sort('date')">Date</th>
+      <th @click="sort('investor_id')">
+        Investor ID
+        <i class="fas fa-arrow-down"></i>
+        <i class="fas fa-arrow-up"></i>
+      </th>
+      <th @click="sort('action')">
+        Action
+        <i class="fas fa-arrow-down"></i>
+        <i class="fas fa-arrow-up"></i>
+      </th>
+      <th @click="sort('info_1')">
+        Old info
+        <i class="fas fa-arrow-down"></i>
+        <i class="fas fa-arrow-up"></i>
+      </th>
+      <th @click="sort('info_2')">
+        New info
+        <i class="fas fa-arrow-down"></i>
+        <i class="fas fa-arrow-up"></i>
+      </th>
+      <th @click="sort('date')">
+        Date
+        <i class="fas fa-arrow-down"></i>
+        <i class="fas fa-arrow-up"></i>
+      </th>
     </tr>
     <tr v-for="history in sortedItems">
       <td>{{ history.investor_id }}</td>
@@ -28,7 +48,7 @@
       <p v-model="totalPages">total pages: {{ totalPages }}</p>
     </div>
     <div class="helpBar__page-select">
-      <label for="pageQuantity">Number of elements on the page</label>
+      <label for="pageQuantity">Number of elements<br> on the page</label>
       <select v-model="pageSize" name="pageQuantity" id="pageQuantity">
         <option value="5">5</option>
         <option value="10">10</option>

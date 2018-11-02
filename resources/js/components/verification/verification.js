@@ -14,9 +14,12 @@ export default {
         return {
             investors: null,
             currentUrl: window.location.origin,
+            currentSort:'date',
+            currentSortDir:'desc',
             pageSize:5,
             currentPage:1,
             totalPages:1,
+            show: false,
             swiperOptionA: {
                 pagination: {
                     el: '.swiper-pagination'
@@ -77,6 +80,11 @@ export default {
             modal.classList.remove('is-active');
         },
 
+        toggleAddingData(id) {
+          let block = document.getElementById('hidden-' + id);
+          block.classList.toggle('dataTable__item-wrap--hidden');
+        },
+
         onSetTranslate() {
             console.log('onSetTranslate')
         },
@@ -111,5 +119,5 @@ export default {
         prevPage() {
           if(this.currentPage > 1) this.currentPage--;
         },
-    }
+      }
 }

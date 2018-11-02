@@ -1,26 +1,37 @@
 <div>
   <section class="verification">
     <div class="dataTable">
-      <table class="dataTable__list">
-        <tr>
-          <th>Photo</th>
-          <th>Investor ID</th>
-          <th>E-mail</th>
-          <th>Full name</th>
-          <th>Date or birth</th>
-          <th>KYC</th>
-        </tr>
-        <tr class="dataTable__success" v-for="investor in investors">
-          <td>
+      <div class="dataTable__list">
+        <div class="dataTable__item">
+          <div class="dataTable__cell dataTable__cell--head dataTable__cell--lt">Photo</div>
+          <div @click="sort('id')" class="dataTable__cell dataTable__cell--head dataTable__cell--lt">
+            Investor ID
+            <i class="fas fa-arrow-down"></i>
+            <i class="fas fa-arrow-up"></i>
+          </div>
+          <div @click="sort('email')" class="dataTable__cell dataTable__cell--head dataTable__cell--big">
+            E-mail
+            <i class="fas fa-arrow-down"></i>
+            <i class="fas fa-arrow-up"></i>
+          </div>
+          <div @click="sort('confirmed')" class="dataTable__cell dataTable__cell--head dataTable__cell--mid">
+            Confirmed
+            <i class="fas fa-arrow-down"></i>
+            <i class="fas fa-arrow-up"></i>
+          </div>
+          <div class="dataTable__cell dataTable__cell--head dataTable__cell--lt">Verified photos</div>
+          <div class="dataTable__cell dataTable__cell--head dataTable__cell--lt">KYC</div>
+        </div>
+        <div class="dataTable__item" v-for="investor in sortedItems">
+          <div class="dataTable__cell dataTable__cell--lt">
             <img :src="investor.img ? currentUrl + '/storage/' + investor.img : currentUrl + '/img/avatar.png'"
                  style="max-width: 75px; max-height: 75px;">
-          </td>
-          <td>{{ investor.id }}</td>
-          <td>{{ investor.email }}</td>
-          <td>{{ investor.personal.name_surname }}</td>
-          <td>{{ investor.personal.date_place_birth }}</td>
-          <td>
-            <button class="btn" @click="showModal(investor.id)">more</button>
+          </div>
+          <div class="dataTable__cell dataTable__cell--lt">{{ investor.id }}</div>
+          <div class="dataTable__cell dataTable__cell--big">{{ investor.email }}</div>
+          <div class="dataTable__cell dataTable__cell--mid">{{investor.confirmed ? 'Confirmed' : 'Not confirmed'}}</div>
+          <div class="dataTable__cell dataTable__cell--lt">
+            <button class="btn" @click="showModal(investor.id)">Docs</button>
             <div class="modal" :id="investor.id">
               <div class="modal-background"></div>
               <div class="modal-content">
@@ -35,8 +46,8 @@
                   <button class="modal-close is-large" aria-label="close" @click="hideModal(investor.id)"></button>
                 </header>
                 <main class="modal__main">
-                  <swiper ref="awesomeSwiperA" :options="swiperOptionA" v-if="investor.personal.doc_img_path.length>0">
-                    <swiper-slide v-for="item in investor.personal.doc_img_path">
+                  <swiper ref="awesomeSwiperA" :options="swiperOptionA" v-if="investor.personal.doc_img_path.length !== null">
+                    <swiper-slide v-for="item in investor.personal.doc_img_path" :key="item">
                       <img :src="currentUrl + '/storage/' + item" alt="Photo">
                     </swiper-slide>
                     <!-- Optional controls -->
@@ -51,9 +62,28 @@
                 </footer>
               </div>
             </div>
-          </td>
-        </tr>
-      </table>
+          </div>
+          <div class="dataTable__cell dataTable__cell--lt">
+            <button v-on:click="toggleAddingData(investor.id)" class="btn" data-toggle="collapse" data-target="#demo">More</button>
+          </div>
+            <div class="dataTable__item-wrap dataTable__item-wrap--hidden" :id="'hidden-' + investor.id">
+              <div class="dataTable__item-hidden">
+                <div class="dataTable__cell dataTable__cell--mid">Phone</div>
+                <div class="dataTable__cell dataTable__cell--big">Full name</div>
+                <div class="dataTable__cell dataTable__cell--mid">Telegram</div>
+                <div class="dataTable__cell dataTable__cell--mid">Address</div>
+                <div class="dataTable__cell dataTable__cell--mid">Birthday</div>
+              </div>
+              <div class="dataTable__item-hidden">
+                <div class="dataTable__cell dataTable__cell--mid">{{ investor.personal.phone }}</div>
+                <div class="dataTable__cell dataTable__cell--big">{{ investor.name }}</div>
+                <div class="dataTable__cell dataTable__cell--mid">{{ investor.personal.telegram }}</div>
+                <div class="dataTable__cell dataTable__cell--mid">{{ investor.personal.permanent_address }}</div>
+                <div class="dataTable__cell dataTable__cell--mid">{{ investor.personal.date_place_birth }}</div>
+              </div>
+            </div>
+        </div>
+      </div>
       <div class="helpBar">
         <div class="helpBar__buttons">
           <button class="btn" @click="prevPage()">Previous</button>
@@ -64,7 +94,7 @@
           <p v-model="totalPages">total pages: {{ totalPages }}</p>
         </div>
         <div class="helpBar__page-select">
-          <label for="pageQuantity">Number of elements on the page</label>
+          <label for="pageQuantity">Number of elements<br> on the page</label>
           <select v-model="pageSize" name="pageQuantity" id="pageQuantity">
             <option value="5">5</option>
             <option value="10">10</option>

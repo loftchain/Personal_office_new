@@ -11262,6 +11262,57 @@ body {
   background: #fff;
 }
 
+.dataTable__item-wrap {
+  width: 100%;
+}
+
+.dataTable__item-wrap--hidden {
+  display: none;
+}
+
+.dataTable__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.dataTable__item-hidden {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.dataTable__cell {
+  border: 1px solid #F2F2F2;
+  text-align: center;
+  font-size: 14px;
+  line-height: normal;
+  padding: 5px;
+}
+
+.dataTable__cell--lt {
+  width: 14%;
+}
+
+.dataTable__cell--mid {
+  width: 19%;
+}
+
+.dataTable__cell--big {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  width: 25%;
+}
+
+.dataTable__cell--head {
+  font-weight: bold;
+  color: #4F4F4F;
+}
+
 .dataTable th {
   font-family: 'Rubik', 'Arial', sans-serif;
   font-style: normal;
@@ -11389,7 +11440,23 @@ body {
 }
 
 .helpBar {
-  padding-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+  margin-top: 30px;
+}
+
+.helpBar::before {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 5px;
+  background: linear-gradient(89.66deg, #FEC808 2.15%, #FFE13A 100%);
+  width: 100%;
 }
 
 .helpBar__buttons {
@@ -11399,12 +11466,32 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 260px;
+  width: 220px;
   margin-bottom: 15px;
+  padding-top: 30px;
 }
 
 .helpBar__buttons button {
-  width: 120px;
+  width: 100px;
+}
+
+.helpBar__help-text {
+  padding-top: 30px;
+}
+
+.helpBar__page-select {
+  padding-top: 30px;
+}
+
+button,
+input,
+textarea,
+select {
+  outline: none !important;
+}
+
+.fas {
+  cursor: pointer;
 }
 
 .welcome__header {

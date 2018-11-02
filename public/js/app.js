@@ -47879,7 +47879,8 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
       currentSortDir: 'desc',
       pageSize: 5,
       currentPage: 1,
-      totalPages: 1
+      totalPages: 1,
+      showIcon: true
     };
   },
   created: function created() {
@@ -48784,7 +48785,12 @@ var render = function() {
                 }
               }
             },
-            [_vm._v("Investor ID")]
+            [
+              _vm._v("\n        Investor ID\n        "),
+              _c("i", { staticClass: "fas fa-arrow-down" }),
+              _vm._v(" "),
+              _c("i", { staticClass: "fas fa-arrow-up" })
+            ]
           ),
           _vm._v(" "),
           _c(
@@ -48796,7 +48802,12 @@ var render = function() {
                 }
               }
             },
-            [_vm._v("Action")]
+            [
+              _vm._v("\n        Action\n        "),
+              _c("i", { staticClass: "fas fa-arrow-down" }),
+              _vm._v(" "),
+              _c("i", { staticClass: "fas fa-arrow-up" })
+            ]
           ),
           _vm._v(" "),
           _c(
@@ -48808,7 +48819,12 @@ var render = function() {
                 }
               }
             },
-            [_vm._v("Old info")]
+            [
+              _vm._v("\n        Old info\n        "),
+              _c("i", { staticClass: "fas fa-arrow-down" }),
+              _vm._v(" "),
+              _c("i", { staticClass: "fas fa-arrow-up" })
+            ]
           ),
           _vm._v(" "),
           _c(
@@ -48820,7 +48836,12 @@ var render = function() {
                 }
               }
             },
-            [_vm._v("New info")]
+            [
+              _vm._v("\n        New info\n        "),
+              _c("i", { staticClass: "fas fa-arrow-down" }),
+              _vm._v(" "),
+              _c("i", { staticClass: "fas fa-arrow-up" })
+            ]
           ),
           _vm._v(" "),
           _c(
@@ -48832,7 +48853,12 @@ var render = function() {
                 }
               }
             },
-            [_vm._v("Date")]
+            [
+              _vm._v("\n        Date\n        "),
+              _c("i", { staticClass: "fas fa-arrow-down" }),
+              _vm._v(" "),
+              _c("i", { staticClass: "fas fa-arrow-up" })
+            ]
           )
         ]),
         _vm._v(" "),
@@ -48923,9 +48949,7 @@ var render = function() {
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "helpBar__page-select" }, [
-        _c("label", { attrs: { for: "pageQuantity" } }, [
-          _vm._v("Number of elements on the page")
-        ]),
+        _vm._m(0),
         _vm._v(" "),
         _c(
           "select",
@@ -48973,7 +48997,18 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { attrs: { for: "pageQuantity" } }, [
+      _vm._v("Number of elements"),
+      _c("br"),
+      _vm._v(" on the page")
+    ])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -49108,9 +49143,12 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
         return {
             investors: null,
             currentUrl: window.location.origin,
+            currentSort: 'date',
+            currentSortDir: 'desc',
             pageSize: 5,
             currentPage: 1,
             totalPages: 1,
+            show: false,
             swiperOptionA: {
                 pagination: {
                     el: '.swiper-pagination'
@@ -49169,6 +49207,10 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
         hideModal: function hideModal(id) {
             var modal = document.getElementById(id);
             modal.classList.remove('is-active');
+        },
+        toggleAddingData: function toggleAddingData(id) {
+            var block = document.getElementById('hidden-' + id);
+            block.classList.toggle('dataTable__item-wrap--hidden');
         },
         onSetTranslate: function onSetTranslate() {
             console.log('onSetTranslate');
@@ -49269,171 +49311,351 @@ var render = function() {
     _c("section", { staticClass: "verification" }, [
       _c("div", { staticClass: "dataTable" }, [
         _c(
-          "table",
+          "div",
           { staticClass: "dataTable__list" },
           [
-            _vm._m(0),
-            _vm._v(" "),
-            _vm._l(_vm.investors, function(investor) {
-              return _c("tr", { staticClass: "dataTable__success" }, [
-                _c("td", [
-                  _c("img", {
-                    staticStyle: { "max-width": "75px", "max-height": "75px" },
-                    attrs: {
-                      src: investor.img
-                        ? _vm.currentUrl + "/storage/" + investor.img
-                        : _vm.currentUrl + "/img/avatar.png"
+            _c("div", { staticClass: "dataTable__item" }, [
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "dataTable__cell dataTable__cell--head dataTable__cell--lt"
+                },
+                [_vm._v("Photo")]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "dataTable__cell dataTable__cell--head dataTable__cell--lt",
+                  on: {
+                    click: function($event) {
+                      _vm.sort("id")
                     }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(investor.id))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(investor.email))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(investor.personal.name_surname))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(investor.personal.date_place_birth))]),
-                _vm._v(" "),
-                _c("td", [
-                  _c(
-                    "button",
-                    {
-                      staticClass: "btn",
-                      on: {
-                        click: function($event) {
-                          _vm.showModal(investor.id)
-                        }
-                      }
-                    },
-                    [_vm._v("more")]
-                  ),
+                  }
+                },
+                [
+                  _vm._v("\r\n            Investor ID\r\n            "),
+                  _c("i", { staticClass: "fas fa-arrow-down" }),
                   _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "modal", attrs: { id: investor.id } },
-                    [
-                      _c("div", { staticClass: "modal-background" }),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "modal-content" }, [
-                        _c("header", { staticClass: "modal__header" }, [
-                          _c("div", { staticClass: "modal__header-user" }, [
-                            _c("div", [
-                              _c("img", {
-                                staticStyle: {
-                                  "max-width": "75px",
-                                  "max-height": "75px"
-                                },
-                                attrs: {
-                                  src: investor.img
-                                    ? _vm.currentUrl +
-                                      "/storage/" +
-                                      investor.img
-                                    : _vm.currentUrl + "/img/avatar.png"
-                                }
-                              })
+                  _c("i", { staticClass: "fas fa-arrow-up" })
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "dataTable__cell dataTable__cell--head dataTable__cell--big",
+                  on: {
+                    click: function($event) {
+                      _vm.sort("email")
+                    }
+                  }
+                },
+                [
+                  _vm._v("\r\n            E-mail\r\n            "),
+                  _c("i", { staticClass: "fas fa-arrow-down" }),
+                  _vm._v(" "),
+                  _c("i", { staticClass: "fas fa-arrow-up" })
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "dataTable__cell dataTable__cell--head dataTable__cell--mid",
+                  on: {
+                    click: function($event) {
+                      _vm.sort("confirmed")
+                    }
+                  }
+                },
+                [
+                  _vm._v("\r\n            Confirmed\r\n            "),
+                  _c("i", { staticClass: "fas fa-arrow-down" }),
+                  _vm._v(" "),
+                  _c("i", { staticClass: "fas fa-arrow-up" })
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "dataTable__cell dataTable__cell--head dataTable__cell--lt"
+                },
+                [_vm._v("Verified photos")]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "dataTable__cell dataTable__cell--head dataTable__cell--lt"
+                },
+                [_vm._v("KYC")]
+              )
+            ]),
+            _vm._v(" "),
+            _vm._l(_vm.sortedItems, function(investor) {
+              return _c("div", { staticClass: "dataTable__item" }, [
+                _c(
+                  "div",
+                  { staticClass: "dataTable__cell dataTable__cell--lt" },
+                  [
+                    _c("img", {
+                      staticStyle: {
+                        "max-width": "75px",
+                        "max-height": "75px"
+                      },
+                      attrs: {
+                        src: investor.img
+                          ? _vm.currentUrl + "/storage/" + investor.img
+                          : _vm.currentUrl + "/img/avatar.png"
+                      }
+                    })
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "dataTable__cell dataTable__cell--lt" },
+                  [_vm._v(_vm._s(investor.id))]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "dataTable__cell dataTable__cell--big" },
+                  [_vm._v(_vm._s(investor.email))]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "dataTable__cell dataTable__cell--mid" },
+                  [
+                    _vm._v(
+                      _vm._s(investor.confirmed ? "Confirmed" : "Not confirmed")
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "dataTable__cell dataTable__cell--lt" },
+                  [
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn",
+                        on: {
+                          click: function($event) {
+                            _vm.showModal(investor.id)
+                          }
+                        }
+                      },
+                      [_vm._v("Docs")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "modal", attrs: { id: investor.id } },
+                      [
+                        _c("div", { staticClass: "modal-background" }),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "modal-content" }, [
+                          _c("header", { staticClass: "modal__header" }, [
+                            _c("div", { staticClass: "modal__header-user" }, [
+                              _c("div", [
+                                _c("img", {
+                                  staticStyle: {
+                                    "max-width": "75px",
+                                    "max-height": "75px"
+                                  },
+                                  attrs: {
+                                    src: investor.img
+                                      ? _vm.currentUrl +
+                                        "/storage/" +
+                                        investor.img
+                                      : _vm.currentUrl + "/img/avatar.png"
+                                  }
+                                })
+                              ]),
+                              _vm._v(" "),
+                              _c("span", [_vm._v(_vm._s(investor.name))])
                             ]),
                             _vm._v(" "),
-                            _c("span", [_vm._v(_vm._s(investor.name))])
+                            _c("button", {
+                              staticClass: "modal-close is-large",
+                              attrs: { "aria-label": "close" },
+                              on: {
+                                click: function($event) {
+                                  _vm.hideModal(investor.id)
+                                }
+                              }
+                            })
                           ]),
                           _vm._v(" "),
-                          _c("button", {
-                            staticClass: "modal-close is-large",
-                            attrs: { "aria-label": "close" },
-                            on: {
-                              click: function($event) {
-                                _vm.hideModal(investor.id)
-                              }
-                            }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "main",
-                          { staticClass: "modal__main" },
-                          [
-                            investor.personal.doc_img_path.length > 0
-                              ? _c(
-                                  "swiper",
-                                  {
-                                    ref: "awesomeSwiperA",
-                                    refInFor: true,
-                                    attrs: { options: _vm.swiperOptionA }
-                                  },
-                                  [
-                                    _vm._l(
-                                      investor.personal.doc_img_path,
-                                      function(item) {
-                                        return _c("swiper-slide", [
-                                          _c("img", {
-                                            attrs: {
-                                              src:
-                                                _vm.currentUrl +
-                                                "/storage/" +
-                                                item,
-                                              alt: "Photo"
-                                            }
-                                          })
-                                        ])
-                                      }
-                                    ),
-                                    _vm._v(" "),
-                                    _c("div", {
-                                      staticClass: "swiper-pagination",
-                                      attrs: { slot: "pagination" },
-                                      slot: "pagination"
-                                    }),
-                                    _vm._v(" "),
-                                    _c("div", {
-                                      staticClass: "swiper-button-prev",
-                                      attrs: { slot: "button-prev" },
-                                      slot: "button-prev"
-                                    }),
-                                    _vm._v(" "),
-                                    _c("div", {
-                                      staticClass: "swiper-button-next",
-                                      attrs: { slot: "button-next" },
-                                      slot: "button-next"
-                                    })
-                                  ],
-                                  2
-                                )
-                              : _vm._e()
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c("footer", { staticClass: "modal__footer" }, [
                           _c(
-                            "button",
-                            {
-                              staticClass: "btn",
-                              on: {
-                                click: function($event) {
-                                  _vm.applyKyc(investor.id)
-                                }
-                              }
-                            },
-                            [_vm._v("Apply")]
+                            "main",
+                            { staticClass: "modal__main" },
+                            [
+                              investor.personal.doc_img_path.length !== null
+                                ? _c(
+                                    "swiper",
+                                    {
+                                      ref: "awesomeSwiperA",
+                                      refInFor: true,
+                                      attrs: { options: _vm.swiperOptionA }
+                                    },
+                                    [
+                                      _vm._l(
+                                        investor.personal.doc_img_path,
+                                        function(item) {
+                                          return _c(
+                                            "swiper-slide",
+                                            { key: item },
+                                            [
+                                              _c("img", {
+                                                attrs: {
+                                                  src:
+                                                    _vm.currentUrl +
+                                                    "/storage/" +
+                                                    item,
+                                                  alt: "Photo"
+                                                }
+                                              })
+                                            ]
+                                          )
+                                        }
+                                      ),
+                                      _vm._v(" "),
+                                      _c("div", {
+                                        staticClass: "swiper-pagination",
+                                        attrs: { slot: "pagination" },
+                                        slot: "pagination"
+                                      }),
+                                      _vm._v(" "),
+                                      _c("div", {
+                                        staticClass: "swiper-button-prev",
+                                        attrs: { slot: "button-prev" },
+                                        slot: "button-prev"
+                                      }),
+                                      _vm._v(" "),
+                                      _c("div", {
+                                        staticClass: "swiper-button-next",
+                                        attrs: { slot: "button-next" },
+                                        slot: "button-next"
+                                      })
+                                    ],
+                                    2
+                                  )
+                                : _vm._e()
+                            ],
+                            1
                           ),
                           _vm._v(" "),
-                          _c(
-                            "button",
-                            {
-                              staticClass: "btn",
-                              on: {
-                                click: function($event) {
-                                  _vm.returnKyc(investor.id)
+                          _c("footer", { staticClass: "modal__footer" }, [
+                            _c(
+                              "button",
+                              {
+                                staticClass: "btn",
+                                on: {
+                                  click: function($event) {
+                                    _vm.applyKyc(investor.id)
+                                  }
                                 }
-                              }
-                            },
-                            [_vm._v("Return")]
-                          )
+                              },
+                              [_vm._v("Apply")]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "button",
+                              {
+                                staticClass: "btn",
+                                on: {
+                                  click: function($event) {
+                                    _vm.returnKyc(investor.id)
+                                  }
+                                }
+                              },
+                              [_vm._v("Return")]
+                            )
+                          ])
                         ])
-                      ])
-                    ]
-                  )
-                ])
+                      ]
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "dataTable__cell dataTable__cell--lt" },
+                  [
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn",
+                        attrs: {
+                          "data-toggle": "collapse",
+                          "data-target": "#demo"
+                        },
+                        on: {
+                          click: function($event) {
+                            _vm.toggleAddingData(investor.id)
+                          }
+                        }
+                      },
+                      [_vm._v("More")]
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "dataTable__item-wrap dataTable__item-wrap--hidden",
+                    attrs: { id: "hidden-" + investor.id }
+                  },
+                  [
+                    _vm._m(0, true),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "dataTable__item-hidden" }, [
+                      _c(
+                        "div",
+                        { staticClass: "dataTable__cell dataTable__cell--mid" },
+                        [_vm._v(_vm._s(investor.personal.phone))]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "dataTable__cell dataTable__cell--big" },
+                        [_vm._v(_vm._s(investor.name))]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "dataTable__cell dataTable__cell--mid" },
+                        [_vm._v(_vm._s(investor.personal.telegram))]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "dataTable__cell dataTable__cell--mid" },
+                        [_vm._v(_vm._s(investor.personal.permanent_address))]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "dataTable__cell dataTable__cell--mid" },
+                        [_vm._v(_vm._s(investor.personal.date_place_birth))]
+                      )
+                    ])
+                  ]
+                )
               ])
             })
           ],
@@ -49500,9 +49722,7 @@ var render = function() {
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "helpBar__page-select" }, [
-            _c("label", { attrs: { for: "pageQuantity" } }, [
-              _vm._v("Number of elements on the page")
-            ]),
+            _vm._m(1),
             _vm._v(" "),
             _c(
               "select",
@@ -49557,18 +49777,36 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("tr", [
-      _c("th", [_vm._v("Photo")]),
+    return _c("div", { staticClass: "dataTable__item-hidden" }, [
+      _c("div", { staticClass: "dataTable__cell dataTable__cell--mid" }, [
+        _vm._v("Phone")
+      ]),
       _vm._v(" "),
-      _c("th", [_vm._v("Investor ID")]),
+      _c("div", { staticClass: "dataTable__cell dataTable__cell--big" }, [
+        _vm._v("Full name")
+      ]),
       _vm._v(" "),
-      _c("th", [_vm._v("E-mail")]),
+      _c("div", { staticClass: "dataTable__cell dataTable__cell--mid" }, [
+        _vm._v("Telegram")
+      ]),
       _vm._v(" "),
-      _c("th", [_vm._v("Full name")]),
+      _c("div", { staticClass: "dataTable__cell dataTable__cell--mid" }, [
+        _vm._v("Address")
+      ]),
       _vm._v(" "),
-      _c("th", [_vm._v("Date or birth")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("KYC")])
+      _c("div", { staticClass: "dataTable__cell dataTable__cell--mid" }, [
+        _vm._v("Birthday")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { attrs: { for: "pageQuantity" } }, [
+      _vm._v("Number of elements"),
+      _c("br"),
+      _vm._v(" on the page")
     ])
   }
 ]
