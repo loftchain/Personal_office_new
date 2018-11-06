@@ -7,9 +7,11 @@
                 <p class="basicBlock__subtitle text-left">{!! trans('home/buyTokens.formPayPal_invest') !!}</p>
                 <div class="formControl">
                     <label class="icoForm__label"><b>{!! trans('home/buyTokens.formPayPal_enterAmount') !!}</b></label>
-                    <input class="wallet icoForm__input icoForm__input--pencil" name="amount" type="number"></p>
+                    <input id="payPalAmount" class="wallet icoForm__input icoForm__input--pencil" name="amount" type="number" min="0">
+                    <div class="message-error"></div>
+                    </p>
                     <label class="icoForm__label"><b>{!! trans('home/buyTokens.formPayPal_enterEth') !!}</b></label>
-                    <input class="wallet icoForm__input icoForm__input--pencil" name="wallet" type="text"></p>
+                    <input data-currency="ETH" class="wallet icoForm__input icoForm__input--pencil" name="wallet" type="text"></p>
                     <button class="btn btn--small">{!! trans('home/buyTokens.formPayPal_Btn') !!}</button>
                 </div>
 
