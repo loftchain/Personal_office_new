@@ -19,6 +19,7 @@ Vue.component('example-component', require('./components/ExampleComponent.vue'))
 // Vue.component('admin-verification-table', require('./components/AdminVerificationTable.vue'));
 Vue.component('history-table', require('./components/history/index'));
 Vue.component('verification-table', require('./components/verification/index'));
+Vue.component('tx-table', require('./components/tx/index'));
 
 const app = new Vue({
     el: '#app'

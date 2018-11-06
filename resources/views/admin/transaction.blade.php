@@ -11,6 +11,8 @@
                     <div class="raisedContainer raisedContainer--full basicBlock--settings">
                         <div class="basicBlock basicBlock--single">
                             <div class="basicBlock__content">
+                                <tx-table></tx-table>
+
                                 <div class="dataTable">
                                     <table class="dataTable__list">
                                         <tr>
