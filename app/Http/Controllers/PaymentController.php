@@ -40,18 +40,13 @@ class PaymentController extends Controller
         $this->_api_context->setConfig($paypal_conf['settings']);
     }
 
-    public function index()
-    {
-        return view('test');
-    }
-
-    public function getPayment()
-    {
-        dd(Payment::all(['count > 10'], $this->_api_context)->getPayments());
-    }
-
     public function payWithpaypal(Request $request)
     {
+        $request->validate([
+            'amount' => 'required|min:1|integer',
+            'wallet' => 'required'
+        ]);
+
         $payer = new Payer();
         $payer->setPaymentMethod('paypal');
 
@@ -90,10 +85,10 @@ class PaymentController extends Controller
         } catch (PayPalConnectionException $ex) {
             if (\Config::get('app.debug')) {
                 Session::put('error', 'Connection timeout');
-                return Redirect::route('test1');
+                return Redirect::route('home.tokens');
             } else {
                 Session::put('error', 'Some error occur, sorry for inconvenient');
-                return Redirect::route('test1');
+                return Redirect::route('home.tokens');
             }
         }
 
@@ -145,7 +140,7 @@ class PaymentController extends Controller
             $transactions = $result->getTransactions()[0]->toArray();
             $investor = Investor::where('email', $email)->first();
 
-            if(!$investor) {
+            if (!$investor) {
                 return abort(404);
             }
 
