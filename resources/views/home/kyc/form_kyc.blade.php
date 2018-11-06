@@ -49,6 +49,6 @@
     <div class="error-message error-message3 error-message-captcha g-recaptcha-response"></div>
 
     <div class="text-center">
-        <button type="submit" class="btn btn--small">{!! trans('home/kyc.kyc_btnSend') !!}</button>
+        <button id="trigger-upload" type="submit" class="btn btn--small">{!! trans('home/kyc.kyc_btnSend') !!}</button>
     </div>
 </form>

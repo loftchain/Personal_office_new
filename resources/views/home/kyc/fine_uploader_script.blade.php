@@ -23,7 +23,7 @@
                 <div class="qq-thumbnail-wrapper">
                     <img class="qq-thumbnail-selector" qq-max-size="120" qq-server-scale>
                 </div>
-                {{--<button type="button" class="qq-upload-cancel-selector qq-upload-cancel">X</button>--}}
+                <button type="button" class="qq-upload-cancel-selector qq-upload-cancel">X</button>
                 <button type="button" class="qq-upload-retry-selector qq-upload-retry">
                     <span class="qq-btn qq-retry-icon" aria-label="Retry"></span>
                     {!! trans('home/kyc.kyc_qq_retry') !!}

@@ -33,9 +33,11 @@
             if(inputList.children().length > 0) {
                 inputText.hide();
                 ver.button.attr('disabled', false);
-                clearInterval(intervalUl)
+            } else {
+                inputText.show();
+                ver.button.attr('disabled', true);
             }
-        }, 600);
+        }, 450);
 
     });
 

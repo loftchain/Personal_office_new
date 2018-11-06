@@ -27,6 +27,14 @@
                             <div class="basicBlock__content basicBlock__content--verification" id="divContent">
                                 @include('home.kyc.form_kyc')
                             </div>
+
+                                <div id="fakeConfirmed" class="basicBlock__content basicBlock__form basicBlock__form--waiting" style="display: none">
+                                    <div class="basicBlock__form-text">{!! trans('home/kyc.nKyc_title') !!}</div>
+                                    <div class="basicBlock__form-img basicBlock__form-img--waiting">
+                                        <img src="{{ asset('img/form-success.svg') }}" alt="wait for confirmation">
+                                    </div>
+                                </div>
+
                                 @elseif(Auth::user()->confirmed)
                                     <div class="basicBlock__content basicBlock__form basicBlock__form--success">
                                         <div class="basicBlock__form-text">{!! trans('home/kyc.vKyc_title') !!}</div>

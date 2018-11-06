@@ -1,7 +1,9 @@
 <script>
+    console.log('testuploader')
     var galleryUploader = new qq.FineUploader({
         element: document.getElementById("fine-uploader-gallery"),
         template: 'qq-template-gallery',
+        autoUpload: false,
         request: {
             endpoint: '{{ route('home.kyc.upload') }}',
         },
@@ -14,5 +16,9 @@
         validation: {
             allowedExtensions: ['jpeg', 'jpg', 'gif', 'png']
         }
+    });
+
+    qq(document.getElementById("trigger-upload")).attach("click", function() {
+        galleryUploader.uploadStoredFiles();
     });
 </script>

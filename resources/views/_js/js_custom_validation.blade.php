@@ -58,7 +58,6 @@
         },
 
         stateSelection: (data, _this) => {
-            console.log(data)
             switch (true) {
                 case !$.isEmptyObject(data.validation_error):
                     if (data.validation_error['g-recaptcha-response']) {
@@ -193,7 +192,9 @@
                     {{--v.showNotification('{!! trans('admin/confirmation.userConfirmed_js') !!}', 'success');--}}
                     break;
                 case data.kyc_success:
-                    window.location.replace("{{ route('home.kyc') }}");
+                    $('#divContent').hide();
+                    $('#fakeConfirmed').show();
+                    $('#agreement').attr('disabled', true);
                     break;
                 default:
                     console.log('js_custom_validation.blade.php default switch state');
