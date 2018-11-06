@@ -1,5 +1,4 @@
 <script>
-    console.log('testuploader')
     var galleryUploader = new qq.FineUploader({
         element: document.getElementById("fine-uploader-gallery"),
         template: 'qq-template-gallery',

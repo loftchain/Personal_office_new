@@ -25,6 +25,11 @@ class TransactionController extends Controller
         ]);
     }
 
+    public function get()
+    {
+        return Transaction::with('investor.wallets', 'investor.referral')->get();
+    }
+
     //Update the status of the transaction if it was successfully sent
     public function updateSend(Request $request)
     {

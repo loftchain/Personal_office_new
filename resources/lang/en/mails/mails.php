@@ -8,8 +8,9 @@ return [
 
     //account rejected
     'rSubject' => 'Account Rejected',
-    'rTitle' => 'Verification was rejected by the administration due to incorrect data',
-    'rButton' => 'Re-identify',
+    'rTitle' => 'Verification was rejected by the administration due to incorrect data.
+Please, specify correct data in your account and send verification request again.',
+    'rButton' => 'Verification',
 
     'resetPasswordSubject_controller' => 'Forgot your password?',
 ];
