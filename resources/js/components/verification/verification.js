@@ -89,20 +89,24 @@ export default {
             console.log('onSetTranslate')
         },
 
-        async applyKyc(id) {
+        async applyKyc(id, key) {
             const {data} = await axios.post(`verification/${id}/confirm`);
 
             if (data.status === true) {
-                this.hideModal(id)
+                this.sortedItems[key].confirmed = 1;
+                this.hideModal(id);
             }
         },
 
-        async returnKyc(id) {
-            const {data} = await axios.post(`verification/${id}/reject`);
-
-            if (data.status === true) {
-                this.hideModal(id)
-            }
+        async returnKyc(id, key) {
+           this.sortedItems.splice(key, 1);
+           console.log(this.sortedItems)
+            // const {data} = await axios.post(`verification/${id}/reject`);
+            //
+            // if (data.status === true) {
+            //     this.sortedItems.splice(key, 1);
+            //     this.hideModal(id);
+            // }
         },
 
         sort(s) {

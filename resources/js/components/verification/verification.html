@@ -22,7 +22,7 @@
           <div class="dataTable__cell dataTable__cell--head dataTable__cell--lt">Verified photos</div>
           <div class="dataTable__cell dataTable__cell--head dataTable__cell--lt">KYC</div>
         </div>
-        <div class="dataTable__item" v-for="investor in sortedItems">
+        <div class="dataTable__item" v-for="(investor, key) in sortedItems">
           <div class="dataTable__cell dataTable__cell--lt">
             <img :src="investor.img ? currentUrl + '/storage/' + investor.img : currentUrl + '/img/avatar.png'"
                  style="max-width: 75px; max-height: 75px;">
@@ -56,9 +56,9 @@
                     <div class="swiper-button-next" slot="button-next"></div>
                   </swiper>
                 </main>
-                <footer class="modal__footer">
-                  <button class="btn" @click="applyKyc(investor.id)">Apply</button>
-                  <button class="btn" @click="returnKyc(investor.id)">Return</button>
+                <footer class="modal__footer" v-if="!investor.confirmed">
+                  <button class="btn" @click="applyKyc(investor.id, key)">Apply</button>
+                  <button class="btn" @click="returnKyc(investor.id, key)">Return</button>
                 </footer>
               </div>
             </div>
