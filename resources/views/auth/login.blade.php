@@ -2,6 +2,11 @@
 
 @section('content')
     <div class="login modalFrame">
+        @if(session('messages'))
+            <div class="alert alert-danger" role="alert">
+                {{ session('messages') }}
+            </div>
+        @endif
         <div class="modalFrame__title">Welcome Back</div>
         <div class="modalFrame__subtitle">{!! trans('modals/modals.enter') !!}</div>
         <form class="loginForm icoForm" action="{{ route('login') }}" method="POST">

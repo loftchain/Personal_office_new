@@ -18,6 +18,11 @@ class SocialAuthController extends Controller
     public function callback($provider)
     {
         $user = Socialite::driver($provider)->user();
+
+        if (Investor::where('email', $user->email)->first()) {
+            return redirect()->route('login')->with('messages', 'User with such email already exists.');
+        }
+
         $authUser = $this->firstOrCreateUser($user, $provider);
         Auth::login($authUser, true);
 
