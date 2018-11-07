@@ -74,6 +74,7 @@ export default {
         },
 
         showModal(id) {
+            this.$forceUpdate()
             let modal = document.getElementById(id);
             modal.classList.add('is-active');
         },
