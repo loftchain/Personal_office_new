@@ -15,6 +15,7 @@
             normal: '#ffffff'
         },
         userConfirmed: '{{ Auth::user() ? Auth::user()->confirmed : null }}',
+        isAdmin: '{{ Auth::user() ? Auth::user()->adnin : null }}',
 
         resetModal: () => {
             v.xInput.removeClass('isError');
@@ -41,7 +42,7 @@
 
             let closeButton = $('.messageTop__button');
             closeButton.click(function() {
-                if (v.userConfirmed == 0 && '{{ Auth::user()->admin }}' !== '1') {
+                if (v.userConfirmed == 0 && v.isAdmin === '0') {
                   messageText.text('Unfortunately your profile is not verified yet.');
                   message.css('background', v.bg.warning);
                 }   else {
@@ -268,7 +269,7 @@
     $(document).ready(() => {
       let message = $('.messageTop');
       let messageText = $('.messageTop__text');
-      if (v.userConfirmed == 0 && '{{ Auth::user()->admin }}' !== '1') {
+      if (v.userConfirmed == 0 && v.isAdmin === '0') {
         messageText.text('{!! trans('layouts/message.messageTop') !!}');
         message.css('background', v.bg.warning);
       }   else {
