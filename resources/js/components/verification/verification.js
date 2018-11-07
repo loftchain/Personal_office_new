@@ -93,6 +93,7 @@ export default {
             const {data} = await axios.post(`verification/${id}/confirm`);
 
             if (data.status === true) {
+                v.showMessage('Account successfully verified', v.bg.success);
                 this.sortedItems[key].confirmed = 1;
                 this.hideModal(id);
             }
@@ -100,13 +101,19 @@ export default {
 
         async returnKyc(id, key) {
            this.sortedItems.splice(key, 1);
-           console.log(this.sortedItems)
-            // const {data} = await axios.post(`verification/${id}/reject`);
-            //
-            // if (data.status === true) {
-            //     this.sortedItems.splice(key, 1);
-            //     this.hideModal(id);
-            // }
+
+            const {data} = await axios.post(`verification/${id}/reject`);
+
+            if (data.status === true) {
+                v.showMessage('Account returned for re-verification', v.bg.success);
+                this.sortedItems.splice(key, 1);
+                this.hideModal(id);
+            }
+            this.$forceUpdate()
+        },
+
+        showMessage(text, color) {
+
         },
 
         sort(s) {

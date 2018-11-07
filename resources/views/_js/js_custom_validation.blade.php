@@ -41,7 +41,7 @@
 
             let closeButton = $('.messageTop__button');
             closeButton.click(function() {
-                if (v.userConfirmed == 0) {
+                if (v.userConfirmed == 0 && '{{ Auth::user()->admin }}' !== '1') {
                   messageText.text('Unfortunately your profile is not verified yet.');
                   message.css('background', v.bg.warning);
                 }   else {
@@ -268,7 +268,7 @@
     $(document).ready(() => {
       let message = $('.messageTop');
       let messageText = $('.messageTop__text');
-      if (v.userConfirmed == 0) {
+      if (v.userConfirmed == 0 && '{{ Auth::user()->admin }}' !== '1') {
         messageText.text('{!! trans('layouts/message.messageTop') !!}');
         message.css('background', v.bg.warning);
       }   else {
