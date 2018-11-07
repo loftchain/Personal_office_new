@@ -15,7 +15,7 @@
             normal: '#ffffff'
         },
         userConfirmed: '{{ Auth::user() ? Auth::user()->confirmed : null }}',
-        isAdmin: '{{ Auth::user() ? Auth::user()->adnin : null }}',
+        isAdmin: '{{ Auth::user() ? Auth::user()->admin : null }}',
 
         resetModal: () => {
             v.xInput.removeClass('isError');
@@ -267,6 +267,7 @@
     v.form.each(v.ajax_form);
 
     $(document).ready(() => {
+        console.log(v.isAdmin)
       let message = $('.messageTop');
       let messageText = $('.messageTop__text');
       if (v.userConfirmed == 0 && v.isAdmin === '0') {
