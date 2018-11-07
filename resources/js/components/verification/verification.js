@@ -20,6 +20,7 @@ export default {
             currentPage:1,
             totalPages:1,
             show: false,
+            checkedConfirmed: [0, 1],
             swiperOptionA: {
                 pagination: {
                     el: '.swiper-pagination'
@@ -54,7 +55,9 @@ export default {
             let start = (this.currentPage-1)*this.pageSize;
             let end = this.currentPage*this.pageSize;
             if(index >= start && index < end) return true;
-          });
+          }).filter((i) =>
+              this.checkedConfirmed.includes(i.confirmed)
+          );
         }
       },
         swiperA() {
@@ -129,6 +132,11 @@ export default {
 
         prevPage() {
           if(this.currentPage > 1) this.currentPage--;
+        },
+
+        checkBoxClick: function () {
+            // this.pageSize = this.totalPages;
+            // console.log(this.sortedItems);
         },
       }
 }

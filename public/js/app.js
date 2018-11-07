@@ -49150,6 +49150,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
             currentPage: 1,
             totalPages: 1,
             show: false,
+            checkedConfirmed: [0, 1],
             swiperOptionA: {
                 pagination: {
                     el: '.swiper-pagination'
@@ -49185,6 +49186,8 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
                     var start = (_this.currentPage - 1) * _this.pageSize;
                     var end = _this.currentPage * _this.pageSize;
                     if (index >= start && index < end) return true;
+                }).filter(function (i) {
+                    return _this.checkedConfirmed.includes(i.confirmed);
                 });
             }
         },
@@ -49303,6 +49306,12 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
         },
         prevPage: function prevPage() {
             if (this.currentPage > 1) this.currentPage--;
+        },
+
+
+        checkBoxClick: function checkBoxClick() {
+            // this.pageSize = this.totalPages;
+            // console.log(this.sortedItems);
         }
     }
 });
@@ -57802,6 +57811,88 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
+    _c("input", {
+      directives: [
+        {
+          name: "model",
+          rawName: "v-model",
+          value: _vm.checkedConfirmed,
+          expression: "checkedConfirmed"
+        }
+      ],
+      attrs: { type: "checkbox", checked: "" },
+      domProps: {
+        value: 0,
+        checked: Array.isArray(_vm.checkedConfirmed)
+          ? _vm._i(_vm.checkedConfirmed, 0) > -1
+          : _vm.checkedConfirmed
+      },
+      on: {
+        click: _vm.checkBoxClick,
+        change: function($event) {
+          var $$a = _vm.checkedConfirmed,
+            $$el = $event.target,
+            $$c = $$el.checked ? true : false
+          if (Array.isArray($$a)) {
+            var $$v = 0,
+              $$i = _vm._i($$a, $$v)
+            if ($$el.checked) {
+              $$i < 0 && (_vm.checkedConfirmed = $$a.concat([$$v]))
+            } else {
+              $$i > -1 &&
+                (_vm.checkedConfirmed = $$a
+                  .slice(0, $$i)
+                  .concat($$a.slice($$i + 1)))
+            }
+          } else {
+            _vm.checkedConfirmed = $$c
+          }
+        }
+      }
+    }),
+    _vm._v("  Not confirmed\r\n  "),
+    _c("br"),
+    _vm._v(" "),
+    _c("input", {
+      directives: [
+        {
+          name: "model",
+          rawName: "v-model",
+          value: _vm.checkedConfirmed,
+          expression: "checkedConfirmed"
+        }
+      ],
+      attrs: { type: "checkbox", checked: "" },
+      domProps: {
+        value: 1,
+        checked: Array.isArray(_vm.checkedConfirmed)
+          ? _vm._i(_vm.checkedConfirmed, 1) > -1
+          : _vm.checkedConfirmed
+      },
+      on: {
+        click: _vm.checkBoxClick,
+        change: function($event) {
+          var $$a = _vm.checkedConfirmed,
+            $$el = $event.target,
+            $$c = $$el.checked ? true : false
+          if (Array.isArray($$a)) {
+            var $$v = 1,
+              $$i = _vm._i($$a, $$v)
+            if ($$el.checked) {
+              $$i < 0 && (_vm.checkedConfirmed = $$a.concat([$$v]))
+            } else {
+              $$i > -1 &&
+                (_vm.checkedConfirmed = $$a
+                  .slice(0, $$i)
+                  .concat($$a.slice($$i + 1)))
+            }
+          } else {
+            _vm.checkedConfirmed = $$c
+          }
+        }
+      }
+    }),
+    _vm._v("  Confirmed\r\n  "),
     _c("section", { staticClass: "verification" }, [
       _c("div", { staticClass: "dataTable" }, [
         _c(
@@ -58257,9 +58348,14 @@ var render = function() {
                 _vm._v(" "),
                 _c("option", { attrs: { value: "20" } }, [_vm._v("20")]),
                 _vm._v(" "),
-                _c("option", { domProps: { value: _vm.totalPages } }, [
-                  _vm._v("all, " + _vm._s(_vm.totalPages))
-                ])
+                _c(
+                  "option",
+                  {
+                    attrs: { selected: "" },
+                    domProps: { value: _vm.totalPages }
+                  },
+                  [_vm._v("all, " + _vm._s(_vm.totalPages))]
+                )
               ]
             )
           ])

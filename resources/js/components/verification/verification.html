@@ -1,4 +1,7 @@
 <div>
+  <input type="checkbox" v-model="checkedConfirmed" @click="checkBoxClick" :value="0" checked/>  Not confirmed
+  <br>
+  <input type="checkbox" v-model="checkedConfirmed" @click="checkBoxClick" :value="1" checked/>  Confirmed
   <section class="verification">
     <div class="dataTable">
       <div class="dataTable__list">
@@ -100,7 +103,7 @@
             <option value="10">10</option>
             <option value="15">15</option>
             <option value="20">20</option>
-            <option :value="totalPages">all, {{ totalPages }}</option>
+            <option :value="totalPages" selected>all, {{ totalPages }}</option>
           </select>
         </div>
       </div>
