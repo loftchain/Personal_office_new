@@ -70,8 +70,6 @@
                             _this.children('.row').children().find('.error-message.' + key).prev().children('input').attr('style', 'border: 2px solid #FF0000;');
                             _this.children('.row').children().find('.error-message.' + key).addClass('isError')
                             _this.children('.row').children().find('.error-message.' + key).html(v.exclamation + value[0]);
-                            console.log(_this.children('.row').children().find('.error-message.' + key).prev().children('input'))
-
                         }
                         // if (_this.children('.error-message.' + key).prev().hasClass('x-input')) {
                         //     _this.children('.error-message.' + key).prev().addClass('isError');
@@ -197,6 +195,11 @@
                     $('#fakeConfirmed').show();
                     $('#agreement').attr('disabled', true);
                     break;
+                case data.set_password:
+                    _this.find('.icoForm__input').val('');
+                    $('.alert.alert-danger').detach();
+                    v.closeModal();
+                    v.showMessage('Set password success', v.bg.success);
                 default:
                     console.log('js_custom_validation.blade.php default switch state');
                     break;
@@ -237,7 +240,6 @@
                             data: $(this).serialize(),
                             dataType: 'json',
                             success: data => {
-                                console.log(data.kyc_success);
                                 // v.loaderSpinner.hide();
                                 v.stateSelection(data, $(this));
                             },
@@ -267,7 +269,6 @@
     v.form.each(v.ajax_form);
 
     $(document).ready(() => {
-        console.log(v.isAdmin)
       let message = $('.messageTop');
       let messageText = $('.messageTop__text');
       if (v.userConfirmed == 0 && v.isAdmin === '0') {

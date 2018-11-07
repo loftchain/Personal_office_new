@@ -21,11 +21,19 @@ class ChangePasswordController extends Controller
 
     protected function validator(array $data)
     {
-        return Validator::make($data, [
-            'old_password' => 'required|string|min:3|max:1024',
-            'password' => 'required|string|min:3|max:1024|confirmed',
+        if(Auth::user()->password) {
+            return Validator::make($data, [
+                'old_password' => 'required|string|min:3|max:1024',
+                'password' => 'required|string|min:3|max:1024|confirmed',
 
-        ]);
+            ]);
+        } else {
+            return Validator::make($data, [
+                'password' => 'required|string|min:3|max:1024|confirmed',
+
+            ]);
+        }
+
     }
 
     protected function change_pwd_history_make($old_pwd, $new_pwd)
@@ -69,6 +77,24 @@ class ChangePasswordController extends Controller
         $this->change_pwd_history_make($input['old_password'], $input['password']);
 
         return response()->json(['success_changed_pwd' => 'good']);
+    }
+
+    public function setPassword(Request $request)
+    {
+        $validator = $this->validator($request->all());
+
+        if ($validator->fails()) {
+            return response()->json(['validation_error' => $validator->errors()]);
+        }
+
+        $user = Auth::user();
+
+        $user->password = bcrypt($request->password);
+        $user->save();
+
+        return [
+          'set_password' => true
+        ];
     }
 }
 

@@ -16,6 +16,10 @@
                                     <div class="alert alert-danger" role="alert">
                                         {!! trans('layouts/message.messageNoEmail') !!}
                                     </div>
+                                @elseif(!Auth::user()->password)
+                                    <div class="alert alert-danger" role="alert">
+                                        Enter password
+                                    </div>
                                 @endif
                                 <div class="basicBlock basicBlock--single settings">
                                     <div class="basicBlock__content">
@@ -46,10 +50,40 @@
                                             </div>
                                             <div class="col-md-4">
                                                 {{--password change form--}}
-                                                @include('home.settings.form_password')
+                                                @if(!Auth::user()->password)
+                                                    <form class="icoForm changePassword icoForm--noMargin hidden" action="{{ route('password.set') }}" method="post">
+                                                        {{ csrf_field() }}
+                                                        <div class="formControl">
+                                                            <label class="icoForm__label">{!! trans('home/settings.formPasswordNew') !!}</label>
+                                                            <input class="icoForm__input" type="password" name="password" placeholder="{!! trans('home/settings.formPassPlaceNew') !!}">
+                                                        </div>
+                                                        <div class="error-message error-message2 password"></div>
+                                                        <div class="formControl">
+                                                            <label class="icoForm__label">{!! trans('home/settings.formPasswordRepeat') !!}</label>
+                                                            <input class="icoForm__input" type="password" name="password_confirmation" placeholder="{!! trans('home/settings.formPassPlaceRepeat') !!}">
+                                                        </div>
+                                                        <div class="error-message error-message2 password2 not_equal"></div>
+                                                        <button type="submit" class="btn btn--small">{!! trans('modals/modals.change_btn') !!}</button>
+                                                    </form>
+                                                @else
+                                                    @include('home.settings.form_password')
+                                                @endif
 
                                                 {{--mail change form--}}
-                                                @include('home.settings.form_email')
+                                                @if(!Auth::user()->email)
+                                                    <form class="icoForm changeEmail icoForm--noMargin hidden" action="{{ route('email.reset') }}" method="post">
+                                                        {{ csrf_field() }}
+                                                        <div class="error-message error-message0 old_email not_your_email not_equal"></div>
+                                                        <div class="formControl">
+                                                            <label class="icoForm__label">{!! trans('home/settings.formEmailNew') !!}</label>
+                                                            <input class="icoForm__input" type="email" name="email" placeholder="{!! trans('home/settings.formEmailPlaceNew') !!}" required>
+                                                        </div>
+                                                        <div class="error-message error-message1 email"></div>
+                                                        <button type="submit" class="btn btn--small"> {!! trans('modals/modals.change_btn') !!}</button>
+                                                    </form>
+                                                @else
+                                                    @include('home.settings.form_email')
+                                                @endif
                                             </div>
                                         </div>
                                     </div>
