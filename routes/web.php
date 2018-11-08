@@ -64,6 +64,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['admin']],
    Route::get('/referral', 'Admin\ReferralController@index')->name('referral');
    Route::get('/transaction', 'Admin\TransactionController@index')->name('transaction');
    Route::get('/transaction/get', 'Admin\TransactionController@get')->name('transaction.get');
+   Route::post('/transaction/update', 'Admin\TransactionController@updateSend')->name('transaction.update');
 });
 
 Route::get('/storage/{path}', 'SettingsController@getAvatar')->name('settings.get.avatar');

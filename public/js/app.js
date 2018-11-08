@@ -58562,11 +58562,36 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
             pageSize: 5,
             currentPage: 1,
             totalPages: 1,
-            showIcon: true
+            showIcon: true,
+            checkedSend: ['0', '1']
+            // abi: [{"constant":true,"inputs":[],"name":"hasClosed","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"addBalanceForOraclize","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":false,"inputs":[{"name":"myid","type":"bytes32"},{"name":"result","type":"string"}],"name":"__callback","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_user","type":"address"}],"name":"delKYC","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"_owner","type":"address"}],"name":"isOwner","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"tokenPriceInWei","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"cap","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"myid","type":"bytes32"},{"name":"result","type":"string"},{"name":"proof","type":"bytes"}],"name":"__callback","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_user","type":"address"}],"name":"addKYC","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"weiRaised","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"closingTime","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"finalize","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"capReached","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"tokensSold","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"wallet","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"currentStage","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_url","type":"string"}],"name":"setOraclizeUrl","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[],"name":"updatePrice","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":false,"inputs":[{"name":"_price","type":"uint256"}],"name":"setTokenPrice","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_newOwner","type":"address"}],"name":"addOwner","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_owner","type":"address"}],"name":"delOwner","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_to","type":"address"}],"name":"withdrawBalance","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"stages","outputs":[{"name":"stopDay","type":"uint256"},{"name":"bonus1","type":"uint256"},{"name":"bonus2","type":"uint256"},{"name":"bonus3","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"bytes32"}],"name":"pendingQueries","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"isFinalized","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_stopDay","type":"uint256"},{"name":"_bonus1","type":"uint256"},{"name":"_bonus2","type":"uint256"},{"name":"_bonus3","type":"uint256"}],"name":"addStage","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"openingTime","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"reserveFund","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"KYC","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_newPrice","type":"uint256"}],"name":"setGasPrice","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"oraclizeBalance","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"oraclize_url","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_beneficiary","type":"address"}],"name":"buyTokens","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":false,"inputs":[{"name":"_beneficiary","type":"address"},{"name":"_tokens","type":"uint256"}],"name":"manualSale","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"stageCount","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"token","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[{"name":"_wallet","type":"address"},{"name":"_token","type":"address"},{"name":"_cap","type":"uint256"},{"name":"_openingTime","type":"uint256"},{"name":"_closingTime","type":"uint256"},{"name":"_reserveFund","type":"address"},{"name":"_tokenPriceInWei","type":"uint256"}],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"payable":true,"stateMutability":"payable","type":"fallback"},{"anonymous":false,"inputs":[{"indexed":true,"name":"purchaser","type":"address"},{"indexed":true,"name":"beneficiary","type":"address"},{"indexed":false,"name":"value","type":"uint256"},{"indexed":false,"name":"tokens","type":"uint256"},{"indexed":false,"name":"bonus","type":"uint256"}],"name":"TokenPurchase","type":"event"},{"anonymous":false,"inputs":[],"name":"Finalized","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"description","type":"string"}],"name":"NewOraclizeQuery","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"price","type":"string"}],"name":"NewKrakenPriceTicker","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"newOwner","type":"address"}],"name":"OwnerAdded","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"owner","type":"address"}],"name":"OwnerDeleted","type":"event"}],
+            // crowdSaleAddress: process.env.MIX_HOME_WALLET_ETH,
+            // overrideOptions: { gasLimit: 150000 },
+            // provider: new ethers.providers.Web3Provider(web3.currentProvider, ethers.providers.networks.homestead),
         };
     },
 
-    computed: {},
+    computed: {
+        sortedItems: function sortedItems() {
+            var _this = this;
+
+            if (this.transactions !== null) {
+                return this.transactions.sort(function (a, b) {
+                    var modifier = 1;
+                    if (_this.currentSortDir === 'desc') modifier = -1;
+                    if (a[_this.currentSort] < b[_this.currentSort]) return -1 * modifier;
+                    if (a[_this.currentSort] > b[_this.currentSort]) return 1 * modifier;
+                    return 0;
+                }).filter(function (row, index) {
+                    var start = (_this.currentPage - 1) * _this.pageSize;
+                    var end = _this.currentPage * _this.pageSize;
+                    if (index >= start && index < end) return true;
+                }).filter(function (i) {
+                    return _this.checkedSend.includes(i.send);
+                });
+            }
+        }
+    },
     mounted: function mounted() {
         this.getTx();
     },
@@ -58574,7 +58599,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
     methods: {
         getTx: function () {
             var _ref = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee() {
-                var _this = this;
+                var _this2 = this;
 
                 return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
                     while (1) {
@@ -58582,7 +58607,8 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
                             case 0:
                                 _context.next = 2;
                                 return __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get('transaction/get').then(function (res) {
-                                    _this.transactions = res.data;
+                                    _this2.totalPages = res.data.length;
+                                    _this2.transactions = res.data;
                                 });
 
                             case 2:
@@ -58598,6 +58624,88 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
             }
 
             return getTx;
+        }(),
+        toggleAddingData: function toggleAddingData(id) {
+            var block = document.getElementById('hidden-' + id);
+            block.classList.toggle('dataTable__item-wrap--hidden');
+        },
+        sort: function sort(s) {
+            if (s === this.currentSort) {
+                this.currentSortDir = this.currentSortDir === 'asc' ? 'desc' : 'asc';
+            }
+            this.currentSort = s;
+        },
+        nextPage: function nextPage() {
+            if (this.currentPage * this.pageSize < this.transactions.length) this.currentPage++;
+        },
+        prevPage: function prevPage() {
+            if (this.currentPage > 1) this.currentPage--;
+        },
+
+
+        checkBoxClick: function checkBoxClick() {
+            this.pageSize = this.totalPages;
+        },
+
+        sendTokens: function sendTokens(item, key) {
+            var beneficiary = null;
+
+            item.investor.wallets.map(function (i) {
+                if (i.currency === 'ETH') {
+                    beneficiary = i.wallet;
+                }
+            });
+
+            this.updateTransaction(item, key);
+
+            // let contract = new ethers.Contract(this.crowdSaleAddress, this.abi, this.provider.getSigner());
+            // contract.manualSale(beneficiary, ethers.utils.parseEther(item.amount_tokens), this.overrideOptions).then(tx => {
+            //     alert('submitted');
+            //     this.updateTransaction(item);
+            //     provider.waitForTransaction(tx.hash).then(tx => {
+            //         alert('confirmed');
+            //     })
+            // })
+        },
+        updateTransaction: function () {
+            var _ref2 = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee2(item, key) {
+                var _ref3, data;
+
+                return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee2$(_context2) {
+                    while (1) {
+                        switch (_context2.prev = _context2.next) {
+                            case 0:
+                                _context2.next = 2;
+                                return __WEBPACK_IMPORTED_MODULE_1_axios___default.a.post('transaction/update', {
+                                    id: item.transaction_id
+                                });
+
+                            case 2:
+                                _ref3 = _context2.sent;
+                                data = _ref3.data;
+
+
+                                if (data.status === true) {
+                                    this.sortedItems[key].send = '1';
+                                    this.toggleAddingData(item.id);
+                                    v.showMessage('Tokens successfully posted.', v.bg.success);
+                                }
+
+                                return _context2.abrupt('return', data);
+
+                            case 6:
+                            case 'end':
+                                return _context2.stop();
+                        }
+                    }
+                }, _callee2, this);
+            }));
+
+            function updateTransaction(_x, _x2) {
+                return _ref2.apply(this, arguments);
+            }
+
+            return updateTransaction;
         }()
     }
 });
@@ -58610,15 +58718,489 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("section", { staticClass: "tx" }, [
+    _c("div", { staticClass: "dataTable" }, [
+      _c(
+        "div",
+        { staticClass: "dataTable__list" },
+        [
+          _c("div", { staticClass: "dataTable__item" }, [
+            _c(
+              "div",
+              {
+                staticClass:
+                  "dataTable__cell dataTable__cell--head dataTable__cell--lt",
+                on: {
+                  click: function($event) {
+                    _vm.sort("investor_id")
+                  }
+                }
+              },
+              [
+                _vm._v("\n          Investor ID\n          "),
+                _c("i", { staticClass: "fas fa-arrow-down" }),
+                _vm._v(" "),
+                _c("i", { staticClass: "fas fa-arrow-up" })
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass:
+                  "dataTable__cell dataTable__cell--head dataTable__cell--lt",
+                on: {
+                  click: function($event) {
+                    _vm.sort("currency")
+                  }
+                }
+              },
+              [
+                _vm._v("\n          Currency\n          "),
+                _c("i", { staticClass: "fas fa-arrow-down" }),
+                _vm._v(" "),
+                _c("i", { staticClass: "fas fa-arrow-up" })
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass:
+                  "dataTable__cell dataTable__cell--head dataTable__cell--lt",
+                on: {
+                  click: function($event) {
+                    _vm.sort("amount_tokens")
+                  }
+                }
+              },
+              [
+                _vm._v("\n          Amount\n          "),
+                _c("i", { staticClass: "fas fa-arrow-down" }),
+                _vm._v(" "),
+                _c("i", { staticClass: "fas fa-arrow-up" })
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass:
+                  "dataTable__cell dataTable__cell--head dataTable__cell--lt",
+                on: {
+                  click: function($event) {
+                    _vm.sort("status")
+                  }
+                }
+              },
+              [
+                _vm._v("\n          Status\n          "),
+                _c("i", { staticClass: "fas fa-arrow-down" }),
+                _vm._v(" "),
+                _c("i", { staticClass: "fas fa-arrow-up" })
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass:
+                  "dataTable__cell dataTable__cell--head dataTable__cell--big",
+                on: {
+                  click: function($event) {
+                    _vm.sort("date")
+                  }
+                }
+              },
+              [
+                _vm._v("\n          Date\n          "),
+                _c("i", { staticClass: "fas fa-arrow-down" }),
+                _vm._v(" "),
+                _c("i", { staticClass: "fas fa-arrow-up" })
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass:
+                  "dataTable__cell dataTable__cell--head dataTable__cell--mid"
+              },
+              [_vm._v("\n          Info\n        ")]
+            )
+          ]),
+          _vm._v(" "),
+          _vm._l(_vm.sortedItems, function(transaction, key) {
+            return _c("div", { staticClass: "dataTable__item" }, [
+              _c(
+                "div",
+                { staticClass: "dataTable__cell dataTable__cell--lt" },
+                [
+                  _vm._v(
+                    "\n          " +
+                      _vm._s(transaction.investor_id) +
+                      "\n        "
+                  )
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "dataTable__cell dataTable__cell--lt" },
+                [_vm._v(_vm._s(transaction.currency))]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "dataTable__cell dataTable__cell--lt" },
+                [_vm._v(_vm._s(transaction.amount_tokens))]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "dataTable__cell dataTable__cell--lt" },
+                [_vm._v(_vm._s(transaction.status))]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "dataTable__cell dataTable__cell--big" },
+                [_vm._v(_vm._s(transaction.date))]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "dataTable__cell dataTable__cell--mid" },
+                [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn",
+                      attrs: {
+                        "data-toggle": "collapse",
+                        "data-target": "#demo"
+                      },
+                      on: {
+                        click: function($event) {
+                          _vm.toggleAddingData(transaction.id)
+                        }
+                      }
+                    },
+                    [_vm._v("info")]
+                  )
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "dataTable__item-wrap dataTable__item-wrap--hidden",
+                  attrs: { id: "hidden-" + transaction.id }
+                },
+                [
+                  _c("div", { staticClass: "dataTable__item-hidden" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "dataTable__cell dataTable__cell--trans-info"
+                      },
+                      [_vm._v("To")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "dataTable__cell dataTable__cell--trans-info",
+                        style:
+                          transaction.send == "0" &&
+                          transaction.currency == "BTC"
+                            ? "width: 25%"
+                            : "width: 50%"
+                      },
+                      [_vm._v("info")]
+                    ),
+                    _vm._v(" "),
+                    transaction.send == "0"
+                      ? _c(
+                          "div",
+                          {
+                            staticClass:
+                              "dataTable__cell dataTable__cell--trans-info",
+                            staticStyle: { width: "25%" }
+                          },
+                          [_vm._v("send")]
+                        )
+                      : _vm._e()
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "dataTable__item-hidden" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "dataTable__cell dataTable__cell--trans-info"
+                      },
+                      [_vm._v(_vm._s(transaction.from))]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "dataTable__cell dataTable__cell--trans-info",
+                        style:
+                          transaction.send == "0" &&
+                          transaction.currency == "BTC"
+                            ? "width: 25%"
+                            : "width: 50%"
+                      },
+                      [_vm._v(_vm._s(transaction.info))]
+                    ),
+                    _vm._v(" "),
+                    transaction.send == "0" && transaction.currency == "BTC"
+                      ? _c(
+                          "div",
+                          {
+                            staticClass:
+                              "dataTable__cell dataTable__cell--trans-info",
+                            staticStyle: { width: "25%" }
+                          },
+                          [
+                            _c(
+                              "button",
+                              {
+                                staticClass: "btn btn--small",
+                                on: {
+                                  click: function($event) {
+                                    _vm.sendTokens(transaction, key)
+                                  }
+                                }
+                              },
+                              [_vm._v("Send")]
+                            )
+                          ]
+                        )
+                      : _vm._e()
+                  ])
+                ]
+              )
+            ])
+          })
+        ],
+        2
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "helpBar" }, [
+        _c("div", { staticClass: "helpBar__buttons" }, [
+          _c(
+            "button",
+            {
+              staticClass: "btn",
+              on: {
+                click: function($event) {
+                  _vm.prevPage()
+                }
+              }
+            },
+            [_vm._v("Previous")]
+          ),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "btn",
+              on: {
+                click: function($event) {
+                  _vm.nextPage()
+                }
+              }
+            },
+            [_vm._v("Next")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "helpBar__help-text" }, [
+          _c(
+            "p",
+            {
+              model: {
+                value: _vm.currentPage,
+                callback: function($$v) {
+                  _vm.currentPage = $$v
+                },
+                expression: "currentPage"
+              }
+            },
+            [_vm._v("current page: " + _vm._s(_vm.currentPage))]
+          ),
+          _vm._v(" "),
+          _c(
+            "p",
+            {
+              model: {
+                value: _vm.totalPages,
+                callback: function($$v) {
+                  _vm.totalPages = $$v
+                },
+                expression: "totalPages"
+              }
+            },
+            [_vm._v("total pages: " + _vm._s(_vm.totalPages))]
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "helpBar__page-select" }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _c("br"),
+          _vm._v(" "),
+          _c(
+            "select",
+            {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.pageSize,
+                  expression: "pageSize"
+                }
+              ],
+              attrs: { name: "pageQuantity", id: "pageQuantity" },
+              on: {
+                change: function($event) {
+                  var $$selectedVal = Array.prototype.filter
+                    .call($event.target.options, function(o) {
+                      return o.selected
+                    })
+                    .map(function(o) {
+                      var val = "_value" in o ? o._value : o.value
+                      return val
+                    })
+                  _vm.pageSize = $event.target.multiple
+                    ? $$selectedVal
+                    : $$selectedVal[0]
+                }
+              }
+            },
+            [
+              _c("option", { attrs: { value: "5" } }, [_vm._v("5")]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "10" } }, [_vm._v("10")]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "15" } }, [_vm._v("15")]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "20" } }, [_vm._v("20")]),
+              _vm._v(" "),
+              _c(
+                "option",
+                {
+                  attrs: { selected: "" },
+                  domProps: { value: _vm.totalPages }
+                },
+                [_vm._v("all, " + _vm._s(_vm.totalPages))]
+              )
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "helpBar__checked-confirm" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.checkedSend,
+                expression: "checkedSend"
+              }
+            ],
+            attrs: { type: "checkbox", value: "0", checked: "" },
+            domProps: {
+              checked: Array.isArray(_vm.checkedSend)
+                ? _vm._i(_vm.checkedSend, "0") > -1
+                : _vm.checkedSend
+            },
+            on: {
+              click: _vm.checkBoxClick,
+              change: function($event) {
+                var $$a = _vm.checkedSend,
+                  $$el = $event.target,
+                  $$c = $$el.checked ? true : false
+                if (Array.isArray($$a)) {
+                  var $$v = "0",
+                    $$i = _vm._i($$a, $$v)
+                  if ($$el.checked) {
+                    $$i < 0 && (_vm.checkedSend = $$a.concat([$$v]))
+                  } else {
+                    $$i > -1 &&
+                      (_vm.checkedSend = $$a
+                        .slice(0, $$i)
+                        .concat($$a.slice($$i + 1)))
+                  }
+                } else {
+                  _vm.checkedSend = $$c
+                }
+              }
+            }
+          }),
+          _vm._v("  Not sent\n        "),
+          _c("br"),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.checkedSend,
+                expression: "checkedSend"
+              }
+            ],
+            attrs: { type: "checkbox", value: "1", checked: "" },
+            domProps: {
+              checked: Array.isArray(_vm.checkedSend)
+                ? _vm._i(_vm.checkedSend, "1") > -1
+                : _vm.checkedSend
+            },
+            on: {
+              click: _vm.checkBoxClick,
+              change: function($event) {
+                var $$a = _vm.checkedSend,
+                  $$el = $event.target,
+                  $$c = $$el.checked ? true : false
+                if (Array.isArray($$a)) {
+                  var $$v = "1",
+                    $$i = _vm._i($$a, $$v)
+                  if ($$el.checked) {
+                    $$i < 0 && (_vm.checkedSend = $$a.concat([$$v]))
+                  } else {
+                    $$i > -1 &&
+                      (_vm.checkedSend = $$a
+                        .slice(0, $$i)
+                        .concat($$a.slice($$i + 1)))
+                  }
+                } else {
+                  _vm.checkedSend = $$c
+                }
+              }
+            }
+          }),
+          _vm._v("  Sent\n      ")
+        ])
+      ])
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("section", { staticClass: "tx" }, [
-      _c("h1", [_vm._v("tx Component")])
+    return _c("label", { attrs: { for: "pageQuantity" } }, [
+      _vm._v("Number of elements"),
+      _c("br"),
+      _vm._v(" on the page")
     ])
   }
 ]

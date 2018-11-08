@@ -11313,6 +11313,10 @@ body {
   color: #4F4F4F;
 }
 
+.dataTable__cell--trans-info {
+  width: 50%;
+}
+
 .dataTable th {
   font-family: 'Rubik', 'Arial', sans-serif;
   font-style: normal;
