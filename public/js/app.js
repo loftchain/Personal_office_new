@@ -58060,7 +58060,29 @@ var render = function() {
                                     ],
                                     2
                                   )
-                                : _vm._e()
+                                : _c(
+                                    "swiper",
+                                    {
+                                      ref: "awesomeSwiperA",
+                                      refInFor: true,
+                                      attrs: { options: _vm.swiperOptionA }
+                                    },
+                                    [
+                                      _c("swiper-slide", [
+                                        _c("img", {
+                                          staticStyle: {
+                                            "max-width": "100%",
+                                            "max-height": "100%"
+                                          },
+                                          attrs: {
+                                            src:
+                                              _vm.currentUrl + "/img/avatar.png"
+                                          }
+                                        })
+                                      ])
+                                    ],
+                                    1
+                                  )
                             ],
                             1
                           ),
