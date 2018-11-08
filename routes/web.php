@@ -62,6 +62,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['admin']],
    Route::get('/history', 'Admin\HistoryController@index')->name('history');
    Route::get('/history/get', 'Admin\HistoryController@get')->name('history.get');
    Route::get('/referral', 'Admin\ReferralController@index')->name('referral');
+   Route::get('/referral/get', 'Admin\ReferralController@get')->name('referral.get');
+   Route::post('/referral/update', 'Admin\ReferralController@update')->name('referral.update');
    Route::get('/transaction', 'Admin\TransactionController@index')->name('transaction');
    Route::get('/transaction/get', 'Admin\TransactionController@get')->name('transaction.get');
    Route::post('/transaction/update', 'Admin\TransactionController@updateSend')->name('transaction.update');

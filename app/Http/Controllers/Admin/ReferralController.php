@@ -10,11 +10,12 @@ class ReferralController extends Controller
 {
     public function index()
     {
-        $referrals = InvestorReferralFields::with('investor')->get();
+        return view('admin.referral');
+    }
 
-        return view('admin.referral', [
-            'referrals' => $referrals
-        ]);
+    public function get()
+    {
+        return InvestorReferralFields::with('investor')->get();
     }
 
     public function update(Request $request)
@@ -24,7 +25,7 @@ class ReferralController extends Controller
         $referral->save();
 
         return [
-            'status' => 'ok'
+            'status' => true
         ];
     }
 }

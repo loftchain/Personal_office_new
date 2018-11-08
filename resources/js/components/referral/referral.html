@@ -1,0 +1,49 @@
+
+<section class="referral">
+  <div class="dataTable">
+    <table class="dataTable__list">
+      <tr>
+        <th @click="sort('investor_id')">Investor ID</th>
+        <th>email</th>
+        <th @click="sort('wallet_to')">wallet</th>
+        <th @click="sort('tokens')">tokens</th>
+        <th>send</th>
+      </tr>
+      <tr class="dataTable__success" v-for="(referral, key) in sortedItems">
+        <td>{{ referral.investor_id }}</td>
+        <td>{{ referral.investor.email }}</td>
+        <td>{{ referral.wallet_to }}</td>
+        <td>{{ referral.tokens }}</td>
+        <td><button class="btn btn--small" :disabled="referral.send === 'true'" @click="sendTokens(referral, key)">Send</button></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="helpBar">
+    <div class="helpBar__buttons">
+      <button class="btn" @click="prevPage()">Previous</button>
+      <button class="btn" @click="nextPage()">Next</button>
+    </div>
+    <div class="helpBar__help-text">
+      <p v-model="currentPage">current page: {{ currentPage }}</p>
+      <p v-model="totalPages">total pages: {{ totalPages }}</p>
+    </div>
+    <div class="helpBar__page-select">
+      <label for="pageQuantity">Number of elements<br> on the page</label>
+      <br>
+      <select v-model="pageSize" name="pageQuantity" id="pageQuantity">
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="15">15</option>
+        <option value="20">20</option>
+        <option :value="totalPages" selected>all, {{ totalPages }}</option>
+      </select>
+    </div>
+    <div class="helpBar__checked-confirm">
+      <input type="checkbox" v-model="checkedSend" @click="checkBoxClick" value="false" checked/>  Not sent
+      <br>
+      <input type="checkbox" v-model="checkedSend" @click="checkBoxClick" value="true" checked/>  Sent
+    </div>
+  </div>
+</section>
+

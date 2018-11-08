@@ -20,6 +20,7 @@ Vue.component('example-component', require('./components/ExampleComponent.vue'))
 Vue.component('history-table', require('./components/history/index'));
 Vue.component('verification-table', require('./components/verification/index'));
 Vue.component('tx-table', require('./components/tx/index'));
+Vue.component('referral-table', require('./components/referral/index'));
 
 const app = new Vue({
     el: '#app'
