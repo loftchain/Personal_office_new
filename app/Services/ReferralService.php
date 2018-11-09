@@ -30,6 +30,9 @@ class ReferralService
                     $transactions = Transaction::where([['from', $rw->wallet], ['refs_send', 'false']])->get();
                     foreach ($transactions as $tx) {
                         if ($tx) {
+                            $tx->update([
+                                'refs_send' => 'true'
+                            ]);
                             $singleRefArray[] = ['ref_owner_id' => $ref->referred_by,
                                 'refs' => [
                                     'id' => $ref->id,

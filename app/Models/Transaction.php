@@ -17,6 +17,7 @@ class Transaction extends Model
         'amount_tokens', //amount converted from ETH to Tokens
         'info', //amount converted from ETH to Tokens
         'date',  // of transactions
+        'refs_send'
     ];
 
     public function investor()
