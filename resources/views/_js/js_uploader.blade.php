@@ -17,7 +17,7 @@
         }
     });
 
-    qq(document.getElementById("trigger-upload")).attach("click", function() {
-        galleryUploader.uploadStoredFiles();
-    });
+    // qq(document.getElementById("trigger-upload")).attach("click", function() {
+    //     galleryUploader.uploadStoredFiles();
+    // });
 </script>

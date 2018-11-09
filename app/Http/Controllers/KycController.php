@@ -32,9 +32,9 @@ class KycController extends Controller
     {
         $validator = $this->validator($request->all());
 
-         if ($validator->fails()){
-             return response()->json(['validation_error' => $validator->errors()]);
-         }
+        if ($validator->fails()) {
+            return response()->json(['validation_error' => $validator->errors()]);
+        }
 
         $investor = Auth::user();
         $personal = $investor->personal()->first();
@@ -45,24 +45,13 @@ class KycController extends Controller
         $dateBirth[] = $request->year;
         $dateBirth = implode(' ', $dateBirth);
 
-        if($personal){
-            $investor->personal()->update([
-                'name_surname' => $request->name,
-                'phone' => $request->phone,
-                'date_place_birth' => $dateBirth,
-                'telegram' => $request->telegram,
-                'permanent_address' => $request->address,
-            ]);
-        } else {
-            $investor->personal()->create([
-                'name_surname' => $request->name,
-                'phone' => $request->phone,
-                'date_place_birth' => $dateBirth,
-                'telegram' => $request->telegram,
-                'permanent_address' => $request->address,
-            ]);
-        }
-
+        $investor->personal()->create([
+            'name_surname' => $request->name,
+            'phone' => $request->phone,
+            'date_place_birth' => $dateBirth,
+            'telegram' => $request->telegram,
+            'permanent_address' => $request->address,
+        ]);
 
         return [
             'kyc_success' => true
@@ -73,25 +62,17 @@ class KycController extends Controller
     {
         $investor = Auth::user();
         $personal = $investor->personal()->first();
-
-
         $img = $request->file('qqfile');
         $extension = $img->extension();
-        $path = $img->storeAs('uploads',  str_random(5) . Carbon::now()->format('_ymd_his') . '_investor_id_' . $investor->id . '.' . $extension);
+        $path = $img->storeAs('uploads', str_random(5) . Carbon::now()->format('_ymd_his') . '_investor_id_' . $investor->id . '.' . $extension);
         $path = explode('/', $path);
 
-        if($personal){
-            $images = $personal->doc_img_path;
-            $images[] = $path[1];
+        $images = $personal->doc_img_path;
+        $images[] = $path[1];
 
-            $personal->update([
-                'doc_img_path' => $images
-            ]);
-        }else{
-            $investor->personal()->create([
-               'doc_img_path' => [$path[1]]
-            ]);
-        }
+        $personal->update([
+            'doc_img_path' => $images
+        ]);
 
         return [
             'success' => true
