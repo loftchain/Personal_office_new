@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\PersonalDocumentField;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -61,17 +62,14 @@ class KycController extends Controller
     public function upload(Request $request)
     {
         $investor = Auth::user();
-        $personal = $investor->personal()->first();
+
         $img = $request->file('qqfile');
         $extension = $img->extension();
         $path = $img->storeAs('uploads', str_random(5) . Carbon::now()->format('_ymd_his') . '_investor_id_' . $investor->id . '.' . $extension);
         $path = explode('/', $path);
 
-        $images = $personal->doc_img_path;
-        $images[] = $path[1];
-
-        $personal->update([
-            'doc_img_path' => $images
+        $investor->personal()->first()->documents()->create([
+            'img' => $path[1]
         ]);
 
         return [

@@ -58007,83 +58007,55 @@ var render = function() {
                             "main",
                             { staticClass: "modal__main" },
                             [
-                              investor.personal.doc_img_path !== null
-                                ? _c(
-                                    "swiper",
-                                    {
-                                      ref: "awesomeSwiperA",
-                                      refInFor: true,
-                                      attrs: { options: _vm.swiperOptionA }
-                                    },
-                                    [
-                                      _vm._l(
-                                        investor.personal.doc_img_path,
-                                        function(item, i) {
-                                          return _c(
-                                            "swiper-slide",
-                                            { key: i },
-                                            [
-                                              _c("img", {
-                                                staticStyle: {
-                                                  "max-height": "100%",
-                                                  "max-width": "100%"
-                                                },
-                                                attrs: {
-                                                  src:
-                                                    _vm.currentUrl +
-                                                    "/storage/" +
-                                                    item,
-                                                  alt: "Photo"
-                                                }
-                                              })
-                                            ]
-                                          )
+                              _c(
+                                "swiper",
+                                {
+                                  ref: "awesomeSwiperA",
+                                  refInFor: true,
+                                  attrs: { options: _vm.swiperOptionA }
+                                },
+                                [
+                                  _vm._l(investor.personal.documents, function(
+                                    item,
+                                    i
+                                  ) {
+                                    return _c("swiper-slide", { key: i }, [
+                                      _c("img", {
+                                        staticStyle: {
+                                          "max-height": "100%",
+                                          "max-width": "100%"
+                                        },
+                                        attrs: {
+                                          src:
+                                            _vm.currentUrl +
+                                            "/storage/" +
+                                            item.img,
+                                          alt: "Photo"
                                         }
-                                      ),
-                                      _vm._v(" "),
-                                      _c("div", {
-                                        staticClass: "swiper-pagination",
-                                        attrs: { slot: "pagination" },
-                                        slot: "pagination"
-                                      }),
-                                      _vm._v(" "),
-                                      _c("div", {
-                                        staticClass: "swiper-button-prev",
-                                        attrs: { slot: "button-prev" },
-                                        slot: "button-prev"
-                                      }),
-                                      _vm._v(" "),
-                                      _c("div", {
-                                        staticClass: "swiper-button-next",
-                                        attrs: { slot: "button-next" },
-                                        slot: "button-next"
                                       })
-                                    ],
-                                    2
-                                  )
-                                : _c(
-                                    "swiper",
-                                    {
-                                      ref: "awesomeSwiperA",
-                                      refInFor: true,
-                                      attrs: { options: _vm.swiperOptionA }
-                                    },
-                                    [
-                                      _c("swiper-slide", [
-                                        _c("img", {
-                                          staticStyle: {
-                                            "max-width": "100%",
-                                            "max-height": "100%"
-                                          },
-                                          attrs: {
-                                            src:
-                                              _vm.currentUrl + "/img/avatar.png"
-                                          }
-                                        })
-                                      ])
-                                    ],
-                                    1
-                                  )
+                                    ])
+                                  }),
+                                  _vm._v(" "),
+                                  _c("div", {
+                                    staticClass: "swiper-pagination",
+                                    attrs: { slot: "pagination" },
+                                    slot: "pagination"
+                                  }),
+                                  _vm._v(" "),
+                                  _c("div", {
+                                    staticClass: "swiper-button-prev",
+                                    attrs: { slot: "button-prev" },
+                                    slot: "button-prev"
+                                  }),
+                                  _vm._v(" "),
+                                  _c("div", {
+                                    staticClass: "swiper-button-next",
+                                    attrs: { slot: "button-next" },
+                                    slot: "button-next"
+                                  })
+                                ],
+                                2
+                              )
                             ],
                             1
                           ),

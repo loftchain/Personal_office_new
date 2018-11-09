@@ -46,20 +46,14 @@
                   <button class="modal-close is-large" aria-label="close" @click="hideModal(investor.id)"></button>
                 </header>
                 <main class="modal__main">
-                  <swiper ref="awesomeSwiperA" :options="swiperOptionA" v-if="investor.personal.doc_img_path !== null">
-                    <swiper-slide v-for="(item, i) in investor.personal.doc_img_path" :key="i">
-                      <img :src="currentUrl + '/storage/' + item" alt="Photo" style="max-height: 100%; max-width: 100%">
+                  <swiper ref="awesomeSwiperA" :options="swiperOptionA">
+                    <swiper-slide v-for="(item, i) in investor.personal.documents" :key="i">
+                      <img :src="currentUrl + '/storage/' + item.img" alt="Photo" style="max-height: 100%; max-width: 100%">
                     </swiper-slide>
                     <!-- Optional controls -->
                     <div class="swiper-pagination" slot="pagination"></div>
                     <div class="swiper-button-prev" slot="button-prev"></div>
                     <div class="swiper-button-next" slot="button-next"></div>
-                  </swiper>
-
-                  <swiper ref="awesomeSwiperA" :options="swiperOptionA" v-else>
-                    <swiper-slide >
-                      <img :src="currentUrl + '/img/avatar.png'" style="max-width: 100%; max-height: 100%">
-                    </swiper-slide>
                   </swiper>
                 </main>
                 <footer class="modal__footer" v-if="!investor.confirmed">

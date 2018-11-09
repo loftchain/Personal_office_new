@@ -24,4 +24,9 @@ class InvestorPersonalFields extends Model
     {
         return $this->belongsTo(Investor::class);
     }
+
+    public function documents()
+    {
+        return $this->hasMany(PersonalDocumentField::class, 'personal_id', 'id');
+    }
 }
