@@ -15,9 +15,16 @@ class CreatePersonalDocumentFieldsTable extends Migration
     {
         Schema::create('personal_document_fields', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('personal_id');
+            $table->integer('personal_id')->unsigned();
             $table->string('img');
             $table->timestamps();
+        });
+
+        Schema::table('personal_document_fields', function($table) {
+            $table->foreign('personal_id')
+                ->references('id')
+                ->on('investor_personal_fields')
+                ->onDelete('cascade');
         });
     }
 

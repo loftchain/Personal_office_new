@@ -13,11 +13,6 @@ class InvestorPersonalFields extends Model
         'date_place_birth',
         'telegram',
         'permanent_address',
-        'doc_img_path'
-    ];
-
-    protected $casts = [
-        'doc_img_path' => 'array',
     ];
 
     public function investor()
