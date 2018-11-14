@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\ResetsPasswords;
 use App\Models\Investor;
 use App\Models\InvestorHistoryFields;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
@@ -49,8 +50,9 @@ class ResetPasswordController extends Controller
 
     public function showResetForm(Request $request, $token = null)
     {
+        $investor = Investor::where('token',$token)->first();
         return view('auth.passwords.reset')->with(
-            ['token' => $token, 'email' => $request->email]
+            ['token' => $token, 'email' => $investor->email]
         );
     }
 
@@ -59,8 +61,8 @@ class ResetPasswordController extends Controller
         return Validator::make($data, [
             'token' => 'required',
             'email' => 'required|string|email|min:7|max:255',
-            'password' => 'required|confirmed|string|min:3|max:1024',
-            'g-recaptcha-response' => 'required'
+            'password' => 'required|confirmed|string|min:8|max:1024|strong_password',
+            'g-recaptcha-response' => (env('APP_ENV') != 'local') ? 'required' : 'nullable'
         ]);
     }
 
@@ -77,8 +79,8 @@ class ResetPasswordController extends Controller
 
     public function reset(Request $request)
     {
+        $rightUser = Investor::where('token', $request['token'])->first();
         $user = Investor::where('email', $request['email'])->first();
-
         $input = $request->all();
         $validator = $this->validator($input);
 
@@ -86,7 +88,7 @@ class ResetPasswordController extends Controller
             return response()->json(['validation_error' => $validator->errors()]);
         }
 
-        if ($request['email'] != $request->session()->get('reset_password_email')) {
+        if ($request['email'] != $rightUser->email) {
             return response()->json(['reset_email_not_match' => __('auth/resetPwd.emailDontMatch_ResetPasswordsTrait')]);
         }
 

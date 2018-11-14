@@ -44,9 +44,10 @@
             <div class="error-message telegram"></div>
         </div>
     </div>
-
-    <div class="g-recaptcha g-recaptcha--verification" data-sitekey="{{ env('RE_CAP_SITE') }}"></div>
-    <div class="error-message error-message3 error-message-captcha g-recaptcha-response"></div>
+    @if(env('APP_ENV') != 'local')
+        <div class="g-recaptcha g-recaptcha--verification" data-sitekey="{{ env('RE_CAP_SITE') }}"></div>
+        <div class="error-message error-message3 error-message-captcha g-recaptcha-response"></div>
+    @endif
 
     <div class="text-center">
         <button id="trigger-upload" type="submit" class="btn btn--small">{!! trans('home/kyc.kyc_btnSend') !!}</button>

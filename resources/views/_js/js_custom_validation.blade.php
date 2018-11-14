@@ -3,7 +3,7 @@
         form: $('form'),
         xInput: $('.icoForm__input'),
         errors: $('.error-message'),
-        loaderSpinner: $('.small-spinner'),
+        loaderSpinner: $('.lds-ring '),
         modal: $('.modal'),
         modalBtn: $('.modal-btn'),
         grayBorderColor: '#E0E0E0',
@@ -17,21 +17,32 @@
         userConfirmed: '{{ Auth::user() ? Auth::user()->confirmed : null }}',
         isAdmin: '{{ Auth::user() ? Auth::user()->admin : null }}',
 
-        resetModal: () => {
+        resetForm: () => {
             v.xInput.removeClass('isError');
             v.errors.text('');
         },
 
-        closeModal: () => {
-            v.modal.modal('hide');
-            $('.modal-backdrop').remove();
+        showNotification: (message, type) => {
+            $.notify({
+                message: message,
+            },{
+                type: type,
+                delay: 5000,
+            });
         },
 
-        // showNotification: (text, type) => {
-        //     $.notify(text, {
-        //         type: type
-        //     });
-        // },
+        notifyAfterReload () {
+            switch (localStorage.getItem('showNotificationAfterReload')) {
+                case 'success_reset_email_sent':
+                    v.showNotification('{!! trans('auth/resetPwd.letterSent_js') !!}', 'success')
+                    break;
+                case 'success_reset_pwd':
+                    v.showMessage('{!! trans('modals/modals.pwdChanged_js') !!}', v.bg.success)
+                    break;
+            }
+
+            localStorage.removeItem('showNotificationAfterReload');
+        },
 
         showMessage(text, bgColor) {
             let message = $('.messageTop');
@@ -58,6 +69,10 @@
             v.loaderSpinner.fadeOut();
         },
 
+        showSpinner () {
+            v.loaderSpinner.fadeIn();
+        },
+
         stateSelection: (data, _this) => {
             switch (true) {
                 case !$.isEmptyObject(data.validation_error):
@@ -67,23 +82,15 @@
 
                     $.each(data.validation_error, (key, value) => {
                         if(window.location.href == '{{ route('home.kyc') }}') {
-                            _this.children('.row').children().find('.error-message.' + key).prev().children('input').attr('style', 'border: 2px solid #FF0000;');
+                            _this.children('.row').children().find('.error-message.' + key).prev().children('input').attr('style', 'border: 1px solid #ff443a;');
                             _this.children('.row').children().find('.error-message.' + key).addClass('isError')
                             _this.children('.row').children().find('.error-message.' + key).html(v.exclamation + value[0]);
                         }
-                        // if (_this.children('.error-message.' + key).prev().hasClass('x-input')) {
-                        //     _this.children('.error-message.' + key).prev().addClass('isError');
-                        // }
                         if (_this.children('.error-message.' + key).prev().children().hasClass('icoForm__input')) {
-                            _this.children('.error-message.' + key).prev().children('input').attr('style', 'border: 2px solid #FF0000;')
+                            _this.children('.error-message.' + key).prev().children('input').attr('style', 'border: 1px solid #ff443a;');
                             _this.children('.error-message.' + key).addClass('isError')
                         }
                         _this.children('.error-message.' + key).html(v.exclamation + value[0]);
-
-                        // if (_this.children().children('.error-message.' + key).prev().hasClass('x-input')) {
-                        //     _this.children().children('.error-message.' + key).prev().addClass('isError');
-                        // }
-                        // _this.children().children('.error-message.' + key).html(v.exclamation + value[0]);
                     });
                     v.hideSpinner();
                     break;
@@ -118,29 +125,23 @@
                     localStorage.setItem('success_login', '+');
                     break;
                 case !$.isEmptyObject(data.success_reset_email_sent):
+                    localStorage.setItem('showNotificationAfterReload', 'success_reset_email_sent');
                     window.location.replace("/");
-                    {{--v.showMessage('{!! trans('auth/resetPwd.letterSent_js') !!}', v.bg.success);--}}
-                    {{--v.showNotification('{!! trans('auth/resetPwd.letterSent_js') !!}', 'success');--}}
-                    v.closeModal();
                     break;
                 case !$.isEmptyObject(data.error_reset_email_sent):
-                    v.showMessage('{!! trans('auth/resetPwd.letterSentError_js') !!}', v.bg.danger);
-                    {{--v.showNotification('{!! trans('auth/resetPwd.letterSentError_js') !!}', 'danger');--}}
-                    v.closeModal();
+                    v.showNotification('{!! trans('auth/resetPwd.letterSentError_js') !!}', 'danger');
                     break;
                 case !$.isEmptyObject(data.success_reset_pwd):
+                    localStorage.setItem('showNotificationAfterReload', 'success_reset_pwd');
                     window.location.replace("{{ route('root') . '/home' }}");
-                    localStorage.setItem('success_reset_pwd', '+');
                     break;
                 case !$.isEmptyObject(data.success_changed_email):
                     _this.find('.icoForm__input').val('');
-                    v.closeModal();
                     v.showMessage('{!! trans('modals/modals.emailChanged_js') !!}', v.bg.success);
                     {{--v.showNotification('{!! trans('modals/modals.emailChanged_js') !!}', 'success');--}}
                     break;
                 case !$.isEmptyObject(data.success_changed_pwd):
                     _this.find('.icoForm__input').val('');
-                    v.closeModal();
                     v.showMessage('{!! trans('modals/modals.pwdChanged_js') !!}', v.bg.success);
                     {{--v.showNotification('{!! trans('modals/modals.pwdChanged_js') !!}', 'success');--}}
                     break;
@@ -199,7 +200,6 @@
                 case data.set_password:
                     _this.find('.icoForm__input').val('');
                     $('.alert.alert-danger').detach();
-                    v.closeModal();
                     v.showMessage('Set password success', v.bg.success);
                 default:
                     console.log('js_custom_validation.blade.php default switch state');
@@ -233,15 +233,18 @@
                 $(this).on('submit', function (e) {
                     let isWallet = typeof wallet !== 'undefined' ? !wallet.bPay.hasClass('cryptoSelector__item--active') : true;
                     if(isWallet) {
+
                         e.preventDefault();
-                        v.resetModal();
+                        v.resetForm();
+                        v.showSpinner();
+
                         $.ajax({
                             url: $(this).attr('action'),
                             type: $(this).attr('method'),
                             data: $(this).serialize(),
                             dataType: 'json',
                             success: data => {
-                                // v.loaderSpinner.hide();
+                                v.loaderSpinner.hide();
                                 v.stateSelection(data, $(this));
                             },
 
@@ -279,5 +282,7 @@
         messageText.text('');
         message.css('background', v.bg.normal);
       }
+
+      v.notifyAfterReload();
     });
 </script>

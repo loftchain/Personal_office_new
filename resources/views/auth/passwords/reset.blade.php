@@ -12,7 +12,7 @@
 
             <div class="formControl">
                 <label class="icoForm__label">{!! trans('modals/modals.reg_email') !!}</label>
-                <input class="icoForm__input" type="email" name="email" value="{{ Session::get('reset_password_email') }}" required>
+                <input class="icoForm__input" type="email" name="email" value="{{ $email }}" required>
             </div>
             <div class="error-message reset_email_not_match"></div>
             <div class="formControl">
@@ -26,11 +26,13 @@
             </div>
             <div class="error-message password"></div>
 
-            <div class="g-recaptcha" data-sitekey="{{ env('RE_CAP_SITE') }}"></div>
-            <div class="error-message g-recaptcha-response"></div>
-
+            @if(env('APP_ENV') != 'local')
+                <div class="g-recaptcha" data-sitekey="{{ env('RE_CAP_SITE') }}"></div>
+                <div class="error-message error-message-captcha g-recaptcha-response"></div>
+            @endif
             <div class="formControl">
                 <button class="btn" type="submit">{!! trans('modals/modals.setNewPass') !!}</button>
+                <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
             </div>
         </form>
     </div>

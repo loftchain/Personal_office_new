@@ -42,7 +42,7 @@ class ForgotPasswordController extends Controller
     {
         return Validator::make($data, [
             'email' => 'required|string|email|min:7|max:255',
-            'g-recaptcha-response' => 'required'
+            'g-recaptcha-response' => (env('APP_ENV') != 'local') ? 'required' : 'nullable'
         ]);
     }
 

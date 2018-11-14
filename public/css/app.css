@@ -10628,7 +10628,8 @@ body {
   font-size: 14px;
   color: #FFFFFF;
   cursor: pointer;
-  border: none;
+  border: 1px solid transparent;
+  outline: none;
 }
 
 .btn:hover {
@@ -10636,7 +10637,7 @@ body {
   background: #fff;
   -webkit-transition: none;
   transition: none;
-  border-color: #FFC701;
+  border: 1px solid #FFC701;
 }
 
 .btn--small {
@@ -10658,7 +10659,12 @@ body {
 }
 
 .isError {
-  color: #FF0000;
+  color: #ff443a;
+}
+
+.error-message-captcha {
+  color: #ff443a;
+  text-align: center;
 }
 
 .icoForm {
@@ -10666,7 +10672,7 @@ body {
 }
 
 .icoForm__isError {
-  border: 2px solid #FF0000;
+  border: 1px solid #ff443a;
 }
 
 .icoForm__input {
@@ -11495,11 +11501,76 @@ button,
 input,
 textarea,
 select {
-  outline: none !important;
+  outline: 0 !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
 }
 
 .fas {
   cursor: pointer;
+}
+
+.lds-ring {
+  display: none;
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  top: 12px;
+  left: 70px;
+}
+
+.lds-ring div {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  margin: 3px;
+  border: 3px solid white;
+  border-radius: 50%;
+  -webkit-animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+          animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: white transparent transparent transparent;
+}
+
+.lds-ring div:nth-child(1) {
+  -webkit-animation-delay: -0.45s;
+          animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+  -webkit-animation-delay: -0.3s;
+          animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+  -webkit-animation-delay: -0.15s;
+          animation-delay: -0.15s;
+}
+
+@-webkit-keyframes lds-ring {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes lds-ring {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
 }
 
 .welcome__header {
@@ -12485,7 +12556,6 @@ select {
 .settings__button-language {
   font-size: 14px;
   font-weight: 300;
-  padding-left: 0;
 }
 
 .modalMessage {

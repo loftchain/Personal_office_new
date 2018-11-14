@@ -56,7 +56,7 @@
 </style>
 <div class="wrapper">
     <div class="img-container">
-        <img src="https://opnplatform.io/images/logo.svg" alt="" border="0"/>
+        <img src="https://mitoshi.io/images/logo.png" alt="" border="0"/>
     </div>
     <div class="rect">
         <div>

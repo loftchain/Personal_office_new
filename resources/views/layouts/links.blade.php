@@ -16,6 +16,7 @@
 <meta name="msapplication-TileImage" content="images/favicon/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
 <link href="{{ asset('css/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
+<link href="{{ asset('css/animate.min.css') }}" rel="stylesheet">
 <link href="{{ asset('js/owl-carousel/assets/owl.carousel.css') }}" rel="stylesheet">
 <link href="https://unpkg.com/simplebar@latest/dist/simplebar.css" rel="stylesheet">
 <link href="{{ asset('js/owl-carousel/assets/owl.theme.default.css') }}" rel="stylesheet">

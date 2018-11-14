@@ -58710,7 +58710,7 @@ var render = function() {
                 }
               },
               [
-                _vm._v("\n          Investor ID\n          "),
+                _vm._v("\r\n          Investor ID\r\n          "),
                 _c("i", { staticClass: "fas fa-arrow-down" }),
                 _vm._v(" "),
                 _c("i", { staticClass: "fas fa-arrow-up" })
@@ -58729,7 +58729,7 @@ var render = function() {
                 }
               },
               [
-                _vm._v("\n          Currency\n          "),
+                _vm._v("\r\n          Currency\r\n          "),
                 _c("i", { staticClass: "fas fa-arrow-down" }),
                 _vm._v(" "),
                 _c("i", { staticClass: "fas fa-arrow-up" })
@@ -58748,7 +58748,7 @@ var render = function() {
                 }
               },
               [
-                _vm._v("\n          Amount\n          "),
+                _vm._v("\r\n          Amount\r\n          "),
                 _c("i", { staticClass: "fas fa-arrow-down" }),
                 _vm._v(" "),
                 _c("i", { staticClass: "fas fa-arrow-up" })
@@ -58767,7 +58767,7 @@ var render = function() {
                 }
               },
               [
-                _vm._v("\n          Status\n          "),
+                _vm._v("\r\n          Status\r\n          "),
                 _c("i", { staticClass: "fas fa-arrow-down" }),
                 _vm._v(" "),
                 _c("i", { staticClass: "fas fa-arrow-up" })
@@ -58786,7 +58786,7 @@ var render = function() {
                 }
               },
               [
-                _vm._v("\n          Date\n          "),
+                _vm._v("\r\n          Date\r\n          "),
                 _c("i", { staticClass: "fas fa-arrow-down" }),
                 _vm._v(" "),
                 _c("i", { staticClass: "fas fa-arrow-up" })
@@ -58799,7 +58799,7 @@ var render = function() {
                 staticClass:
                   "dataTable__cell dataTable__cell--head dataTable__cell--mid"
               },
-              [_vm._v("\n          Info\n        ")]
+              [_vm._v("\r\n          Info\r\n        ")]
             )
           ]),
           _vm._v(" "),
@@ -58810,9 +58810,9 @@ var render = function() {
                 { staticClass: "dataTable__cell dataTable__cell--lt" },
                 [
                   _vm._v(
-                    "\n          " +
+                    "\r\n          " +
                       _vm._s(transaction.investor_id) +
-                      "\n        "
+                      "\r\n        "
                   )
                 ]
               ),
@@ -58896,7 +58896,7 @@ var render = function() {
                       [_vm._v("info")]
                     ),
                     _vm._v(" "),
-                    transaction.send == "0"
+                    transaction.send == "0" && transaction.currency == "BTC"
                       ? _c(
                           "div",
                           {
@@ -59118,7 +59118,7 @@ var render = function() {
               }
             }
           }),
-          _vm._v("  Not sent\n        "),
+          _vm._v("  Not sent\r\n        "),
           _c("br"),
           _vm._v(" "),
           _c("input", {
@@ -59159,7 +59159,7 @@ var render = function() {
               }
             }
           }),
-          _vm._v("  Sent\n      ")
+          _vm._v("  Sent\r\n      ")
         ])
       ])
     ])
@@ -59680,7 +59680,7 @@ var render = function() {
             }
           }
         }),
-        _vm._v("  Not sent\n      "),
+        _vm._v("  Not sent\r\n      "),
         _c("br"),
         _vm._v(" "),
         _c("input", {
@@ -59721,7 +59721,7 @@ var render = function() {
             }
           }
         }),
-        _vm._v("  Sent\n    ")
+        _vm._v("  Sent\r\n    ")
       ])
     ])
   ])

@@ -15,7 +15,6 @@
                 @if($data['stage'] === 0)
                     <div class="blockHolder">
                         @include('home.ico.widget')
-
                         @include('home.ico.raised')
                     </div>
 
@@ -28,7 +27,6 @@
                 @if($data['stage'] === 1)
                     <div class="blockHolder">
                         @include('home.ico.widget')
-
                         @include('home.ico.raised')
                     </div>
                     @include('home.ico.round_info')
@@ -40,7 +38,6 @@
                 @endif
 
                 @include('home.ico.bonus')
-
                 @include('home.ico.token_distribution')
             </div>
         </div>
