@@ -16,6 +16,7 @@
 <script src="{{ asset('js/ico.js') }}"></script>
 @include('_js.js_custom_validation')
 @include('_js.js_main_menu')
+@include('_js.js_loader_cloak')
 
 @if(isset($data) && \Illuminate\Support\Facades\Route::current()->getName() == 'home.index')
     @include('_js.js_widget')
