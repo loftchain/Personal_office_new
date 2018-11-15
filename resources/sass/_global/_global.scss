@@ -152,12 +152,14 @@ body {
   font-size: 14px;
   color: #FFFFFF;
   cursor: pointer;
-  border: none;
+  border: 1px solid transparent;
+  outline: none;
+
   &:hover {
     color: #FFC701;
     background: #fff;
     transition: none;
-    border-color: #FFC701;
+    border:1px solid #FFC701;
   }
 }
 
@@ -178,13 +180,18 @@ body {
 }
 
 .isError {
-  color: #FF0000;
+  color: $validationError;
+}
+
+.error-message-captcha {
+    color: $validationError;
+    text-align: center;
 }
 
 .icoForm {
   padding: 16px 0;
   &__isError{
-    border: 2px solid #FF0000;
+    border: 1px solid $validationError;
   }
   &__input {
     border: 1px solid #E0E0E0;
@@ -312,6 +319,7 @@ body {
   border-radius: 10px;
   display: flex;
   max-height: 100vh;
+    position: relative;
 }
 
 .sidebar {
@@ -883,9 +891,96 @@ button,
 input,
 textarea,
 select {
-  outline: none !important;
+    outline: 0!important;
+    box-shadow: none !important;
 }
 
 .fas {
   cursor: pointer;
+}
+
+.lds-ring {
+    display: none;
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    top: 12px;
+    left: 70px;
+
+}
+.lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    margin: 3px;
+    border: 3px solid white;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: white transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.cloak {
+    @extend %fc;
+    position: absolute;
+    width: 100%;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    bottom:0;
+    background: white;
+    border-radius: 10px;
+}
+
+.spinner {
+    width: 60px;
+    height: 60px;
+    background: #FEC808;
+    -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
+    animation: sk-rotateplane 1.2s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-rotateplane {
+    0% {
+        -webkit-transform: perspective(120px)
+    }
+    50% {
+        -webkit-transform: perspective(120px) rotateY(180deg)
+    }
+    100% {
+        -webkit-transform: perspective(120px) rotateY(180deg) rotateX(180deg)
+    }
+}
+
+@keyframes sk-rotateplane {
+    0% {
+        transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+        -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg)
+    }
+    50% {
+        transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+        -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)
+    }
+    100% {
+        transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+        -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    }
 }

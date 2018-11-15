@@ -24,6 +24,7 @@
             <div class="error-message error-message1 password pwd_not_match"></div>
             <div class="formControl">
                 <button class="btn" name="submit">{!! trans('modals/modals.signIn_btn') !!}</button>
+                <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
             </div>
         </form>
         <div class="textSeparator">{!! trans('modals/modals.or') !!}</div>

@@ -11,11 +11,13 @@
 <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
 <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+<link rel="icon" href="https://mitoshi.io/favicon.ico?v=3" type="image/x-icon">
 <link rel="manifest" href="images/favicon/manifest.json">
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="images/favicon/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
 <link href="{{ asset('css/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
+<link href="{{ asset('css/animate.min.css') }}" rel="stylesheet">
 <link href="{{ asset('js/owl-carousel/assets/owl.carousel.css') }}" rel="stylesheet">
 <link href="https://unpkg.com/simplebar@latest/dist/simplebar.css" rel="stylesheet">
 <link href="{{ asset('js/owl-carousel/assets/owl.theme.default.css') }}" rel="stylesheet">

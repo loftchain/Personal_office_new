@@ -22,7 +22,8 @@
         <div class="container">
             <div class="forSlideMenu">
                 <div class="cabinetHolder">
-                @include('layouts.menu')
+                    @include('layouts.cloak')
+                    @include('layouts.menu')
     @endauth
 
                     @yield('content')

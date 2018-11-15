@@ -25,11 +25,13 @@
                 <input class="icoForm__input" type="password" name="password_confirmation" required>
             </div>
             <div class="error-message error-message2 password"></div>
-            {{--@captcha--}}
-            <div class="g-recaptcha" data-sitekey="{{ env('RE_CAP_SITE') }}"></div>
-            <div class="error-message error-message3 error-message-captcha g-recaptcha-response"></div>
+            @if(env('APP_ENV') != 'local')
+                <div class="g-recaptcha" data-sitekey="{{ env('RE_CAP_SITE') }}"></div>
+                <div class="error-message error-message3 error-message-captcha g-recaptcha-response"></div>
+            @endif
             <div class="formControl">
-                <button class="btn" type="submit">{!! trans('modals/modals.signUp_btn') !!}</button>
+                <button class="btn" type="submit">{!! trans('modals/modals.signUp_btn') !!} </button>
+                <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
             </div>
         </form>
         <div class="formRegText">{{ trans('modals/modals.have_account') }}<a class="link" href="{{ route('login') }}">{{ trans('modals/modals.signIn_title') }}</a></div>

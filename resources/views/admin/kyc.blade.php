@@ -5,7 +5,8 @@
     @push('links')
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.css">
     @endpush
-    <div  class="workArea jsWorkArea">
+    @if(Auth::user()->admin == 1)
+        <div  class="workArea jsWorkArea">
 
         <div class="mobileMenuBtn">
             <button class="cmn-toggle-switch cmn-toggle-switch__htx"><span>toggle menu</span></button>
@@ -28,4 +29,5 @@
             </div>
         </div>
     </div>
+    @endif
 @endsection
