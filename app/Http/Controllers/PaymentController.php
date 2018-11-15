@@ -7,6 +7,7 @@ use App\Models\InvestorWalletFields;
 use App\Services\BonusService;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
@@ -40,7 +41,7 @@ class PaymentController extends Controller
         $this->_api_context->setConfig($paypal_conf['settings']);
     }
 
-    public function payWithpaypal(Request $request)
+    public function createPayment(Request $request)
     {
         $request->validate([
             'amount' => 'required|min:1|integer',
@@ -51,11 +52,10 @@ class PaymentController extends Controller
         $payer->setPaymentMethod('paypal');
 
         $item_1 = new Item();
-        $item_1->setName('tokens')/** item name **/
+        $item_1->setName('tokens')
         ->setCurrency('USD')
             ->setQuantity(1)
             ->setPrice($request->get('amount'));
-        /** unit price **/
 
         $item_list = new ItemList();
         $item_list->setItems(array($item_1));
@@ -70,18 +70,18 @@ class PaymentController extends Controller
             ->setDescription('Buy tokens');
 
         $redirect_urls = new RedirectUrls();
-        $redirect_urls->setReturnUrl(route('home.paypal.status'))/** Specify return URL **/
-        ->setCancelUrl(route('home.paypal.status'));
+        $redirect_urls->setReturnUrl(route('home.paypal.execute'))
+        ->setCancelUrl(route('home.tokens'));
 
         $payment = new Payment();
         $payment->setIntent('Sale')
             ->setPayer($payer)
             ->setRedirectUrls($redirect_urls)
-            ->setTransactions(array($transaction));
-        /** dd($payment->create($this->_api_context));exit; **/
+            ->setTransactions([$transaction]);
 
+        Session::put('wallet', $request->wallet);
         try {
-            $payment->create($this->_api_context);
+            return $payment->create($this->_api_context);
         } catch (PayPalConnectionException $ex) {
             if (\Config::get('app.debug')) {
                 Session::put('error', 'Connection timeout');
@@ -91,84 +91,63 @@ class PaymentController extends Controller
                 return Redirect::route('home.tokens');
             }
         }
-
-        foreach ($payment->getLinks() as $link) {
-            if ($link->getRel() == 'approval_url') {
-                $redirect_url = $link->getHref();
-                break;
-            }
-        }
-
-        /** add payment ID to session **/
-        Session::put('paypal_payment_id', $payment->getId());
-        Session::put('wallet', $request->wallet);
-
-        if (isset($redirect_url)) {
-            /** redirect to paypal **/
-            return Redirect::away($redirect_url);
-        }
-
-        Session::put('error', 'Unknown error occurred');
-
-        return Redirect::route('paywithpaypal');
     }
 
-    public function getPaymentStatus()
+    public function executePayment(Request $request)
     {
-        $payment_id = Session::get('paypal_payment_id');
         $wallet = Session::get('wallet');
+        $payment_id = $request->paymentID;
+        $payer_id = $request->payerID;
 
-        Session::forget('paypal_payment_id');
         Session::forget('wallet');
-
-        if (empty(Input::get('PayerID')) || empty(Input::get('token'))) {
-            Session::put('error', 'Payment failed');
-
-            return Redirect::route('home.tokens');
-        }
 
         $payment = Payment::get($payment_id, $this->_api_context);
 
         $execution = new PaymentExecution();
-        $execution->setPayerId(Input::get('PayerID'));
+        $execution->setPayerId($payer_id);
 
-        $result = $payment->execute($execution, $this->_api_context);
+        try {
+            $result = $payment->execute($execution, $this->_api_context);
 
-        if ($result->getState() == 'approved') {
-            $currentPrice = isset($this->bonusService->getStageInfo()['currentPrice']) ? $this->bonusService->getStageInfo()['currentPrice'] : 0;
-            $email = $result->getPayer()->getPayerInfo()->email;
-            $transactions = $result->getTransactions()[0]->toArray();
-            $investor = Investor::where('email', $email)->first();
+            if ($result->getState() == 'approved') {
+                $currentPrice = isset($this->bonusService->getStageInfo()['currentPrice']) ? $this->bonusService->getStageInfo()['currentPrice'] : 0;
+                $transactions = $result->getTransactions()[0]->toArray();
+                $investor = Investor::where('email', Auth::user()->email)->first();
 
-            if (!$investor) {
-                return abort(404);
+                if (!$investor) {
+                    return abort(404);
+                }
+
+                $investor->wallets()->where('wallet', $wallet)->firstOrCreate([
+                    'currency' => 'ETH',
+                    'type' => 'to',
+                    'wallet' => $wallet,
+                    'active' => '1',
+                ]);
+
+                $investor->transactions()->create([
+                    'transaction_id' => $result->getId(),
+                    'status' => 'true',
+                    'currency' => $transactions['amount']['currency'],
+                    'from' => $wallet,
+                    'amount' => $transactions['amount']['total'],
+                    'amount_tokens' => $transactions['amount']['total'] / $currentPrice,
+                    'info' => 'PayPal',
+                    'date' => Carbon::now(),
+                ]);
             }
+        } catch (PayPalConnectionException $e) {
+            \Log::error(
+                sprintf('PayPal execution error: %s | url: %s', $e->getMessage(), $e->getUrl())
+            );
 
-            $investor->wallets()->where('wallet', $wallet)->firstOrCreate([
-                'currency' => 'ETH',
-                'type' => 'to',
-                'wallet' => $wallet,
-                'active' => '1',
-            ]);
-
-            $investor->transactions()->create([
-                'transaction_id' => $result->getId(),
-                'status' => 'true',
-                'currency' => $transactions['amount']['currency'],
-                'from' => $wallet,
-                'amount' => $transactions['amount']['total'],
-                'amount_tokens' => $transactions['amount']['total'] / $currentPrice,
-                'info' => 'PayPal',
-                'date' => Carbon::now(),
-            ]);
-
-            Session::put('success', 'Payment success');
-
-            return Redirect::route('home.tokens');
+            return [
+                'status' => false
+            ];
         }
 
-        Session::put('error', 'Payment failed');
-
-        return Redirect::route('home.tokens');
+        return [
+            'status' => true
+        ];
     }
 }

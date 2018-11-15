@@ -27,10 +27,12 @@ class TokensController extends Controller
         $investor = Auth::user();
         $transactions = $investor->transactions()->paginate(10);
         $personal = $investor->personal()->first();
+        $walletTo = $investor->wallets()->where('type', 'to')->first();
 
         return view('home.buyTokens', [
             'transactions' => $transactions,
-            'personal' => $personal
+            'personal' => $personal,
+            'walletTo' => $walletTo
         ]);
     }
 
