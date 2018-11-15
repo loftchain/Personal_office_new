@@ -18,6 +18,9 @@ class KycController extends Controller
             'zip' => 'required|min:3|max:15',
             'address' => 'required|min:3|max:50',
             'telegram' => 'nullable|regex:(^([a-zA-Z_]+)(\d+)?$)',
+            'day' => 'required',
+            'month' => 'required',
+            'year' => 'required',
             'g-recaptcha-response' => (env('APP_ENV') != 'local') ? 'required' : 'nullable'
         ]);
     }

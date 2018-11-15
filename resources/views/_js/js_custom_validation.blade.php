@@ -83,7 +83,11 @@
                     $.each(data.validation_error, (key, value) => {
                         if(window.location.href == '{{ route('home.kyc') }}') {
                             _this.children('.row').children().find('.error-message.' + key).prev().children('input').attr('style', 'border: 1px solid #ff443a;');
-                            _this.children('.row').children().find('.error-message.' + key).addClass('isError')
+                            _this.children('.row').children().find('.error-message.' + key).addClass('isError');
+                            if (key === 'day' || key === 'month' || key === 'year') {
+                                _this.children('.row').children().find('.error-message.date-of-birth').addClass('isError');
+                                _this.children('.row').children().find('.error-message.date-of-birth').html(v.exclamation + 'The date of birth field is required');
+                            }
                             _this.children('.row').children().find('.error-message.' + key).html(v.exclamation + value[0]);
                         }
                         if (_this.children('.error-message.' + key).prev().children().hasClass('icoForm__input')) {

@@ -31,7 +31,7 @@
             <div class="formControl">
                 @include('home.kyc.form_date')
             </div>
-            <div class="error-message error-message2 password2 not_equal"></div>
+            <div class="error-message date-of-birth"></div>
             <div class="formControl">
                 <label class="icoForm__label" for="zip-code">{!! trans('home/kyc.kyc_zipCode') !!}</label>
                 <input class="icoForm__input" id="zip-code" type="text" name="zip" required>
