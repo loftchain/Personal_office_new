@@ -26,19 +26,18 @@
                 <div class="row">
                     <div class="col-md-4 align-self-top text-center">
                         <div class="dropdown dropdown--qr">
-                            <img id="qrEth" class="qrCode" alt="qr" src="{{ asset('img/0x7E7884c00cF0032Dc9360A8294a97aDf8fD18B61.png') }}">
+                            <img id="qrEth" class="qrCode" alt="qr" src="{{ asset('img/0x1a503c973ff08f4985f3da21c9cf0164a586edb3.gif') }}">
                             <div class="dropdown-content dropdown-content--qr">
-                                <img width="200" height="200" class="qrCode" alt="qr" src="{{ asset('img/0x7E7884c00cF0032Dc9360A8294a97aDf8fD18B61.png') }}">
+                                <img width="200" height="200" class="qrCode" alt="qr" src="{{ asset('img/0x1a503c973ff08f4985f3da21c9cf0164a586edb3.gif') }}">
                             </div>
                         </div>
-                        {{--<p class="dropdown__hint">{!! trans('home/buyTokens.qrHover') !!}</p>--}}
+                        <p class="dropdown__hint">{!! trans('home/buyTokens.qrHover') !!}</p>
                     </div>
                     <div class="col-md-8 align-self-top">
                         <div class="formControl formControl--noMargin">
-                            <input class="icoForm__input icoForm__input--canCopy" type="text" v-model="invsetmentWalletETH" name="ethWallet" id="ethWallet"><span class="icoForm__copy" v-on:click="copyToBuffer"> </span>
+                            <input class="icoForm__input icoForm__input--canCopy" type="text" name="ethWallet" id="ethWallet" value="{{ env('HOME_WALLET_ETH') }}"><span class="icoForm__copy"> </span>
                         </div>
-                        {{--{{minumumDeposit}}--}}
-                        <div class="minumudDeposit">{!! trans('home/buyTokens.minDep') !!}</div>
+                        <div class="minumudDeposit">{!! trans('home/buyTokens.minDep') !!} {{ env('MIN_DEP_ETH') }} ETH</div>
                         {{--{{gas}}--}}
                         <div class="setGas">{!! trans('home/buyTokens.setGas') !!} gas</div>
                     </div>

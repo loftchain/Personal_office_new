@@ -38,20 +38,18 @@
                 <div class="row">
                     <div class="col-md-4 align-self-top text-center">
                         <div class="dropdown dropdown--qr">
-                            <img id="qrBtc" class="qrCode" alt="qr" src="{{ asset('img/3KwdivDeNYHJo7hzxWfHM4rwe7xtraLQ52.png') }}">
+                            <img id="qrBtc" class="qrCode" alt="qr" src="{{ asset('img/3KwdivDeNYHJo7hzxWfHM4rwe7xtraLQ52.gif') }}">
                             <div class="dropdown-content dropdown-content--qr">
-                                <img width="200" height="200" class="qrCode" alt="qr" src="{{ asset('img/3KwdivDeNYHJo7hzxWfHM4rwe7xtraLQ52.png') }}">
+                                <img width="200" height="200" class="qrCode" alt="qr" src="{{ asset('img/3KwdivDeNYHJo7hzxWfHM4rwe7xtraLQ52.gif') }}">
                             </div>
                         </div>
-                        {{--<p class="dropdown__hint">{!! trans('home/buyTokens.qrHover') !!}</p>--}}
+                        <p class="dropdown__hint">{!! trans('home/buyTokens.qrHover') !!}</p>
                     </div>
                     <div class="col-md-8 align-self-top">
                         <div class="formControl formControl--noMargin">
-                            <input class="icoForm__input icoForm__input--canCopy" type="text" v-model="invsetmentWalletETH" name="ethWallet" id="ethWallet"><span class="icoForm__copy" v-on:click="copyToBuffer"> </span>
+                            <input class="icoForm__input icoForm__input--canCopy" type="text" name="btcWallet" id="btcWallet" value="3KwdivDeNYHJo7hzxWfHM4rwe7xtraLQ52"><span class="icoForm__copy"> </span>
                         </div>
-                        {{--{{minumumDeposit}}--}}
-                        <div class="minumudDeposit">{!! trans('home/buyTokens.minDep') !!}</div>
-                        {{--{{gas}}--}}
+                        <div class="minumudDeposit">{!! trans('home/buyTokens.minDep') !!} {{ env('MIN_DEP_ETH') }} ETH</div>
                         <div class="setGas">{!! trans('home/buyTokens.setGas') !!} gas</div>
                     </div>
                 </div>
