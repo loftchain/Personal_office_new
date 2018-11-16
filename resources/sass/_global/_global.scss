@@ -161,12 +161,16 @@ body {
     transition: none;
     border:1px solid #FFC701;
   }
+
+    &:focus {
+       box-shadow: none;
+    }
 }
 
 .btn--small {
   width: auto;
   padding: 13px 50px;
-  border: none;
+
   &:hover {
     color: #FFC701;
     background: #fff;
