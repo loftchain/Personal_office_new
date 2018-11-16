@@ -4,10 +4,10 @@
     <table class="dataTable__list">
       <tr>
         <th @click="sort('investor_id')">Investor ID</th>
-        <th>email</th>
-        <th @click="sort('wallet_to')">wallet</th>
-        <th @click="sort('tokens')">tokens</th>
-        <th>send</th>
+        <th>Email</th>
+        <th @click="sort('wallet_to')">Wallet</th>
+        <th @click="sort('tokens')">Tokens</th>
+        <th>Send</th>
       </tr>
       <tr class="dataTable__success" v-for="(referral, key) in sortedItems">
         <td>{{ referral.investor_id }}</td>

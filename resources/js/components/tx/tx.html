@@ -51,9 +51,9 @@
         </div>
         <div class="dataTable__item-wrap dataTable__item-wrap--hidden" :id="'hidden-' + transaction.id">
           <div class="dataTable__item-hidden">
-            <div class="dataTable__cell dataTable__cell--trans-info">To</div>
-            <div class="dataTable__cell dataTable__cell--trans-info" :style="transaction.send == '0' && transaction.currency == 'BTC' ? 'width: 25%' : 'width: 50%'">info</div>
-            <div class="dataTable__cell dataTable__cell--trans-info" style="width: 25%" v-if="transaction.send == '0' && transaction.currency == 'BTC'">send</div>
+            <div class="dataTable__cell dataTable__cell--trans-info"><b>To</b></div>
+            <div class="dataTable__cell dataTable__cell--trans-info" :style="transaction.send == '0' && transaction.currency == 'BTC' ? 'width: 25%' : 'width: 50%'"><b>Info</b></div>
+            <div class="dataTable__cell dataTable__cell--trans-info" style="width: 25%" v-if="transaction.send == '0' && transaction.currency == 'BTC'"><b>Send</b></div>
           </div>
           <div class="dataTable__item-hidden">
             <div class="dataTable__cell dataTable__cell--trans-info">{{ transaction.from }}</div>
