@@ -48,6 +48,7 @@
                     case 'from':
                         if (currency.val() === wallet.currency) {
                             _this.val(wallet_val);
+                            _this.attr('disabled', true)
                             // $('.raisedContainer--qr-2').removeClass('raisedContainer--disabled');
                         }
                         break;
@@ -56,11 +57,13 @@
 
                             if (wallet.type === 'from_to') {
                                 _this.val(wallet_val);
+                                _this.attr('disabled', true);
                                 $('.raisedContainer--qr-1').removeClass('raisedContainer--disabled');
                             }
 
                             if (wallet.type === 'to') {
                                 _this.val(wallet_val);
+                                _this.attr('disabled', true);
                                 // $('.raisedContainer--qr-2').removeClass('raisedContainer--disabled');
                             }
 
