@@ -29,13 +29,13 @@
                 @include('home.buy_tokens.fakeblock')
 
                 <div id="blockEth" class="blockHolder blockHolder--token blockHolder--hide">
-                    @include('modals.eth_form')
+                    @include('home.buy_tokens.eth_form')
                 </div>
                 <div id="blockBtc" class="blockHolder blockHolder--token blockHolder--hide">
-                    @include('modals.btc_form')
+                    @include('home.buy_tokens.btc_form')
                 </div>
                 <div id="blockPay" class="blockHolder blockHolder--token blockHolder--hide">
-                    @include('modals.changelly')
+                    @include('home.buy_tokens.changelly')
                 </div>
                 @if(Auth::user()->wallets()->first())
                     <div class="blockHolder">
