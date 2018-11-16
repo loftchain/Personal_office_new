@@ -63,6 +63,16 @@
                 $(this).remove();
             });
 
+            setTimeout(() => {
+                if (v.userConfirmed == 0 && v.isAdmin === '0') {
+                    messageText.text('Unfortunately your profile is not verified yet.');
+                    message.css('background', v.bg.warning);
+                }   else {
+                    messageText.text('');
+                    message.css('background', v.bg.normal);
+                }
+                closeButton.remove();
+            }, 5000)
         },
 
         hideSpinner: () => {
