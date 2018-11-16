@@ -7,6 +7,7 @@ use App\Services\UnisenderService;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
 class KycController extends Controller
 {
@@ -44,6 +45,12 @@ class KycController extends Controller
 
     public function rejected(Investor $investor)
     {
+        $documents = $investor->personal()->first()->documents()->get();
+
+        foreach ($documents as $document){
+            Storage::delete('uploads/' . $document->img);
+        }
+
         $investor->personal()->delete();
 
         $this->unisenderService->sendEmail($investor->email,
