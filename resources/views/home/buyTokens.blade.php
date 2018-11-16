@@ -19,7 +19,7 @@
                                 <div class="cryptoSelector">
                                     <button class="cryptoSelector__item" id="buttonEth">Etherium</button>
                                     <button class="cryptoSelector__item" id="buttonBtc">Bitcoin</button>
-                                    <button class="cryptoSelector__item" id="buttonPay">PayPal</button>
+                                    <button class="cryptoSelector__item" id="buttonPay">Changelly</button>
                                 </div>
                             </div>
                         </div>
@@ -35,7 +35,7 @@
                     @include('modals.btc_form')
                 </div>
                 <div id="blockPay" class="blockHolder blockHolder--token blockHolder--hide">
-                    @include('modals.payPal_form')
+                    @include('modals.changelly')
                 </div>
                 @if(Auth::user()->wallets()->first())
                     <div class="blockHolder">
