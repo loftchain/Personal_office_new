@@ -10,4 +10,6 @@ return [
     'rSubject' => 'Cuenta rechazada',
     'rTitle' => 'La verificación fue rechazada por la administración debido a datos incorrectos.',
     'rButton' => 'Reidentificar',
+
+    'forgotButton' => 'Restaurar'
 ];

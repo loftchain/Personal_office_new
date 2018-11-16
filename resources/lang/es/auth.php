@@ -16,5 +16,6 @@ return [
     'failed' => 'Estas credenciales no coinciden con nuestros registros.',
     'throttle' => 'Demasiados intentos de inicio de sesión. Por favor intente de nuevo en :seconds segundos.',
     'not_found' => 'Disculpe, usuario no encontrado',
+    'password_preg_math' => 'La contraseña debe contener al menos una letra mayúscula / minúscula, un número y un carácter especial',
 
 ];

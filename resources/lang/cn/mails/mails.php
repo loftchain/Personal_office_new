@@ -11,5 +11,5 @@ return [
     'rTitle' => '由於數據不正確，主管部門拒絕進行驗證',
     'rButton' => '重新標識',
 
-
+    'forgotButton' => '恢復'
 ];

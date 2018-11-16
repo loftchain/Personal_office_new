@@ -16,5 +16,6 @@ return [
     'failed' => 'These credentials do not match our records.',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
     'not_found' => 'Sorry, this user not found',
+    'password_preg_math' => 'Password should contain at least one uppercase/lowercase letters, one number and one special char',
 
 ];

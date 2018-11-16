@@ -1,5 +1,5 @@
 <head>
-    <link href="http://pon.local/css/app.css?594866" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 
 <body>
