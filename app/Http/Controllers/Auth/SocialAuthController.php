@@ -34,8 +34,9 @@ class SocialAuthController extends Controller
         $authUser = Investor::where([['provider', $provider], ['provider_id', $user->id]])->firstOrCreate([
             'name' => $user->name,
             'email' => $user->email,
+            'token' => str_random(15),
             'provider' => $provider,
-            'provider_id' => $user->id
+            'provider_id' => $user->id,
         ]);
 
         return $authUser;
