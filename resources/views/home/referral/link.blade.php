@@ -4,8 +4,7 @@
         <div class="formControl">
             <input class="icoForm__input icoForm__input--canCopy" type="text"
                    value="{{url('/').'/register/?ref='.Auth::user()->token}}" name="ethWallet"
-                   id="ethWallet"><span class="icoForm__copy"
-                                        v-on:click="copyToBuffer"> </span>
+                   id="ethWallet"><span class="icoForm__copy"> </span>
         </div>
     @else
         <h4 class="referral__message">{!! trans('home/referrals.tableNoWallet') !!}</h4>
