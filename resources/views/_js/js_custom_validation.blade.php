@@ -168,6 +168,7 @@
                 case !$.isEmptyObject(data.wallet_added):
                     v.showMessage('{!! trans('home/buyTokens.walletAdded') !!}', v.bg.success);
                     $('#fakeTable').show();
+                    wallet.wallet = true;
                     {{--v.showNotification('{!! trans('home/wallet.added_js') !!}', 'success');--}}
                     if (typeof wallet !== 'undefined') {
                         // wa.exitEditMode(_this.children('.w-input'));

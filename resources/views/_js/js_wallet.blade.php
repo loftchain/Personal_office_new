@@ -20,6 +20,7 @@
         wInput: $('.wallet'),
         personal: '{{ $personal }}',
         confirmed: '{{ Auth::user()->confirmed }}',
+        wallet: false,
 
         setWallets(_this) {
             $.ajax({
@@ -41,9 +42,9 @@
             const type = form.find('.type');
             walletsData.currentWallets.forEach(function (wallet) {
                 let wallet_val = ($(window).width() > 555) ? wallet.wallet : wallet.wallet.trunc(20);
-              if($('#wallet1').val() != '' && $('#wallet2').val() != '') {
-                $('.raisedContainer--qr-2').removeClass('raisedContainer--disabled');
-              }
+                if ($('#wallet1').val() != '' && $('#wallet2').val() != '') {
+                    $('.raisedContainer--qr-2').removeClass('raisedContainer--disabled');
+                }
                 switch (wallet.type) {
                     case 'from':
                         if (currency.val() === wallet.currency) {
@@ -76,7 +77,7 @@
         isConfirmed() {
             let confirmed = wallet.confirmed;
 
-            if(confirmed == 0) {
+            if (confirmed == 0) {
                 wallet.bEth.attr('disabled', true);
                 wallet.bBtc.attr('disabled', true);
                 wallet.bPay.attr('disabled', true);
@@ -84,10 +85,10 @@
         },
 
         removeDisabled() {
-          wallet.btn.removeClass('cryptoSelector__item--active');
-          wallet.block.addClass('blockHolder--hide');
-          // wallet.wInput.removeAttr('disabled');
-          wallet.walBlock.removeClass('raisedContainer--disabled');
+            wallet.btn.removeClass('cryptoSelector__item--active');
+            wallet.block.addClass('blockHolder--hide');
+            // wallet.wInput.removeAttr('disabled');
+            wallet.walBlock.removeClass('raisedContainer--disabled');
         }
     };
 
@@ -103,29 +104,44 @@
         wallet.removeDisabled(this);
         $(evt.target).addClass('cryptoSelector__item--active');
         wallet.blockEth.removeClass('blockHolder--hide');
+        $('#txTable').show();
+
+        if (wallet.wallet) {
+            $('#fakeTable').show();
+        }
     });
 
     wallet.bBtc.click((evt) => {
         wallet.removeDisabled(this);
         $(evt.target).addClass('cryptoSelector__item--active');
         wallet.blockBtc.removeClass('blockHolder--hide');
+        $('#txTable').show();
+
+        if (wallet.wallet) {
+            $('#fakeTable').show();
+        }
     });
 
     wallet.bPay.click((evt) => {
-      wallet.removeDisabled(this);
-      $(evt.target).addClass('cryptoSelector__item--active');
-      wallet.blockPay.removeClass('blockHolder--hide');
+        wallet.removeDisabled(this);
+        $(evt.target).addClass('cryptoSelector__item--active');
+        wallet.blockPay.removeClass('blockHolder--hide');
+        $('#txTable').hide();
+
+        if (wallet.wallet) {
+            $('#fakeTable').hide();
+        }
     });
 
-    wallet.wInput.on('input', function() {
-      if ($(this).is(':valid')) {
-        $(this).next().removeClass('icoForm__pencil--disabled');
-      } else {
-        $(this).next().addClass('icoForm__pencil--disabled');
-      }
+    wallet.wInput.on('input', function () {
+        if ($(this).is(':valid')) {
+            $(this).next().removeClass('icoForm__pencil--disabled');
+        } else {
+            $(this).next().addClass('icoForm__pencil--disabled');
+        }
     });
 
-    $('#payPalAmount').on('input', function() {
+    $('#payPalAmount').on('input', function () {
         this.value = this.value.replace(/\D/g, '');
     });
 

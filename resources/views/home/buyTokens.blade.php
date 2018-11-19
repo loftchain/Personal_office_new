@@ -38,7 +38,7 @@
                     @include('home.buy_tokens.changelly')
                 </div>
                 @if(Auth::user()->wallets()->first())
-                    <div class="blockHolder">
+                    <div class="blockHolder" id="txTable">
                         @include('home.buy_tokens.txTable')
                     </div>
                 @else
