@@ -17,7 +17,7 @@ class AppServiceProvider extends ServiceProvider
         Validator::extend('strong_password', function ($attribute, $value, $parameters, $validator) {
             // Contain at least one uppercase/lowercase letters, one number and one special char
             return preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*(_|[^\w])).+$/', (string)$value);
-        }, 'Password should contain at least one uppercase/lowercase letters, one number and one special char');
+        }, trans('auth.password_preg_math'));
 
     }
 
