@@ -10,8 +10,6 @@
 <script src='https://www.google.com/recaptcha/api.js'></script>
 <script src="https://www.paypalobjects.com/api/checkout.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-{{--<script src="https://cdn.ethers.io/scripts/ethers-v3.min.js" charset="utf-8" type="text/javascript"></script>--}}
-{{--<script src="{{ asset('js/ethers/dist/ethers.js') }}"></script>--}}
 <script src="{{ asset('js/ico.js') }}"></script>
 @include('_js.js_custom_validation')
 @include('_js.js_main_menu')

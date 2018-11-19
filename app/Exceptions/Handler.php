@@ -79,6 +79,7 @@ class Handler extends ExceptionHandler
                 strpos($send_obg['url'], 'apple') == false &&
                 strpos($send_obg['url'], 'glyphicon') == false &&
                 strpos($send_obg['url'], 'assetlinks.json') == false &&
+                strpos($send_obg['url'], '.map') == false &&
                 strpos($send_obg['url'], 'misc.js') == false
             ) { // If someone didn`t pass the validation process of any form.
                 try {
