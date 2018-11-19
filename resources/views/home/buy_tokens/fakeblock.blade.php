@@ -28,10 +28,10 @@
                             <div class="dropdown dropdown--qr">
                                 <img id="qrEth" class="qrCode" alt="qr" src="{{ asset('img/qr.jpg') }}">
                                 <div class="dropdown-content dropdown-content--qr">
-                                    <img width="200" height="200" class="qrCode" alt="qr" src="{{ asset('img/0x7E7884c00cF0032Dc9360A8294a97aDf8fD18B61.png') }}">
+                                    <img width="200" height="200" class="qrCode" alt="qr" src="{{ asset('img/0x1a503c973ff08f4985f3da21c9cf0164a586edb3.gif') }}">
                                 </div>
                             </div>
-                            {{--<p class="dropdown__hint">{!! trans('home/buyTokens.qrHover') !!}</p>--}}
+                            <p class="dropdown__hint">{!! trans('home/buyTokens.qrHover') !!}</p>
                         </div>
                         <div class="col-md-8 align-self-top">
                             <div class="formControl formControl--noMargin">
