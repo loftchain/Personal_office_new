@@ -47,7 +47,7 @@ export default {
       async getTx() {
           await axios.get('transaction/get')
               .then(res => {
-                  this.totalPages = res.data.length
+                  this.totalPages = res.data.length;
                   this.transactions = res.data;
               });
       },

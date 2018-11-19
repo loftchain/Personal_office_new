@@ -58652,9 +58652,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
     created: function created() {
         this.getUsers();
     },
-    mounted: function mounted() {
-        console.log('this is current swiper instance object', this);
-    },
+    mounted: function mounted() {},
 
 
     computed: {
@@ -58687,6 +58685,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
             var _this2 = this;
 
             __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get('verification/get').then(function (res) {
+                _this2.totalPages = res.data.length;
                 _this2.investors = res.data;
             });
         },
@@ -58797,8 +58796,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 
 
         checkBoxClick: function checkBoxClick() {
-            // this.pageSize = this.totalPages;
-            // console.log(this.sortedItems);
+            this.pageSize = this.totalPages;
         }
     }
 });

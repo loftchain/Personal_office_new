@@ -39,7 +39,7 @@ export default {
     },
 
     mounted() {
-        console.log('this is current swiper instance object', this)
+
     },
 
     computed: {
@@ -69,6 +69,7 @@ export default {
         getUsers() {
             axios.get('verification/get')
                 .then(res => {
+                    this.totalPages = res.data.length;
                     this.investors = res.data;
                 });
         },
@@ -136,8 +137,7 @@ export default {
         },
 
         checkBoxClick: function () {
-            // this.pageSize = this.totalPages;
-            // console.log(this.sortedItems);
+            this.pageSize = this.totalPages;
         },
       }
 }
