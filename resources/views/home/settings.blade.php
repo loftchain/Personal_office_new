@@ -16,10 +16,6 @@
                                     <div class="alert alert-danger" role="alert">
                                         {!! trans('layouts/message.messageNoEmail') !!}
                                     </div>
-                                @elseif(!Auth::user()->password)
-                                    <div class="alert alert-danger" role="alert">
-                                        Enter password
-                                    </div>
                                 @endif
                                 <div class="basicBlock basicBlock--single settings">
                                     <div class="basicBlock__content">
