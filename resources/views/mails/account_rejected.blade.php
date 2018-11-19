@@ -13,15 +13,14 @@
         text-align: center;
         margin: 0 auto;
         background-size: cover;
-        width: 55%;
-        height: 14%;
+        width: 50px;
+        height: 50px;
         overflow: hidden;
     }
 
     .img-container img {
-        padding: 15px;
-        height: 60%;
-        width: 60%;
+        width: 100%;
+        height: 100%;
         max-width: 100%;
     }
 
@@ -35,7 +34,7 @@
 
     .rect div {
         line-height: 24px;
-        padding: 40px 40px;
+        padding: 20px 20px;
         font-size: 18px;
     }
 
@@ -48,8 +47,6 @@
         text-align: center;
         margin: 0 auto;
         width: 100%;
-        padding-left: 5%;
-        padding-top: 2%;
         font-size: 12px;
         color: #4b4b4b;
     }
