@@ -86,7 +86,7 @@
         removeDisabled() {
           wallet.btn.removeClass('cryptoSelector__item--active');
           wallet.block.addClass('blockHolder--hide');
-          wallet.wInput.removeAttr('disabled');
+          // wallet.wInput.removeAttr('disabled');
           wallet.walBlock.removeClass('raisedContainer--disabled');
         }
     };
