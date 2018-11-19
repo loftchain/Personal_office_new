@@ -39,7 +39,7 @@
                         </div>
                         <div class="minumudDeposit">{!! trans('home/buyTokens.minDep') !!} {{ env('MIN_DEP_ETH') }} ETH</div>
                         {{--{{gas}}--}}
-                        <div class="setGas">{!! trans('home/buyTokens.setGas') !!} gas</div>
+                        <div class="setGas">{!! trans('home/buyTokens.setGas') !!} 199000</div>
                     </div>
                 </div>
             </form>
