@@ -3,7 +3,6 @@
         <div class="basicBlock__content">
             <div class="basicBlock__title text-center">{!! trans('home/buyTokens.trans') !!}</div>
             <div class="basicBlock__subtitle text-center">{!! trans('home/buyTokens.transText') !!}</div>
-            <div class="infoBtn"><a class="btn btn--small" href="#">h5723882302832cn8399c2</a></div>
             <div class="dataTable">
                 <table class="dataTable__list">
                     <tr>
