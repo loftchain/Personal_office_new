@@ -68,7 +68,7 @@
     </div>
 
     <div class="bottom">
-        <p>{!! __('mails/mails.doNotReply_p') !!}<br>
-            {!! __('mails/mails.contactUs_p') !!}</p>
+        <p>{!! trans('mails/mails.doNotReply_p') !!}<br>
+            {!! trans('mails/mails.contactUs_p') !!}</p>
     </div>
 </div>
