@@ -75,6 +75,7 @@ class Handler extends ExceptionHandler
             $str = implode("\n", $send_obg);
             $client = new Client();
             if (
+                $exception->getMessage() !== 'Unauthenticated.' &&
                 $send_obg['error_message'] != '[ The given data was invalid. ]' &&
                 strpos($send_obg['url'], 'apple') == false &&
                 strpos($send_obg['url'], 'glyphicon') == false &&
