@@ -12,13 +12,14 @@ return [
 Please, specify correct data in your account and send verification request again.',
     'rButton' => 'Verification',
 
-    'resetPasswordSubject_controller' => 'Forgot your password?',
-    'forgotButton' => 'Restore'
+    'forgotButton' => 'Restore',
 
-//    'doNotReply_p' => 'Please, do not reply on this letter',
-//    'contactUs_p' => 'Contact us <a href="mailto:luckyyou@mitoshiworldwide.com"> by email.</a>',
-//
-//    'followLink1_div' => 'Please, follow the ',
-//    'followLink2_div' => ' link',
-//    'followLink3_div' => ' to reset your password'
+    'resetPasswordSubject_controller' => 'Forgot your password?',
+
+    'doNotReply_p' => 'Please, do not reply on this letter',
+    'contactUs_p' => 'Contact us <a href="mailto:luckyyou@mitoshiworldwide.com"> by email.</a>',
+
+    'followLink1_div' => 'Please, follow the ',
+    'followLink2_div' => ' link',
+    'followLink3_div' => ' to reset your password'
 ];
