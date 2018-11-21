@@ -1,16 +1,16 @@
 .timer {
   display: flex;
   justify-content: space-between;
-  @media(max-width: 1200px) {
+  @media #{$tablet1199} {
     justify-content: center;
   }
   &__number {
     text-align: center;
-    background: #FFFFFF;
+    background: $white;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
     margin: 0 7px;
-    @media(max-width: 992px) {
+    @media #{$tablet992} {
       margin: 0 7px;
     }
   }
@@ -19,10 +19,10 @@
     font-weight: 500;
     line-height: normal;
     font-size: 30px;
-    color: #828282;
+    color: $grey5;
     padding: 21px 21px 15px 21px;
     align-self: center;
-    @media(max-width: 992px) {
+    @media #{$tablet992} {
       padding: 10px;
       font-size: 18px;
     }
@@ -42,7 +42,7 @@
       width: 7px;
       height: 7px;
       border-radius: 50%;
-      background: #828282;
+      background: $grey5;
     }
     &:before {
       margin-top: -8px;
@@ -50,7 +50,7 @@
     &:after {
       margin-top: 8px;
     }
-    @media(max-width: 767px) {
+    @media #{$mobile} {
       margin: 0 7px;
     }
   }
@@ -60,7 +60,7 @@
   flex: 1 1 auto;
   margin: 10px;
   max-width: 350px;
-  @media(max-width: 1200px) {
+  @media #{$tablet1199} {
     max-width: none;
   }
 }
@@ -73,7 +73,7 @@
   font-weight: 500;
   position: relative;
   font-size: 14px;
-  color: #FFFFFF;
+  color: $white;
   text-align: center;
   border: 1px solid rgba(242, 201, 76, 0.29);
   border-radius: 100px;
@@ -99,7 +99,7 @@
     transition: left 1.5s ease;
   }
   &__fill {
-    background: linear-gradient(90deg, rgba(255, 225, 58, 0) 0%, #FFC701 100%);
+    background: linear-gradient(90deg, rgba(255, 225, 58, 0) 0%, $yellow1 100%);
     border-radius: 100px;
     height: 28px;
     display: block;
@@ -135,7 +135,7 @@
     font-weight: normal;
     line-height: normal;
     font-size: 14px;
-    color: #BDBDBD;
+    color: $grey2;
   }
 }
 
@@ -177,17 +177,17 @@
   font-weight: 300;
   line-height: normal;
   font-size: 14px;
-  color: #989DAB;
+  color: $grey6;
   &__from {
     float: left;
-    @media(max-width: 450px) {
+    @media #{$mobile450} {
       float: none;
       text-align: center;
     }
   }
   &__to {
     float: right;
-    @media(max-width: 450px) {
+    @media #{$mobile450} {
       float: none;
       text-align: center;
     }
@@ -226,6 +226,6 @@
     line-height: normal;
     font-size: 14px;
     text-transform: capitalize;
-    color: #4F4F4F;
+    color: $grey1;
   }
 }

@@ -8,18 +8,74 @@ $font-size-base: 0.9rem;
 $line-height-base: 1.6;
 
 // Colors
-$blue: #3490dc;
-$indigo: #6574cd;
-$purple: #9561e2;
-$pink: #f66D9b;
-$red: #e3342f;
-$orange: #f6993f;
-$yellow: #ffed4a;
-$green: #38c172;
-$teal: #4dc0b5;
-$cyan: #6cb2eb;
+//$blue: #3490dc;
+//$indigo: #6574cd;
+//$purple: #9561e2;
+//$pink: #f66D9b;
+//$red: #e3342f;
+//$orange: #f6993f;
+//$yellow: #ffed4a;
+//$green: #38c172;
+//$teal: #4dc0b5;
+//$cyan: #6cb2eb;
 $validationError: #ff443a;
 
+//new colors
+$white: #ffffff;
+$whitegrey: #E0E0E0;
+
+$yellow1: #FFC701;
+$yellow2: #FFE13A;
+$yellow3: #F2C94C;
+$yellow4: #FEC808;
+$yellow5: #FDCA0E;
+$yellow6: #FFE139;
+
+$yellowgradient1: #FFD703;
+$yellowgradient2: #FCF089;
+
+$grey1: #4F4F4F;
+$grey2: #BDBDBD;
+$grey3: #F2F2F2;
+$grey4: #A4A4A5;
+$grey5: #828282;
+$grey6: #989DAB;
+$grey7: #8E99A5;
+
+// Breakpoints
+$desktop: 'only screen and (min-width: 1025px)';
+$superDesktop: 'only screen and (min-width: 1940px)';
+$largeDesktop: 'only screen and (min-width: 1920px)';
+$desktop1920: 'only screen and (width: 1920px)';
+$wideDesktop: 'only screen and (min-width: 1480px)';
+$normalDesktop: 'only screen and (min-width: 1025px) and (max-width: 1479px)';
+$narrowDesktop: 'only screen and (min-width: 1025px) and (max-width: 1279px)';
+$tablet: 'only screen and (min-width: 768px) and (max-width: 1024px)';
+$tabletLandscape: 'only screen and (min-width: 961px) and (max-width: 1024px)';
+$tabletPortrait: 'only screen and (min-width: 768px) and (max-width: 960px)';
+//$mobile: '(max-width: 768px)';
+$mobile545: '(max-width: 545px)';
+$mobile480: '(max-width: 480px)';
+$mobile360: '(max-width: 360px)';
+$mobile320: '(max-width: 320px)';
+
+$noMobile: 'only screen and (min-width: 768px)';
+$noTablet: 'only screen and (min-width: 1025px), only screen and (max-width: 767px)';
+$noDesktop: '(max-width: 1024px)';
+
+// new breakpoints
+
+$desktop1280: '(min-width: 1280px)';
+$beforedesktop: '(max-width: 1279px)';
+
+$tablet1199: '(max-width: 1199px)';
+$tablet992: '(max-width: 992px)';
+$tablet1157: '(max-width: 1157px)';
+
+$mobile: '(max-width: 767px)';
+$mobile540: '(max-width: 540px)';
+$mobile480: '(max-width: 480px)';
+$mobile450: '(max-width: 450px)';
 
 %fc {
     display: flex;

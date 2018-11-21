@@ -17,9 +17,9 @@
 
 .referral__cell {
   padding: 14px 18px;
-  border: 1px solid #F2F2F2;
+  border: 1px solid $grey3;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.11);
-  color: #F2C94C;
+  color: $yellow3;
 
   &--person {
     width: 70%;
@@ -32,7 +32,7 @@
 
   &--th {
     font-weight: 700;
-    color: #4F4F4F;
+    color: $grey1;
     text-align: center;
   }
 
@@ -49,12 +49,12 @@
 
 .referral__message {
   margin-left: 10px;
-  color: #F2C94C;
+  color: $yellow3;
   font-size: 18px;
   font-weight: 700;
 }
 
-@media (max-width: 1279px) {
+@media #{$beforedesktop} {
   .referral__cell {
     padding: 14px 6px;
     font-size: 12px;
@@ -67,7 +67,7 @@
   }
 }
 
-@media (max-width: 1199px) {
+@media #{$tablet1199} {
   .referral__table {
     width: 100%;
   }
@@ -77,7 +77,7 @@
   }
 }
 
-@media (max-width: 480px) {
+@media #{$mobile480} {
   .referral__cell {
     padding: 14px 3px;
 

@@ -11,11 +11,11 @@
   line-height: normal;
   font-size: 12px;
   line-height: 50px;
-  color: #4F4F4F;
+  color: $grey1;
   cursor: pointer;
   &:hover {
     text-decoration: none;
-    color: #4F4F4F;
+    color: $grey1;
     box-shadow: 0px 0px 30px #FFF16E;
   }
 }
@@ -24,7 +24,7 @@
   background: url(/img/google-favicon-logo.svg) no-repeat 20px 50% transparent;
   background-size: 36px 36px;
   padding-left: 60px;
-  @media(max-width: 767px) {
+  @media #{$mobile} {
     margin: 10px 0;
   }
 }
@@ -33,7 +33,7 @@
   background: url(/img/facebook-favicon-logo.svg) no-repeat 20px 50% transparent;
   background-size: 36px 36px;
   padding-left: 60px;
-  @media(max-width: 767px) {
+  @media #{$mobile} {
     margin: 10px 0;
   }
 }
@@ -46,13 +46,13 @@
   font-weight: normal;
   line-height: normal;
   font-size: 14px;
-  color: #BDBDBD;
+  color: $grey2;
   margin-bottom: 20px;
   &:before {
     display: block;
     height: 1px;
     content: '';
-    background: #BDBDBD;
+    background: $grey2;
     width: 100%;
     margin-right: 10px;
   }
@@ -60,7 +60,7 @@
     display: block;
     height: 1px;
     content: '';
-    background: #BDBDBD;
+    background: $grey2;
     width: 100%;
     margin-left: 10px;
   }

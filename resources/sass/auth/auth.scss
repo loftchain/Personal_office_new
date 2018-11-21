@@ -1,28 +1,28 @@
 .modalFrame {
-  background: #FFFFFF;
-  box-shadow: 0px 0px 70px #E0E0E0;
+  background: $white;
+  box-shadow: 0px 0px 70px $whitegrey;
   border-radius: 10px;
   align-self: center;
   padding: 71px 60px 30px 60px;
   flex: none;
   width: 537px;
-  background: #fff;
+  background: $white;
   &__title {
     font-family: 'Rubik', 'Arial', sans-serif;
     font-size: 22px;
     text-align: center;
-    color: #4F4F4F;
+    color: $grey1;
   }
   &__subtitle {
     font-family: 'Rubik', 'Arial', sans-serif;
     font-size: 16px;
     text-align: center;
-    color: #4F4F4F;
+    color: $grey1;
   }
   &__subtitleMargin {
     margin-top: 20px;
   }
-  @media(max-width: 540px) {
+  @media #{$mobile540} {
     width: 100%;
     padding: 30px;
   }
@@ -37,7 +37,7 @@
   line-height: normal;
   font-size: 14px;
   text-align: center;
-  color: #A4A4A5;
+  color: $grey4;
 }
 
 .formRegText {

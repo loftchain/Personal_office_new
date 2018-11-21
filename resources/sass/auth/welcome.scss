@@ -10,7 +10,7 @@
 }
 
 .welcome__button-language {
-  color: #4f4f4f;
+  color: $grey1;
 }
 
 .welcome__wrapper {
@@ -21,28 +21,28 @@
   padding: 15px 15px 0;
 
   &--registration {
-    border-right: 1px solid #f2c94c;
+    border-right: 1px solid $yellow3;
   }
 }
 
 .welcome__link {
-  color: #f2c94c;
+  color: $yellow3;
 
   &:hover {
-    color: #f2c94c;
+    color: $yellow3;
     text-decoration: underline;
   }
 
   &--password {
-    color: #4f4f4f;
+    color: $grey1;
 
     &:hover {
-      color: #4f4f4f;
+      color: $grey1;
     }
   }
 }
 
-@media (max-width: 992px) {
+@media #{$tablet992} {
   .welcome__header {
     padding-right: 60px;
   }
