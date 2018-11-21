@@ -8,7 +8,7 @@
             @foreach($referrals['stat'] as $key => $referral)
                 <tr>
                     <td class="referral__cell referral__cell--person">{{ $key }}</td>
-                    <td class="referral__cell referral__cell--bonus">{{ $referral['token_sum'] }}</td>
+                    <td class="referral__cell referral__cell--bonus">{{ isset($referral['token_sum']) ? $referral['token_sum'] : 0}}</td>
                 </tr>
             @endforeach
 
