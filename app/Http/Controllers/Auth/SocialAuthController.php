@@ -14,12 +14,12 @@ class SocialAuthController extends Controller
 {
     public function redirect($provider)
     {
-        return Socialite::driver($provider)->redirect();
+        return Socialite::driver($provider)->stateless()->redirect();
     }
 
     public function callback($provider)
     {
-        $user = Socialite::driver($provider)->user();
+        $user = Socialite::driver($provider)->stateless()->user();
 
         $authUser = $this->firstOrCreateUser($user, $provider);
 
@@ -35,7 +35,7 @@ class SocialAuthController extends Controller
     protected function firstOrCreateUser($user, $provider)
     {
         $referred_by = Investor::where('token', Cookie::get('referral'))->first();
-        
+
         try {
             $authUser = Investor::firstOrCreate(['provider' => $provider, 'provider_id' => $user->id] ,[
                 'name' => $user->name,
