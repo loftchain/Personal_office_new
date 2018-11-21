@@ -20,54 +20,31 @@ class ReferralService
     {
         InvestorReferralFields::truncate();
 
-        $finalReferralSumm = [];
-        $singleRefArray = [];
-        $referals = Investor::where('referred_by', '!=', null)->get();
-        foreach ($referals as $ref) {
-            $referredWallets = InvestorWalletFields::where('investor_id', $ref->id)->get();
-            if ($referredWallets) {
-                foreach ($referredWallets as $rw) {
-                    $transactions = Transaction::where([['from', $rw->wallet], ['refs_send', 'false']])->get();
-                    foreach ($transactions as $tx) {
-                        if ($tx) {
-                            $tx->update([
-                                'refs_send' => 'true'
-                            ]);
-                            $singleRefArray[] = ['ref_owner_id' => $ref->referred_by,
-                                'refs' => [
-                                    'id' => $ref->id,
-                                    'tokens' => $tx->amount_tokens
-                                ]
-                            ];
-                        }
-                    }
-                }
-            }
+        $recountedReferrals = [];
+
+        $referrals = Investor::where('referred_by', '!=', null)
+            ->whereHas('transactions', function ($query){
+                $query->where('refs_send', 'false');
+            })
+            ->with('wallets', 'transactions')
+            ->get();
+
+        foreach ($referrals as $referral) {
+            $tokensSum = $referral->transactions->sum('amount_tokens') * 0.1;
+            $investorWallet = InvestorWalletFields::where('investor_id', $referral->referred_by)->whereIn('type', ['to', 'from_to'])->first()->wallet;
+            $referral->transactions()->update([
+                'refs_send' => 'true'
+            ]);
+
+            $recountedReferrals[$referral->referred_by]['tokens'][] = $tokensSum;
+            $recountedReferrals[$referral->referred_by]['wallet'] = $investorWallet;
         }
 
-        foreach ($singleRefArray as $k => $v) {
-            $id = $v['ref_owner_id'];
-            $result[$id][] = $v['refs']['tokens'];
-        }
-
-        foreach ($result as $key => $value) {
-            $wallets = InvestorWalletFields::where('investor_id', $key)->get();
-            foreach ($wallets as $w) {
-                if ($w->type === 'from_to') {
-                    $finalReferralSumm[] = array('id' => $key, 'wallet' => $w->wallet, 'token_sum' => array_sum($value) * 0.05);
-                    break;
-                } else if ($w->type === 'to') {
-                    $finalReferralSumm[] = array('id' => $key, 'wallet' => $w->wallet, 'token_sum' => array_sum($value) * 0.05); //DRY as it is)
-                    break;
-                }
-            }
-        }
-
-        foreach ($finalReferralSumm as $frs) {
+        foreach ($recountedReferrals as $key => $item){
             InvestorReferralFields::create([
-                'investor_id' => $frs['id'],
-                'wallet_to' => $frs['wallet'],
-                'tokens' => $frs['token_sum']
+                'investor_id' => $key,
+                'wallet_to' => $item['wallet'],
+                'tokens' => array_sum($item['tokens'])
             ]);
         }
     }
