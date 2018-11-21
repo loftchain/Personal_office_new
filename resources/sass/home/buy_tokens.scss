@@ -11,7 +11,7 @@
     cursor: pointer;
     margin: 10px 20px;
     border-radius: 100px;
-    border: 1px solid #FDCA0E;
+    border: 1px solid $yellow5;
     background: transparent;
     font-family: 'Rubik', 'Arial', sans-serif;
     font-style: normal;
@@ -20,15 +20,15 @@
     font-size: 14px;
     height: 45px;
     padding: 10px 60px;
-    color: #4F4F4F;
+    color: $grey1;
     &:hover {
-      background: linear-gradient(90deg, #FDCA0E 0%, #FFE139 76.95%);
-      color: #fff;
+      background: linear-gradient(90deg, $yellow5 0%, $yellow6 76.95%);
+      color: $white;
     }
   }
   &__item--active {
-    background: linear-gradient(90deg, #FDCA0E 0%, #FFE139 76.95%);
-    color: #fff;
+    background: linear-gradient(90deg, $yellow5 0%, $yellow6 76.95%);
+    color: $white;
   }
 }
 
@@ -43,7 +43,7 @@
   font-weight: 300;
   line-height: normal;
   font-size: 14px;
-  color: #4F4F4F;
+  color: $grey1;
   margin: 8px 0;
 }
 
@@ -54,14 +54,14 @@
   line-height: normal;
   font-size: 14px;
   text-transform: uppercase;
-  color: #F2C94C;
+  color: $yellow3;
 }
 
 .infoBtn {
   margin: 20px 0;
   text-align: center;
   .btn {
-    @media(max-width: 767px) {
+    @media #{$mobile} {
       padding-left: 10px;
       padding-right: 10px;
       font-size: 12px;

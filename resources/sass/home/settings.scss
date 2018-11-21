@@ -21,7 +21,7 @@
     font-weight: 300;
     line-height: 27px;
     font-size: 14px;
-    color: #BDBDBD;
+    color: $grey2;
   }
 }
 
@@ -43,14 +43,14 @@
     line-height: normal;
     font-size: 14px;
     text-decoration-line: underline;
-    color: #F2C94C;
+    color: $yellow3;
     margin: 7px 0;
   }
   &__langSelector {
     margin-top: 18px;
   }
   &__langSelectorBtn {
-    background: #E0E0E0;
+    background: $whitegrey;
     display: inline-block;
     margin: 0 5px;
     font-family: 'Rubik', 'Arial', sans-serif;
@@ -58,20 +58,20 @@
     font-weight: 500;
     line-height: normal;
     font-size: 14px;
-    color: #BDBDBD;
+    color: $grey2;
     padding: 3px 6px;
     text-transform: uppercase;
     cursor: pointer;
   }
   &__langSelectorBtn--active {
-    background: #F2C94C;
-    color: #fff;
+    background: $yellow3;
+    color: $white;
   }
 }
 
 .basicBlock--settings {
   min-width: 66%;
-  @media(max-width: 767px) {
+  @media #{$mobile} {
     min-width: 0;
   }
 }

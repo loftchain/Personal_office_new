@@ -7,7 +7,7 @@
   padding-left: 77px;
   max-width: 100%;
   padding-right: 40px !important;
-  @media (max-width: 450px) {
+  @media #{$mobile450} {
     padding-left: 50px;
   }
   &:before {
@@ -19,11 +19,11 @@
     height: 32px;
     margin-left: -30px;
     margin-top: -6px;
-    background: #fff;
+    background: $white;
   }
   &:hover {
     &:before {
-      background: #F2C94C;
+      background: $yellow3;
     }
   }
 }
@@ -44,7 +44,7 @@
   font-weight: 300;
   line-height: normal;
   font-size: 14px;
-  color: #4F4F4F;
+  color: $grey1;
 }
 
 .checkbox+label:before {
@@ -54,13 +54,13 @@
   height: 20px;
   left: 0;
   top: -2px;
-  background: #F2F2F2;
+  background: $grey3;
   border-radius: 4px;
   background-position: 2px 0;
 }
 
 .checkbox:checked+label:before {
-  background: url(/img/checkbox.svg) no-repeat 2px 0 #F2F2F2;
+  background: url(/img/checkbox.svg) no-repeat 2px 0 $grey3;
   background-size: 100% 100%;
 }
 
@@ -78,10 +78,10 @@
 .drop {
   width: 96%;
   height: 210px;
-  border: 3px dotted #E0E0E0;
+  border: 3px dotted $whitegrey;
   overflow: hidden;
   text-align: center;
-  background: white;
+  background: $white;
   -webkit-transition: all 0.5s ease-out;
   -moz-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
@@ -95,7 +95,7 @@
 }
 
 .drop .cont {
-  color: #8E99A5;
+  color: $grey7;
   -webkit-transition: all 0.5s ease-out;
   -moz-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
@@ -109,7 +109,7 @@
 
 .drop .cont i {
   font-size: 400%;
-  color: #8E99A5;
+  color: $grey7;
   position: relative;
 }
 
@@ -125,13 +125,13 @@
   line-height: normal;
   font-size: 10px;
   text-align: center;
-  color: #4F4F4F;
+  color: $grey1;
   padding: 0 26px;
 }
 
 .drop .cont .browse {
   margin: 10px 25%;
-  color: white;
+  color: $white;
   padding: 8px 16px;
   border-radius: 5px;
   background: #09f;
@@ -166,7 +166,7 @@
   font-family: 'Rubik', 'Arial', sans-serif;
   font-size: 12px;
   line-height: 14px;
-  color: #4F4F4F;
+  color: $grey1;
   background-color: transparent;
   border: none;
   box-shadow: none;
