@@ -35,9 +35,9 @@ class SocialAuthController extends Controller
     protected function firstOrCreateUser($user, $provider)
     {
         $referred_by = Investor::where('token', Cookie::get('referral'))->first();
-
+        
         try {
-            $authUser = Investor::where([['provider', $provider], ['provider_id', $user->id]])->firstOrCreate([
+            $authUser = Investor::firstOrCreate(['provider' => $provider, 'provider_id' => $user->id] ,[
                 'name' => $user->name,
                 'email' => $user->email,
                 'token' => str_random(15),
