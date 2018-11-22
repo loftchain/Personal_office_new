@@ -6,7 +6,7 @@
         <div class="mobileMenuBtn">
             <button class="cmn-toggle-switch cmn-toggle-switch__htx"><span>toggle menu</span></button>
         </div>
-        <div class="scrollHolder">
+        <div class="scrollHolder scrollHolder--admin">
             <div class="content">
                 <div class="blockHolder">
                     <div class="raisedContainer raisedContainer--full basicBlock--settings">

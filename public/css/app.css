@@ -11046,6 +11046,14 @@ body {
   max-height: 88vh;
 }
 
+.scrollHolder--admin {
+  padding: 0;
+}
+
+.scrollHolder .basicBlock__content {
+  padding: 12px 5px;
+}
+
 @media (max-width: 992px) {
   .scrollHolder {
     padding-top: 90px;
@@ -11443,6 +11451,15 @@ body {
 
 .dataTable tr {
   border-bottom: 3px solid #F2F2F2;
+}
+
+.dataTable--admin th,
+.dataTable--admin td {
+  font-size: 11px;
+}
+
+.dataTable--admin .dataTable__cell {
+  font-size: 11px;
 }
 
 .dropbtn {

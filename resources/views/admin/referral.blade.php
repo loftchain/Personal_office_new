@@ -10,7 +10,7 @@
         <div class="messageTop">
             <p class="messageTop__text"></p>
         </div>
-        <div class="scrollHolder">
+        <div class="scrollHolder scrollHolder--admin">
             <div class="content">
                 <div class="blockHolder">
                     <div class="raisedContainer raisedContainer--full basicBlock--settings">

@@ -58257,7 +58257,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "dataTable" }, [
+  return _c("div", { staticClass: "dataTable dataTable--admin" }, [
     _c(
       "table",
       { staticClass: "dataTable__list" },
@@ -67297,7 +67297,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", [
     _c("section", { staticClass: "verification" }, [
-      _c("div", { staticClass: "dataTable" }, [
+      _c("div", { staticClass: "dataTable dataTable--admin" }, [
         _c(
           "div",
           { staticClass: "dataTable__list" },
@@ -76675,7 +76675,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("section", { staticClass: "tx" }, [
-    _c("div", { staticClass: "dataTable" }, [
+    _c("div", { staticClass: "dataTable dataTable--admin" }, [
       _c(
         "div",
         { staticClass: "dataTable__list" },
@@ -77440,7 +77440,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("section", { staticClass: "referral" }, [
-    _c("div", { staticClass: "dataTable" }, [
+    _c("div", { staticClass: "dataTable dataTable--admin" }, [
       _c(
         "table",
         { staticClass: "dataTable__list" },

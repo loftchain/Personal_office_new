@@ -162,9 +162,9 @@ body {
     border:1px solid $yellow1;
   }
 
-    &:focus {
-       box-shadow: none;
-    }
+  &:focus {
+    box-shadow: none;
+  }
 }
 
 .btn--small {
@@ -453,6 +453,15 @@ body {
   height: 700px;
   padding: 20px 30px;
   max-height: 88vh;
+
+  &--admin {
+    padding: 0;
+  }
+
+  .basicBlock__content {
+    padding: 12px 5px;
+  }
+
   @media #{$tablet992} {
     padding-top: 90px;
     max-height: 100vh;
@@ -735,6 +744,7 @@ body {
       width: 50%;
     }
   }
+
   th {
     font-family: 'Rubik', 'Arial', sans-serif;
     font-style: normal;
@@ -750,6 +760,7 @@ body {
     line-height: normal;
     font-size: 14px;
   }
+
   &__error {
     color: #CF0032;
   }
@@ -790,6 +801,15 @@ body {
   tr {
     border-bottom: 3px solid $grey3;
   }
+}
+
+.dataTable--admin {
+    th, td {
+      font-size: 11px;
+    }
+    .dataTable__cell {
+      font-size: 11px;
+    }
 }
 
 .dropbtn {
