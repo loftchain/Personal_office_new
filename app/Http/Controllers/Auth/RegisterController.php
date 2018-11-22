@@ -101,7 +101,6 @@ class RegisterController extends Controller
         $user->ip_token = request()->ip();
         $user->remember_token = str_random(15);
         $user->reg_attempts += 1;
-        $user->valid_step = 1;
         $user->save();
 
         try{
