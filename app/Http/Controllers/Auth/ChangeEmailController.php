@@ -100,7 +100,7 @@ class ChangeEmailController extends Controller
         $user->email = $request->email;
         $user->save();
 
-        $this->change_email_history_make(null, $request->email);
+        $this->change_email_history_make($request->email, $request->email);
 
         return [
             'success_set_email' => true
