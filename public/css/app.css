@@ -11860,7 +11860,7 @@ select {
 }
 
 .btnSecondary--facebookLogin {
-  background: url(/img/facebook-favicon-logo.svg) no-repeat 20px 50% transparent;
+  background: url(/img/facebook.svg) no-repeat 20px 50% transparent;
   background-size: 36px 36px;
   padding-left: 60px;
 }
