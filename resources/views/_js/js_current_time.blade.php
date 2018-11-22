@@ -20,7 +20,7 @@
                 let tdDate = item.children[0],
                     date = $(tdDate),
                     x = new Date(Date.parse(date.text()));
-                x.setHours(x.getHours() + this.currentTimeZoneOffset);
+                x.setHours(x.getHours() + Math.abs(this.currentTimeZoneOffset));
 
                 date.text(x.customFormat())
             })
