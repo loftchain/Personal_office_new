@@ -24,7 +24,7 @@ class ReferralService
 
         $referrals = Investor::where('referred_by', '!=', null)
             ->whereHas('transactions', function ($query){
-                $query->where('refs_send', 'false');
+                $query->where([['refs_send', 'false'], ['status', 'true']]);
             })
             ->with('wallets', 'transactions')
             ->get();
