@@ -3,27 +3,30 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Models\Investor;
+use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cookie;
 use Laravel\Socialite\Facades\Socialite;
 
 class SocialAuthController extends Controller
 {
     public function redirect($provider)
     {
-        return Socialite::driver($provider)->redirect();
+        return Socialite::driver($provider)->stateless()->redirect();
     }
 
     public function callback($provider)
     {
-        $user = Socialite::driver($provider)->user();
+        $user = Socialite::driver($provider)->stateless()->user();
 
-        if (Investor::where('email', $user->email)->first()) {
+        $authUser = $this->firstOrCreateUser($user, $provider);
+
+        if (!$authUser) {
             return redirect()->route('login')->with('messages', 'User with such email already exists.');
         }
 
-        $authUser = $this->firstOrCreateUser($user, $provider);
         Auth::login($authUser, true);
 
         return redirect()->route('home.index');
@@ -31,13 +34,20 @@ class SocialAuthController extends Controller
 
     protected function firstOrCreateUser($user, $provider)
     {
-        $authUser = Investor::where([['provider', $provider], ['provider_id', $user->id]])->firstOrCreate([
-            'name' => $user->name,
-            'email' => $user->email,
-            'token' => str_random(15),
-            'provider' => $provider,
-            'provider_id' => $user->id,
-        ]);
+        $referred_by = Investor::where('token', Cookie::get('referral'))->first();
+
+        try {
+            $authUser = Investor::firstOrCreate(['provider' => $provider, 'provider_id' => $user->id] ,[
+                'name' => $user->name,
+                'email' => $user->email,
+                'token' => str_random(15),
+                'provider' => $provider,
+                'provider_id' => $user->id,
+                'referred_by'   => $referred_by->id ?? null
+            ]);
+        } catch (QueryException $e) {
+            return false;
+        }
 
         return $authUser;
     }

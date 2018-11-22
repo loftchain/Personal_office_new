@@ -15,11 +15,12 @@ return [
     //table transactions
     'tableTransDate' => 'Fecha',
     'tableTransCurrency' => 'Moneda',
-    'tableTransToken' => 'Simbólico',
+    'tableTransToken' => 'Fichas',
     'tableTransStatus' => 'Estado',
     'tableNoTrans' => 'Sin transacciones',
     'tableSumTo' => 'A',
     'tableSumInfo' => 'Información',
+    'tableAction' => 'Acción',
 
     //form
     'formEth' => 'Cartera ETH para invertir y recibir fichas.',

@@ -58273,7 +58273,7 @@ var render = function() {
               }
             },
             [
-              _vm._v("\n        Investor ID\n        "),
+              _vm._v("\r\n        Investor ID\r\n        "),
               _c("i", { staticClass: "fas fa-arrow-down" }),
               _vm._v(" "),
               _c("i", { staticClass: "fas fa-arrow-up" })
@@ -58290,7 +58290,7 @@ var render = function() {
               }
             },
             [
-              _vm._v("\n        Action\n        "),
+              _vm._v("\r\n        Action\r\n        "),
               _c("i", { staticClass: "fas fa-arrow-down" }),
               _vm._v(" "),
               _c("i", { staticClass: "fas fa-arrow-up" })
@@ -58307,7 +58307,7 @@ var render = function() {
               }
             },
             [
-              _vm._v("\n        Old info\n        "),
+              _vm._v("\r\n        Old info\r\n        "),
               _c("i", { staticClass: "fas fa-arrow-down" }),
               _vm._v(" "),
               _c("i", { staticClass: "fas fa-arrow-up" })
@@ -58324,7 +58324,7 @@ var render = function() {
               }
             },
             [
-              _vm._v("\n        New info\n        "),
+              _vm._v("\r\n        New info\r\n        "),
               _c("i", { staticClass: "fas fa-arrow-down" }),
               _vm._v(" "),
               _c("i", { staticClass: "fas fa-arrow-up" })
@@ -58341,7 +58341,7 @@ var render = function() {
               }
             },
             [
-              _vm._v("\n        Date\n        "),
+              _vm._v("\r\n        Date\r\n        "),
               _c("i", { staticClass: "fas fa-arrow-down" }),
               _vm._v(" "),
               _c("i", { staticClass: "fas fa-arrow-up" })
@@ -58355,9 +58355,9 @@ var render = function() {
             _vm._v(" "),
             _c("td", [
               _vm._v(
-                "\n        " +
+                "\r\n        " +
                   _vm._s(_vm.renameAction(history.action)) +
-                  "\n      "
+                  "\r\n      "
               )
             ]),
             _vm._v(" "),
@@ -68024,7 +68024,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
             showIcon: true,
             checkedSend: ['0', '1'],
             abi: [{ "constant": true, "inputs": [], "name": "hasClosed", "outputs": [{ "name": "", "type": "bool" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [], "name": "addBalanceForOraclize", "outputs": [], "payable": true, "stateMutability": "payable", "type": "function" }, { "constant": false, "inputs": [{ "name": "myid", "type": "bytes32" }, { "name": "result", "type": "string" }], "name": "__callback", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_user", "type": "address" }], "name": "delKYC", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [{ "name": "_owner", "type": "address" }], "name": "isOwner", "outputs": [{ "name": "", "type": "bool" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "tokenPriceInWei", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "cap", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [{ "name": "myid", "type": "bytes32" }, { "name": "result", "type": "string" }, { "name": "proof", "type": "bytes" }], "name": "__callback", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_user", "type": "address" }], "name": "addKYC", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [], "name": "weiRaised", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "closingTime", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [], "name": "finalize", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [], "name": "capReached", "outputs": [{ "name": "", "type": "bool" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "tokensSold", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "wallet", "outputs": [{ "name": "", "type": "address" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "currentStage", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [{ "name": "_url", "type": "string" }], "name": "setOraclizeUrl", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [], "name": "updatePrice", "outputs": [], "payable": true, "stateMutability": "payable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_price", "type": "uint256" }], "name": "setTokenPrice", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_newOwner", "type": "address" }], "name": "addOwner", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_owner", "type": "address" }], "name": "delOwner", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_to", "type": "address" }], "name": "withdrawBalance", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [{ "name": "", "type": "uint256" }], "name": "stages", "outputs": [{ "name": "stopDay", "type": "uint256" }, { "name": "bonus1", "type": "uint256" }, { "name": "bonus2", "type": "uint256" }, { "name": "bonus3", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [{ "name": "", "type": "bytes32" }], "name": "pendingQueries", "outputs": [{ "name": "", "type": "bool" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "isFinalized", "outputs": [{ "name": "", "type": "bool" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [{ "name": "_stopDay", "type": "uint256" }, { "name": "_bonus1", "type": "uint256" }, { "name": "_bonus2", "type": "uint256" }, { "name": "_bonus3", "type": "uint256" }], "name": "addStage", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [], "name": "openingTime", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "reserveFund", "outputs": [{ "name": "", "type": "address" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [{ "name": "", "type": "address" }], "name": "KYC", "outputs": [{ "name": "", "type": "bool" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [{ "name": "_newPrice", "type": "uint256" }], "name": "setGasPrice", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [], "name": "oraclizeBalance", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "oraclize_url", "outputs": [{ "name": "", "type": "string" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [{ "name": "_beneficiary", "type": "address" }], "name": "buyTokens", "outputs": [], "payable": true, "stateMutability": "payable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_beneficiary", "type": "address" }, { "name": "_tokens", "type": "uint256" }], "name": "manualSale", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [], "name": "stageCount", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "token", "outputs": [{ "name": "", "type": "address" }], "payable": false, "stateMutability": "view", "type": "function" }, { "inputs": [{ "name": "_wallet", "type": "address" }, { "name": "_token", "type": "address" }, { "name": "_cap", "type": "uint256" }, { "name": "_openingTime", "type": "uint256" }, { "name": "_closingTime", "type": "uint256" }, { "name": "_reserveFund", "type": "address" }, { "name": "_tokenPriceInWei", "type": "uint256" }], "payable": false, "stateMutability": "nonpayable", "type": "constructor" }, { "payable": true, "stateMutability": "payable", "type": "fallback" }, { "anonymous": false, "inputs": [{ "indexed": true, "name": "purchaser", "type": "address" }, { "indexed": true, "name": "beneficiary", "type": "address" }, { "indexed": false, "name": "value", "type": "uint256" }, { "indexed": false, "name": "tokens", "type": "uint256" }, { "indexed": false, "name": "bonus", "type": "uint256" }], "name": "TokenPurchase", "type": "event" }, { "anonymous": false, "inputs": [], "name": "Finalized", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": false, "name": "description", "type": "string" }], "name": "NewOraclizeQuery", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": false, "name": "price", "type": "string" }], "name": "NewKrakenPriceTicker", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "name": "newOwner", "type": "address" }], "name": "OwnerAdded", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "name": "owner", "type": "address" }], "name": "OwnerDeleted", "type": "event" }],
-            crowdSaleAddress: Object({"NODE_ENV":"development"}).MIX_HOME_WALLET_ETH,
+            crowdSaleAddress: Object({"MIX_PUSHER_APP_CLUSTER":"mt1","MIX_PUSHER_APP_KEY":"","NODE_ENV":"development"}).MIX_HOME_WALLET_ETH,
             overrideOptions: { gasLimit: 150000 },
             provider: new __WEBPACK_IMPORTED_MODULE_2_ethers___default.a.providers.Web3Provider(web3.currentProvider, __WEBPACK_IMPORTED_MODULE_2_ethers___default.a.providers.networks.homestead)
         };
@@ -68173,7 +68173,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 /* 104 */
 /***/ (function(module, exports) {
 
-module.exports = {"_args":[["ethers@3.0.29","D:\\LoftChain\\OSPanel\\domains\\personal-office.local"]],"_from":"ethers@3.0.29","_id":"ethers@3.0.29","_inBundle":false,"_integrity":"sha512-OGyA5pW5xFC5o/ZV5MfIoVp/EdA1QMg2bMJFf7Kznsz8m7IzzbgsPHTCjzSfKQDs/XDphGyRcA7A6bkIeJL4gw==","_location":"/ethers","_phantomChildren":{"bn.js":"4.11.8","brorand":"1.1.0","hash.js":"1.1.5"},"_requested":{"type":"version","registry":true,"raw":"ethers@3.0.29","name":"ethers","escapedName":"ethers","rawSpec":"3.0.29","saveSpec":null,"fetchSpec":"3.0.29"},"_requiredBy":["/"],"_resolved":"https://registry.npmjs.org/ethers/-/ethers-3.0.29.tgz","_spec":"3.0.29","_where":"D:\\LoftChain\\OSPanel\\domains\\personal-office.local","author":{"name":"Richard Moore","email":"me@ricmoo.com"},"browser":{"fs":"./tests/browser-fs.js","zlib":"browserify-zlib","./utils/base64.js":"./utils/browser-base64.js","./utils/random-bytes.js":"./utils/browser-random-bytes.js","./providers/ipc-provider.js":"./utils/empty.js","xmlhttprequest":"./providers/browser-xmlhttprequest.js"},"bugs":{"url":"https://github.com/ethers-io/ethers-wallet/issues"},"dependencies":{"aes-js":"3.0.0","bn.js":"^4.4.0","elliptic":"6.3.3","hash.js":"^1.0.0","inherits":"2.0.1","js-sha3":"0.5.7","scrypt-js":"2.0.3","setimmediate":"1.0.4","uuid":"2.0.1","xmlhttprequest":"1.8.0"},"description":"Ethereum wallet library.","devDependencies":{"browserify-zlib":"^0.2.0","eslint":"^5.0.1","eslint-plugin-promise":"^3.8.0","grunt":"^0.4.5","grunt-browserify":"^5.0.0","grunt-cli":"1.2.0","grunt-contrib-uglify":"^1.0.1","mocha":"^5.2.0","mocha-phantomjs-core":"2.1.2","solc":"0.4.20","web3":"0.20.2"},"homepage":"https://github.com/ethers-io/ethers-wallet#readme","keywords":["ethereum","wallet"],"license":"MIT","main":"index.js","name":"ethers","repository":{"type":"git","url":"git://github.com/ethers-io/ethers-wallet.git"},"scripts":{"eslint":"eslint index.js contracts/*.js providers/*.js utils/*.js wallet/*.js","test":"if [ \"$RUN_PHANTOMJS\" = \"1\" ]; then npm run-script test-phantomjs; else npm run-script test-node; fi","test-node":"mocha tests/test-*.js","test-phantomjs":"grunt dist && ./node_modules/.bin/grunt --gruntfile Gruntfile-test.js dist && phantomjs --web-security=false ./node_modules/mocha-phantomjs-core/mocha-phantomjs-core.js ./tests/test.html","version":"grunt dist"},"version":"3.0.29"}
+module.exports = {"_from":"ethers@^3.0.29","_id":"ethers@3.0.29","_inBundle":false,"_integrity":"sha512-OGyA5pW5xFC5o/ZV5MfIoVp/EdA1QMg2bMJFf7Kznsz8m7IzzbgsPHTCjzSfKQDs/XDphGyRcA7A6bkIeJL4gw==","_location":"/ethers","_phantomChildren":{"bn.js":"4.11.8","brorand":"1.1.0","hash.js":"1.1.5"},"_requested":{"type":"range","registry":true,"raw":"ethers@^3.0.29","name":"ethers","escapedName":"ethers","rawSpec":"^3.0.29","saveSpec":null,"fetchSpec":"^3.0.29"},"_requiredBy":["/"],"_resolved":"https://registry.npmjs.org/ethers/-/ethers-3.0.29.tgz","_shasum":"ce8139955b4ed44456eb6764b089bb117c86775d","_spec":"ethers@^3.0.29","_where":"D:\\Code\\Personal_office_new","author":{"name":"Richard Moore","email":"me@ricmoo.com"},"browser":{"fs":"./tests/browser-fs.js","zlib":"browserify-zlib","./utils/base64.js":"./utils/browser-base64.js","./utils/random-bytes.js":"./utils/browser-random-bytes.js","./providers/ipc-provider.js":"./utils/empty.js","xmlhttprequest":"./providers/browser-xmlhttprequest.js"},"bugs":{"url":"https://github.com/ethers-io/ethers-wallet/issues"},"bundleDependencies":false,"dependencies":{"aes-js":"3.0.0","bn.js":"^4.4.0","elliptic":"6.3.3","hash.js":"^1.0.0","inherits":"2.0.1","js-sha3":"0.5.7","scrypt-js":"2.0.3","setimmediate":"1.0.4","uuid":"2.0.1","xmlhttprequest":"1.8.0"},"deprecated":false,"description":"Ethereum wallet library.","devDependencies":{"browserify-zlib":"^0.2.0","eslint":"^5.0.1","eslint-plugin-promise":"^3.8.0","grunt":"^0.4.5","grunt-browserify":"^5.0.0","grunt-cli":"1.2.0","grunt-contrib-uglify":"^1.0.1","mocha":"^5.2.0","mocha-phantomjs-core":"2.1.2","solc":"0.4.20","web3":"0.20.2"},"homepage":"https://github.com/ethers-io/ethers-wallet#readme","keywords":["ethereum","wallet"],"license":"MIT","main":"index.js","name":"ethers","repository":{"type":"git","url":"git://github.com/ethers-io/ethers-wallet.git"},"scripts":{"eslint":"eslint index.js contracts/*.js providers/*.js utils/*.js wallet/*.js","test":"if [ \"$RUN_PHANTOMJS\" = \"1\" ]; then npm run-script test-phantomjs; else npm run-script test-node; fi","test-node":"mocha tests/test-*.js","test-phantomjs":"grunt dist && ./node_modules/.bin/grunt --gruntfile Gruntfile-test.js dist && phantomjs --web-security=false ./node_modules/mocha-phantomjs-core/mocha-phantomjs-core.js ./tests/test.html","version":"grunt dist"},"version":"3.0.29"}
 
 /***/ }),
 /* 105 */
@@ -70846,7 +70846,7 @@ module.exports = Wallet;
 /* 130 */
 /***/ (function(module, exports) {
 
-module.exports = {"_args":[["elliptic@6.3.3","D:\\LoftChain\\OSPanel\\domains\\personal-office.local"]],"_from":"elliptic@6.3.3","_id":"elliptic@6.3.3","_inBundle":false,"_integrity":"sha1-VILZZG1UvLif19mU/J4ulWiHbj8=","_location":"/ethers/elliptic","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"elliptic@6.3.3","name":"elliptic","escapedName":"elliptic","rawSpec":"6.3.3","saveSpec":null,"fetchSpec":"6.3.3"},"_requiredBy":["/ethers"],"_resolved":"https://registry.npmjs.org/elliptic/-/elliptic-6.3.3.tgz","_spec":"6.3.3","_where":"D:\\LoftChain\\OSPanel\\domains\\personal-office.local","author":{"name":"Fedor Indutny","email":"fedor@indutny.com"},"bugs":{"url":"https://github.com/indutny/elliptic/issues"},"dependencies":{"bn.js":"^4.4.0","brorand":"^1.0.1","hash.js":"^1.0.0","inherits":"^2.0.1"},"description":"EC cryptography","devDependencies":{"brfs":"^1.4.3","coveralls":"^2.11.3","grunt":"^0.4.5","grunt-browserify":"^5.0.0","grunt-cli":"^1.2.0","grunt-contrib-connect":"^1.0.0","grunt-contrib-copy":"^1.0.0","grunt-contrib-uglify":"^1.0.1","grunt-mocha-istanbul":"^3.0.1","grunt-saucelabs":"^8.6.2","istanbul":"^0.4.2","jscs":"^2.9.0","jshint":"^2.6.0","mocha":"^2.1.0"},"files":["lib"],"homepage":"https://github.com/indutny/elliptic","keywords":["EC","Elliptic","curve","Cryptography"],"license":"MIT","main":"lib/elliptic.js","name":"elliptic","repository":{"type":"git","url":"git+ssh://git@github.com/indutny/elliptic.git"},"scripts":{"jscs":"jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js","jshint":"jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js","lint":"npm run jscs && npm run jshint","test":"npm run lint && npm run unit","unit":"istanbul test _mocha --reporter=spec test/index.js","version":"grunt dist && git add dist/"},"version":"6.3.3"}
+module.exports = {"_from":"elliptic@6.3.3","_id":"elliptic@6.3.3","_inBundle":false,"_integrity":"sha1-VILZZG1UvLif19mU/J4ulWiHbj8=","_location":"/ethers/elliptic","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"elliptic@6.3.3","name":"elliptic","escapedName":"elliptic","rawSpec":"6.3.3","saveSpec":null,"fetchSpec":"6.3.3"},"_requiredBy":["/ethers"],"_resolved":"https://registry.npmjs.org/elliptic/-/elliptic-6.3.3.tgz","_shasum":"5482d9646d54bcb89fd7d994fc9e2e9568876e3f","_spec":"elliptic@6.3.3","_where":"D:\\Code\\Personal_office_new\\node_modules\\ethers","author":{"name":"Fedor Indutny","email":"fedor@indutny.com"},"bugs":{"url":"https://github.com/indutny/elliptic/issues"},"bundleDependencies":false,"dependencies":{"bn.js":"^4.4.0","brorand":"^1.0.1","hash.js":"^1.0.0","inherits":"^2.0.1"},"deprecated":false,"description":"EC cryptography","devDependencies":{"brfs":"^1.4.3","coveralls":"^2.11.3","grunt":"^0.4.5","grunt-browserify":"^5.0.0","grunt-cli":"^1.2.0","grunt-contrib-connect":"^1.0.0","grunt-contrib-copy":"^1.0.0","grunt-contrib-uglify":"^1.0.1","grunt-mocha-istanbul":"^3.0.1","grunt-saucelabs":"^8.6.2","istanbul":"^0.4.2","jscs":"^2.9.0","jshint":"^2.6.0","mocha":"^2.1.0"},"files":["lib"],"homepage":"https://github.com/indutny/elliptic","keywords":["EC","Elliptic","curve","Cryptography"],"license":"MIT","main":"lib/elliptic.js","name":"elliptic","repository":{"type":"git","url":"git+ssh://git@github.com/indutny/elliptic.git"},"scripts":{"jscs":"jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js","jshint":"jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js","lint":"npm run jscs && npm run jshint","test":"npm run lint && npm run unit","unit":"istanbul test _mocha --reporter=spec test/index.js","version":"grunt dist && git add dist/"},"version":"6.3.3"}
 
 /***/ }),
 /* 131 */
@@ -76693,7 +76693,7 @@ var render = function() {
                 }
               },
               [
-                _vm._v("\r\n          Investor ID\r\n          "),
+                _vm._v("\n          Investor ID\n          "),
                 _c("i", { staticClass: "fas fa-arrow-down" }),
                 _vm._v(" "),
                 _c("i", { staticClass: "fas fa-arrow-up" })
@@ -76712,7 +76712,7 @@ var render = function() {
                 }
               },
               [
-                _vm._v("\r\n          Currency\r\n          "),
+                _vm._v("\n          Currency\n          "),
                 _c("i", { staticClass: "fas fa-arrow-down" }),
                 _vm._v(" "),
                 _c("i", { staticClass: "fas fa-arrow-up" })
@@ -76731,7 +76731,7 @@ var render = function() {
                 }
               },
               [
-                _vm._v("\r\n          Amount\r\n          "),
+                _vm._v("\n          Amount\n          "),
                 _c("i", { staticClass: "fas fa-arrow-down" }),
                 _vm._v(" "),
                 _c("i", { staticClass: "fas fa-arrow-up" })
@@ -76750,7 +76750,7 @@ var render = function() {
                 }
               },
               [
-                _vm._v("\r\n          Status\r\n          "),
+                _vm._v("\n          Status\n          "),
                 _c("i", { staticClass: "fas fa-arrow-down" }),
                 _vm._v(" "),
                 _c("i", { staticClass: "fas fa-arrow-up" })
@@ -76769,7 +76769,7 @@ var render = function() {
                 }
               },
               [
-                _vm._v("\r\n          Date\r\n          "),
+                _vm._v("\n          Date\n          "),
                 _c("i", { staticClass: "fas fa-arrow-down" }),
                 _vm._v(" "),
                 _c("i", { staticClass: "fas fa-arrow-up" })
@@ -76782,7 +76782,7 @@ var render = function() {
                 staticClass:
                   "dataTable__cell dataTable__cell--head dataTable__cell--mid"
               },
-              [_vm._v("\r\n          Info\r\n        ")]
+              [_vm._v("\n          Info\n        ")]
             )
           ]),
           _vm._v(" "),
@@ -76793,9 +76793,9 @@ var render = function() {
                 { staticClass: "dataTable__cell dataTable__cell--lt" },
                 [
                   _vm._v(
-                    "\r\n          " +
+                    "\n          " +
                       _vm._s(transaction.investor_id) +
-                      "\r\n        "
+                      "\n        "
                   )
                 ]
               ),
@@ -76814,8 +76814,18 @@ var render = function() {
               _vm._v(" "),
               _c(
                 "div",
-                { staticClass: "dataTable__cell dataTable__cell--lt" },
-                [_vm._v(_vm._s(transaction.status))]
+                {
+                  staticClass: "dataTable__cell dataTable__cell--lt",
+                  style:
+                    transaction.status === "true"
+                      ? "color: green;"
+                      : "color:red;"
+                },
+                [
+                  _vm._v(
+                    _vm._s(transaction.status === "true" ? "success" : "fail")
+                  )
+                ]
               ),
               _vm._v(" "),
               _c(
@@ -76906,7 +76916,21 @@ var render = function() {
                             ? "width: 25%"
                             : "width: 50%"
                       },
-                      [_vm._v(_vm._s(transaction.info))]
+                      [
+                        _c(
+                          "a",
+                          {
+                            attrs: {
+                              href:
+                                "https://" +
+                                transaction.info +
+                                "/tx/" +
+                                transaction.transaction_id
+                            }
+                          },
+                          [_vm._v(_vm._s(transaction.info))]
+                        )
+                      ]
                     ),
                     _vm._v(" "),
                     transaction.send == "0" && transaction.currency == "BTC"
@@ -77094,7 +77118,7 @@ var render = function() {
               }
             }
           }),
-          _vm._v("  Not sent\r\n        "),
+          _vm._v("  Not sent\n        "),
           _c("br"),
           _vm._v(" "),
           _c("input", {
@@ -77135,7 +77159,7 @@ var render = function() {
               }
             }
           }),
-          _vm._v("  Sent\r\n      ")
+          _vm._v("  Sent\n      ")
         ])
       ])
     ])
@@ -77296,7 +77320,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
             totalPages: 1,
             checkedSend: ['false', 'true'],
             abi: [{ "constant": true, "inputs": [], "name": "hasClosed", "outputs": [{ "name": "", "type": "bool" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [], "name": "addBalanceForOraclize", "outputs": [], "payable": true, "stateMutability": "payable", "type": "function" }, { "constant": false, "inputs": [{ "name": "myid", "type": "bytes32" }, { "name": "result", "type": "string" }], "name": "__callback", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_user", "type": "address" }], "name": "delKYC", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [{ "name": "_owner", "type": "address" }], "name": "isOwner", "outputs": [{ "name": "", "type": "bool" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "tokenPriceInWei", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "cap", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [{ "name": "myid", "type": "bytes32" }, { "name": "result", "type": "string" }, { "name": "proof", "type": "bytes" }], "name": "__callback", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_user", "type": "address" }], "name": "addKYC", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [], "name": "weiRaised", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "closingTime", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [], "name": "finalize", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [], "name": "capReached", "outputs": [{ "name": "", "type": "bool" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "tokensSold", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "wallet", "outputs": [{ "name": "", "type": "address" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "currentStage", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [{ "name": "_url", "type": "string" }], "name": "setOraclizeUrl", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [], "name": "updatePrice", "outputs": [], "payable": true, "stateMutability": "payable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_price", "type": "uint256" }], "name": "setTokenPrice", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_newOwner", "type": "address" }], "name": "addOwner", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_owner", "type": "address" }], "name": "delOwner", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_to", "type": "address" }], "name": "withdrawBalance", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [{ "name": "", "type": "uint256" }], "name": "stages", "outputs": [{ "name": "stopDay", "type": "uint256" }, { "name": "bonus1", "type": "uint256" }, { "name": "bonus2", "type": "uint256" }, { "name": "bonus3", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [{ "name": "", "type": "bytes32" }], "name": "pendingQueries", "outputs": [{ "name": "", "type": "bool" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "isFinalized", "outputs": [{ "name": "", "type": "bool" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [{ "name": "_stopDay", "type": "uint256" }, { "name": "_bonus1", "type": "uint256" }, { "name": "_bonus2", "type": "uint256" }, { "name": "_bonus3", "type": "uint256" }], "name": "addStage", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [], "name": "openingTime", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "reserveFund", "outputs": [{ "name": "", "type": "address" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [{ "name": "", "type": "address" }], "name": "KYC", "outputs": [{ "name": "", "type": "bool" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [{ "name": "_newPrice", "type": "uint256" }], "name": "setGasPrice", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [], "name": "oraclizeBalance", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "oraclize_url", "outputs": [{ "name": "", "type": "string" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [{ "name": "_beneficiary", "type": "address" }], "name": "buyTokens", "outputs": [], "payable": true, "stateMutability": "payable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_beneficiary", "type": "address" }, { "name": "_tokens", "type": "uint256" }], "name": "manualSale", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [], "name": "stageCount", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "token", "outputs": [{ "name": "", "type": "address" }], "payable": false, "stateMutability": "view", "type": "function" }, { "inputs": [{ "name": "_wallet", "type": "address" }, { "name": "_token", "type": "address" }, { "name": "_cap", "type": "uint256" }, { "name": "_openingTime", "type": "uint256" }, { "name": "_closingTime", "type": "uint256" }, { "name": "_reserveFund", "type": "address" }, { "name": "_tokenPriceInWei", "type": "uint256" }], "payable": false, "stateMutability": "nonpayable", "type": "constructor" }, { "payable": true, "stateMutability": "payable", "type": "fallback" }, { "anonymous": false, "inputs": [{ "indexed": true, "name": "purchaser", "type": "address" }, { "indexed": true, "name": "beneficiary", "type": "address" }, { "indexed": false, "name": "value", "type": "uint256" }, { "indexed": false, "name": "tokens", "type": "uint256" }, { "indexed": false, "name": "bonus", "type": "uint256" }], "name": "TokenPurchase", "type": "event" }, { "anonymous": false, "inputs": [], "name": "Finalized", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": false, "name": "description", "type": "string" }], "name": "NewOraclizeQuery", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": false, "name": "price", "type": "string" }], "name": "NewKrakenPriceTicker", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "name": "newOwner", "type": "address" }], "name": "OwnerAdded", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "name": "owner", "type": "address" }], "name": "OwnerDeleted", "type": "event" }],
-            crowdSaleAddress: Object({"NODE_ENV":"development"}).MIX_HOME_WALLET_ETH,
+            crowdSaleAddress: Object({"MIX_PUSHER_APP_CLUSTER":"mt1","MIX_PUSHER_APP_KEY":"","NODE_ENV":"development"}).MIX_HOME_WALLET_ETH,
             overrideOptions: { gasLimit: 150000 },
             provider: new __WEBPACK_IMPORTED_MODULE_2_ethers___default.a.providers.Web3Provider(web3.currentProvider, __WEBPACK_IMPORTED_MODULE_2_ethers___default.a.providers.networks.homestead)
         };
@@ -77668,7 +77692,7 @@ var render = function() {
             }
           }
         }),
-        _vm._v("  Not sent\r\n      "),
+        _vm._v("  Not sent\n      "),
         _c("br"),
         _vm._v(" "),
         _c("input", {
@@ -77709,7 +77733,7 @@ var render = function() {
             }
           }
         }),
-        _vm._v("  Sent\r\n    ")
+        _vm._v("  Sent\n    ")
       ])
     ])
   ])

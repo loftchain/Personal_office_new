@@ -15,11 +15,12 @@ return [
     //table transactions
     'tableTransDate' => '日期',
     'tableTransCurrency' => '貨幣',
-    'tableTransToken' => '代幣',
+    'tableTransToken' => '令牌',
     'tableTransStatus' => '狀態',
     'tableNoTrans' => '沒有交易',
     'tableSumTo' => '至',
     'tableSumInfo' => '信息',
+    'tableAction' => '行動',
 
     //form
     'formEth' => '用於投資和接收代幣的ETH錢包',
