@@ -67,7 +67,7 @@
 
                                                 {{--mail change form--}}
                                                 @if(!Auth::user()->email)
-                                                    <form class="icoForm changeEmail icoForm--noMargin hidden" action="{{ route('email.reset') }}" method="post">
+                                                    <form class="icoForm changeEmail icoForm--noMargin hidden" action="{{ route('email.set') }}" method="post">
                                                         {{ csrf_field() }}
                                                         <div class="error-message error-message0 old_email not_your_email not_equal"></div>
                                                         <div class="formControl">
@@ -75,6 +75,7 @@
                                                             <input class="icoForm__input" type="email" name="email" placeholder="{!! trans('home/settings.formEmailPlaceNew') !!}" required>
                                                         </div>
                                                         <div class="error-message error-message1 email"></div>
+                                                        <div class="error-message error-message1 is_taken"></div>
                                                         <button type="submit" class="btn btn--small"> {!! trans('modals/modals.change_btn') !!}</button>
                                                     </form>
                                                 @else

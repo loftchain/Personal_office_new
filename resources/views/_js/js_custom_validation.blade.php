@@ -216,6 +216,8 @@
                     _this.find('.icoForm__input').val('');
                     $('.alert.alert-danger').detach();
                     v.showMessage('Set password success', v.bg.success);
+                case data.success_set_email:
+                    location.reload();
                 default:
                     console.log('js_custom_validation.blade.php default switch state');
                     break;
