@@ -20,6 +20,7 @@ return [
     'tableNoTrans' => 'Нет транзакций',
     'tableSumTo' => 'В',
     'tableSumInfo' => 'Информация',
+    'tableAction' => 'Действие',
 
     //form
     'formEth' => 'ETH кошелек для инвестирования и получения токенов',

@@ -15,11 +15,12 @@ return [
     //table transactions
     'tableTransDate' => 'Date',
     'tableTransCurrency' => 'Currency',
-    'tableTransToken' => 'Token',
+    'tableTransToken' => 'Tokens',
     'tableTransStatus' => 'Status',
     'tableNoTrans' => 'No transactions',
     'tableSumTo' => 'To',
     'tableSumInfo' => 'Info',
+    'tableAction' => 'Action',
 
     //form
     'formEth' => 'ETH wallet for investing and receiving tokens',

@@ -20,6 +20,7 @@ return [
     'tableNoTrans' => '取引はありません',
     'tableSumTo' => 'に',
     'tableSumInfo' => '情報',
+    'tableAction' => 'アクション',
 
     //form
     'formEth' => 'トークンの投資と受け取りのためのETHウォレット',
