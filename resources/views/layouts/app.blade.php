@@ -14,9 +14,9 @@
 </head>
 <body>
 <div id="app">
-    <div class="gradientLeft"></div>
-    <div class="gradientBottom"></div>
-    <div class="gradientRight"></div>
+    {{--<div class="gradientLeft"></div>--}}
+    {{--<div class="gradientBottom"></div>--}}
+    {{--<div class="gradientRight"></div>--}}
 
     @auth
         <div class="container">
