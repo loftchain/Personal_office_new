@@ -5,6 +5,8 @@ return [
     'chooseTokens' => '選擇您要投資的貨幣',
     'minDep' => '最低存款金額: ',
     'setGas' => '設置GAS:',
+    'ethUpdate' => '信息每分鐘更新一次',
+    'btcUpdate' => '信息每30分鐘更新一次',
 
     'walletAdded' => '錢包成功添加!',
 

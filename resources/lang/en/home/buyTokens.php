@@ -5,6 +5,8 @@ return [
     'chooseTokens' => 'Choose which currency you want to invest in',
     'minDep' => 'Minimum deposit amount: ',
     'setGas' => 'Set GAS:',
+    'ethUpdate' => 'Information updates every minute',
+    'btcUpdate' => 'Information updates every 30 minutes',
 
     'walletAdded' => 'Wallet successfully added!',
 

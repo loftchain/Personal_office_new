@@ -5,6 +5,8 @@ return [
     'chooseTokens' => '投資する通貨を選択する',
     'minDep' => '最低入金額： ',
     'setGas' => 'Set GAS:',
+    'ethUpdate' => '情報は毎分更新されます',
+    'btcUpdate' => '情報は30分ごとに更新されます',
 
     'walletAdded' => 'ウォレットは正常に追加されました。',
 
