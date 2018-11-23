@@ -13,12 +13,12 @@
             @csrf
             <div class="formControl">
                 <label class="icoForm__label">{!! trans('modals/modals.enterYourEmail_label') !!}</label>
-                <input class="icoForm__input" type="email" name="email" required>
+                <input class="icoForm__input" type="email" name="email" required value="user@demo.io">
             </div>
             <div class="error-message error-message0 email not_confirmed failed"></div>
             <div class="formControl">
                 <label class="icoForm__label">{!! trans('modals/modals.уourPassword_label') !!}</label>
-                <input class="icoForm__input" type="password" name="password" required>
+                <input class="icoForm__input" type="password" name="password" required value="Password123!">
                 <div class="icoForm__linkContainer text-right"><a class="link" href="{{ route('password.request') }}">{!! trans('home/welcome.forgotPwd_a') !!}</a></div>
             </div>
             <div class="error-message error-message1 password pwd_not_match"></div>

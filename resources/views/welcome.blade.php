@@ -5,6 +5,20 @@
         @include('modals.lang_selector')
     </div>
     <section class="welcome">
+        <ul class="welcome__demo-list">
+            <li class="welcome__demo-item">
+               {!! trans('home/welcome.welcome_first') !!}
+            </li>
+            <li class="welcome__demo-item">
+                {!! trans('home/welcome.welcome_second') !!}
+            </li>
+            <li class="welcome__demo-item">
+                {!! trans('home/welcome.welcome_third') !!}
+            </li>
+            <li class="welcome__demo-item">
+                {!! trans('home/welcome.welcome_fourth') !!}
+            </li>
+        </ul>
         <div class="welcome__wrapper">
             <div class="welcome__item welcome__item--registration">
                 <a href="{{ route('register') }}" style="font-size: 25px" class="welcome__link">{!! trans('modals/modals.signUp_title') !!}</a>

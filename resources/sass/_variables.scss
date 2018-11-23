@@ -1,6 +1,6 @@
 
 // Body
-$body-bg: #f8fafc;
+$body-bg: #E5E5E5;
 
 // Typography
 $font-family-sans-serif: "Nunito", sans-serif;
@@ -24,23 +24,33 @@ $validationError: #ff443a;
 $white: #ffffff;
 $whitegrey: #E0E0E0;
 
-$yellow1: #FFC701;
+$yellow1: #FF184A;
 $yellow2: #FFE13A;
-$yellow3: #F2C94C;
-$yellow4: #FEC808;
-$yellow5: #FDCA0E;
-$yellow6: #FFE139;
+$yellow3: #FF184A;
+$yellow4: #FF184A;
+$yellow5: #FF184A;
+$yellow6: #FF184A;
+$yellow7: #a51937;
 
 $yellowgradient1: #FFD703;
 $yellowgradient2: #FCF089;
 
 $grey1: #4F4F4F;
-$grey2: #BDBDBD;
+$grey2: #4A4D57;
 $grey3: #F2F2F2;
 $grey4: #A4A4A5;
 $grey5: #828282;
-$grey6: #989DAB;
+$grey6: #333333;
 $grey7: #8E99A5;
+
+// demo colors
+
+$purple: #FF184A;
+$purpleShadow: #a51937;
+$mainTextColor: #333333;
+$text1: #4A4D57;
+$text2: #333333;
+$sidebarBg: #2E324E;
 
 // Breakpoints
 $desktop: 'only screen and (min-width: 1025px)';
