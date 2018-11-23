@@ -67705,7 +67705,7 @@ var render = function() {
                   expression: "totalPages"
                 }
               },
-              [_vm._v("total pages: " + _vm._s(_vm.totalPages))]
+              [_vm._v("total investors: " + _vm._s(_vm.totalPages))]
             )
           ]),
           _vm._v(" "),
