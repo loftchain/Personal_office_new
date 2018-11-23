@@ -1,4 +1,4 @@
-<link rel="icon" href="https://mitoshi.io/favicon.ico?v=3" type="image/x-icon">
+<link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
 <meta name="theme-color" content="#ffffff">
 <link href="{{ asset('css/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
 <link href="{{ asset('css/animate.min.css') }}" rel="stylesheet">
