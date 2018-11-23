@@ -5,6 +5,8 @@ return [
     'chooseTokens' => 'Elija en qué moneda desea invertir',
     'minDep' => '\'Monto mínimo de depósito: ',
     'setGas' => 'Set GAS:',
+    'ethUpdate' => 'Información actualizada a cada minuto',
+    'btcUpdate' => 'Información actualizada cada 30 minutos',
 
     'walletAdded' => 'Wallet agregado exitosamente!',
 

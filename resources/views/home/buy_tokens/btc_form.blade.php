@@ -49,8 +49,9 @@
                         <div class="formControl formControl--noMargin">
                             <input class="icoForm__input icoForm__input--canCopy" type="text" name="btcWallet" id="btcWallet" value="3KwdivDeNYHJo7hzxWfHM4rwe7xtraLQ52"><span class="icoForm__copy"> </span>
                         </div>
-                        <div class="minumudDeposit">{!! trans('home/buyTokens.minDep') !!} {{ env('MIN_DEP_ETH') }} ETH</div>
-                        <div class="setGas">{!! trans('home/buyTokens.setGas') !!} 199000</div>
+                        <div class="minumudDeposit">{!! trans('home/buyTokens.minDep') !!} 500$</div>
+                        {{--<div class="setGas">{!! trans('home/buyTokens.setGas') !!} 199000</div>--}}
+                        <div class="smallText">{!! trans('home/buyTokens.btcUpdate') !!}</div>
                     </div>
                 </div>
             </form>

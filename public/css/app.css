@@ -12009,6 +12009,12 @@ select:-webkit-autofill {
   }
 }
 
+.smallText {
+  margin-top: 5px;
+  font-size: 14px;
+  font-weight: 300;
+}
+
 .timer {
   display: -webkit-box;
   display: -ms-flexbox;
