@@ -67511,7 +67511,7 @@ var render = function() {
                                         attrs: {
                                           src:
                                             _vm.currentUrl +
-                                            "/storage/" +
+                                            "/storage/document/" +
                                             item.img,
                                           alt: "Photo"
                                         }

@@ -68,11 +68,11 @@ class KycController extends Controller
 
         $img = $request->file('qqfile');
         $extension = $img->extension();
-        $path = $img->storeAs('uploads', str_random(5) . Carbon::now()->format('_ymd_his') . '_investor_id_' . $investor->id . '.' . $extension);
+        $path = $img->storeAs('uploads/documents', str_random(5) . Carbon::now()->format('_ymd_his') . '_investor_id_' . $investor->id . '.' . $extension);
         $path = explode('/', $path);
 
         $investor->personal()->first()->documents()->create([
-            'img' => $path[1]
+            'img' => $path[2]
         ]);
 
         return [

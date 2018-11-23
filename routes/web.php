@@ -71,4 +71,5 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['admin']],
 });
 
 Route::get('/storage/{path}', 'SettingsController@getAvatar')->name('settings.get.avatar');
+Route::get('/storage/document/{path}', 'DocumentController@get')->name('settings.get.document');
 Route::get('settings', 'HomeController@settings')->name('home.settings')->middleware('isNotAdmin');
