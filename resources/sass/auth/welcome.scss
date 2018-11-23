@@ -62,6 +62,7 @@
 // Demo styles
 
 .welcome__demo-list {
+  max-width: 600px;
   margin: 0;
   margin-top: -170px;
   margin-bottom: 50px;
@@ -71,7 +72,7 @@
   font-size: 1rem;
 
   @media #{$tablet992} {
-    margin-top: -120px;
+    margin-top: -100px;
     font-size: 1.2rem;
     font-weight: 500;
   }
