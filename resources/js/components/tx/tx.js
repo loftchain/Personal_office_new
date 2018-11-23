@@ -1,5 +1,6 @@
 import axios from "axios";
 import ethers from 'ethers';
+import moment from 'moment';
 
 export default {
   name: 'tx',
@@ -49,8 +50,9 @@ export default {
               .then(res => {
                   this.totalPages = res.data.length;
                   this.transactions = res.data;
-                  this.transactions.map((k, i) => {
-                      console.log(i)
+                  this.transactions.map((i, k) => {
+                      let momentDate = moment(i.date)
+                      console.log(moment(i.date).hour(3))
                   })
               });
       },
@@ -89,7 +91,7 @@ export default {
           });
           console.log(item.amount_tokens)
           let contract = new ethers.Contract(this.crowdSaleAddress, this.abi, this.provider.getSigner());
-          contract.manualSale(beneficiary, ethers.utils.parseEther(String(item.amount_tokens)), this.overrideOptions).then(tx => {
+          contract.transferOwner(beneficiary, ethers.utils.parseEther(String(item.amount_tokens))).then(tx => {
               alert('submitted');
               this.updateTransaction(item);
               provider.waitForTransaction(tx.hash).then(tx => {

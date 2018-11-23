@@ -23,6 +23,7 @@
     },
     "dependencies": {
         "ethers": "^3.0.29",
+        "moment": "^2.22.2",
         "vue-agile": "^0.3.7",
         "vue-carousel": "^0.16.0-rc2"
     }
