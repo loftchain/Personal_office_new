@@ -11,7 +11,7 @@
         bg: {
             success: '#6fe86f',
             danger: '#f03535',
-            warning: 'linear-gradient(90deg, #FFC701 0%, #FFE13A 100%)',
+            warning: '#2E324E',
             normal: '#ffffff'
         },
         userConfirmed: '{{ Auth::user() ? Auth::user()->confirmed : null }}',

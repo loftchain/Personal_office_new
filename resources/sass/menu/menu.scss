@@ -1,6 +1,6 @@
 .userInfo {
   padding: 13px 19px;
-  box-shadow: -10px 0px 30px rgba(224, 224, 224, 0.63);
+  //box-shadow: -10px 0px 30px rgba(224, 224, 224, 0.63);
   display: flex;
   &__avatarLink {
     display: flex;
@@ -23,7 +23,7 @@
     font-weight: 300;
     line-height: 28px;
     font-size: 14px;
-    color: $grey6;
+    color: $white;
     margin-left: 12px;
   }
 }
@@ -44,25 +44,20 @@
     font-weight: 500;
     line-height: normal;
     font-size: 14px;
-    color: $grey2;
+    color: $white;
   }
   &__item:hover {
     .mainMenu__link {
       color: $yellow3;
     }
-    background: rgba(242,
-            242,
-            242,
-            0.29);
+    background: #3d425f;
   }
   &__item--active {
     .mainMenu__link {
       color: $yellow3;
     }
-    background: rgba(242,
-            242,
-            242,
-            0.29);
+    //background: rgba(242, 242, 242, 0.29);
+    background: #3d425f;
   }
 }
 

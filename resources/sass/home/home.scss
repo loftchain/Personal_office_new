@@ -75,7 +75,7 @@
   font-size: 14px;
   color: $white;
   text-align: center;
-  border: 1px solid rgba(242, 201, 76, 0.29);
+  border: 1px solid rgba(46, 50, 78, 0.29);
   border-radius: 100px;
   &__number {
     z-index: 15;
@@ -90,11 +90,11 @@
     width: 28px;
     display: block;
     top: 0;
-    box-shadow: -4px 0px 5px #F4BD30;
+    box-shadow: -4px 0px 5px $yellow7;
     position: absolute;
     left: 0;
     margin-left: -20px;
-    background: #FFD964;
+    background: $yellow1;
     border-radius: 50%;
     transition: left 1.5s ease;
   }
