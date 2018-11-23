@@ -6,6 +6,7 @@
         loaderSpinner: $('.lds-ring '),
         modal: $('.modal'),
         modalBtn: $('.modal-btn'),
+        wpButton: $('.btn--whitePaper'),
         grayBorderColor: '#E0E0E0',
         exclamation: '<i class="fa fa-exclamation-circle fa-lg" aria-hidden="true"></i>&nbsp',
         bg: {
@@ -299,5 +300,10 @@
       }
 
       v.notifyAfterReload();
+
+      v.wpButton.click(function(evt) {
+        evt.preventDefault();
+        v.showMessage('{!! trans('home/kyc.whitePaper_message') !!}', v.bg.warning);
+      });
     });
 </script>

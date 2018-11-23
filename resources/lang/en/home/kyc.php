@@ -6,6 +6,7 @@ return [
     'whitePaper_desc' => 'please read the white paper and agree to the proposed conditions',
     'whitePaper_btn' => 'Read the white paper',
     'whitePaper_checkBox' => 'I agree with the terms of use',
+    'whitePaper_message' => 'Here will be your white paper',
 
     //kyc
     'kyc_fullName' => 'Full name',

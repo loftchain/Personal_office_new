@@ -6,6 +6,7 @@ return [
     'whitePaper_desc' => '請閱讀白皮書並同意建議的條件',
     'whitePaper_btn' => '閱讀白皮書',
     'whitePaper_checkBox' => '我同意使用條款',
+    'whitePaper_message' => '這將是你的白皮書',
 
     //kyc
     'kyc_fullName' => '全名',

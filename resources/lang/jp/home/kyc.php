@@ -6,6 +6,7 @@ return [
     'whitePaper_desc' => 'ホワイトペーパーを読み、提案された条件に同意してください',
     'whitePaper_btn' => '白書を読む',
     'whitePaper_checkBox' => '私は使用条件に同意します',
+    'whitePaper_message' => 'ここに白紙があります',
 
     //kyc
     'kyc_fullName' => 'フルネーム',

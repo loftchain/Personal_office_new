@@ -6,6 +6,7 @@ return [
     'whitePaper_desc' => 'Por favor lea el libro blanco y acepte las condiciones propuestas.',
     'whitePaper_btn' => 'Lee el papel blanco',
     'whitePaper_checkBox' => 'Estoy de acuerdo con los términos de uso',
+    'whitePaper_message' => 'Aquí estará tu papel blanco',
 
     //kyc
     'kyc_fullName' => 'Nombre completo',
