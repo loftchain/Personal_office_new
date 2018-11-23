@@ -11630,6 +11630,31 @@ select:-webkit-autofill {
   background-color: red !important;
 }
 
+.welcome {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media (max-width: 992px) {
+  .welcome {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 100vh;
+  }
+}
+
 .welcome__header {
   position: absolute;
   top: 0;
@@ -11645,6 +11670,12 @@ select:-webkit-autofill {
   padding-top: 40px;
 }
 
+@media (max-width: 992px) {
+  .welcome__header {
+    padding-right: 85px;
+  }
+}
+
 .welcome__button-language {
   color: #4F4F4F;
 }
@@ -11653,6 +11684,9 @@ select:-webkit-autofill {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .welcome__item {
@@ -11680,23 +11714,57 @@ select:-webkit-autofill {
   color: #4F4F4F;
 }
 
-@media (max-width: 992px) {
-  .welcome__header {
-    padding-right: 60px;
-  }
+.welcome__demo-list {
+  margin: 0;
+  margin-top: -170px;
+  margin-bottom: 50px;
+  padding: 15px;
+  list-style: none;
+  text-align: center;
+  font-size: 1rem;
+}
 
-  .welcome {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    height: 100vh;
+@media (max-width: 992px) {
+  .welcome__demo-list {
+    margin-top: -120px;
+    font-size: 1.2rem;
+    font-weight: 500;
   }
+}
+
+.welcome__demo-item {
+  color: #333333;
+}
+
+.welcome__demo-item a {
+  color: #FF184A;
+}
+
+.welcome__demo-start {
+  position: relative;
+  padding-left: 10px;
+}
+
+.welcome__demo-start::before {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: 0;
+  width: 5px;
+  height: 5px;
+  background-color: #FF184A;
+  border-radius: 50%;
+}
+
+@media (max-width: 992px) {
+  .welcome__demo-start::before {
+    top: 4px;
+  }
+}
+
+.welcome__demo-underlined {
+  color: #FF184A;
+  text-decoration: underline;
 }
 
 .modalFrame {

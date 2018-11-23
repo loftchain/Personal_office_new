@@ -1,3 +1,15 @@
+.welcome {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @media #{$tablet992} {
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+}
+
 .welcome__header {
   position: absolute;
   top: 0;
@@ -7,6 +19,10 @@
   justify-content: flex-end;
   padding-right: 150px;
   padding-top: 40px;
+
+  @media #{$tablet992} {
+    padding-right: 85px;
+  }
 }
 
 .welcome__button-language {
@@ -15,6 +31,7 @@
 
 .welcome__wrapper {
   display: flex;
+  justify-content: center;
 }
 
 .welcome__item {
@@ -42,14 +59,53 @@
   }
 }
 
-@media #{$tablet992} {
-  .welcome__header {
-    padding-right: 60px;
+// Demo styles
+
+.welcome__demo-list {
+  margin: 0;
+  margin-top: -170px;
+  margin-bottom: 50px;
+  padding: 15px;
+  list-style: none;
+  text-align: center;
+  font-size: 1rem;
+
+  @media #{$tablet992} {
+    margin-top: -120px;
+    font-size: 1.2rem;
+    font-weight: 500;
   }
-  .welcome {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+}
+
+.welcome__demo-item {
+  color: $mainTextColor;
+
+  a {
+    color: $purple;
   }
+}
+
+.welcome__demo-start {
+  position: relative;
+  padding-left: 10px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 7px;
+    left: 0;
+    width: 5px;
+    height: 5px;
+    background-color: $purple;
+    border-radius: 50%;
+
+    @media #{$tablet992} {
+      top: 4px;
+    }
+  }
+}
+
+.welcome__demo-underlined {
+  color: $purple;
+  text-decoration: underline;
 }
