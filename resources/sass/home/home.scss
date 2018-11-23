@@ -112,6 +112,8 @@
 
 .raisedSlider {
   padding: 0 10px;
+  display: flex;
+  justify-content: center;
   &__item {
     white-space: nowrap;
     vertical-align: middle;
