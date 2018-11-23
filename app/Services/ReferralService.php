@@ -23,8 +23,8 @@ class ReferralService
         $recountedReferrals = [];
 
         $referrals = Investor::where('referred_by', '!=', null)
-            ->whereHas('transactions', function ($query){
-                $query->where('refs_send', 'false');
+            ->whereHas('transactions', function ($query) {
+                $query->where([['refs_send', 'false'], ['status', 'true']]);
             })
             ->with('wallets', 'transactions')
             ->get();
@@ -40,7 +40,7 @@ class ReferralService
             $recountedReferrals[$referral->referred_by]['wallet'] = $investorWallet;
         }
 
-        foreach ($recountedReferrals as $key => $item){
+        foreach ($recountedReferrals as $key => $item) {
             InvestorReferralFields::create([
                 'investor_id' => $key,
                 'wallet_to' => $item['wallet'],
@@ -51,57 +51,17 @@ class ReferralService
 
     public function getReferralData()
     {
-        $referralData = [];
-        $total = 0;
-        if (Auth::user()->admin == 0) {
-            $myReferrals = Investor::where('referred_by', Auth::user()->id)->get();
-            //----------------------wallets_to-----------------
-            $myUwf = InvestorWalletFields::where('investor_id', Auth::user()->id)->get();
-            foreach ($myUwf as $item) {
-                if ($item->type === 'from_to' || $item->type === 'to') {
-                    $referralData['wallets_to'][] = $item['wallet'];
-                }
-            }
-            //------------------------------------------------
+        $referrals = Investor::where('referred_by', Auth::user()->id)
+            ->whereHas('transactions', function ($query) {
+                $query->where('status', 'true');
+            })
+            ->with(['transactions' => function ($query) {
+                $query->where('status', 'true');
+            }])
+            ->get();
 
-            foreach ($myReferrals as $mr) {
-                //----------------------emails--------------------
-                $uwf = InvestorWalletFields::where('investor_id', $mr->id)->get();
-                //------------------------------------------------
+        return $referrals;
 
-                //----------------------wallets_from-----------------
-                foreach ($uwf as $item) {
-                    if ($item->type === 'from_to' || $item->type === 'from') {
-                        $referralData['stat'][$mr['email']]['wallets_from'][] = $item['wallet'];
-
-                        //----------------------tokens---------------------
-                        $transactions = Transaction::where('from', $item['wallet'])->get();
-                        foreach ($transactions as $txs) {
-                            if ($txs->status === 'true') {
-                                $referralData['stat'][$mr['email']]['tokens'][] = $txs['amount_tokens'] * 0.1;  //10%
-                                $token_sum = array_sum($referralData['stat'][$mr['email']]['tokens']);
-                                $referralData['stat'][$mr['email']]['token_sum'] = $token_sum;
-                            }
-                        }
-                    }
-                }
-                //------------------------------------------------
-            }
-            //----------------------token_sum---------------------
-            if (isset($referralData['stat'])) {
-                foreach ($referralData['stat'] as $item) {
-                    if (isset($item['tokens'])) {
-                        $total += $item['token_sum'];
-                    }
-                }
-            }
-
-            $referralData['tokens_total'] = $total;
-            //------------------------------------------------
-
-        }
-
-        return $referralData;
     }
 
 }

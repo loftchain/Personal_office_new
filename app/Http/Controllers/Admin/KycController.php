@@ -48,7 +48,7 @@ class KycController extends Controller
         $documents = $investor->personal()->first()->documents()->get();
 
         foreach ($documents as $document){
-            Storage::delete('uploads/' . $document->img);
+            Storage::delete('uploads/documents/' . $document->img);
         }
 
         $investor->personal()->delete();

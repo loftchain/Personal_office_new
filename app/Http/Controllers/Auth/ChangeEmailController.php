@@ -82,4 +82,29 @@ class ChangeEmailController extends Controller
         return response()->json(['success_changed_email' => 'good']);
 
     }
+
+    public function set_email(Request $request)
+    {
+        $user = Auth::user();
+        $isUser = Investor::where('email', $request->email)->first();
+        $validator = $this->validator($request->all());
+
+        if ($validator->fails()) {
+            return response()->json(['validation_error' => $validator->errors()]);
+        }
+
+        if ($isUser) {
+            return response()->json(['is_taken' => Lang::get('modals/modals.EmailIsTaken_ChangeEmailController')]);
+        }
+
+        $user->email = $request->email;
+        $user->save();
+
+        $this->change_email_history_make($request->email, $request->email);
+
+        return [
+            'success_set_email' => true
+        ];
+
+    }
 }

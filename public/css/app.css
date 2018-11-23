@@ -12169,6 +12169,8 @@ select:-webkit-autofill {
       -ms-flex-pack: center;
           justify-content: center;
   padding: 0 10px;
+  display: flex;
+  justify-content: center;
 }
 
 .raisedSlider__item {

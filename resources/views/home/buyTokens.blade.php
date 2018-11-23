@@ -51,5 +51,6 @@
         @include('_js.js_wallet')
         @include('_js.js_copy_to_clipboard')
         @include('_js.js_transactions')
+        @include('_js.js_current_time')
     @endpush
 @endsection

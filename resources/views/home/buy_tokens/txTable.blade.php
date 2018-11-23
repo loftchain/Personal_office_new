@@ -13,7 +13,7 @@
                         <th>{!! trans('home/buyTokens.tableAction') !!}</th>
                     </tr>
                     @forelse($transactions as $transaction)
-                        <tr class="{{ $transaction->status == 'true' ? "dataTable__success" : 'dataTable__error' }}">
+                        <tr class="{{ $transaction->status == 'true' ? "dataTable__success" : 'dataTable__error' }} tr-tx-table">
                             <td>{{ $transaction->date }}</td>
                             <td>{{ $transaction->currency }}</td>
                             <td>{{ $transaction->amount_tokens }}</td>

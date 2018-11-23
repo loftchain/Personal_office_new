@@ -113,24 +113,6 @@ class TransactionService
 //			}
         }
 
-        $user = $this->widgetService->getUserByWallet($wallet);
-
-        if (isset($user->referred_by) && !empty($user->referred_by)) {
-            $urf = InvestorWalletFields::where('investor_id', '=', $user->id)->first();
-            if (empty($urf)) {
-                $urf = new InvestorReferralFields;
-                $urf->user_id = $user->id;
-                $urf->wallet_to = $wallet;
-            }
-
-            if (empty($urf->tokens_referred_by)) {
-                $urf->tokens_referred_by = 0;
-            }
-
-            $urf->tokens_referred_by += $tokenAmount * env('BONUS_REFERRED_BY') / 100;
-            $urf->save();
-        }
-
         return round($totalTokenAmount, 2);
     }
 

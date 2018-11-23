@@ -32,6 +32,7 @@ Route::group(['prefix' => 'social', 'as' => 'social.'], function () {
 
 //------------------------ChangeEmail/ChangePassword------------------------------
 Route::post('/change/email', 'Auth\ChangeEmailController@reset_email')->name('email.reset');
+Route::post('/set/email', 'Auth\ChangeEmailController@set_email')->name('email.set');
 Route::post('/change/password', 'Auth\ChangePasswordController@renew_password')->name('password.change');
 Route::post('/set/password', 'Auth\ChangePasswordController@setPassword')->name('password.set');
 //--------------------------------------------------------------------------------
@@ -70,4 +71,5 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['admin']],
 });
 
 Route::get('/storage/{path}', 'SettingsController@getAvatar')->name('settings.get.avatar');
+Route::get('/storage/document/{path}', 'DocumentController@get')->name('settings.get.document');
 Route::get('settings', 'HomeController@settings')->name('home.settings')->middleware('isNotAdmin');
