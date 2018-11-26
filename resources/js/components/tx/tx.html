@@ -52,12 +52,19 @@
           </div>
           <div class="dataTable__item-wrap dataTable__item-wrap--hidden" :id="'hidden-' + transaction.id">
             <div class="dataTable__item-hidden">
-              <div class="dataTable__cell dataTable__cell--trans-info"><b>To</b></div>
+              <div class="dataTable__cell dataTable__cell--trans-info"><b>Wallets</b></div>
               <div class="dataTable__cell dataTable__cell--trans-info" :style="transaction.send == '0' && transaction.currency == 'BTC' ? 'width: 25%' : 'width: 50%'"><b>Info</b></div>
               <div class="dataTable__cell dataTable__cell--trans-info" style="width: 25%" v-if="transaction.send == '0' && transaction.currency == 'BTC'"><b>Send</b></div>
             </div>
             <div class="dataTable__item-hidden">
-              <div class="dataTable__cell dataTable__cell--trans-info">{{ transaction.from }}</div>
+              <div class="dataTable__cell dataTable__cell--trans-info">
+                <div v-if="transaction.currency === 'BTC'" v-for="wallet in transaction.investor.wallets">
+                  <span v-if="wallet.type === 'to' || wallet.type === 'from'"><b>{{ wallet.type }}: </b> {{ wallet.wallet }}</span> <br>
+                </div>
+                <div v-else>
+                  <b>from_to: </b> {{ transaction.from }}
+                </div>
+              </div>
               <div class="dataTable__cell dataTable__cell--trans-info" :style="transaction.send == '0' && transaction.currency == 'BTC' ? 'width: 25%' : 'width: 50%'">
                 <a :href="'https://' + transaction.info + '/tx/' + transaction.transaction_id">{{ transaction.info }}</a>
               </div>
