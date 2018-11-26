@@ -43,7 +43,6 @@ export default {
     },
     mounted() {
         this.getReferrals();
-        console.log(typeof this.web3);
     },
 
     methods: {

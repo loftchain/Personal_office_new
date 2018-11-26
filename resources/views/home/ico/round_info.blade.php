@@ -22,7 +22,7 @@
                     <p>Soft Cap: {{ number_format(env('ICO_SOFT_CAP')) }}$</p>
                     <p>Hard cap: {{ number_format(env('ICO_HARD_CAP')) }}$</p>
                     <p>{!! trans('home/home.round_currentPrice') !!} {{ isset($data['currentPrice']) ? $data['currentPrice'] . '$' : 'Not for sale'}}</p>
-                    <p>{!! trans('home/home.round_minDeposit') !!} {{ env('MIN_DEP_ETH') }} ETH</p><br>
+                    <p>{!! trans('home/home.round_minDeposit') !!} 500$</p><br>
                 </div>
             </div>
         </div>
