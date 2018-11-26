@@ -1,6 +1,6 @@
 
 <section class="referral">
-  <div v-if="typeof web3 !== undefined">
+  <div v-if="typeof web3 != 'undefined'">
     <div class="dataTable dataTable--admin">
       <table class="dataTable__list">
         <tr>
@@ -47,7 +47,7 @@
     </div>
   </div>
   <div class="metaMask__undefined-block" v-else>
-    <p class="metaMask__undefined-text">{!! trans('admin/admin.install_metaMask') !!}</p>
+    <p class="metaMask__undefined-text">{{trans.vue.install_metaMask}}</p>
     <ul class="metaMask__undefined-list">
       <li class="metaMask__undefined-item">
         <a class="metaMask__undefined-link" href="https://addons.mozilla.org/ru/firefox/addon/ether-metamask/" target="_blank">

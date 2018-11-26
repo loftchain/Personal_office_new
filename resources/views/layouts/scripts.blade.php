@@ -1,3 +1,4 @@
+@include('_js.js_vue_translations')
 <script src="{{ asset('js/app.js'.'?v='.env('VERSION')) }}"></script>
 <script src="{{ asset('js/jquery/jquery.min.js') }}"></script>
 <script src="{{ asset('js/jquery/jquery.js') }}"></script>
@@ -16,6 +17,7 @@
         type="text/javascript">
 </script>
 <script src="{{ asset('js/ico.js') }}"></script>
+
 @include('_js.js_custom_validation')
 @include('_js.js_main_menu')
 @include('_js.js_loader_cloak')
