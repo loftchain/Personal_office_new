@@ -11571,6 +11571,30 @@ body {
   padding-top: 30px;
 }
 
+.metaMask__undefined-text {
+  margin: 0;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.metaMask__undefined-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.metaMask__undefined-item {
+  margin-bottom: 10px;
+}
+
+.metaMask__undefined-link {
+  color: #FFC701;
+}
+
+.metaMask__undefined-link:hover {
+  color: #FFC701;
+}
+
 button,
 input,
 textarea,
