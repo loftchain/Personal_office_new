@@ -2,7 +2,7 @@
     <div class="raisedContainer raisedContainer--deposit-bonus">
         <div class="basicBlock basicBlock--single">
             <div class="basicBlock__content">
-                <div class="basicBlock__title text-center">{!! trans('home/home.deposit_bonus') !!}</div>
+                <div class="basicBlock__title text-center">Bonuses</div>
                 <div class="bonuses">
                     <div class="row">
                         <div class="col-md-3 col-lg-4 col-xl-3">

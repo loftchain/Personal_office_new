@@ -8,7 +8,7 @@
             </div>
         @endif
         <div class="modalFrame__title">Welcome Back</div>
-        <div class="modalFrame__subtitle">{!! trans('modals/modals.enter') !!}</div>
+        {{--<div class="modalFrame__subtitle">{!! trans('modals/modals.enter') !!}</div>--}}
         <form class="loginForm icoForm" action="{{ route('login') }}" method="POST">
             @csrf
             <div class="formControl">

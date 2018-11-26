@@ -4,10 +4,10 @@ return [
     //investor
     'status' => 'Стаус',
     'verified1' => 'Не ',
-    'verified' => 'проверен',
+    'verified' => 'подтвержден',
     'tokenAmount' => 'Количество токенов:',
     'ico' => 'ICO',
-    'verification' => 'Проверка',
+    'verification' => 'Подтверждение',
     'buyTokens' => 'Купить токены',
     'referralProgram' => 'Реферальная программа',
     'settings' => 'Настройки',
@@ -18,3 +18,4 @@ return [
     'aReferrals' => 'Рефералы',
     'aTransactions' => 'Транзакции'
 ];
+

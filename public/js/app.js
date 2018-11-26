@@ -75878,11 +75878,7 @@ var staticRenderFns = [
               target: "_blank"
             }
           },
-          [
-            _vm._v(
-              "\r\n          https://addons.mozilla.org/ru/firefox/addon/ether-metamask/\r\n        "
-            )
-          ]
+          [_vm._v("\r\n          Mozilla Firefox\r\n        ")]
         )
       ]),
       _vm._v(" "),
@@ -75897,11 +75893,7 @@ var staticRenderFns = [
               target: "_blank"
             }
           },
-          [
-            _vm._v(
-              "\r\n          https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn\r\n        "
-            )
-          ]
+          [_vm._v("\r\n          Google Chrome\r\n        ")]
         )
       ])
     ])
@@ -76021,8 +76013,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ethers___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_ethers__);
 
 
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
 function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
 
 
@@ -76073,7 +76063,6 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
     },
     mounted: function mounted() {
         this.getReferrals();
-        console.log(_typeof(this.web3));
     },
 
 
@@ -76513,11 +76502,7 @@ var staticRenderFns = [
               target: "_blank"
             }
           },
-          [
-            _vm._v(
-              "\r\n          https://addons.mozilla.org/ru/firefox/addon/ether-metamask/\r\n        "
-            )
-          ]
+          [_vm._v("\r\n          Mozilla Firefox\r\n        ")]
         )
       ]),
       _vm._v(" "),
@@ -76532,11 +76517,7 @@ var staticRenderFns = [
               target: "_blank"
             }
           },
-          [
-            _vm._v(
-              "\r\n          https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn\r\n        "
-            )
-          ]
+          [_vm._v("\r\n          Google Chrome\r\n        ")]
         )
       ])
     ])
