@@ -17,6 +17,19 @@
     </div>
 
 @else
+    {{--Подсчет токенов от рефералов --}}
+    @php
+        $amountTokens = 0;
+
+        $referrals =  \App\Models\Investor::where('referred_by', Auth::id())->with(['transactions' => function ($query){
+            $query->where('status', 'true');
+        }])->get();
+
+        foreach ($referrals as $referral){
+            $amountTokens += $referral->transactions->sum('amount_tokens') * 0.1;
+        }
+    @endphp
+
     <div class="sidebar jsSidebar">
         <div class="userInfo">
             <div class="userInfo__avatar">
@@ -27,7 +40,7 @@
             <div class="userInfo__text">
                 <div class="userInfo__textItem">{{ Auth::user()->name }}</div>
                 <div class="userInfo__textItem">{!! trans('home/menu.status') !!}: {{ !Auth::user()->confirmed ? trans('home/menu.verified1') : ''}} {!! trans('home/menu.verified') !!}</div>
-                <div class="userInfo__textItem">{!! trans('home/menu.tokenAmount') !!} {{ Auth::user()->transactions()->sum('amount_tokens') }} {{ env('TOKEN_NAME') }}</div>
+                <div class="userInfo__textItem">{!! trans('home/menu.tokenAmount') !!} {{ Auth::user()->transactions()->sum('amount_tokens') + $amountTokens }} {{ env('TOKEN_NAME') }}</div>
             </div>
         </div>
         <div class="mainMenu">
