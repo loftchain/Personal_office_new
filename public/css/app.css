@@ -11571,6 +11571,10 @@ body {
   padding-top: 30px;
 }
 
+.metaMask__undefined-block {
+  text-align: center;
+}
+
 .metaMask__undefined-text {
   margin: 0;
   margin-bottom: 15px;
@@ -11578,13 +11582,19 @@ body {
 }
 
 .metaMask__undefined-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
 .metaMask__undefined-item {
-  margin-bottom: 10px;
+  margin-right: 20px;
 }
 
 .metaMask__undefined-link {
