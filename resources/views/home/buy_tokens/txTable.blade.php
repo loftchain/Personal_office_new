@@ -8,6 +8,7 @@
                     <tr>
                         <th>{!! trans('home/buyTokens.tableTransDate') !!}</th>
                         <th>{!! trans('home/buyTokens.tableTransCurrency') !!}</th>
+                        <th>amount</th>
                         <th>{!! trans('home/buyTokens.tableTransToken') !!}</th>
                         <th>{!! trans('home/buyTokens.tableTransStatus') !!}</th>
                         <th>{!! trans('home/buyTokens.tableAction') !!}</th>
@@ -16,6 +17,7 @@
                         <tr class="{{ $transaction->status == 'true' ? "dataTable__success" : 'dataTable__error' }} tr-tx-table">
                             <td>{{ $transaction->date }}</td>
                             <td>{{ $transaction->currency }}</td>
+                            <td>{{ $transaction->amount }}</td>
                             <td>{{ $transaction->amount_tokens }}</td>
                             <td>{{ $transaction->status === 'true' ? 'success' : 'fail' }}</td>
                             <td>
@@ -25,11 +27,11 @@
                         </tr>
                         <tr class="dataTable__summary" id="data-{{ $transaction->id }}" style="display: none">
                             <td colspan="3"><span class="dataTable__address"><strong>{!! trans('home/buyTokens.tableSumTo') !!}</strong>: {{ $transaction->from }}</span></td>
-                            <td colspan="2"><strong>{!! trans('home/buyTokens.tableSumInfo') !!}: </strong><a class="dataTable__link" href="https://{{ $transaction->info }}/tx/{{ $transaction->transaction_id }}">{{ $transaction->info }}</a></td>
+                            <td colspan="3"><strong>{!! trans('home/buyTokens.tableSumInfo') !!}: </strong><a class="dataTable__link" href="https://{{ $transaction->info }}/tx/{{ $transaction->transaction_id }}" target="_blank">{{ $transaction->info }}</a></td>
                         </tr>
                     @empty
                         <tr class="dataTable__error">
-                            <td colspan="5"><h3>{!! trans('home/buyTokens.tableNoTrans') !!}</h3></td>
+                            <td colspan="6"><h3>{!! trans('home/buyTokens.tableNoTrans') !!}</h3></td>
                         </tr>
                     @endforelse
 
