@@ -53,7 +53,7 @@ class BonusService
             $stageData['stageBegin'] = \DateTime::createFromFormat('U', env('ICO_START'))->format('d.m.Y');
             $stageData['stageEnd'] = \DateTime::createFromFormat('U', env('ICO_END'))->format('d.m.Y');
             $stageData['stageLabel'] = 'ICO';
-            $stageData['stageTitle'] = 'ENDS IN ';
+            $stageData['stageTitle'] = Lang::get('home/widget.ends_in');
             $stageData['currentPrice'] = 0.10;
 
             switch (true) {
@@ -123,7 +123,7 @@ class BonusService
                     break;
             }
 
-            $stageData['stageTitle'] = $stageData['stageTitle'] . $stageData['roundName'];
+            $stageData['stageTitle'] =  $stageData['roundName'] . $stageData['stageTitle'];
         } else {
             $stageData['stage'] = 2;
             $stageData['timerBegin'] = 0;

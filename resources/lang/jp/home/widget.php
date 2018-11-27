@@ -10,4 +10,5 @@ return [
     'minutes_span' => '分',
     'raised' => '育った',
     'total' => '合計',
+    'ends_in' => ' 終わり'
 ];

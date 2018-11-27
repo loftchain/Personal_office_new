@@ -10,4 +10,5 @@ return [
     'minutes_span' => 'minutes',
     'raised' => 'raised',
     'total' => 'total',
+    'ends_in' => ' ENDS IN'
 ];

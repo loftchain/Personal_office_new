@@ -65148,7 +65148,7 @@ var render = function() {
               }
             },
             [
-              _vm._v("\r\n        Investor ID\r\n        "),
+              _vm._v("\n        Investor ID\n        "),
               _c("i", { staticClass: "fas fa-arrow-down" }),
               _vm._v(" "),
               _c("i", { staticClass: "fas fa-arrow-up" })
@@ -65165,7 +65165,7 @@ var render = function() {
               }
             },
             [
-              _vm._v("\r\n        Action\r\n        "),
+              _vm._v("\n        Action\n        "),
               _c("i", { staticClass: "fas fa-arrow-down" }),
               _vm._v(" "),
               _c("i", { staticClass: "fas fa-arrow-up" })
@@ -65182,7 +65182,7 @@ var render = function() {
               }
             },
             [
-              _vm._v("\r\n        Old info\r\n        "),
+              _vm._v("\n        Old info\n        "),
               _c("i", { staticClass: "fas fa-arrow-down" }),
               _vm._v(" "),
               _c("i", { staticClass: "fas fa-arrow-up" })
@@ -65199,7 +65199,7 @@ var render = function() {
               }
             },
             [
-              _vm._v("\r\n        New info\r\n        "),
+              _vm._v("\n        New info\n        "),
               _c("i", { staticClass: "fas fa-arrow-down" }),
               _vm._v(" "),
               _c("i", { staticClass: "fas fa-arrow-up" })
@@ -65216,7 +65216,7 @@ var render = function() {
               }
             },
             [
-              _vm._v("\r\n        Date\r\n        "),
+              _vm._v("\n        Date\n        "),
               _c("i", { staticClass: "fas fa-arrow-down" }),
               _vm._v(" "),
               _c("i", { staticClass: "fas fa-arrow-up" })
@@ -65230,9 +65230,9 @@ var render = function() {
             _vm._v(" "),
             _c("td", [
               _vm._v(
-                "\r\n        " +
+                "\n        " +
                   _vm._s(_vm.renameAction(history.action)) +
-                  "\r\n      "
+                  "\n      "
               )
             ]),
             _vm._v(" "),
@@ -76036,8 +76036,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ethers___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_ethers__);
 
 
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
 function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
 
 
@@ -76088,7 +76086,6 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
     },
     mounted: function mounted() {
         this.getReferrals();
-        console.log(_typeof(this.web3));
     },
 
 

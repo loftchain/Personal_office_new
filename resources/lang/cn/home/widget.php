@@ -10,4 +10,5 @@ return [
     'minutes_span' => '分鐘',
     'raised' => '提高',
     'total' => '總',
+    'ends_in' => ' 結束'
 ];
