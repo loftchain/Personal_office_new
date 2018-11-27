@@ -26,7 +26,9 @@ class ReferralService
             ->whereHas('transactions', function ($query) {
                 $query->where([['refs_send', 'false'], ['status', 'true']]);
             })
-            ->with('wallets', 'transactions')
+            ->with(['wallets', 'transactions' => function($query){
+                $query->where([['refs_send', 'false'], ['status', 'true']]);
+            }])
             ->get();
 
         foreach ($referrals as $referral) {
