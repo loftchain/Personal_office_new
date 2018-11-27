@@ -65148,7 +65148,7 @@ var render = function() {
               }
             },
             [
-              _vm._v("\n        Investor ID\n        "),
+              _vm._v("\r\n        Investor ID\r\n        "),
               _c("i", { staticClass: "fas fa-arrow-down" }),
               _vm._v(" "),
               _c("i", { staticClass: "fas fa-arrow-up" })
@@ -65165,7 +65165,7 @@ var render = function() {
               }
             },
             [
-              _vm._v("\n        Action\n        "),
+              _vm._v("\r\n        Action\r\n        "),
               _c("i", { staticClass: "fas fa-arrow-down" }),
               _vm._v(" "),
               _c("i", { staticClass: "fas fa-arrow-up" })
@@ -65182,7 +65182,7 @@ var render = function() {
               }
             },
             [
-              _vm._v("\n        Old info\n        "),
+              _vm._v("\r\n        Old info\r\n        "),
               _c("i", { staticClass: "fas fa-arrow-down" }),
               _vm._v(" "),
               _c("i", { staticClass: "fas fa-arrow-up" })
@@ -65199,7 +65199,7 @@ var render = function() {
               }
             },
             [
-              _vm._v("\n        New info\n        "),
+              _vm._v("\r\n        New info\r\n        "),
               _c("i", { staticClass: "fas fa-arrow-down" }),
               _vm._v(" "),
               _c("i", { staticClass: "fas fa-arrow-up" })
@@ -65216,7 +65216,7 @@ var render = function() {
               }
             },
             [
-              _vm._v("\n        Date\n        "),
+              _vm._v("\r\n        Date\r\n        "),
               _c("i", { staticClass: "fas fa-arrow-down" }),
               _vm._v(" "),
               _c("i", { staticClass: "fas fa-arrow-up" })
@@ -65230,9 +65230,9 @@ var render = function() {
             _vm._v(" "),
             _c("td", [
               _vm._v(
-                "\n        " +
+                "\r\n        " +
                   _vm._s(_vm.renameAction(history.action)) +
-                  "\n      "
+                  "\r\n      "
               )
             ]),
             _vm._v(" "),
