@@ -170,6 +170,10 @@
                     v.showMessage('{!! trans('home/buyTokens.walletAdded') !!}', v.bg.success);
                     $('#fakeTable').show();
                     wallet.wallet = true;
+
+                    if(data.type === 'to'){
+                        $('#wallet2').removeAttr('disabled');
+                    }
                     {{--v.showNotification('{!! trans('home/wallet.added_js') !!}', 'success');--}}
                     if (typeof wallet !== 'undefined') {
                         // wa.exitEditMode(_this.children('.w-input'));

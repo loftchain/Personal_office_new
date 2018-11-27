@@ -9,5 +9,4 @@
     }
     echo json_encode($trans);
     ?>;
-    console.log(window.trans);
 </script>

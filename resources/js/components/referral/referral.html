@@ -51,42 +51,17 @@
     <ul class="metaMask__undefined-list">
       <li class="metaMask__undefined-item">
         <a class="metaMask__undefined-link" href="https://addons.mozilla.org/ru/firefox/addon/ether-metamask/" target="_blank">
-          https://addons.mozilla.org/ru/firefox/addon/ether-metamask/
+          Mozilla Firefox
         </a>
       </li>
       <li class="metaMask__undefined-item">
         <a class="metaMask__undefined-link" href="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn" target="_blank">
-          https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn
+          Google Chrome
         </a>
       </li>
     </ul>
   </div>
 
-  <div class="helpBar">
-    <div class="helpBar__buttons">
-      <button class="btn" @click="prevPage()">Previous</button>
-      <button class="btn" @click="nextPage()">Next</button>
-    </div>
-    <div class="helpBar__help-text">
-      <p v-model="currentPage">current page: {{ currentPage }}</p>
-      <p v-model="totalPages">total pages: {{ totalPages }}</p>
-    </div>
-    <div class="helpBar__page-select">
-      <label for="pageQuantity">Number of elements<br> on the page</label>
-      <br>
-      <select v-model="pageSize" name="pageQuantity" id="pageQuantity">
-        <option value="5">5</option>
-        <option value="10">10</option>
-        <option value="15">15</option>
-        <option value="20">20</option>
-        <option :value="totalPages" selected>all, {{ totalPages }}</option>
-      </select>
-    </div>
-    <div class="helpBar__checked-confirm">
-      <input type="checkbox" v-model="checkedSend" @click="checkBoxClick" value="false" checked/>  Not sent
-      <br>
-      <input type="checkbox" v-model="checkedSend" @click="checkBoxClick" value="true" checked/>  Sent
-    </div>
-  </div>
+
 </section>
 

@@ -28,70 +28,78 @@
           <!--From/To-->
           <!--<i class="fas fa-arrow-down"></i>-->
           <!--<i class="fas fa-arrow-up"></i>-->
-        <!--</div>-->
-        <div @click="sort('date')" class="dataTable__cell dataTable__cell--head dataTable__cell--big">
-          Date
-          <i class="fas fa-arrow-down"></i>
-          <i class="fas fa-arrow-up"></i>
-        </div>
-        <div class="dataTable__cell dataTable__cell--head dataTable__cell--mid">
-          Info
-        </div>
-      </div>
-      <div class="dataTable__item" v-for="(transaction, key) in sortedItems">
-        <div class="dataTable__cell dataTable__cell--lt">
-          {{ transaction.investor_id }}
-        </div>
-        <div class="dataTable__cell dataTable__cell--lt">{{ transaction.currency }}</div>
-        <div class="dataTable__cell dataTable__cell--lt">{{ transaction.amount_tokens }}</div>
-        <div class="dataTable__cell dataTable__cell--lt" :style="transaction.status === 'true' ? 'color: green;' : 'color:red;'">{{ transaction.status === 'true' ? 'success' : 'fail' }}</div>
-        <!--<div class="dataTable__cell dataTable__cell&#45;&#45;lt">{{ transaction.from }}</div>-->
-        <div class="dataTable__cell dataTable__cell--big">{{ transaction.date }}</div>
-        <div class="dataTable__cell dataTable__cell--mid">
-          <button v-on:click="toggleAddingData(transaction.id)" class="btn" data-toggle="collapse" data-target="#demo">info</button>
-        </div>
-        <div class="dataTable__item-wrap dataTable__item-wrap--hidden" :id="'hidden-' + transaction.id">
-          <div class="dataTable__item-hidden">
-            <div class="dataTable__cell dataTable__cell--trans-info"><b>To</b></div>
-            <div class="dataTable__cell dataTable__cell--trans-info" :style="transaction.send == '0' && transaction.currency == 'BTC' ? 'width: 25%' : 'width: 50%'"><b>Info</b></div>
-            <div class="dataTable__cell dataTable__cell--trans-info" style="width: 25%" v-if="transaction.send == '0' && transaction.currency == 'BTC'"><b>Send</b></div>
+          <!--</div>-->
+          <div @click="sort('date')" class="dataTable__cell dataTable__cell--head dataTable__cell--big">
+            Date
+            <i class="fas fa-arrow-down"></i>
+            <i class="fas fa-arrow-up"></i>
           </div>
-          <div class="dataTable__item-hidden">
-            <div class="dataTable__cell dataTable__cell--trans-info">{{ transaction.from }}</div>
-            <div class="dataTable__cell dataTable__cell--trans-info" :style="transaction.send == '0' && transaction.currency == 'BTC' ? 'width: 25%' : 'width: 50%'">
-              <a :href="'https://' + transaction.info + '/tx/' + transaction.transaction_id">{{ transaction.info }}</a>
-            </div>
-            <div class="dataTable__cell dataTable__cell--trans-info" style="width: 25%" v-if="transaction.send == '0' && transaction.currency == 'BTC'">
-              <button class="btn btn--small" @click="sendTokens(transaction, key)">Send</button>
-            </div>
+          <div class="dataTable__cell dataTable__cell--head dataTable__cell--mid">
+            Info
           </div>
         </div>
+        <div class="dataTable__item" v-for="(transaction, key) in sortedItems">
+          <div class="dataTable__cell dataTable__cell--lt">
+            {{ transaction.investor_id }}
+          </div>
+          <div class="dataTable__cell dataTable__cell--lt">{{ transaction.currency }}</div>
+          <div class="dataTable__cell dataTable__cell--lt">{{ transaction.amount_tokens }}</div>
+          <div class="dataTable__cell dataTable__cell--lt" :style="transaction.status === 'true' ? 'color: green;' : 'color:red;'">{{ transaction.status === 'true' ? 'success' : 'fail' }}</div>
+          <!--<div class="dataTable__cell dataTable__cell&#45;&#45;lt">{{ transaction.from }}</div>-->
+          <div class="dataTable__cell dataTable__cell--big">{{ transaction.date }}</div>
+          <div class="dataTable__cell dataTable__cell--mid">
+            <button v-on:click="toggleAddingData(transaction.id)" class="btn" data-toggle="collapse" data-target="#demo">info</button>
+          </div>
+          <div class="dataTable__item-wrap dataTable__item-wrap--hidden" :id="'hidden-' + transaction.id">
+            <div class="dataTable__item-hidden">
+              <div class="dataTable__cell dataTable__cell--trans-info"><b>Wallets</b></div>
+              <div class="dataTable__cell dataTable__cell--trans-info" :style="transaction.send == '0' && transaction.currency == 'BTC' ? 'width: 25%' : 'width: 50%'"><b>Info</b></div>
+              <div class="dataTable__cell dataTable__cell--trans-info" style="width: 25%" v-if="transaction.send == '0' && transaction.currency == 'BTC'"><b>Send</b></div>
+            </div>
+            <div class="dataTable__item-hidden">
+              <div class="dataTable__cell dataTable__cell--trans-info">
+                <div v-if="transaction.currency === 'BTC'" v-for="wallet in transaction.investor.wallets">
+                  <span v-if="wallet.type === 'to' || wallet.type === 'from'"><b>{{ wallet.type }}: </b> {{ wallet.wallet }}</span> <br>
+                </div>
+                <div v-else>
+                  <b>from_to: </b> {{ transaction.from }}
+                </div>
+              </div>
+              <div class="dataTable__cell dataTable__cell--trans-info" :style="transaction.send == '0' && transaction.currency == 'BTC' ? 'width: 25%' : 'width: 50%'">
+                <a :href="'https://' + transaction.info + '/tx/' + transaction.transaction_id">{{ transaction.info }}</a>
+              </div>
+              <div class="dataTable__cell dataTable__cell--trans-info" style="width: 25%" v-if="transaction.send == '0' && transaction.currency == 'BTC'">
+                <button class="btn btn--small" @click="sendTokens(transaction, key)">Send</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="helpBar">
-      <div class="helpBar__buttons">
-        <button class="btn" @click="prevPage()">Previous</button>
-        <button class="btn" @click="nextPage()">Next</button>
-      </div>
-      <div class="helpBar__help-text">
-        <p v-model="currentPage">current page: {{ currentPage }}</p>
-        <p v-model="totalPages">total pages: {{ totalPages }}</p>
-      </div>
-      <div class="helpBar__page-select">
-        <label for="pageQuantity">Number of elements<br> on the page</label>
-        <br>
-        <select v-model="pageSize" name="pageQuantity" id="pageQuantity">
-          <option value="5">5</option>
-          <option value="10">10</option>
-          <option value="15">15</option>
-          <option value="20">20</option>
-          <option :value="totalPages" selected>all, {{ totalPages }}</option>
-        </select>
-      </div>
-      <div class="helpBar__checked-confirm">
-        <input type="checkbox" v-model="checkedSend" @click="checkBoxClick" value="0" checked/>  Not sent
-        <br>
-        <input type="checkbox" v-model="checkedSend" @click="checkBoxClick" value="1" checked/>  Sent
+      <div class="helpBar">
+        <div class="helpBar__buttons">
+          <button class="btn" @click="prevPage()">Previous</button>
+          <button class="btn" @click="nextPage()">Next</button>
+        </div>
+        <div class="helpBar__help-text">
+          <p v-model="currentPage">current page: {{ currentPage }}</p>
+          <p v-model="totalPages">total pages: {{ totalPages }}</p>
+        </div>
+        <div class="helpBar__page-select">
+          <label for="pageQuantity">Number of elements<br> on the page</label>
+          <br>
+          <select v-model="pageSize" name="pageQuantity" id="pageQuantity">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+            <option :value="totalPages" selected>all, {{ totalPages }}</option>
+          </select>
+        </div>
+        <div class="helpBar__checked-confirm">
+          <input type="checkbox" v-model="checkedSend" @click="checkBoxClick" value="0" checked/>  Not sent
+          <br>
+          <input type="checkbox" v-model="checkedSend" @click="checkBoxClick" value="1" checked/>  Sent
+        </div>
       </div>
     </div>
   </div>
@@ -100,12 +108,12 @@
     <ul class="metaMask__undefined-list">
       <li class="metaMask__undefined-item">
         <a class="metaMask__undefined-link" href="https://addons.mozilla.org/ru/firefox/addon/ether-metamask/" target="_blank">
-          https://addons.mozilla.org/ru/firefox/addon/ether-metamask/
+          Mozilla Firefox
         </a>
       </li>
       <li class="metaMask__undefined-item">
         <a class="metaMask__undefined-link" href="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn" target="_blank">
-          https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn
+          Google Chrome
         </a>
       </li>
     </ul>

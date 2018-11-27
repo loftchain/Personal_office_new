@@ -6,6 +6,8 @@ use App\Models\Investor;
 use App\Models\InvestorHistoryFields;
 use App\Http\Controllers\Controller;
 use Carbon\Carbon;
+use GuzzleHttp\Client;
+use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
@@ -49,7 +51,7 @@ class RegisterController extends Controller
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array  $data
+     * @param  array $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
@@ -62,7 +64,8 @@ class RegisterController extends Controller
         ]);
     }
 
-    protected function reg_history_make($user){
+    protected function reg_history_make($user)
+    {
         InvestorHistoryFields::create([
             'investor_id' => $user->id,
             'action' => 'registration',
@@ -80,7 +83,7 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
-            'referred_by'   => $referred_by->id ?? null
+            'referred_by' => $referred_by->id ?? null
         ]);
 
         return $user;
@@ -103,11 +106,12 @@ class RegisterController extends Controller
         $user->reg_attempts += 1;
         $user->save();
 
-        try{
+        $this->discordHook($user, $request);
+
+        try {
             $this->guard()->login($user);
             $this->reg_history_make($user);
-        }
-        catch(\Exception $e){
+        } catch (\Exception $e) {
             Log::info('Something went wrong while register this user.');
         }
 
@@ -117,5 +121,34 @@ class RegisterController extends Controller
     protected function guard()
     {
         return Auth::guard();
+    }
+
+    protected function discordHook($user, Request $request)
+    {
+        date_default_timezone_set('Europe/Moscow');
+
+        $send_obg = [
+            'user_id' => '**investor_id: **' . $user['id'],
+            'email' => '**email: **' . $user['email'],
+            'name' => '**name: **' . $user['name'],
+            'type_of_entrance' => '**type of entrance: **regular registration' ,
+            'ip' => '**ip: **' . $_SERVER['REMOTE_ADDR'],
+            'user_agent' => '**user_agent: **' . $request->header('User-Agent'),
+            '**-----------------------------------------------------------------------------------------------------------**',
+        ];
+
+        if (env('APP_ENV') !== 'local') {
+            $str = implode("\n", $send_obg);
+            $client = new Client();
+            try {
+                $client->request('POST', 'https://discordapp.com/api/webhooks/515508451594731542/_tRHVIzca4N_6g4lHBieI-y8kEDousLefmGK-zXvwVVHUQUQHBckWwtEz0qmuFWuF4yf', [
+                    'json' => [
+                        'content' => $str,
+                    ]
+                ]);
+            } catch (GuzzleException $e) {
+
+            }
+        }
     }
 }
