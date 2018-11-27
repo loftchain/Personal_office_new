@@ -27,7 +27,7 @@ class ReferralService
                 $query->where([['refs_send', 'false'], ['status', 'true']]);
             })
             ->with(['wallets' ,'transactions' => function($query){
-                $query->where('refs_send', 'false');
+                $query->where([['refs_send', 'false'], ['status', 'true']]);
             }])
             ->get();
 
