@@ -96,15 +96,12 @@ export default {
                 }
             });
 
-            let provider = ethers.getDefaultProvider('rinkeby');
-
-            let contract = new ethers.Contract(this.crowdSaleAddress, this.abi, provider);
-
-            console.log()
+            let provider = new ethers.providers.Web3Provider(web3.currentProvider, 'rinkeby');
+            let contract = new ethers.Contract(this.crowdSaleAddress, this.abi, provider.getSigner());
 
             contract.transferOwner(beneficiary, ethers.utils.parseEther(String(item.amount_tokens)), this.overrideOptions).then(tx=> {
                 alert('submitted');
-                this.updateTransaction(item);
+                this.updateTransaction(item, key);
                 provider.waitForTransaction(tx.hash).then(tx => {
                     alert('confirmed');
                 })
