@@ -917,6 +917,38 @@ body {
   padding-top: 30px;
 }
 
+.metaMask {
+  &__undefined-block {
+    text-align: center;
+  }
+
+  &__undefined-text {
+    margin: 0;
+    margin-bottom: 15px;
+    font-size: 18px;
+  }
+
+  &__undefined-list {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__undefined-item {
+    margin-right: 20px;
+  }
+
+  &__undefined-link {
+    color: $yellow1;
+
+    &:hover {
+      color: $yellow1;
+    }
+  }
+}
+
 button,
 input,
 textarea,

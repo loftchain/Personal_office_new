@@ -74901,16 +74901,13 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
             checkedSend: ['0', '1'],
             abi: [{ "constant": true, "inputs": [], "name": "name", "outputs": [{ "name": "", "type": "string" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [{ "name": "_spender", "type": "address" }, { "name": "_value", "type": "uint256" }], "name": "approve", "outputs": [{ "name": "success", "type": "bool" }], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_value", "type": "uint256" }], "name": "updateCurs", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [], "name": "tokensForSale", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "cost", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [], "name": "addBalanceForOraclize", "outputs": [], "payable": true, "stateMutability": "payable", "type": "function" }, { "constant": true, "inputs": [], "name": "totalSupply", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [{ "name": "_from", "type": "address" }, { "name": "_to", "type": "address" }, { "name": "_value", "type": "uint256" }], "name": "transferFrom", "outputs": [{ "name": "success", "type": "bool" }], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "myid", "type": "bytes32" }, { "name": "result", "type": "string" }], "name": "__callback", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [], "name": "rate", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "decimals", "outputs": [{ "name": "", "type": "uint8" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [{ "name": "myid", "type": "bytes32" }, { "name": "result", "type": "string" }, { "name": "proof", "type": "bytes" }], "name": "__callback", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_value", "type": "uint256" }], "name": "burn", "outputs": [{ "name": "success", "type": "bool" }], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [], "name": "close", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [], "name": "withdrawBalance", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [], "name": "updatePrice", "outputs": [], "payable": true, "stateMutability": "payable", "type": "function" }, { "constant": true, "inputs": [{ "name": "", "type": "address" }], "name": "balanceOf", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [], "name": "enableRefunds", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [], "name": "owner", "outputs": [{ "name": "", "type": "address" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "symbol", "outputs": [{ "name": "", "type": "string" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "curs", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [{ "name": "_to", "type": "address" }, { "name": "_value", "type": "uint256" }], "name": "transfer", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_newPrice", "type": "uint256" }], "name": "setGasPrice", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [], "name": "state", "outputs": [{ "name": "", "type": "uint8" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "oraclizeBalance", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [{ "name": "_spender", "type": "address" }, { "name": "_value", "type": "uint256" }, { "name": "_extraData", "type": "bytes" }], "name": "approveAndCall", "outputs": [{ "name": "success", "type": "bool" }], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [{ "name": "", "type": "address" }, { "name": "", "type": "address" }], "name": "allowance", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [{ "name": "_to", "type": "address" }, { "name": "_value", "type": "uint256" }], "name": "transferOwner", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "beneficiary", "type": "address" }], "name": "buyTokens", "outputs": [], "payable": true, "stateMutability": "payable", "type": "function" }, { "constant": false, "inputs": [{ "name": "newOwner", "type": "address" }], "name": "transferOwnership", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "investor", "type": "address" }], "name": "refund", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "inputs": [], "payable": false, "stateMutability": "nonpayable", "type": "constructor" }, { "payable": true, "stateMutability": "payable", "type": "fallback" }, { "anonymous": false, "inputs": [{ "indexed": true, "name": "from", "type": "address" }, { "indexed": true, "name": "to", "type": "address" }, { "indexed": false, "name": "value", "type": "uint256" }], "name": "Transfer", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "name": "owner", "type": "address" }, { "indexed": true, "name": "spender", "type": "address" }, { "indexed": false, "name": "value", "type": "uint256" }], "name": "Approval", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "name": "from", "type": "address" }, { "indexed": false, "name": "value", "type": "uint256" }], "name": "Burn", "type": "event" }, { "anonymous": false, "inputs": [], "name": "RefundsEnabled", "type": "event" }, { "anonymous": false, "inputs": [], "name": "Closed", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "name": "beneficiary", "type": "address" }, { "indexed": false, "name": "weiAmount", "type": "uint256" }], "name": "Refunded", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": false, "name": "price", "type": "string" }], "name": "LogPriceUpdated", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": false, "name": "description", "type": "string" }], "name": "LogNewOraclizeQuery", "type": "event" }],
             crowdSaleAddress: '0x8691bd14bfbcbfd4f1276a81afbcb271237eede3',
-<<<<<<< HEAD
-            overrideOptions: { gasLimit: 150000 }
-=======
             overrideOptions: { gasLimit: 150000 },
             web3: window.web3,
             trans: window.trans
->>>>>>> 24737de... fixing metamask js
 
         };
     },
+
 
     computed: {
         sortedItems: function sortedItems() {
@@ -74996,8 +74993,6 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
         },
 
         sendTokens: function sendTokens(item, key) {
-            var _this3 = this;
-
             var beneficiary = null;
 
             item.investor.wallets.map(function (i) {
@@ -75006,19 +75001,19 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
                 }
             });
 
-            var provider = ethers.getDefaultProvider('rinkeby');
-
-            var contract = new ethers.Contract(this.crowdSaleAddress, this.abi, provider);
-
-            console.log();
-
-            contract.transferOwner(beneficiary, ethers.utils.parseEther(String(item.amount_tokens)), this.overrideOptions).then(function (tx) {
-                alert('submitted');
-                _this3.updateTransaction(item);
-                provider.waitForTransaction(tx.hash).then(function (tx) {
-                    alert('confirmed');
-                });
-            });
+            // let provider = ethers.getDefaultProvider('rinkeby');
+            //
+            // let contract = new ethers.Contract(this.crowdSaleAddress, this.abi, provider);
+            //
+            // console.log()
+            //
+            // contract.transferOwner(beneficiary, ethers.utils.parseEther(String(item.amount_tokens)), this.overrideOptions).then(tx=> {
+            //     alert('submitted');
+            this.updateTransaction(item);
+            //     provider.waitForTransaction(tx.hash).then(tx => {
+            //         alert('confirmed');
+            //     })
+            // });
         },
         updateTransaction: function () {
             var _ref2 = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee2(item, key) {
@@ -75340,459 +75335,520 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("section", { staticClass: "tx" }, [
-<<<<<<< HEAD
-    _c("div", { staticClass: "dataTable dataTable--admin" }, [
-      _c(
-        "div",
-        { staticClass: "dataTable__list" },
-        [
-          _c("div", { staticClass: "dataTable__item" }, [
-=======
     typeof _vm.web3 != "undefined"
       ? _c("div", [
           _c("div", { staticClass: "dataTable dataTable--admin" }, [
->>>>>>> 24737de... fixing metamask js
             _c(
               "div",
-              {
-                staticClass:
-                  "dataTable__cell dataTable__cell--head dataTable__cell--lt",
-                on: {
-                  click: function($event) {
-                    _vm.sort("investor_id")
-                  }
-                }
-              },
+              { staticClass: "dataTable__list" },
               [
-                _vm._v("\r\n          Investor ID\r\n          "),
-                _c("i", { staticClass: "fas fa-arrow-down" }),
-                _vm._v(" "),
-                _c("i", { staticClass: "fas fa-arrow-up" })
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass:
-                  "dataTable__cell dataTable__cell--head dataTable__cell--lt",
-                on: {
-                  click: function($event) {
-                    _vm.sort("currency")
-                  }
-                }
-              },
-              [
-                _vm._v("\r\n          Currency\r\n          "),
-                _c("i", { staticClass: "fas fa-arrow-down" }),
-                _vm._v(" "),
-                _c("i", { staticClass: "fas fa-arrow-up" })
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass:
-                  "dataTable__cell dataTable__cell--head dataTable__cell--lt",
-                on: {
-                  click: function($event) {
-                    _vm.sort("amount_tokens")
-                  }
-                }
-              },
-              [
-                _vm._v("\r\n          Amount\r\n          "),
-                _c("i", { staticClass: "fas fa-arrow-down" }),
-                _vm._v(" "),
-                _c("i", { staticClass: "fas fa-arrow-up" })
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass:
-                  "dataTable__cell dataTable__cell--head dataTable__cell--lt",
-                on: {
-                  click: function($event) {
-                    _vm.sort("status")
-                  }
-                }
-              },
-              [
-                _vm._v("\r\n          Status\r\n          "),
-                _c("i", { staticClass: "fas fa-arrow-down" }),
-                _vm._v(" "),
-                _c("i", { staticClass: "fas fa-arrow-up" })
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass:
-                  "dataTable__cell dataTable__cell--head dataTable__cell--big",
-                on: {
-                  click: function($event) {
-                    _vm.sort("date")
-                  }
-                }
-              },
-              [
-                _vm._v("\r\n          Date\r\n          "),
-                _c("i", { staticClass: "fas fa-arrow-down" }),
-                _vm._v(" "),
-                _c("i", { staticClass: "fas fa-arrow-up" })
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass:
-                  "dataTable__cell dataTable__cell--head dataTable__cell--mid"
-              },
-              [_vm._v("\r\n          Info\r\n        ")]
-            )
-          ]),
-          _vm._v(" "),
-          _vm._l(_vm.sortedItems, function(transaction, key) {
-            return _c("div", { staticClass: "dataTable__item" }, [
-              _c(
-                "div",
-                { staticClass: "dataTable__cell dataTable__cell--lt" },
-                [
-                  _vm._v(
-                    "\r\n          " +
-                      _vm._s(transaction.investor_id) +
-                      "\r\n        "
-                  )
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "dataTable__cell dataTable__cell--lt" },
-                [_vm._v(_vm._s(transaction.currency))]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "dataTable__cell dataTable__cell--lt" },
-                [_vm._v(_vm._s(transaction.amount_tokens))]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "dataTable__cell dataTable__cell--lt",
-                  style:
-                    transaction.status === "true"
-                      ? "color: green;"
-                      : "color:red;"
-                },
-                [
-                  _vm._v(
-                    _vm._s(transaction.status === "true" ? "success" : "fail")
-                  )
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "dataTable__cell dataTable__cell--big" },
-                [_vm._v(_vm._s(transaction.date))]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "dataTable__cell dataTable__cell--mid" },
-                [
+                _c("div", { staticClass: "dataTable__item" }, [
                   _c(
-                    "button",
+                    "div",
                     {
-                      staticClass: "btn",
-                      attrs: {
-                        "data-toggle": "collapse",
-                        "data-target": "#demo"
-                      },
+                      staticClass:
+                        "dataTable__cell dataTable__cell--head dataTable__cell--lt",
                       on: {
                         click: function($event) {
-                          _vm.toggleAddingData(transaction.id)
+                          _vm.sort("investor_id")
                         }
                       }
                     },
-                    [_vm._v("info")]
-                  )
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "dataTable__item-wrap dataTable__item-wrap--hidden",
-                  attrs: { id: "hidden-" + transaction.id }
-                },
-                [
-                  _c("div", { staticClass: "dataTable__item-hidden" }, [
-                    _vm._m(0, true),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "dataTable__cell dataTable__cell--trans-info",
-                        style:
-                          transaction.send == "0" &&
-                          transaction.currency == "BTC"
-                            ? "width: 25%"
-                            : "width: 50%"
-                      },
-                      [_c("b", [_vm._v("Info")])]
-                    ),
-                    _vm._v(" "),
-                    transaction.send == "0" && transaction.currency == "BTC"
-                      ? _c(
-                          "div",
-                          {
-                            staticClass:
-                              "dataTable__cell dataTable__cell--trans-info",
-                            staticStyle: { width: "25%" }
-                          },
-                          [_c("b", [_vm._v("Send")])]
-                        )
-                      : _vm._e()
-                  ]),
+                    [
+                      _vm._v("\r\n            Investor ID\r\n            "),
+                      _c("i", { staticClass: "fas fa-arrow-down" }),
+                      _vm._v(" "),
+                      _c("i", { staticClass: "fas fa-arrow-up" })
+                    ]
+                  ),
                   _vm._v(" "),
-                  _c("div", { staticClass: "dataTable__item-hidden" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "dataTable__cell dataTable__cell--head dataTable__cell--lt",
+                      on: {
+                        click: function($event) {
+                          _vm.sort("currency")
+                        }
+                      }
+                    },
+                    [
+                      _vm._v("\r\n            Currency\r\n            "),
+                      _c("i", { staticClass: "fas fa-arrow-down" }),
+                      _vm._v(" "),
+                      _c("i", { staticClass: "fas fa-arrow-up" })
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "dataTable__cell dataTable__cell--head dataTable__cell--lt",
+                      on: {
+                        click: function($event) {
+                          _vm.sort("amount_tokens")
+                        }
+                      }
+                    },
+                    [
+                      _vm._v("\r\n            Amount\r\n            "),
+                      _c("i", { staticClass: "fas fa-arrow-down" }),
+                      _vm._v(" "),
+                      _c("i", { staticClass: "fas fa-arrow-up" })
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "dataTable__cell dataTable__cell--head dataTable__cell--lt",
+                      on: {
+                        click: function($event) {
+                          _vm.sort("status")
+                        }
+                      }
+                    },
+                    [
+                      _vm._v("\r\n            Status\r\n            "),
+                      _c("i", { staticClass: "fas fa-arrow-down" }),
+                      _vm._v(" "),
+                      _c("i", { staticClass: "fas fa-arrow-up" })
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "dataTable__cell dataTable__cell--head dataTable__cell--big",
+                      on: {
+                        click: function($event) {
+                          _vm.sort("date")
+                        }
+                      }
+                    },
+                    [
+                      _vm._v("\r\n            Date\r\n            "),
+                      _c("i", { staticClass: "fas fa-arrow-down" }),
+                      _vm._v(" "),
+                      _c("i", { staticClass: "fas fa-arrow-up" })
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "dataTable__cell dataTable__cell--head dataTable__cell--mid"
+                    },
+                    [_vm._v("\r\n            Info\r\n          ")]
+                  )
+                ]),
+                _vm._v(" "),
+                _vm._l(_vm.sortedItems, function(transaction, key) {
+                  return _c("div", { staticClass: "dataTable__item" }, [
                     _c(
                       "div",
-                      {
-                        staticClass:
-                          "dataTable__cell dataTable__cell--trans-info"
-                      },
-                      [_vm._v(_vm._s(transaction.from))]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "dataTable__cell dataTable__cell--trans-info",
-                        style:
-                          transaction.send == "0" &&
-                          transaction.currency == "BTC"
-                            ? "width: 25%"
-                            : "width: 50%"
-                      },
+                      { staticClass: "dataTable__cell dataTable__cell--lt" },
                       [
-                        _c(
-                          "a",
-                          {
-                            attrs: {
-                              href:
-                                "https://" +
-                                transaction.info +
-                                "/tx/" +
-                                transaction.transaction_id
-                            }
-                          },
-                          [_vm._v(_vm._s(transaction.info))]
+                        _vm._v(
+                          "\r\n            " +
+                            _vm._s(transaction.investor_id) +
+                            "\r\n          "
                         )
                       ]
                     ),
                     _vm._v(" "),
-                    transaction.send == "0" && transaction.currency == "BTC"
-                      ? _c(
-                          "div",
-                          {
-                            staticClass:
-                              "dataTable__cell dataTable__cell--trans-info",
-                            staticStyle: { width: "25%" }
-                          },
-                          [
-                            _c(
-                              "button",
-                              {
-                                staticClass: "btn btn--small",
-                                on: {
-                                  click: function($event) {
-                                    _vm.sendTokens(transaction, key)
-                                  }
-                                }
-                              },
-                              [_vm._v("Send")]
-                            )
-                          ]
+                    _c(
+                      "div",
+                      { staticClass: "dataTable__cell dataTable__cell--lt" },
+                      [_vm._v(_vm._s(transaction.currency))]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "dataTable__cell dataTable__cell--lt" },
+                      [_vm._v(_vm._s(transaction.amount_tokens))]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass: "dataTable__cell dataTable__cell--lt",
+                        style:
+                          transaction.status === "true"
+                            ? "color: green;"
+                            : "color:red;"
+                      },
+                      [
+                        _vm._v(
+                          _vm._s(
+                            transaction.status === "true" ? "success" : "fail"
+                          )
                         )
-                      : _vm._e()
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "dataTable__cell dataTable__cell--big" },
+                      [_vm._v(_vm._s(transaction.date))]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "dataTable__cell dataTable__cell--mid" },
+                      [
+                        _c(
+                          "button",
+                          {
+                            staticClass: "btn",
+                            attrs: {
+                              "data-toggle": "collapse",
+                              "data-target": "#demo"
+                            },
+                            on: {
+                              click: function($event) {
+                                _vm.toggleAddingData(transaction.id)
+                              }
+                            }
+                          },
+                          [_vm._v("info")]
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "dataTable__item-wrap dataTable__item-wrap--hidden",
+                        attrs: { id: "hidden-" + transaction.id }
+                      },
+                      [
+                        _c("div", { staticClass: "dataTable__item-hidden" }, [
+                          _vm._m(0, true),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "dataTable__cell dataTable__cell--trans-info",
+                              style:
+                                transaction.send == "0" &&
+                                transaction.currency == "BTC"
+                                  ? "width: 25%"
+                                  : "width: 50%"
+                            },
+                            [_c("b", [_vm._v("Info")])]
+                          ),
+                          _vm._v(" "),
+                          transaction.send == "0" &&
+                          transaction.currency == "BTC"
+                            ? _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "dataTable__cell dataTable__cell--trans-info",
+                                  staticStyle: { width: "25%" }
+                                },
+                                [_c("b", [_vm._v("Send")])]
+                              )
+                            : _vm._e()
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "dataTable__item-hidden" }, [
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "dataTable__cell dataTable__cell--trans-info"
+                            },
+                            _vm._l(transaction.investor.wallets, function(
+                              wallet
+                            ) {
+                              return transaction.currency === "BTC"
+                                ? _c("div", [
+                                    wallet.type === "to" ||
+                                    wallet.type === "from"
+                                      ? _c("span", [
+                                          _c("b", [
+                                            _vm._v(_vm._s(wallet.type) + ": ")
+                                          ]),
+                                          _vm._v(" " + _vm._s(wallet.wallet))
+                                        ])
+                                      : _vm._e(),
+                                    _vm._v(" "),
+                                    _c("br")
+                                  ])
+                                : _c("div", [
+                                    _c("b", [_vm._v("from_to: ")]),
+                                    _vm._v(
+                                      " " +
+                                        _vm._s(transaction.from) +
+                                        "\r\n                "
+                                    )
+                                  ])
+                            })
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "dataTable__cell dataTable__cell--trans-info",
+                              style:
+                                transaction.send == "0" &&
+                                transaction.currency == "BTC"
+                                  ? "width: 25%"
+                                  : "width: 50%"
+                            },
+                            [
+                              _c(
+                                "a",
+                                {
+                                  attrs: {
+                                    href:
+                                      "https://" +
+                                      transaction.info +
+                                      "/tx/" +
+                                      transaction.transaction_id
+                                  }
+                                },
+                                [_vm._v(_vm._s(transaction.info))]
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          transaction.send == "0" &&
+                          transaction.currency == "BTC"
+                            ? _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "dataTable__cell dataTable__cell--trans-info",
+                                  staticStyle: { width: "25%" }
+                                },
+                                [
+                                  _c(
+                                    "button",
+                                    {
+                                      staticClass: "btn btn--small",
+                                      on: {
+                                        click: function($event) {
+                                          _vm.sendTokens(transaction, key)
+                                        }
+                                      }
+                                    },
+                                    [_vm._v("Send")]
+                                  )
+                                ]
+                              )
+                            : _vm._e()
+                        ])
+                      ]
+                    )
                   ])
-                ]
-              )
-            ])
-          })
-        ],
-        2
-      ),
-      _vm._v(" "),
-      _c("div", { staticClass: "helpBar" }, [
-        _c("div", { staticClass: "helpBar__buttons" }, [
-          _c(
-            "button",
-            {
-              staticClass: "btn",
-              on: {
-                click: function($event) {
-                  _vm.prevPage()
-                }
-              }
-            },
-            [_vm._v("Previous")]
-          ),
-          _vm._v(" "),
-          _c(
-            "button",
-            {
-              staticClass: "btn",
-              on: {
-                click: function($event) {
-                  _vm.nextPage()
-                }
-              }
-            },
-            [_vm._v("Next")]
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "helpBar__help-text" }, [
-          _c(
-            "p",
-            {
-              model: {
-                value: _vm.currentPage,
-                callback: function($$v) {
-                  _vm.currentPage = $$v
-                },
-                expression: "currentPage"
-              }
-            },
-            [_vm._v("current page: " + _vm._s(_vm.currentPage))]
-          ),
-          _vm._v(" "),
-          _c(
-            "p",
-            {
-              model: {
-                value: _vm.totalPages,
-                callback: function($$v) {
-                  _vm.totalPages = $$v
-                },
-                expression: "totalPages"
-              }
-            },
-            [_vm._v("total pages: " + _vm._s(_vm.totalPages))]
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "helpBar__page-select" }, [
-          _vm._m(1),
-          _vm._v(" "),
-          _c("br"),
-          _vm._v(" "),
-          _c(
-            "select",
-            {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.pageSize,
-                  expression: "pageSize"
-                }
+                })
               ],
-              attrs: { name: "pageQuantity", id: "pageQuantity" },
-              on: {
-                change: function($event) {
-                  var $$selectedVal = Array.prototype.filter
-                    .call($event.target.options, function(o) {
-                      return o.selected
-                    })
-                    .map(function(o) {
-                      var val = "_value" in o ? o._value : o.value
-                      return val
-                    })
-                  _vm.pageSize = $event.target.multiple
-                    ? $$selectedVal
-                    : $$selectedVal[0]
-                }
-              }
-            },
-            [
-              _c("option", { attrs: { value: "5" } }, [_vm._v("5")]),
+              2
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "helpBar" }, [
+              _c("div", { staticClass: "helpBar__buttons" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn",
+                    on: {
+                      click: function($event) {
+                        _vm.prevPage()
+                      }
+                    }
+                  },
+                  [_vm._v("Previous")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn",
+                    on: {
+                      click: function($event) {
+                        _vm.nextPage()
+                      }
+                    }
+                  },
+                  [_vm._v("Next")]
+                )
+              ]),
               _vm._v(" "),
-              _c("option", { attrs: { value: "10" } }, [_vm._v("10")]),
+              _c("div", { staticClass: "helpBar__help-text" }, [
+                _c(
+                  "p",
+                  {
+                    model: {
+                      value: _vm.currentPage,
+                      callback: function($$v) {
+                        _vm.currentPage = $$v
+                      },
+                      expression: "currentPage"
+                    }
+                  },
+                  [_vm._v("current page: " + _vm._s(_vm.currentPage))]
+                ),
+                _vm._v(" "),
+                _c(
+                  "p",
+                  {
+                    model: {
+                      value: _vm.totalPages,
+                      callback: function($$v) {
+                        _vm.totalPages = $$v
+                      },
+                      expression: "totalPages"
+                    }
+                  },
+                  [_vm._v("total pages: " + _vm._s(_vm.totalPages))]
+                )
+              ]),
               _vm._v(" "),
-              _c("option", { attrs: { value: "15" } }, [_vm._v("15")]),
+              _c("div", { staticClass: "helpBar__page-select" }, [
+                _vm._m(1),
+                _vm._v(" "),
+                _c("br"),
+                _vm._v(" "),
+                _c(
+                  "select",
+                  {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.pageSize,
+                        expression: "pageSize"
+                      }
+                    ],
+                    attrs: { name: "pageQuantity", id: "pageQuantity" },
+                    on: {
+                      change: function($event) {
+                        var $$selectedVal = Array.prototype.filter
+                          .call($event.target.options, function(o) {
+                            return o.selected
+                          })
+                          .map(function(o) {
+                            var val = "_value" in o ? o._value : o.value
+                            return val
+                          })
+                        _vm.pageSize = $event.target.multiple
+                          ? $$selectedVal
+                          : $$selectedVal[0]
+                      }
+                    }
+                  },
+                  [
+                    _c("option", { attrs: { value: "5" } }, [_vm._v("5")]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "10" } }, [_vm._v("10")]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "15" } }, [_vm._v("15")]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "20" } }, [_vm._v("20")]),
+                    _vm._v(" "),
+                    _c(
+                      "option",
+                      {
+                        attrs: { selected: "" },
+                        domProps: { value: _vm.totalPages }
+                      },
+                      [_vm._v("all, " + _vm._s(_vm.totalPages))]
+                    )
+                  ]
+                )
+              ]),
               _vm._v(" "),
-              _c("option", { attrs: { value: "20" } }, [_vm._v("20")]),
-              _vm._v(" "),
-              _c(
-                "option",
-                {
-                  attrs: { selected: "" },
-                  domProps: { value: _vm.totalPages }
-                },
-                [_vm._v("all, " + _vm._s(_vm.totalPages))]
-              )
-            ]
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "helpBar__checked-confirm" }, [
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.checkedSend,
-                expression: "checkedSend"
-              }
-            ],
-            attrs: { type: "checkbox", value: "0", checked: "" },
-            domProps: {
-              checked: Array.isArray(_vm.checkedSend)
-                ? _vm._i(_vm.checkedSend, "0") > -1
-                : _vm.checkedSend
-            },
-            on: {
-              click: _vm.checkBoxClick,
-              change: function($event) {
-                var $$a = _vm.checkedSend,
-                  $$el = $event.target,
-                  $$c = $$el.checked ? true : false
-                if (Array.isArray($$a)) {
-                  var $$v = "0",
-                    $$i = _vm._i($$a, $$v)
-                  if ($$el.checked) {
-                    $$i < 0 && (_vm.checkedSend = $$a.concat([$$v]))
-                  } else {
-                    $$i > -1 &&
-                      (_vm.checkedSend = $$a
-                        .slice(0, $$i)
-                        .concat($$a.slice($$i + 1)))
+              _c("div", { staticClass: "helpBar__checked-confirm" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.checkedSend,
+                      expression: "checkedSend"
+                    }
+                  ],
+                  attrs: { type: "checkbox", value: "0", checked: "" },
+                  domProps: {
+                    checked: Array.isArray(_vm.checkedSend)
+                      ? _vm._i(_vm.checkedSend, "0") > -1
+                      : _vm.checkedSend
+                  },
+                  on: {
+                    click: _vm.checkBoxClick,
+                    change: function($event) {
+                      var $$a = _vm.checkedSend,
+                        $$el = $event.target,
+                        $$c = $$el.checked ? true : false
+                      if (Array.isArray($$a)) {
+                        var $$v = "0",
+                          $$i = _vm._i($$a, $$v)
+                        if ($$el.checked) {
+                          $$i < 0 && (_vm.checkedSend = $$a.concat([$$v]))
+                        } else {
+                          $$i > -1 &&
+                            (_vm.checkedSend = $$a
+                              .slice(0, $$i)
+                              .concat($$a.slice($$i + 1)))
+                        }
+                      } else {
+                        _vm.checkedSend = $$c
+                      }
+                    }
                   }
-<<<<<<< HEAD
-                } else {
-                  _vm.checkedSend = $$c
-                }
-              }
-            }
-          }),
-          _vm._v("  Not sent\r\n        "),
-          _c("br"),
-=======
+                }),
+                _vm._v("  Not sent\r\n          "),
+                _c("br"),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.checkedSend,
+                      expression: "checkedSend"
+                    }
+                  ],
+                  attrs: { type: "checkbox", value: "1", checked: "" },
+                  domProps: {
+                    checked: Array.isArray(_vm.checkedSend)
+                      ? _vm._i(_vm.checkedSend, "1") > -1
+                      : _vm.checkedSend
+                  },
+                  on: {
+                    click: _vm.checkBoxClick,
+                    change: function($event) {
+                      var $$a = _vm.checkedSend,
+                        $$el = $event.target,
+                        $$c = $$el.checked ? true : false
+                      if (Array.isArray($$a)) {
+                        var $$v = "1",
+                          $$i = _vm._i($$a, $$v)
+                        if ($$el.checked) {
+                          $$i < 0 && (_vm.checkedSend = $$a.concat([$$v]))
+                        } else {
+                          $$i > -1 &&
+                            (_vm.checkedSend = $$a
+                              .slice(0, $$i)
+                              .concat($$a.slice($$i + 1)))
+                        }
+                      } else {
+                        _vm.checkedSend = $$c
+                      }
+                    }
+                  }
                 }),
                 _vm._v("  Sent\r\n        ")
               ])
@@ -75803,50 +75859,9 @@ var render = function() {
           _c("p", { staticClass: "metaMask__undefined-text" }, [
             _vm._v(_vm._s(_vm.trans.vue.install_metaMask))
           ]),
->>>>>>> 24737de... fixing metamask js
           _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.checkedSend,
-                expression: "checkedSend"
-              }
-            ],
-            attrs: { type: "checkbox", value: "1", checked: "" },
-            domProps: {
-              checked: Array.isArray(_vm.checkedSend)
-                ? _vm._i(_vm.checkedSend, "1") > -1
-                : _vm.checkedSend
-            },
-            on: {
-              click: _vm.checkBoxClick,
-              change: function($event) {
-                var $$a = _vm.checkedSend,
-                  $$el = $event.target,
-                  $$c = $$el.checked ? true : false
-                if (Array.isArray($$a)) {
-                  var $$v = "1",
-                    $$i = _vm._i($$a, $$v)
-                  if ($$el.checked) {
-                    $$i < 0 && (_vm.checkedSend = $$a.concat([$$v]))
-                  } else {
-                    $$i > -1 &&
-                      (_vm.checkedSend = $$a
-                        .slice(0, $$i)
-                        .concat($$a.slice($$i + 1)))
-                  }
-                } else {
-                  _vm.checkedSend = $$c
-                }
-              }
-            }
-          }),
-          _vm._v("  Sent\r\n      ")
+          _vm._m(2)
         ])
-      ])
-    ])
   ])
 }
 var staticRenderFns = [
@@ -75857,7 +75872,7 @@ var staticRenderFns = [
     return _c(
       "div",
       { staticClass: "dataTable__cell dataTable__cell--trans-info" },
-      [_c("b", [_vm._v("To")])]
+      [_c("b", [_vm._v("Wallets")])]
     )
   },
   function() {
@@ -75868,6 +75883,42 @@ var staticRenderFns = [
       _vm._v("Number of elements"),
       _c("br"),
       _vm._v(" on the page")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("ul", { staticClass: "metaMask__undefined-list" }, [
+      _c("li", { staticClass: "metaMask__undefined-item" }, [
+        _c(
+          "a",
+          {
+            staticClass: "metaMask__undefined-link",
+            attrs: {
+              href:
+                "https://addons.mozilla.org/ru/firefox/addon/ether-metamask/",
+              target: "_blank"
+            }
+          },
+          [_vm._v("\r\n          Mozilla Firefox\r\n        ")]
+        )
+      ]),
+      _vm._v(" "),
+      _c("li", { staticClass: "metaMask__undefined-item" }, [
+        _c(
+          "a",
+          {
+            staticClass: "metaMask__undefined-link",
+            attrs: {
+              href:
+                "https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn",
+              target: "_blank"
+            }
+          },
+          [_vm._v("\r\n          Google Chrome\r\n        ")]
+        )
+      ])
     ])
   }
 ]
@@ -76005,19 +76056,12 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
             currentPage: 1,
             totalPages: 1,
             checkedSend: ['false', 'true'],
-<<<<<<< HEAD
-            abi: [{ "constant": true, "inputs": [], "name": "hasClosed", "outputs": [{ "name": "", "type": "bool" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [], "name": "addBalanceForOraclize", "outputs": [], "payable": true, "stateMutability": "payable", "type": "function" }, { "constant": false, "inputs": [{ "name": "myid", "type": "bytes32" }, { "name": "result", "type": "string" }], "name": "__callback", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_user", "type": "address" }], "name": "delKYC", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [{ "name": "_owner", "type": "address" }], "name": "isOwner", "outputs": [{ "name": "", "type": "bool" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "tokenPriceInWei", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "cap", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [{ "name": "myid", "type": "bytes32" }, { "name": "result", "type": "string" }, { "name": "proof", "type": "bytes" }], "name": "__callback", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_user", "type": "address" }], "name": "addKYC", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [], "name": "weiRaised", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "closingTime", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [], "name": "finalize", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [], "name": "capReached", "outputs": [{ "name": "", "type": "bool" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "tokensSold", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "wallet", "outputs": [{ "name": "", "type": "address" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "currentStage", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [{ "name": "_url", "type": "string" }], "name": "setOraclizeUrl", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [], "name": "updatePrice", "outputs": [], "payable": true, "stateMutability": "payable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_price", "type": "uint256" }], "name": "setTokenPrice", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_newOwner", "type": "address" }], "name": "addOwner", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_owner", "type": "address" }], "name": "delOwner", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_to", "type": "address" }], "name": "withdrawBalance", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [{ "name": "", "type": "uint256" }], "name": "stages", "outputs": [{ "name": "stopDay", "type": "uint256" }, { "name": "bonus1", "type": "uint256" }, { "name": "bonus2", "type": "uint256" }, { "name": "bonus3", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [{ "name": "", "type": "bytes32" }], "name": "pendingQueries", "outputs": [{ "name": "", "type": "bool" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "isFinalized", "outputs": [{ "name": "", "type": "bool" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [{ "name": "_stopDay", "type": "uint256" }, { "name": "_bonus1", "type": "uint256" }, { "name": "_bonus2", "type": "uint256" }, { "name": "_bonus3", "type": "uint256" }], "name": "addStage", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [], "name": "openingTime", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "reserveFund", "outputs": [{ "name": "", "type": "address" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [{ "name": "", "type": "address" }], "name": "KYC", "outputs": [{ "name": "", "type": "bool" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [{ "name": "_newPrice", "type": "uint256" }], "name": "setGasPrice", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [], "name": "oraclizeBalance", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "oraclize_url", "outputs": [{ "name": "", "type": "string" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [{ "name": "_beneficiary", "type": "address" }], "name": "buyTokens", "outputs": [], "payable": true, "stateMutability": "payable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_beneficiary", "type": "address" }, { "name": "_tokens", "type": "uint256" }], "name": "manualSale", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [], "name": "stageCount", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "token", "outputs": [{ "name": "", "type": "address" }], "payable": false, "stateMutability": "view", "type": "function" }, { "inputs": [{ "name": "_wallet", "type": "address" }, { "name": "_token", "type": "address" }, { "name": "_cap", "type": "uint256" }, { "name": "_openingTime", "type": "uint256" }, { "name": "_closingTime", "type": "uint256" }, { "name": "_reserveFund", "type": "address" }, { "name": "_tokenPriceInWei", "type": "uint256" }], "payable": false, "stateMutability": "nonpayable", "type": "constructor" }, { "payable": true, "stateMutability": "payable", "type": "fallback" }, { "anonymous": false, "inputs": [{ "indexed": true, "name": "purchaser", "type": "address" }, { "indexed": true, "name": "beneficiary", "type": "address" }, { "indexed": false, "name": "value", "type": "uint256" }, { "indexed": false, "name": "tokens", "type": "uint256" }, { "indexed": false, "name": "bonus", "type": "uint256" }], "name": "TokenPurchase", "type": "event" }, { "anonymous": false, "inputs": [], "name": "Finalized", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": false, "name": "description", "type": "string" }], "name": "NewOraclizeQuery", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": false, "name": "price", "type": "string" }], "name": "NewKrakenPriceTicker", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "name": "newOwner", "type": "address" }], "name": "OwnerAdded", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "name": "owner", "type": "address" }], "name": "OwnerDeleted", "type": "event" }],
-            crowdSaleAddress: Object({"NODE_ENV":"development"}).MIX_HOME_WALLET_ETH,
-            overrideOptions: { gasLimit: 150000 },
-            provider: new __WEBPACK_IMPORTED_MODULE_2_ethers___default.a.providers.Web3Provider(web3.currentProvider, __WEBPACK_IMPORTED_MODULE_2_ethers___default.a.providers.networks.homestead)
-=======
             web3: window.web3,
             trans: window.trans
             // abi: [{"constant":true,"inputs":[],"name":"hasClosed","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"addBalanceForOraclize","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":false,"inputs":[{"name":"myid","type":"bytes32"},{"name":"result","type":"string"}],"name":"__callback","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_user","type":"address"}],"name":"delKYC","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"_owner","type":"address"}],"name":"isOwner","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"tokenPriceInWei","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"cap","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"myid","type":"bytes32"},{"name":"result","type":"string"},{"name":"proof","type":"bytes"}],"name":"__callback","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_user","type":"address"}],"name":"addKYC","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"weiRaised","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"closingTime","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"finalize","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"capReached","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"tokensSold","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"wallet","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"currentStage","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_url","type":"string"}],"name":"setOraclizeUrl","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[],"name":"updatePrice","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":false,"inputs":[{"name":"_price","type":"uint256"}],"name":"setTokenPrice","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_newOwner","type":"address"}],"name":"addOwner","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_owner","type":"address"}],"name":"delOwner","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_to","type":"address"}],"name":"withdrawBalance","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"stages","outputs":[{"name":"stopDay","type":"uint256"},{"name":"bonus1","type":"uint256"},{"name":"bonus2","type":"uint256"},{"name":"bonus3","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"bytes32"}],"name":"pendingQueries","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"isFinalized","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_stopDay","type":"uint256"},{"name":"_bonus1","type":"uint256"},{"name":"_bonus2","type":"uint256"},{"name":"_bonus3","type":"uint256"}],"name":"addStage","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"openingTime","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"reserveFund","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"KYC","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_newPrice","type":"uint256"}],"name":"setGasPrice","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"oraclizeBalance","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"oraclize_url","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_beneficiary","type":"address"}],"name":"buyTokens","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":false,"inputs":[{"name":"_beneficiary","type":"address"},{"name":"_tokens","type":"uint256"}],"name":"manualSale","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"stageCount","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"token","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[{"name":"_wallet","type":"address"},{"name":"_token","type":"address"},{"name":"_cap","type":"uint256"},{"name":"_openingTime","type":"uint256"},{"name":"_closingTime","type":"uint256"},{"name":"_reserveFund","type":"address"},{"name":"_tokenPriceInWei","type":"uint256"}],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"payable":true,"stateMutability":"payable","type":"fallback"},{"anonymous":false,"inputs":[{"indexed":true,"name":"purchaser","type":"address"},{"indexed":true,"name":"beneficiary","type":"address"},{"indexed":false,"name":"value","type":"uint256"},{"indexed":false,"name":"tokens","type":"uint256"},{"indexed":false,"name":"bonus","type":"uint256"}],"name":"TokenPurchase","type":"event"},{"anonymous":false,"inputs":[],"name":"Finalized","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"description","type":"string"}],"name":"NewOraclizeQuery","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"price","type":"string"}],"name":"NewKrakenPriceTicker","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"newOwner","type":"address"}],"name":"OwnerAdded","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"owner","type":"address"}],"name":"OwnerDeleted","type":"event"}],
             // crowdSaleAddress: process.env.MIX_HOME_WALLET_ETH,
             // overrideOptions: { gasLimit: 150000 },
             // provider: new ethers.providers.Web3Provider(web3.currentProvider, ethers.providers.networks.homestead),
->>>>>>> 24737de... fixing metamask js
         };
     },
 
@@ -76096,18 +76140,17 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
         },
 
         sendTokens: function sendTokens(item, key) {
-            var _this3 = this;
-
             if (item.tokens !== '0.00') {
-                var contract = new __WEBPACK_IMPORTED_MODULE_2_ethers___default.a.Contract(this.crowdSaleAddress, this.abi, this.provider.getSigner());
+                // let contract = new ethers.Contract(this.crowdSaleAddress, this.abi, this.provider.getSigner());
                 var beneficiary = item.wallet_to; //адрес кому отправить токены
-                contract.manualSale(beneficiary, __WEBPACK_IMPORTED_MODULE_2_ethers___default.a.utils.parseEther(String(item.tokens)), this.overrideOptions).then(function (tx) {
-                    alert('Submitted');
-                    _this3.updateReferral(item);
-                    provider.waitForTransaction(tx.hash).then(function (tx) {
-                        alert('Confirmed');
-                    });
-                });
+                // contract.manualSale(beneficiary, ethers.utils.parseEther(String(item.tokens)), this.overrideOptions).then(tx=> {
+                //     alert('Submitted');
+                this.updateReferral(item);
+                //     provider.waitForTransaction(tx.hash).then(tx=> {
+                //         alert('Confirmed');
+                //     })
+                //
+                // })
             }
         },
         updateReferral: function () {
@@ -76170,95 +76213,282 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("section", { staticClass: "referral" }, [
-<<<<<<< HEAD
-    _c("div", { staticClass: "dataTable dataTable--admin" }, [
-      _c(
-        "table",
-        { staticClass: "dataTable__list" },
-        [
-          _c("tr", [
-=======
     typeof _vm.web3 != "undefined"
       ? _c("div", [
           _c("div", { staticClass: "dataTable dataTable--admin" }, [
->>>>>>> 24737de... fixing metamask js
             _c(
-              "th",
-              {
-                on: {
-                  click: function($event) {
-                    _vm.sort("investor_id")
-                  }
-                }
-              },
-              [_vm._v("Investor ID")]
+              "table",
+              { staticClass: "dataTable__list" },
+              [
+                _c("tr", [
+                  _c(
+                    "th",
+                    {
+                      on: {
+                        click: function($event) {
+                          _vm.sort("investor_id")
+                        }
+                      }
+                    },
+                    [_vm._v("Investor ID")]
+                  ),
+                  _vm._v(" "),
+                  _c("th", [_vm._v("Email")]),
+                  _vm._v(" "),
+                  _c(
+                    "th",
+                    {
+                      on: {
+                        click: function($event) {
+                          _vm.sort("wallet_to")
+                        }
+                      }
+                    },
+                    [_vm._v("Wallet")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "th",
+                    {
+                      on: {
+                        click: function($event) {
+                          _vm.sort("tokens")
+                        }
+                      }
+                    },
+                    [_vm._v("Tokens")]
+                  ),
+                  _vm._v(" "),
+                  _c("th", [_vm._v("Send")])
+                ]),
+                _vm._v(" "),
+                _vm._l(_vm.sortedItems, function(referral, key) {
+                  return _c("tr", { staticClass: "dataTable__success" }, [
+                    _c("td", [_vm._v(_vm._s(referral.investor_id))]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(referral.investor.email))]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(referral.wallet_to))]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(referral.tokens))]),
+                    _vm._v(" "),
+                    _c("td", [
+                      _c(
+                        "button",
+                        {
+                          staticClass: "btn btn--small",
+                          attrs: { disabled: referral.send === "true" },
+                          on: {
+                            click: function($event) {
+                              _vm.sendTokens(referral, key)
+                            }
+                          }
+                        },
+                        [_vm._v("Send")]
+                      )
+                    ])
+                  ])
+                })
+              ],
+              2
             ),
             _vm._v(" "),
-            _c("th", [_vm._v("Email")]),
-            _vm._v(" "),
-            _c(
-              "th",
-              {
-                on: {
-                  click: function($event) {
-                    _vm.sort("wallet_to")
-                  }
-                }
-              },
-              [_vm._v("Wallet")]
-            ),
-            _vm._v(" "),
-            _c(
-              "th",
-              {
-                on: {
-                  click: function($event) {
-                    _vm.sort("tokens")
-                  }
-                }
-              },
-              [_vm._v("Tokens")]
-            ),
-            _vm._v(" "),
-            _c("th", [_vm._v("Send")])
-          ]),
-          _vm._v(" "),
-          _vm._l(_vm.sortedItems, function(referral, key) {
-            return _c("tr", { staticClass: "dataTable__success" }, [
-              _c("td", [_vm._v(_vm._s(referral.investor_id))]),
-              _vm._v(" "),
-              _c("td", [_vm._v(_vm._s(referral.investor.email))]),
-              _vm._v(" "),
-              _c("td", [_vm._v(_vm._s(referral.wallet_to))]),
-              _vm._v(" "),
-              _c("td", [_vm._v(_vm._s(referral.tokens))]),
-              _vm._v(" "),
-              _c("td", [
+            _c("div", { staticClass: "helpBar" }, [
+              _c("div", { staticClass: "helpBar__buttons" }, [
                 _c(
                   "button",
                   {
-                    staticClass: "btn btn--small",
-                    attrs: { disabled: referral.send === "true" },
+                    staticClass: "btn",
                     on: {
                       click: function($event) {
-                        _vm.sendTokens(referral, key)
+                        _vm.prevPage()
                       }
                     }
                   },
-                  [_vm._v("Send")]
+                  [_vm._v("Previous")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn",
+                    on: {
+                      click: function($event) {
+                        _vm.nextPage()
+                      }
+                    }
+                  },
+                  [_vm._v("Next")]
                 )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "helpBar__help-text" }, [
+                _c(
+                  "p",
+                  {
+                    model: {
+                      value: _vm.currentPage,
+                      callback: function($$v) {
+                        _vm.currentPage = $$v
+                      },
+                      expression: "currentPage"
+                    }
+                  },
+                  [_vm._v("current page: " + _vm._s(_vm.currentPage))]
+                ),
+                _vm._v(" "),
+                _c(
+                  "p",
+                  {
+                    model: {
+                      value: _vm.totalPages,
+                      callback: function($$v) {
+                        _vm.totalPages = $$v
+                      },
+                      expression: "totalPages"
+                    }
+                  },
+                  [_vm._v("total pages: " + _vm._s(_vm.totalPages))]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "helpBar__page-select" }, [
+                _vm._m(0),
+                _vm._v(" "),
+                _c("br"),
+                _vm._v(" "),
+                _c(
+                  "select",
+                  {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.pageSize,
+                        expression: "pageSize"
+                      }
+                    ],
+                    attrs: { name: "pageQuantity", id: "pageQuantity" },
+                    on: {
+                      change: function($event) {
+                        var $$selectedVal = Array.prototype.filter
+                          .call($event.target.options, function(o) {
+                            return o.selected
+                          })
+                          .map(function(o) {
+                            var val = "_value" in o ? o._value : o.value
+                            return val
+                          })
+                        _vm.pageSize = $event.target.multiple
+                          ? $$selectedVal
+                          : $$selectedVal[0]
+                      }
+                    }
+                  },
+                  [
+                    _c("option", { attrs: { value: "5" } }, [_vm._v("5")]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "10" } }, [_vm._v("10")]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "15" } }, [_vm._v("15")]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "20" } }, [_vm._v("20")]),
+                    _vm._v(" "),
+                    _c(
+                      "option",
+                      {
+                        attrs: { selected: "" },
+                        domProps: { value: _vm.totalPages }
+                      },
+                      [_vm._v("all, " + _vm._s(_vm.totalPages))]
+                    )
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "helpBar__checked-confirm" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.checkedSend,
+                      expression: "checkedSend"
+                    }
+                  ],
+                  attrs: { type: "checkbox", value: "false", checked: "" },
+                  domProps: {
+                    checked: Array.isArray(_vm.checkedSend)
+                      ? _vm._i(_vm.checkedSend, "false") > -1
+                      : _vm.checkedSend
+                  },
+                  on: {
+                    click: _vm.checkBoxClick,
+                    change: function($event) {
+                      var $$a = _vm.checkedSend,
+                        $$el = $event.target,
+                        $$c = $$el.checked ? true : false
+                      if (Array.isArray($$a)) {
+                        var $$v = "false",
+                          $$i = _vm._i($$a, $$v)
+                        if ($$el.checked) {
+                          $$i < 0 && (_vm.checkedSend = $$a.concat([$$v]))
+                        } else {
+                          $$i > -1 &&
+                            (_vm.checkedSend = $$a
+                              .slice(0, $$i)
+                              .concat($$a.slice($$i + 1)))
+                        }
+                      } else {
+                        _vm.checkedSend = $$c
+                      }
+                    }
+                  }
+                }),
+                _vm._v("  Not sent\r\n          "),
+                _c("br"),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.checkedSend,
+                      expression: "checkedSend"
+                    }
+                  ],
+                  attrs: { type: "checkbox", value: "true", checked: "" },
+                  domProps: {
+                    checked: Array.isArray(_vm.checkedSend)
+                      ? _vm._i(_vm.checkedSend, "true") > -1
+                      : _vm.checkedSend
+                  },
+                  on: {
+                    click: _vm.checkBoxClick,
+                    change: function($event) {
+                      var $$a = _vm.checkedSend,
+                        $$el = $event.target,
+                        $$c = $$el.checked ? true : false
+                      if (Array.isArray($$a)) {
+                        var $$v = "true",
+                          $$i = _vm._i($$a, $$v)
+                        if ($$el.checked) {
+                          $$i < 0 && (_vm.checkedSend = $$a.concat([$$v]))
+                        } else {
+                          $$i > -1 &&
+                            (_vm.checkedSend = $$a
+                              .slice(0, $$i)
+                              .concat($$a.slice($$i + 1)))
+                        }
+                      } else {
+                        _vm.checkedSend = $$c
+                      }
+                    }
+                  }
+                }),
+                _vm._v("  Sent\r\n        ")
               ])
             ])
-<<<<<<< HEAD
-          })
-        ],
-        2
-      )
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "helpBar" }, [
-      _c("div", { staticClass: "helpBar__buttons" }, [
-=======
           ])
         ])
       : _c("div", { staticClass: "metaMask__undefined-block" }, [
@@ -76287,209 +76517,34 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("ul", { staticClass: "metaMask__undefined-list" }, [
       _c("li", { staticClass: "metaMask__undefined-item" }, [
->>>>>>> 24737de... fixing metamask js
         _c(
-          "button",
+          "a",
           {
-            staticClass: "btn",
-            on: {
-              click: function($event) {
-                _vm.prevPage()
-              }
+            staticClass: "metaMask__undefined-link",
+            attrs: {
+              href:
+                "https://addons.mozilla.org/ru/firefox/addon/ether-metamask/",
+              target: "_blank"
             }
           },
-          [_vm._v("Previous")]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            staticClass: "btn",
-            on: {
-              click: function($event) {
-                _vm.nextPage()
-              }
-            }
-          },
-          [_vm._v("Next")]
+          [_vm._v("\r\n          Mozilla Firefox\r\n        ")]
         )
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "helpBar__help-text" }, [
+      _c("li", { staticClass: "metaMask__undefined-item" }, [
         _c(
-          "p",
+          "a",
           {
-            model: {
-              value: _vm.currentPage,
-              callback: function($$v) {
-                _vm.currentPage = $$v
-              },
-              expression: "currentPage"
+            staticClass: "metaMask__undefined-link",
+            attrs: {
+              href:
+                "https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn",
+              target: "_blank"
             }
           },
-          [_vm._v("current page: " + _vm._s(_vm.currentPage))]
-        ),
-        _vm._v(" "),
-        _c(
-          "p",
-          {
-            model: {
-              value: _vm.totalPages,
-              callback: function($$v) {
-                _vm.totalPages = $$v
-              },
-              expression: "totalPages"
-            }
-          },
-          [_vm._v("total pages: " + _vm._s(_vm.totalPages))]
+          [_vm._v("\r\n          Google Chrome\r\n        ")]
         )
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "helpBar__page-select" }, [
-        _vm._m(0),
-        _vm._v(" "),
-        _c("br"),
-        _vm._v(" "),
-        _c(
-          "select",
-          {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.pageSize,
-                expression: "pageSize"
-              }
-            ],
-            attrs: { name: "pageQuantity", id: "pageQuantity" },
-            on: {
-              change: function($event) {
-                var $$selectedVal = Array.prototype.filter
-                  .call($event.target.options, function(o) {
-                    return o.selected
-                  })
-                  .map(function(o) {
-                    var val = "_value" in o ? o._value : o.value
-                    return val
-                  })
-                _vm.pageSize = $event.target.multiple
-                  ? $$selectedVal
-                  : $$selectedVal[0]
-              }
-            }
-          },
-          [
-            _c("option", { attrs: { value: "5" } }, [_vm._v("5")]),
-            _vm._v(" "),
-            _c("option", { attrs: { value: "10" } }, [_vm._v("10")]),
-            _vm._v(" "),
-            _c("option", { attrs: { value: "15" } }, [_vm._v("15")]),
-            _vm._v(" "),
-            _c("option", { attrs: { value: "20" } }, [_vm._v("20")]),
-            _vm._v(" "),
-            _c(
-              "option",
-              { attrs: { selected: "" }, domProps: { value: _vm.totalPages } },
-              [_vm._v("all, " + _vm._s(_vm.totalPages))]
-            )
-          ]
-        )
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "helpBar__checked-confirm" }, [
-        _c("input", {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.checkedSend,
-              expression: "checkedSend"
-            }
-          ],
-          attrs: { type: "checkbox", value: "false", checked: "" },
-          domProps: {
-            checked: Array.isArray(_vm.checkedSend)
-              ? _vm._i(_vm.checkedSend, "false") > -1
-              : _vm.checkedSend
-          },
-          on: {
-            click: _vm.checkBoxClick,
-            change: function($event) {
-              var $$a = _vm.checkedSend,
-                $$el = $event.target,
-                $$c = $$el.checked ? true : false
-              if (Array.isArray($$a)) {
-                var $$v = "false",
-                  $$i = _vm._i($$a, $$v)
-                if ($$el.checked) {
-                  $$i < 0 && (_vm.checkedSend = $$a.concat([$$v]))
-                } else {
-                  $$i > -1 &&
-                    (_vm.checkedSend = $$a
-                      .slice(0, $$i)
-                      .concat($$a.slice($$i + 1)))
-                }
-              } else {
-                _vm.checkedSend = $$c
-              }
-            }
-          }
-        }),
-        _vm._v("  Not sent\r\n      "),
-        _c("br"),
-        _vm._v(" "),
-        _c("input", {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.checkedSend,
-              expression: "checkedSend"
-            }
-          ],
-          attrs: { type: "checkbox", value: "true", checked: "" },
-          domProps: {
-            checked: Array.isArray(_vm.checkedSend)
-              ? _vm._i(_vm.checkedSend, "true") > -1
-              : _vm.checkedSend
-          },
-          on: {
-            click: _vm.checkBoxClick,
-            change: function($event) {
-              var $$a = _vm.checkedSend,
-                $$el = $event.target,
-                $$c = $$el.checked ? true : false
-              if (Array.isArray($$a)) {
-                var $$v = "true",
-                  $$i = _vm._i($$a, $$v)
-                if ($$el.checked) {
-                  $$i < 0 && (_vm.checkedSend = $$a.concat([$$v]))
-                } else {
-                  $$i > -1 &&
-                    (_vm.checkedSend = $$a
-                      .slice(0, $$i)
-                      .concat($$a.slice($$i + 1)))
-                }
-              } else {
-                _vm.checkedSend = $$c
-              }
-            }
-          }
-        }),
-        _vm._v("  Sent\r\n    ")
       ])
-    ])
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("label", { attrs: { for: "pageQuantity" } }, [
-      _vm._v("Number of elements"),
-      _c("br"),
-      _vm._v(" on the page")
     ])
   }
 ]

@@ -65,6 +65,7 @@
                             if (wallet.type === 'to') {
                                 _this.val(wallet_val);
                                 _this.attr('disabled', true);
+                                $('#wallet2').removeAttr('disabled');
                                 // $('.raisedContainer--qr-2').removeClass('raisedContainer--disabled');
                             }
 

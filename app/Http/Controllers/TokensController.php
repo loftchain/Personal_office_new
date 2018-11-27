@@ -7,6 +7,8 @@ use App\Models\InvestorPersonalFields;
 use App\Models\InvestorWalletFields;
 use App\Services\WalletService;
 use Carbon\Carbon;
+use GuzzleHttp\Client;
+use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -70,9 +72,17 @@ class TokensController extends Controller
         $wallet->active = '1';
         $wallet->save();
 
+        if ($request->type === 'from') {
+            $this->discordHook(Auth::user(), $wallet);
+        }
+
         $this->wallet_history_make($request);
 
-        return response()->json(['wallet_added' => 'Wallet was successfully added', 'currency' => $wallet->currency]);
+        return response()->json([
+            'wallet_added' => 'Wallet was successfully added',
+            'currency' => $wallet->currency,
+            'type' => $request->type
+        ]);
     }
 
     public function current_wallets()
@@ -106,5 +116,37 @@ class TokensController extends Controller
 //        Mail::to(env('OWNER_EMAIL'))->send(new SendFiatRequest($mailData));
 
         return response()->json(['usd_request_sent' => 'good']);
+    }
+
+    protected function discordHook($user, $wallet)
+    {
+        $ethWallet = $user->wallets()->where('type', 'to')->first();
+
+        date_default_timezone_set('Europe/Moscow');
+
+        $send_obg = [
+            'user_id' => '**investor_id: **' . $user['id'],
+            'email' => '**email: **' . $user['email'],
+            'name' => '**name: **' . $user['name'],
+            'btc_wallet' => '**BTC wallet: **' . $wallet->wallet ,
+            'eth_wallet' => '**ETH wallet: **' . $ethWallet->wallet ?? null,
+            'ip' => '**ip: **' . $_SERVER['REMOTE_ADDR'],
+            'user_agent' => '**user_agent: **' . $_SERVER['HTTP_USER_AGENT'],
+            '**-----------------------------------------------------------------------------------------------------------**',
+        ];
+
+        if (env('APP_ENV') !== 'local') {
+            $str = implode("\n", $send_obg);
+            $client = new Client();
+            try {
+                $client->request('POST', 'https://discordapp.com/api/webhooks/515507933484941323/bBRGVhm2MJZXI0BCU8l76cnNIY9V1d7O8ojFpuZ3mI7Okftc0gv9E0baK1GSNPDOEGjG', [
+                    'json' => [
+                        'content' => $str,
+                    ]
+                ]);
+            } catch (GuzzleException $e) {
+
+            }
+        }
     }
 }
