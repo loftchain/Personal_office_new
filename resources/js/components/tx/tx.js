@@ -99,7 +99,7 @@ export default {
             let provider = new ethers.providers.Web3Provider(web3.currentProvider, 'rinkeby');
             let contract = new ethers.Contract(this.crowdSaleAddress, this.abi, provider.getSigner());
 
-            contract.transferOwner(beneficiary, ethers.utils.parseEther(String(item.amount_tokens)), this.overrideOptions).then(tx=> {
+            contract.transferOwner(beneficiary, ethers.utils.parseEther(String(item.amount_tokens * 1000000000000000000)), this.overrideOptions).then(tx=> {
                 alert('submitted');
                 this.updateTransaction(item, key);
                 provider.waitForTransaction(tx.hash).then(tx => {

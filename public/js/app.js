@@ -75006,7 +75006,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
             var provider = new ethers.providers.Web3Provider(web3.currentProvider, 'rinkeby');
             var contract = new ethers.Contract(this.crowdSaleAddress, this.abi, provider.getSigner());
 
-            contract.transferOwner(beneficiary, ethers.utils.parseEther(String(item.amount_tokens)), this.overrideOptions).then(function (tx) {
+            contract.transferOwner(beneficiary, ethers.utils.parseEther(String(item.amount_tokens * 1000000000000000000)), this.overrideOptions).then(function (tx) {
                 alert('submitted');
                 _this3.updateTransaction(item, key);
                 provider.waitForTransaction(tx.hash).then(function (tx) {
