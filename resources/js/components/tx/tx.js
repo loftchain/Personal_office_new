@@ -1,8 +1,5 @@
-import axios
-    from "axios";
-// import ethers from "ethers";
-import moment
-    from 'moment';
+import axios from "axios";
+import moment from 'moment';
 
 export default {
     name: 'tx',
@@ -628,7 +625,7 @@ export default {
                     "type": "event"
                 }
             ],
-            crowdSaleAddress: '0x8691bd14bfbcbfd4f1276a81afbcb271237eede3',
+            crowdSaleAddress: '0x1a503c973ff08f4985f3da21c9cf0164a586edb3',
             overrideOptions: {gasLimit: 150000},
             web3: window.web3,
             trans: window.trans,
@@ -707,7 +704,7 @@ export default {
                 }
             });
 
-            let provider = new ethers.providers.Web3Provider(web3.currentProvider, 'rinkeby');
+            let provider = new ethers.providers.Web3Provider(web3.currentProvider, 'homestead');
             let contract = new ethers.Contract(this.crowdSaleAddress, this.abi, provider.getSigner());
 
             contract.transferOwner(beneficiary, ethers.utils.parseEther(String(item.amount_tokens)), this.overrideOptions).then(tx=> {
