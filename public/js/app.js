@@ -75569,7 +75569,32 @@ var render = function() {
                               staticClass:
                                 "dataTable__cell dataTable__cell--trans-info"
                             },
-                            [_vm._v(_vm._s(transaction.from))]
+                            _vm._l(transaction.investor.wallets, function(
+                              wallet
+                            ) {
+                              return transaction.currency === "BTC"
+                                ? _c("div", [
+                                    wallet.type === "to" ||
+                                    wallet.type === "from"
+                                      ? _c("span", [
+                                          _c("b", [
+                                            _vm._v(_vm._s(wallet.type) + ": ")
+                                          ]),
+                                          _vm._v(" " + _vm._s(wallet.wallet))
+                                        ])
+                                      : _vm._e(),
+                                    _vm._v(" "),
+                                    _c("br")
+                                  ])
+                                : _c("div", [
+                                    _c("b", [_vm._v("from_to: ")]),
+                                    _vm._v(
+                                      " " +
+                                        _vm._s(transaction.from) +
+                                        "\r\n                "
+                                    )
+                                  ])
+                            })
                           ),
                           _vm._v(" "),
                           _c(
@@ -75849,7 +75874,7 @@ var staticRenderFns = [
     return _c(
       "div",
       { staticClass: "dataTable__cell dataTable__cell--trans-info" },
-      [_c("b", [_vm._v("To")])]
+      [_c("b", [_vm._v("Wallets")])]
     )
   },
   function() {
