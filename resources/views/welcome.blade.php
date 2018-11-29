@@ -30,4 +30,8 @@
             </div>
         </div>
     </section>
+    <footer class="page-footer page-footer--welcome">
+        @include('layouts.footer')
+    </footer>
+
 @endsection

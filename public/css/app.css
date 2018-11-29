@@ -10810,6 +10810,13 @@ body {
 }
 
 .sidebar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   position: relative;
   width: 318px;
   -ms-flex-negative: 0;
@@ -10825,24 +10832,23 @@ body {
 
 @media (max-width: 992px) {
   .sidebar {
-    display: block;
     left: -318px;
     position: fixed;
     height: 100%;
-    -webkit-box-flex: 0;
-        -ms-flex: none;
-            flex: none;
     top: 53px;
   }
 }
 
 .sidebar--mobileVisible {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   left: 0;
-  display: block;
   width: 318px;
-  -webkit-box-flex: 0;
-      -ms-flex: none;
-          flex: none;
   position: fixed;
   height: 100%;
   top: 53px;
@@ -10851,7 +10857,7 @@ body {
 
 .sidebar__logout {
   position: absolute;
-  bottom: 50px;
+  bottom: 60px;
   left: 63px;
   font-size: 20px;
   color: #ffffff;
@@ -10865,7 +10871,7 @@ body {
 
 @media (max-width: 992px) {
   .sidebar__logout {
-    bottom: 90px;
+    bottom: 120px;
   }
 }
 
@@ -11815,6 +11821,12 @@ select:-webkit-autofill {
           flex: none;
   width: 537px;
   background: #ffffff;
+}
+
+@media (max-width: 992px) {
+  .modalFrame--fix {
+    margin: auto;
+  }
 }
 
 .modalFrame__title {
@@ -12956,6 +12968,52 @@ select:-webkit-autofill {
   height: 75px;
   border: 1px solid #323a44;
   margin: 10px 5px 0 0;
+}
+
+.page-footer--welcome {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+
+.page-footer--menu {
+  margin-top: auto;
+  padding: 13px 19px;
+}
+
+@media (max-width: 992px) {
+  .page-footer--menu {
+    margin-bottom: 60px;
+  }
+}
+
+.page-footer__text {
+  font-size: 13px;
+  margin: 0;
+}
+
+.page-footer__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.page-footer__list-item {
+  font-size: 13px;
+  margin-right: 10px;
+}
+
+.page-footer__link {
+  color: #8E99A5;
+  text-decoration: underline;
+}
+
+.page-footer__link:hover {
+  color: #8E99A5;
+  text-decoration: none;
 }
 
 .navbar-laravel {

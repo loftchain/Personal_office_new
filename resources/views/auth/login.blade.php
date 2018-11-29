@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="login modalFrame">
+    <div class="login modalFrame modalFrame--fix">
         @if(session('messages'))
             <div class="alert alert-danger" role="alert">
                 {{ session('messages') }}
@@ -36,4 +36,5 @@
         </div>
         <div class="formRegText">{!! trans('modals/modals.not_have_account') !!} <a class="link" href="{{ route('register') }}">{!! trans('modals/modals.signUp_title') !!}</a></div>
     </div>
+
 @endsection

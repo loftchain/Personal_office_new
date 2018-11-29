@@ -330,6 +330,9 @@ body {
 }
 
 .sidebar {
+  display: flex;
+  flex-direction: column;
+
   position: relative;
   width: 318px;
   flex-shrink: 0;
@@ -337,11 +340,11 @@ body {
   background: $sidebarBg;
   border-radius: 10px 0 0 10px;
   @media #{$tablet992} {
-    display: block;
+    //display: block;
     left: -318px;
     position: fixed;
     height: 100%;
-    flex: none;
+    //flex: none;
     top: 53px;
   }
   transition: 0.3s all linear;
@@ -349,10 +352,13 @@ body {
 }
 
 .sidebar--mobileVisible {
+  display: flex;
+  flex-direction: column;
+
   left: 0;
-  display: block;
+  //display: block;
   width: 318px;
-  flex: none;
+  //flex: none;
   position: fixed;
   height: 100%;
   top: 53px;
@@ -361,7 +367,7 @@ body {
 
 .sidebar__logout {
   position: absolute;
-  bottom: 50px;
+  bottom: 60px;
   left: 63px;
   font-size: 20px;
   color: $white;
@@ -372,7 +378,7 @@ body {
   }
 
   @media #{$tablet992} {
-    bottom: 90px;
+    bottom: 120px;
   }
 }
 

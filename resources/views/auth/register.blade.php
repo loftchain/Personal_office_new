@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="login modalFrame">
+    <div class="login modalFrame modalFrame--fix">
         <div class="modalFrame__title">{!! trans('modals/modals.signUp_title') !!}</div>
         <form class="loginForm icoForm" id="demo-form" action="{{ route('register') }}" method="post">
             {{ csrf_field() }}
