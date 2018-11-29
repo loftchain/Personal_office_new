@@ -26,15 +26,20 @@ class ReferralService
             ->whereHas('transactions', function ($query) {
                 $query->where([['refs_send', 'false'], ['status', 'true']]);
             })
-            ->with('wallets', 'transactions')
+            ->with(['wallets', 'transactions' => function($query){
+                $query->where([['refs_send', 'false'], ['status', 'true']]);
+            }])
             ->get();
 
         foreach ($referrals as $referral) {
             $tokensSum = $referral->transactions->sum('amount_tokens') * 0.1;
             $investorWallet = InvestorWalletFields::where('investor_id', $referral->referred_by)->whereIn('type', ['to', 'from_to'])->first()->wallet;
-            $referral->transactions()->update([
-                'refs_send' => 'true'
-            ]);
+
+//Обновление статуса транзакций, которые получили посвязи
+            foreach ($referral->transactions as $transaction) {
+                $transaction->refs_send = 'true';
+                $transaction->save();
+            }
 
             $recountedReferrals[$referral->referred_by]['tokens'][] = $tokensSum;
             $recountedReferrals[$referral->referred_by]['wallet'] = $investorWallet;
