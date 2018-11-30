@@ -39,6 +39,9 @@
                 <li class="mainMenu__item"><a class="mainMenu__link" href="{{ route('home.settings') }}">{!! trans('home/menu.settings') !!}</a></li>
             </ul>
         </div>
+        <footer class="page-footer page-footer--menu">
+            @include('layouts.footer')
+        </footer>
         <a class="sidebar__logout" href="{{ route('logout') }}"><i class="fas fa-sign-out-alt"></i></a>
     </div>
 
