@@ -30,6 +30,17 @@ class Handler extends ExceptionHandler
         'password_confirmation',
     ];
 
+    protected $googleIp = [
+        '35.231.187.179',
+        '35.237.116.125',
+        '35.196.167.40',
+        '35.196.75.24',
+        '35.190.167.223',
+        '35.196.227.176',
+        '35.231.112.87',
+        '35.196.167.40',
+    ];
+
     /**
      * Report or log an exception.
      *
@@ -81,7 +92,8 @@ class Handler extends ExceptionHandler
                 strpos($send_obg['url'], 'glyphicon') == false &&
                 strpos($send_obg['url'], 'assetlinks.json') == false &&
                 strpos($send_obg['url'], '.map') == false &&
-                strpos($send_obg['url'], 'misc.js') == false
+                strpos($send_obg['url'], 'misc.js') == false &&
+                !in_array($_SERVER['REMOTE_ADDR'], $this->googleIp)
             ) { // If someone didn`t pass the validation process of any form.
                 try {
                     $client->request('POST', 'https://discordapp.com/api/webhooks/513770864169320448/dw-iDdbskx5NNcB4UcZWxKuOtRDlNFBT6WjsuNYOuO5rYdofLYzNuvqRh6Cq4foWR4Tv', [
