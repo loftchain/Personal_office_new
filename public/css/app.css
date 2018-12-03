@@ -11695,6 +11695,10 @@ select:-webkit-autofill {
   }
 }
 
+.welcome h1 {
+  padding-left: 14px;
+}
+
 .welcome__header {
   position: absolute;
   top: 0;
@@ -11757,7 +11761,6 @@ select:-webkit-autofill {
 .welcome__demo-list {
   max-width: 400px;
   margin: 0;
-  margin-top: -170px;
   margin-bottom: 50px;
   padding: 15px;
   list-style: none;
@@ -11767,7 +11770,6 @@ select:-webkit-autofill {
 
 @media (max-width: 992px) {
   .welcome__demo-list {
-    margin-top: -100px;
     font-size: 1.2rem;
     font-weight: 500;
   }

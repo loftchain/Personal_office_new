@@ -8,6 +8,10 @@
     align-items: center;
     height: 100vh;
   }
+
+    h1{
+        padding-left: 14px;
+    }
 }
 
 .welcome__header {
@@ -64,7 +68,6 @@
 .welcome__demo-list {
   max-width: 400px;
   margin: 0;
-  margin-top: -170px;
   margin-bottom: 50px;
   padding: 15px;
   list-style: none;
@@ -72,7 +75,6 @@
   font-size: 1rem;
 
   @media #{$tablet992} {
-    margin-top: -100px;
     font-size: 1.2rem;
     font-weight: 500;
   }

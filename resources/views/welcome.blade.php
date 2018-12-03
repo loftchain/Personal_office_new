@@ -1,14 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
+
     <div class="welcome__header">
         @include('modals.lang_selector')
     </div>
+
     <section class="welcome">
+        <h1>{!! trans('home/welcome.welcome_h1') !!}</h1>
+
         <ul class="welcome__demo-list">
-            <li class="welcome__demo-item">
-               {!! trans('home/welcome.welcome_first') !!}
-            </li>
             <li class="welcome__demo-item">
                 {!! trans('home/welcome.welcome_second') !!}
             </li>

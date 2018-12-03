@@ -30697,7 +30697,7 @@ module.exports = Cancel;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(142);
-module.exports = __webpack_require__(201);
+module.exports = __webpack_require__(200);
 
 
 /***/ }),
@@ -75466,6 +75466,8 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
         },
 
         sendTokens: function sendTokens(item, key) {
+            var _this3 = this;
+
             var beneficiary = null;
 
             item.investor.wallets.map(function (i) {
@@ -76411,7 +76413,7 @@ var normalizeComponent = __webpack_require__(4)
 /* script */
 var __vue_script__ = __webpack_require__(198)
 /* template */
-var __vue_template__ = __webpack_require__(200)
+var __vue_template__ = __webpack_require__(199)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -77074,6 +77076,8 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
         },
 
         sendTokens: function sendTokens(item, key) {
+            var _this3 = this;
+
             if (item.tokens !== '0.00') {
                 var beneficiary = item.wallet_to; //адрес кому отправить токены
                 var provider = new ethers.providers.Web3Provider(web3.currentProvider, 'homestead');
@@ -77128,8 +77132,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 });
 
 /***/ }),
-/* 199 */,
-/* 200 */
+/* 199 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -77482,7 +77485,7 @@ if (false) {
 }
 
 /***/ }),
-/* 201 */
+/* 200 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
