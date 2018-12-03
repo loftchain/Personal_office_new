@@ -1,19 +1,19 @@
-<link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
-<meta name="theme-color" content="#ffffff">
+<title>ICO Personal office</title>
+
+<link rel="icon" type="image/x-icon"  sizes="32x32" href="https://loftchain.io/favicon-32x32.png?v=1">
+<link rel="icon" type="image/x-icon" sizes="16x16" href="https://loftchain.io/favicon-16x16.png?v=1">
 <link href="{{ asset('css/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
 <link href="{{ asset('css/animate.min.css') }}" rel="stylesheet">
 <link href="{{ asset('js/owl-carousel/assets/owl.carousel.css') }}" rel="stylesheet">
 <link href="https://unpkg.com/simplebar@latest/dist/simplebar.css" rel="stylesheet">
 <link href="{{ asset('js/owl-carousel/assets/owl.theme.default.css') }}" rel="stylesheet">
-<title>ICO Personal office</title>
 <link href="{{ asset('css/app.css'.'?v='.env('VERSION')) }}" rel="stylesheet">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 <link rel="apple-touch-icon" sizes="180x180" href="https://loftchain.io/apple-touch-icon.png">
-<link rel="shortcut icon" type="image/x-icon"  sizes="32x32" href="https://loftchain.io/favicon-32x32.png?v=1">
-<link rel="shortcut icon" type="image/x-icon" sizes="16x16" href="https://loftchain.io/favicon-16x16.png?v=1">
 <link rel="manifest" href="{{ asset('site.webmanifest') }}">
 <link rel="mask-icon" href="https://loftchain.io/safari-pinned-tab.svg" color="#5bbad5">
 
+<meta name="theme-color" content="#ffffff">
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="description"
       content="LoftChain provides technical services for your ICO. Smart contracts, personal cabinets, white papers, landing and splash pages, websites."/>
