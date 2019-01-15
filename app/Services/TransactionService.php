@@ -43,7 +43,7 @@ class TransactionService
             ]
         ]);
         $body = json_decode($res->getBody());
-dd($body);
+
         return $body;
     }
 
