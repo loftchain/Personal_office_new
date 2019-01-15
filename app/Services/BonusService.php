@@ -13,7 +13,11 @@ class BonusService
     public function getLatestCurrencies($pair = null, $timestamp = null)
     {
         $client = new Client();
-        $res = $client->request('GET', env('SELF_API_URL') . '/api/currencies/');
+        $res = $client->request('GET', env('SELF_API_URL') . '/api/currencies/', [
+            'headers' => [
+                'Authorization' => 'Bearer ' . env('SELF_JWT_TOKEN')
+            ]
+        ]);
         $body = json_decode($res->getBody());
         foreach ($body as $item) {
             if ($item->pair == $pair && $item->timestamp == $timestamp) {
@@ -24,6 +28,7 @@ class BonusService
                 return $item->price;
             }
         }
+        
         return $body;
     }
 
