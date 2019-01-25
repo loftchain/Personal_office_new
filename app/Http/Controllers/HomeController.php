@@ -58,7 +58,7 @@ class HomeController extends Controller
         $data['confirmed'] = $user->confirmed;
         $data['admin'] = $user->admin;
         $data['dateNow'] = Carbon::now()->format('d.m.Y');
-dd($data);
+        
         return view('home.home', [
             'data' => $data
         ]);
