@@ -86,6 +86,22 @@ class WidgetService
         return ['currency' => $amountCurrency, 'eth' => $amountETH, 'token' => $amountToken];
     }
 
+    public function totalUsdRound($start, $end, $price)
+    {
+        $parseStart = \DateTime::createFromFormat('U', $start)->format('Y-m-d');
+        $parseEnd = \DateTime::createFromFormat('U', $end)->format('Y-m-d');
+
+        $txEth = TempTransaction::where([['date', '>=', $parseStart], ['date', '<=', $parseEnd], ['currency', 'ETH']])->sum('amount');
+        $txBtc = TempTransaction::where([['date', '>=', $parseStart], ['date', '<=', $parseEnd], ['currency', 'BTC']])->sum('amount');
+
+        $ethUsd = TempCurrency::where('pair', 'ETH/USD')->get()
+            ->last()->price;
+        $btcUsd = TempCurrency::where('pair', 'BTC/USD')->get()
+            ->last()->price;
+
+       return ($txEth * $ethUsd) + ($txBtc * $btcUsd) / $price;
+    }
+
     public function recountFiatToETH()
     {
         $ethUsd = $this->getCurrencyByPair('ETH/USD');

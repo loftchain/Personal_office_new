@@ -12,6 +12,7 @@ use App\Models\Transactions;
 use App\Models\UserWalletFields;
 use App\Models\UserReferralFields;
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
@@ -128,6 +129,7 @@ class TransactionService
         $rates = $this->bonusService->getLatestCurrencies();
 
         foreach ($tx as $t) {
+            $date = Carbon::parse($t->date)->format('Y-m-d h:i:s');
             if($t->status === 'true'){
                 TempTransaction::create([
                     'transaction_id' => $t->txId,
@@ -135,8 +137,7 @@ class TransactionService
                     'amount' => $t->amount,
                     'currency' => $t->currency,
                     'from' => $t->from,
-                    'date' => $t->date
-
+                    'date' => $date
                 ]);
             }
             $txTimestamp = strtotime($t->date);
@@ -154,7 +155,7 @@ class TransactionService
                     'amount' => $t->amount,
                     'amount_tokens' => $this->countTokens($rates, $t->amount, $t->date, $t->currency, $t->from),
                     'info' => $info,
-                    'date' => $t->date
+                    'date' => $date
                 ];
 
                 for ($i = 0; $i < count($db); $i++) {
