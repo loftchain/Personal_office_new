@@ -30697,7 +30697,7 @@ module.exports = Cancel;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(142);
-module.exports = __webpack_require__(201);
+module.exports = __webpack_require__(200);
 
 
 /***/ }),
@@ -65148,7 +65148,7 @@ var render = function() {
               }
             },
             [
-              _vm._v("\r\n        Investor ID\r\n        "),
+              _vm._v("\n        Investor ID\n        "),
               _c("i", { staticClass: "fas fa-arrow-down" }),
               _vm._v(" "),
               _c("i", { staticClass: "fas fa-arrow-up" })
@@ -65165,7 +65165,7 @@ var render = function() {
               }
             },
             [
-              _vm._v("\r\n        Action\r\n        "),
+              _vm._v("\n        Action\n        "),
               _c("i", { staticClass: "fas fa-arrow-down" }),
               _vm._v(" "),
               _c("i", { staticClass: "fas fa-arrow-up" })
@@ -65182,7 +65182,7 @@ var render = function() {
               }
             },
             [
-              _vm._v("\r\n        Old info\r\n        "),
+              _vm._v("\n        Old info\n        "),
               _c("i", { staticClass: "fas fa-arrow-down" }),
               _vm._v(" "),
               _c("i", { staticClass: "fas fa-arrow-up" })
@@ -65199,7 +65199,7 @@ var render = function() {
               }
             },
             [
-              _vm._v("\r\n        New info\r\n        "),
+              _vm._v("\n        New info\n        "),
               _c("i", { staticClass: "fas fa-arrow-down" }),
               _vm._v(" "),
               _c("i", { staticClass: "fas fa-arrow-up" })
@@ -65216,7 +65216,7 @@ var render = function() {
               }
             },
             [
-              _vm._v("\r\n        Date\r\n        "),
+              _vm._v("\n        Date\n        "),
               _c("i", { staticClass: "fas fa-arrow-down" }),
               _vm._v(" "),
               _c("i", { staticClass: "fas fa-arrow-up" })
@@ -65230,9 +65230,9 @@ var render = function() {
             _vm._v(" "),
             _c("td", [
               _vm._v(
-                "\r\n        " +
+                "\n        " +
                   _vm._s(_vm.renameAction(history.action)) +
-                  "\r\n      "
+                  "\n      "
               )
             ]),
             _vm._v(" "),
@@ -76413,7 +76413,7 @@ var normalizeComponent = __webpack_require__(4)
 /* script */
 var __vue_script__ = __webpack_require__(198)
 /* template */
-var __vue_template__ = __webpack_require__(200)
+var __vue_template__ = __webpack_require__(199)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -77132,8 +77132,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 });
 
 /***/ }),
-/* 199 */,
-/* 200 */
+/* 199 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -77486,7 +77485,7 @@ if (false) {
 }
 
 /***/ }),
-/* 201 */
+/* 200 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

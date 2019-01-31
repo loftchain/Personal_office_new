@@ -367,16 +367,16 @@ body {
   bottom: 60px;
   left: 63px;
   font-size: 20px;
-  color: $grey2;
+  color: $black;
   transform: rotate(180deg);
 
   &:hover {
     color: $yellow3;
   }
 
-  @media #{$tablet992} {
-    bottom: 120px;
-  }
+  //@media #{$tablet992} {
+  //  bottom: 12userInfo__text0px;
+  //}
 }
 
 .workArea {
