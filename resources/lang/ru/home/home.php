@@ -20,7 +20,10 @@ return [
     'ico_noBonus' => 'нет бонуса',
 
     'ico_card_to' => 'до',
+    'ico_card_sep' => 'сен',
     'ico_card_oct' => 'окт',
+    'ico_card_nov' => 'нояб',
+    'ico_card_dec' => 'дек',
     'ico_card_jan' => 'янв',
     'ico_card_feb' => 'фев',
     'ico_card_mar' => 'март',

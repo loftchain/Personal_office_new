@@ -20,7 +20,10 @@ return [
     'ico_noBonus' => '沒有獎金',
 
     'ico_card_to' => '至',
+    'ico_card_sep' => '九月',
     'ico_card_oct' => '十月',
+    'ico_card_nov' => '十一月',
+    'ico_card_dec' => '十二月',
     'ico_card_jan' => '一月',
     'ico_card_feb' => '二月',
     'ico_card_mar' => '遊行',

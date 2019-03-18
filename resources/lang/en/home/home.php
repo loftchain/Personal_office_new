@@ -20,7 +20,10 @@ return [
     'ico_noBonus' => 'no bonus',
 
     'ico_card_to' => 'to',
+    'ico_card_sep' => 'sep',
     'ico_card_oct' => 'oct',
+    'ico_card_nov' => 'nov',
+    'ico_card_dec' => 'dec',
     'ico_card_jan' => 'jan',
     'ico_card_feb' => 'feb',
     'ico_card_mar' => 'mar',

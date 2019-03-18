@@ -20,7 +20,10 @@ return [
     'ico_noBonus' => 'sin bonificación',
 
     'ico_card_to' => 'a',
+    'ico_card_sep' => 'sep',
     'ico_card_oct' => 'oct',
+    'ico_card_nov' => 'nov',
+    'ico_card_dec' => 'dic',
     'ico_card_jan' => 'ene',
     'ico_card_feb' => 'feb',
     'ico_card_mar' => 'mar',

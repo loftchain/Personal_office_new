@@ -20,7 +20,10 @@ return [
     'ico_noBonus' => 'ボーナスなし',
 
     'ico_card_to' => 'に',
+    'ico_card_sep' => '長月',
     'ico_card_oct' => 'オクト',
+    'ico_card_nov' => '霜月',
+    'ico_card_dec' => '12月',
     'ico_card_jan' => '1月',
     'ico_card_feb' => '2月',
     'ico_card_mar' => '三月',
