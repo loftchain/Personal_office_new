@@ -7,18 +7,16 @@
                 {{ session('messages') }}
             </div>
         @endif
-        <div class="modalFrame__title">Welcome Back</div>
+        <div class="modalFrame__title">{!! trans('modals/modals.signIn_title') !!}</div>
         {{--<div class="modalFrame__subtitle">{!! trans('modals/modals.enter') !!}</div>--}}
         <form class="loginForm icoForm" action="{{ route('login') }}" method="POST">
             @csrf
             <div class="formControl">
-                <label class="icoForm__label">{!! trans('modals/modals.enterYourEmail_label') !!}</label>
-                <input class="icoForm__input" type="email" name="email" required>
+                <input class="icoForm__input" type="email" name="email" placeholder="{!! trans('modals/modals.enterYourEmail_label') !!}" required>
             </div>
             <div class="error-message error-message0 email not_confirmed failed"></div>
             <div class="formControl">
-                <label class="icoForm__label">{!! trans('modals/modals.уourPassword_label') !!}</label>
-                <input class="icoForm__input" type="password" name="password" required>
+                <input class="icoForm__input" type="password" name="password" placeholder="{!! trans('modals/modals.уourPassword_label') !!}" required>
                 <div class="icoForm__linkContainer text-right"><a class="link" href="{{ route('password.request') }}">{!! trans('home/welcome.forgotPwd_a') !!}</a></div>
             </div>
             <div class="error-message error-message1 password pwd_not_match"></div>

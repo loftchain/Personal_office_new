@@ -28,7 +28,7 @@
                             <div class="dropdown dropdown--qr">
                                 <img id="qrEth" class="qrCode" alt="qr" src="{{ asset('img/qr.jpg') }}">
                                 <div class="dropdown-content dropdown-content--qr">
-                                    <img width="200" height="200" class="qrCode" alt="qr" src="{{ asset('img/0x1a503c973ff08f4985f3da21c9cf0164a586edb3.gif') }}">
+                                    <img width="200" height="200" class="qrCode" alt="qr" src="{{ asset('img/' . env('HOME_WALLET_ETH') . '.gif') }}">
                                 </div>
                             </div>
                             <p class="dropdown__hint">{!! trans('home/buyTokens.qrHover') !!}</p>

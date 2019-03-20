@@ -1,5 +1,5 @@
 <form class="loginForm icoForm" action="#">
-    @if(Auth::user()->wallets()->first())
+    @if(Auth::user()->transactions()->first())
         <div class="basicBlock__text">{!! trans('home/referrals.refLink') !!}</div>
         <div class="formControl">
             <input class="icoForm__input icoForm__input--canCopy" type="text"

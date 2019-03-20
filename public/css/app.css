@@ -10645,8 +10645,25 @@ body {
 }
 
 .formControl {
-  margin: 20px 0;
+  margin: 15px 0;
   position: relative;
+}
+
+.checkboxControl {
+  margin: 10px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.checkboxControl label {
+  margin: 0 0 0 10px;
 }
 
 .link {
@@ -10677,7 +10694,7 @@ body {
   font-family: 'Rubik', 'Arial', sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 18px;
   color: #ffffff;
   cursor: pointer;
   border: 1px solid transparent;
@@ -10697,14 +10714,23 @@ body {
           box-shadow: none;
 }
 
+.btn:disabled {
+  background: gray;
+}
+
+.btn:disabled:hover {
+  color: white;
+  border: 1px solid transparent;
+  cursor: not-allowed;
+}
+
 .btn--small {
   width: auto;
   padding: 13px 50px;
 }
 
 .btn--small:hover {
-  color: #FFC701;
-  background: #ffffff;
+  color: black;
   -webkit-transition: none;
   transition: none;
 }
@@ -11811,7 +11837,8 @@ select {
   -webkit-box-flex: 0;
       -ms-flex: none;
           flex: none;
-  width: 537px;
+  width: 50vw;
+  max-width: 768px;
   background: #ffffff;
 }
 
@@ -11823,7 +11850,7 @@ select {
 
 .modalFrame__title {
   font-family: 'Rubik', 'Arial', sans-serif;
-  font-size: 22px;
+  font-size: 30px;
   text-align: center;
   color: #4F4F4F;
 }

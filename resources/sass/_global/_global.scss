@@ -121,8 +121,19 @@ body {
 }
 
 .formControl {
-  margin: 20px 0;
+  margin: 15px 0;
   position: relative;
+}
+
+.checkboxControl {
+    margin: 10px 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    label {
+        margin: 0 0 0 10px;
+    }
 }
 
 .link {
@@ -149,7 +160,7 @@ body {
   font-family: 'Rubik', 'Arial', sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 18px;
   color: $white;
   cursor: pointer;
   border: 1px solid transparent;
@@ -165,6 +176,15 @@ body {
   &:focus {
     box-shadow: none;
   }
+  &:disabled {
+      background: gray;
+
+      &:hover{
+          color: white;
+          border:1px solid transparent;
+          cursor: not-allowed;
+      }
+  }
 }
 
 .btn--small {
@@ -172,8 +192,7 @@ body {
   padding: 13px 50px;
 
   &:hover {
-    color: $yellow1;
-    background: $white;
+    color: black;
     transition: none;
   }
 }

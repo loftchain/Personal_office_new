@@ -8,7 +8,7 @@ return [
     'tableRef' => 'Referred person',
     'tableBonus' => 'Bonus',
     'tableNoReferrals' => 'No referrals',
-    'tableNoWallet' => 'To participate in the referral program, add a wallet',
+    'tableNoWallet' => 'To participate in the referral program, make your first transaction',
 
     'refLink' => 'Your referral link',
 

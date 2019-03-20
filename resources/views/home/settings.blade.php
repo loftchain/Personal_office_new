@@ -37,8 +37,8 @@
                                                     </div>
                                                 </form>
                                                 <div class="settingsActions">
-                                                    <a class="settingsActions__link jsChangeEmail" href="#">{!! trans('home/settings.changeEmail') !!}</a>
-                                                    <a class="settingsActions__link jsChangePassword" href="#">{!! trans('home/settings.changePassword') !!}</a>
+                                                    {{--<a class="settingsActions__link jsChangeEmail" href="#">{!! trans('home/settings.changeEmail') !!}</a>--}}
+                                                    {{--<a class="settingsActions__link jsChangePassword" href="#">{!! trans('home/settings.changePassword') !!}</a>--}}
                                                     <div class="settingsActions__langSelector">
                                                        @include('modals.lang_selector')
                                                     </div>

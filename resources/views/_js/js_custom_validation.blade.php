@@ -211,7 +211,6 @@
                     {{--v.showNotification('{!! trans('admin/confirmation.userConfirmed_js') !!}', 'success');--}}
                     break;
                 case data.kyc_success:
-                    galleryUploader.uploadStoredFiles();
                     $('#divContent').hide();
                     $('#fakeConfirmed').show();
                     $('#agreement').attr('disabled', true);

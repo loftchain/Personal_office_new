@@ -8,7 +8,7 @@ return [
     'tableRef' => '紹介者',
     'tableBonus' => 'ボーナス',
     'tableNoReferrals' => '紹介なし',
-    'tableNoWallet' => '紹介プログラムに参加するには、ウォレットを追加してください',
+    'tableNoWallet' => '紹介プログラムに参加するには、最初の取引を行います',
 
     'refLink' => 'あなたの紹介リンク',
 

@@ -2,15 +2,15 @@
 
 return [
     //auth
-    'signUp_title' => 'Register',
+    'signUp_title' => 'Sign Up',
     'signIn_title' => 'Login',
     'resetPwd_title' => 'Password recovery',
     'enterYourEmail_label' => 'Fill in your Email',
     'createYourPassword_label' => 'Make up a password',
     'уourPassword_label' => 'Your password',
     'resetPwd_label' => 'Fill in your Email<br> <span style="font-size: 12px;">(password recovery link will be sent to this address)</span>',
-    'signUp_btn' => 'Register',
-    'signIn_btn' => 'Log in',
+    'signUp_btn' => 'Create an account',
+    'signIn_btn' => 'Login',
     'change_btn' => 'Change',
     'send_btn' => 'Send',
     'userNotFound_LoginController' => 'Sorry, user not found',
@@ -25,6 +25,13 @@ return [
     'reg_email' => 'E-mail',
     'reg_password' => 'Password',
     'reg_repeatPassword' => 'Repeat password',
+    'have_read' => 'I have read and understood the ',
+    'terms' => 'Terms of Use',
+    'policy' => 'Privacy Policy',
+    'accept' => ' and I accept it.',
+    'have_read_essentials' => 'I have read, understood and agreed upon the essentials of my participation in the Mitoshi.',
+
+
 
     //signIn
     'signIn_google' => 'Sign in with Gmail',

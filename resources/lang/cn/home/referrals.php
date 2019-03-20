@@ -8,7 +8,7 @@ return [
     'tableRef' => '推薦的人',
     'tableBonus' => '獎金',
     'tableNoReferrals' => '沒有推薦',
-    'tableNoWallet' => '要參與推薦計劃，請添加一個錢包',
+    'tableNoWallet' => '要参与推荐计划，请进行首次交易',
 
     'refLink' => '您的推薦鏈接',
 

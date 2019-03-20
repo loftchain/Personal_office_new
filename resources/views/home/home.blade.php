@@ -29,7 +29,7 @@
                         @include('home.ico.widget')
                         @include('home.ico.raised')
                     </div>
-                    @include('home.ico.round_info')
+                    {{--@include('home.ico.round_info')--}}
                 @endif
 
                 {{--if ico is over--}}

@@ -8,7 +8,7 @@ return [
     'tableRef' => 'Persona referida',
     'tableBonus' => 'Prima',
     'tableNoReferrals' => 'No hay referencias',
-    'tableNoWallet' => 'Para participar en el programa de referencia, agregue una billetera',
+    'tableNoWallet' => 'Para participar en el programa de referencia, realice su primera transacción.',
 
     'refLink' => 'Tu enlace de referencia',
 

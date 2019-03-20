@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-    @push('links')
-        @if(!Auth::user()->confirmed)
-            <link rel="stylesheet" href="{{ asset('css/fine-uploader-gallery.min.css') }}">
-        @endif
-    @endpush
+    {{--@push('links')--}}
+        {{--@if(!Auth::user()->confirmed)--}}
+            {{--<link rel="stylesheet" href="{{ asset('css/fine-uploader-gallery.min.css') }}">--}}
+        {{--@endif--}}
+    {{--@endpush--}}
     <div class="workArea jsWorkArea">
         <div class="mobileMenuBtn">
             <button class="cmn-toggle-switch cmn-toggle-switch__htx"><span>toggle menu</span></button>
@@ -60,9 +60,9 @@
     </div>
     @push('scripts')
         @if(!Auth::user()->confirmed)
-            <script src="{{ asset('js/fine-uploader.min.js') }}"></script>
-            @include('home.kyc.fine_uploader_script')
-            @include('_js.js_uploader')
+{{--            <script src="{{ asset('js/fine-uploader.min.js') }}"></script>--}}
+            {{--@include('home.kyc.fine_uploader_script')--}}
+            {{--@include('_js.js_uploader')--}}
         @endif
 
         @include('_js.js_verification')

@@ -3,6 +3,8 @@
         checkbox: $('#agreement'),
         form: $('#formKyc'),
         inputs: $('#formKyc :input'),
+        reqInputs: $('.kyc-required-js'),
+        reqDateSelect: $('.icoForm__select'),
         content: $('#divContent'),
         personal: '{{ $personal }}',
         button: $('button[type="submit"]'),
@@ -13,31 +15,44 @@
 
         if (!ver.personal) {
           ver.button.hide();
-        }else {
+        } else {
             ver.checkbox.attr('disabled', true);
         }
 
-        let fineUploader = $('#fine-uploader-gallery');
-        let inputFile = fineUploader.find('input[type="file"]');
-        let inputList = fineUploader.find('.qq-upload-list');
-        let inputText = fineUploader.find('.qq-upload-button div');
+        // let fineUploader = $('#fine-uploader-gallery');
+        // let inputFile = fineUploader.find('input[type="file"]');
+        // let inputList = fineUploader.find('.qq-upload-list');
+        // let inputText = fineUploader.find('.qq-upload-button div');
 
-        inputFile.on('input', function() {
-          inputText.hide();
-            ver.button.attr('disabled', false);
+        ver.reqInputs.on('input', function () {
+            if( $(this).val() !== "" && ver.reqDateSelect.val() !== ""){
+                ver.button.attr('disabled', false);
+            } else {
+                ver.button.attr('disabled', true);
+            }
+        });
+
+        ver.reqDateSelect.change(function () {
+            ver.reqDateSelect.each(function(){
+                if( $(this).val() !== "" && ver.reqInputs.val() !== ""){
+                    ver.button.attr('disabled', false);
+                } else {
+                    ver.button.attr('disabled', true);
+                }
+            });
         });
 
 
 
-        let intervalUl = setInterval(() => {
-            if(inputList.children().length > 0) {
-                inputText.hide();
-                ver.button.attr('disabled', false);
-            } else {
-                inputText.show();
-                ver.button.attr('disabled', true);
-            }
-        }, 450);
+        // let intervalUl = setInterval(() => {
+        //     if(inputList.children().length > 0) {
+        //         inputText.hide();
+        //         ver.button.attr('disabled', false);
+        //     } else {
+        //         inputText.show();
+        //         ver.button.attr('disabled', true);
+        //     }
+        // }, 450);
 
     });
 
