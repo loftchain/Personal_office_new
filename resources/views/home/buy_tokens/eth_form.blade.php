@@ -37,7 +37,7 @@
                         <div class="formControl formControl--noMargin">
                             <input class="icoForm__input icoForm__input--canCopy" type="text" name="ethWallet" id="ethWallet" value="{{ env('HOME_WALLET_ETH') }}"><span class="icoForm__copy"> </span>
                         </div>
-                        <div class="minumudDeposit">{!! trans('home/buyTokens.minDep') !!} 500$</div>
+                        <div class="minumudDeposit">{!! trans('home/buyTokens.minDep') !!} {{ env('MIN_PAY_AMOUNT') }}</div>
                         {{--{{gas}}--}}
                         <div class="setGas">{!! trans('home/buyTokens.setGas') !!} 199000</div>
                         <div class="smallText">{!! trans('home/buyTokens.ethUpdate') !!}</div>
