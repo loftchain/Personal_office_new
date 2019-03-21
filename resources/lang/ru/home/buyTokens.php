@@ -18,6 +18,7 @@ return [
     'tableTransDate' => 'Дата',
     'tableTransCurrency' => 'Валюта',
     'tableTransToken' => 'Токены',
+    'tableTransAmount' => 'Количество',
     'tableTransStatus' => 'Статус',
     'tableNoTrans' => 'Нет транзакций',
     'tableSumTo' => 'В',

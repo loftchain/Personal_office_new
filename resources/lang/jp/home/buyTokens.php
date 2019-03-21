@@ -18,6 +18,7 @@ return [
     'tableTransDate' => '日付',
     'tableTransCurrency' => '通貨',
     'tableTransToken' => 'トークン',
+    'tableTransAmount' => '量',
     'tableTransStatus' => '状態',
     'tableNoTrans' => '取引はありません',
     'tableSumTo' => 'に',

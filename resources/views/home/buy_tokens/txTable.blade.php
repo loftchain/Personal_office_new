@@ -8,7 +8,7 @@
                     <tr>
                         <th>{!! trans('home/buyTokens.tableTransDate') !!}</th>
                         <th>{!! trans('home/buyTokens.tableTransCurrency') !!}</th>
-                        <th>amount</th>
+                        <th>{!! trans('home/buyTokens.tableTransAmount') !!}</th>
                         <th>{!! trans('home/buyTokens.tableTransToken') !!}</th>
                         <th>{!! trans('home/buyTokens.tableTransStatus') !!}</th>
                         <th>{!! trans('home/buyTokens.tableAction') !!}</th>

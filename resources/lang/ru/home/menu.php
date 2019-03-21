@@ -8,8 +8,8 @@ return [
     'tokenAmount' => 'Количество токенов:',
     'ico' => 'ICO',
     'verification' => 'Подтверждение',
-    'buyTokens' => 'Купить токены',
-    'referralProgram' => 'Реферальная программа',
+    'buyTokens' => 'Купить Токены',
+    'referralProgram' => 'Реферальная Программа',
     'settings' => 'Настройки',
 
     //admin

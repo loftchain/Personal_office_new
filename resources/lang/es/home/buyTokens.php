@@ -18,6 +18,7 @@ return [
     'tableTransDate' => 'Fecha',
     'tableTransCurrency' => 'Moneda',
     'tableTransToken' => 'Fichas',
+    'tableTransAmount' => 'Cantidad',
     'tableTransStatus' => 'Estado',
     'tableNoTrans' => 'Sin transacciones',
     'tableSumTo' => 'A',

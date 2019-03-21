@@ -18,6 +18,7 @@ return [
     'tableTransDate' => '日期',
     'tableTransCurrency' => '貨幣',
     'tableTransToken' => '令牌',
+    'tableTransAmount' => '量',
     'tableTransStatus' => '狀態',
     'tableNoTrans' => '沒有交易',
     'tableSumTo' => '至',

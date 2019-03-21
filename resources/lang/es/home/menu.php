@@ -4,12 +4,12 @@ return [
     //investor
     'status' => 'Estado',
     'verified1' => 'No ',
-    'verified' => 'verificado',
-    'tokenAmount' => 'Cantidad de fichas:',
+    'verified' => 'Verificado',
+    'tokenAmount' => 'Cantidad de Fichas:',
     'ico' => 'ICO',
     'verification' => 'Verificación',
-    'buyTokens' => 'Comprar fichas',
-    'referralProgram' => 'Programa de referencia',
+    'buyTokens' => 'Comprar Fichas',
+    'referralProgram' => 'Programa de Referencia',
     'settings' => 'Ajustes',
 
     //admin

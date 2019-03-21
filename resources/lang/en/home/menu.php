@@ -8,7 +8,7 @@ return [
     'tokenAmount' => 'Token amount:',
     'ico' => 'ICO',
     'verification' => 'Verification',
-    'buyTokens' => 'Buy tokens',
+    'buyTokens' => 'Buy Tokens',
     'referralProgram' => 'Referral Program',
     'settings' => 'Settings',
 

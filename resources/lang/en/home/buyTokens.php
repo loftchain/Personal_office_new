@@ -18,6 +18,7 @@ return [
     'tableTransDate' => 'Date',
     'tableTransCurrency' => 'Currency',
     'tableTransToken' => 'Tokens',
+    'tableTransAmount' => 'Amount',
     'tableTransStatus' => 'Status',
     'tableNoTrans' => 'No transactions',
     'tableSumTo' => 'To',

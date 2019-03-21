@@ -17,7 +17,7 @@
                                 <div class="basicBlock__title text-center">{!! trans('home/buyTokens.buyTokens') !!}</div>
                                 <div class="basicBlock__subtitle text-center">{!! trans('home/buyTokens.chooseTokens') !!}</div>
                                 <div class="cryptoSelector">
-                                    <button class="cryptoSelector__item" id="buttonEth">Etherium</button>
+                                    <button class="cryptoSelector__item" id="buttonEth">Ethereum</button>
                                     <button class="cryptoSelector__item" id="buttonBtc">Bitcoin</button>
                                     <button class="cryptoSelector__item" id="buttonPay">Changelly</button>
                                 </div>
