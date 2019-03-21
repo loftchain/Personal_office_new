@@ -19,7 +19,7 @@
                                 <div class="cryptoSelector">
                                     <button class="cryptoSelector__item" id="buttonEth">Ethereum</button>
                                     <button class="cryptoSelector__item" id="buttonBtc">Bitcoin</button>
-                                    <button class="cryptoSelector__item" id="buttonPay">Changelly</button>
+                                    {{--<button class="cryptoSelector__item" id="buttonPay">Changelly</button>--}}
                                 </div>
                             </div>
                         </div>
