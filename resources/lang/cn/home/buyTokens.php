@@ -2,7 +2,7 @@
 
 return [
     'buyTokens' => '購買代幣',
-    'chooseTokens' => '選擇您要投資的貨幣',
+    'chooseTokens' => '選擇您將用於購買MCL代幣的貨幣',
     'minDep' => '最低存款金額: ',
     'setGas' => '設置GAS:',
     'ethUpdate' => '信息每分鐘更新一次',

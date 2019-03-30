@@ -2,10 +2,11 @@
 
 return [
     //whitePaper
-    'whitePaper_title' => 'Condiciones de papel blanco',
-    'whitePaper_desc' => 'Por favor lea el libro blanco y acepte las condiciones propuestas.',
+    'whitePaper_title' => 'Acuerdo de venta de fichas',
+    'whitePaper_desc' => 'Por favor lea y acepte las condiciones propuestas.',
     'whitePaper_btn' => 'Lee el papel blanco',
-    'whitePaper_checkBox' => 'Estoy de acuerdo con los términos de uso',
+		'agreement_btn' => 'Lee el acuerdo',
+    'whitePaper_checkBox' => 'Estoy de acuerdo con el Acuerdo de Venta de Fichas',
 
     //kyc
     'kyc_fullName' => 'Nombre completo',

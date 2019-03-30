@@ -2,10 +2,11 @@
 
 return [
     //whitePaper
-    'whitePaper_title' => '白皮書條件',
-    'whitePaper_desc' => '請閱讀白皮書並同意建議的條件',
+    'whitePaper_title' => '令牌銷售協議',
+    'whitePaper_desc' => '請閱讀並同意建議的條件',
     'whitePaper_btn' => '閱讀白皮書',
-    'whitePaper_checkBox' => '我同意使用條款',
+		'agreement_btn' => '閱讀協議',
+    'whitePaper_checkBox' => '我同意令牌銷售協議',
 
     //kyc
     'kyc_fullName' => '全名',

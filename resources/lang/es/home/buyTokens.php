@@ -2,7 +2,7 @@
 
 return [
     'buyTokens' => 'Compra de fichas',
-    'chooseTokens' => 'Elija en qué moneda desea invertir',
+    'chooseTokens' => 'Elija qué moneda utilizará para comprar tokens MCL',
     'minDep' => '\'Monto mínimo de depósito: ',
     'setGas' => 'Set GAS:',
     'ethUpdate' => 'Información actualizada a cada minuto',

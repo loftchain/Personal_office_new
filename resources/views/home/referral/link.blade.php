@@ -7,6 +7,10 @@
                    id="ethWallet"><span class="icoForm__copy"> </span>
         </div>
     @else
-        <h4 class="referral__message">{!! trans('home/referrals.tableNoWallet') !!}</h4>
+        <h4 class="referral__message">{!! trans('home/referrals.tableNoWallet') !!}
+          <br>
+
+        </h4>
+        <div class="basicBlock__text">{!! trans('home/referrals.minPurchase') !!}</div>
     @endif
 </form>

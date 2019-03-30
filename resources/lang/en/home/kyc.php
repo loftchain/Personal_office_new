@@ -2,10 +2,11 @@
 
 return [
     //whitePaper
-    'whitePaper_title' => 'WHITE PAPER CONDITIONS',
-    'whitePaper_desc' => 'please read the white paper and agree to the proposed conditions',
+    'whitePaper_title' => 'Token Sale Agreement',
+    'whitePaper_desc' => 'Please read and agree to the proposed conditions',
     'whitePaper_btn' => 'Read the white paper',
-    'whitePaper_checkBox' => 'I agree with the terms of use',
+    'agreement_btn' => 'Read the agreement',
+    'whitePaper_checkBox' => 'I agree with the Token Sale Agreement',
 
     //kyc
     'kyc_fullName' => 'Full name',

@@ -2,10 +2,11 @@
 
 return [
     //whitePaper
-    'whitePaper_title' => 'ホワイトペーパーの条件',
-    'whitePaper_desc' => 'ホワイトペーパーを読み、提案された条件に同意してください',
+    'whitePaper_title' => 'トークン販売契約',
+    'whitePaper_desc' => '提案された条件を読んで同意してください',
     'whitePaper_btn' => '白書を読む',
-    'whitePaper_checkBox' => '私は使用条件に同意します',
+		'agreement_btn' => '契約を読む',
+    'whitePaper_checkBox' => '私はトークン販売契約に同意します',
 
     //kyc
     'kyc_fullName' => 'フルネーム',

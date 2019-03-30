@@ -2,7 +2,7 @@
 
 return [
     'buyTokens' => 'Purchase of tokens',
-    'chooseTokens' => 'Choose which currency you want to invest in',
+    'chooseTokens' => 'Choose which currency you will be using to purchase MCL Tokens',
     'minDep' => 'Minimum deposit amount: ',
     'setGas' => 'Set GAS:',
     'ethUpdate' => 'Information updates every minute',

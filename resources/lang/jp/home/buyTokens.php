@@ -2,7 +2,7 @@
 
 return [
     'buyTokens' => 'トークンの購入',
-    'chooseTokens' => '投資する通貨を選択する',
+    'chooseTokens' => 'MCLトークンの購入に使用する通貨を選択してください',
     'minDep' => '最低入金額： ',
     'setGas' => 'Set GAS:',
     'ethUpdate' => '情報は毎分更新されます',

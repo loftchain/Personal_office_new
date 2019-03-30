@@ -1,7 +1,10 @@
 <?php
 
 return [
-    'refText' => '根據使用推介鏈接購買的代幣數量，推薦鏈接所有者的推薦費用為10％。',
+    'refText' => '推薦獎金10％（以MCL支付）
+     被授予推薦鏈接的所有者並且是
+     基於MCL令牌的數量成功
+     使用該推薦鏈接購買。',
     'refBonus' => '推薦獎金：',
 
     //table
@@ -9,6 +12,7 @@ return [
     'tableBonus' => '獎金',
     'tableNoReferrals' => '沒有推薦',
     'tableNoWallet' => '要参与推荐计划，请进行首次交易',
+		'minPurchase' => '最低購買量為25 MCL令牌',
 
     'refLink' => '您的推薦鏈接',
 
