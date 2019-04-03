@@ -25,13 +25,13 @@
         showNotification: (message, type) => {
             $.notify({
                 message: message,
-            },{
+            }, {
                 type: type,
                 delay: 5000,
             });
         },
 
-        notifyAfterReload () {
+        notifyAfterReload() {
             switch (localStorage.getItem('showNotificationAfterReload')) {
                 case 'success_reset_email_sent':
                     v.showNotification('{!! trans('auth/resetPwd.letterSent_js') !!}', 'success')
@@ -52,13 +52,13 @@
             message.css('background', bgColor);
 
             let closeButton = $('.messageTop__button');
-            closeButton.click(function() {
+            closeButton.click(function () {
                 if (v.userConfirmed == 0 && v.isAdmin === '0') {
-                  messageText.text('Unfortunately your profile is not verified yet.');
-                  message.css('background', v.bg.warning);
-                }   else {
-                  messageText.text('');
-                  message.css('background', v.bg.normal);
+                    messageText.text('Unfortunately your profile is not verified yet.');
+                    message.css('background', v.bg.warning);
+                } else {
+                    messageText.text('');
+                    message.css('background', v.bg.normal);
                 }
                 $(this).remove();
             });
@@ -67,7 +67,7 @@
                 if (v.userConfirmed == 0 && v.isAdmin === '0') {
                     messageText.text('Unfortunately your profile is not verified yet.');
                     message.css('background', v.bg.warning);
-                }   else {
+                } else {
                     messageText.text('');
                     message.css('background', v.bg.normal);
                 }
@@ -79,7 +79,7 @@
             v.loaderSpinner.fadeOut();
         },
 
-        showSpinner () {
+        showSpinner() {
             v.loaderSpinner.fadeIn();
         },
 
@@ -91,7 +91,7 @@
                     }
 
                     $.each(data.validation_error, (key, value) => {
-                        if(window.location.href == '{{ route('home.kyc') }}') {
+                        if (window.location.href == '{{ route('home.kyc') }}') {
                             _this.children('.row').children().find('.error-message.' + key).prev().children('input').attr('style', 'border: 1px solid #ff443a;');
                             _this.children('.row').children().find('.error-message.' + key).addClass('isError');
                             if (key === 'day' || key === 'month' || key === 'year') {
@@ -152,13 +152,13 @@
                 case !$.isEmptyObject(data.success_changed_email):
                     _this.find('.icoForm__input').val('');
                     v.showMessage('{!! trans('modals/modals.emailChanged_js') !!}', v.bg.success);
-                    {{--v.showNotification('{!! trans('modals/modals.emailChanged_js') !!}', 'success');--}}
-                    break;
+                  {{--v.showNotification('{!! trans('modals/modals.emailChanged_js') !!}', 'success');--}}
+                      break;
                 case !$.isEmptyObject(data.success_changed_pwd):
                     _this.find('.icoForm__input').val('');
                     v.showMessage('{!! trans('modals/modals.pwdChanged_js') !!}', v.bg.success);
-                    {{--v.showNotification('{!! trans('modals/modals.pwdChanged_js') !!}', 'success');--}}
-                    break;
+                  {{--v.showNotification('{!! trans('modals/modals.pwdChanged_js') !!}', 'success');--}}
+                      break;
                 case !$.isEmptyObject(data.goto2):
                     window.location.replace("{{ route('root') }}");
                     break;
@@ -170,46 +170,52 @@
                     $('#fakeTable').show();
                     wallet.wallet = true;
 
-                    if(data.type === 'to'){
-                        $('#wallet2').removeAttr('disabled');
+                    // if (data.type === 'to') {
+                    //     $('#wallet2').removeAttr('disabled');
+                    // }
+                    console.log(data.type);
+                    switch (data.type) {
+                        case 'from_to':
+                            $('#plus').hide();
+                            $('#wallet').blur();
+                            $('#wallet').prop('disabled', true);
+                            break;
+                        case 'to':
+                            $('#wallet1').prop('disabled', true);
+                            $('#wallet2').prop('disabled', false);
+                            $('#plus1').hide();
+                            break;
+                        case 'from':
+                            $('#wallet2').prop('disabled', true);
+                            $('#plus2').hide();
+                            break;
                     }
-                    {{--v.showNotification('{!! trans('home/wallet.added_js') !!}', 'success');--}}
-                    if (typeof wallet !== 'undefined') {
-                        // wa.exitEditMode(_this.children('.w-input'));
-                        // if(_this.children('.formControl').children('.type').val() === 'to' && $('#wallet1').val() > 0){
-                        //     // wa.showDescription('BTC');
-                        // }
-                        //
-                        // if(_this.children('.formControl').children('.type').val() === 'from' && $('#wallet2').val() > 0){
-                        //     // wa.showDescription(data.currency);
-                        // }
-
-                        if(_this.children('.formControl').children('.type').val() === 'from_to'){
-                            // wa.showDescription(data.currency);
+                  if (typeof wallet !== 'undefined') {
+                      if (_this.children('.formControl').children('.type').val() === 'from_to') {
                           $('.raisedContainer--qr-1').removeClass('raisedContainer--disabled');
-                        }
-                        if((_this.children('.formControl').children('.type').val() === 'to' || _this.children('.formControl').children('.type').val() === 'from') && $('#wallet1').val() != '' && $('#wallet2').val() != '') {
+                      }
+                      if ((_this.children('.formControl').children('.type').val() === 'to' || _this.children('.formControl').children('.type').val() === 'from') && $('#wallet1').val() != '' && $('#wallet2').val() != '') {
                           $('.raisedContainer--qr-2').removeClass('raisedContainer--disabled');
-                        }
+                      }
 
-                    }
+                  }
                     break;
                 case !$.isEmptyObject(data.usd_request_sent):
                     v.showMessage('{!! trans('home/wallet.requestWasSent_js') !!}', v.bg.success);
-                    {{--v.showNotification('{!! trans('home/wallet.requestWasSent_js') !!}', 'success');--}}
-                    v.hideSpinner();
+                  {{--v.showNotification('{!! trans('home/wallet.requestWasSent_js') !!}', 'success');--}}
+                  v.hideSpinner();
                     break;
                 case !$.isEmptyObject(data.wallet_edited):
                     v.showMessage('{!! trans('home/wallet.edited_js') !!}', v.bg.success);
-                    {{--v.showNotification('{!! trans('home/wallet.edited_js') !!}', 'success');--}}
-                    if (typeof wa !== 'undefined') {
-                        wa.exitEditMode(_this.children('.w-input'));
-                    }
+                  {{--v.showNotification('{!! trans('home/wallet.edited_js') !!}', 'success');--}}
+                  if (typeof wa !== 'undefined') {
+                      wa.exitEditMode(_this.children('.w-input'));
+                  }
                     break;
                 case !$.isEmptyObject(data.confirmation_complete):
                     v.showMessage('{!! trans('admin/confirmation.userConfirmed_js') !!}', v.bg.success);
-                    {{--v.showNotification('{!! trans('admin/confirmation.userConfirmed_js') !!}', 'success');--}}
-                    break;
+                  {{--v.showNotification('{!! trans('admin/confirmation.userConfirmed_js') !!}', 'success');--}}
+                      break;
                 case data.kyc_success:
                     $('#divContent').hide();
                     $('#fakeConfirmed').show();
@@ -250,30 +256,30 @@
         },
 
         ajax_form: function () {
-                $(this).on('submit', function (e) {
-                    let isWallet = typeof wallet !== 'undefined' ? !wallet.bPay.hasClass('cryptoSelector__item--active') : true;
-                    if(isWallet) {
+            $(this).on('submit', function (e) {
+                let isWallet = typeof wallet !== 'undefined' ? !wallet.bPay.hasClass('cryptoSelector__item--active') : true;
+                if (isWallet) {
 
-                        e.preventDefault();
-                        v.resetForm();
-                        v.showSpinner();
+                    e.preventDefault();
+                    v.resetForm();
+                    v.showSpinner();
 
-                        $.ajax({
-                            url: $(this).attr('action'),
-                            type: $(this).attr('method'),
-                            data: $(this).serialize(),
-                            dataType: 'json',
-                            success: data => {
-                                v.loaderSpinner.hide();
-                                v.stateSelection(data, $(this));
-                            },
+                    $.ajax({
+                        url: $(this).attr('action'),
+                        type: $(this).attr('method'),
+                        data: $(this).serialize(),
+                        dataType: 'json',
+                        success: data => {
+                            v.loaderSpinner.hide();
+                            v.stateSelection(data, $(this));
+                        },
 
-                            error: data => {
-                                console.log('Error: Something wrong with ajax call ' + data.errors);
-                            }
-                        });
-                    }
-                });
+                        error: data => {
+                            console.log('Error: Something wrong with ajax call ' + data.errors);
+                        }
+                    });
+                }
+            });
 
         }
     };
@@ -293,16 +299,16 @@
     v.form.each(v.ajax_form);
 
     $(document).ready(() => {
-      let message = $('.messageTop');
-      let messageText = $('.messageTop__text');
-      if (v.userConfirmed == 0 && v.isAdmin === '0') {
-        messageText.text('{!! trans('layouts/message.messageTop') !!}');
-        message.css('background', v.bg.warning);
-      }   else {
-        messageText.text('');
-        message.css('background', v.bg.normal);
-      }
+        let message = $('.messageTop');
+        let messageText = $('.messageTop__text');
+        if (v.userConfirmed == 0 && v.isAdmin === '0') {
+            messageText.text('{!! trans('layouts/message.messageTop') !!}');
+            message.css('background', v.bg.warning);
+        } else {
+            messageText.text('');
+            message.css('background', v.bg.normal);
+        }
 
-      v.notifyAfterReload();
+        v.notifyAfterReload();
     });
 </script>

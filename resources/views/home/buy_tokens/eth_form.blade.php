@@ -8,9 +8,9 @@
                         <div class="formControl">
                             <input type="hidden" name="type" class="type" value="from_to">
                             <input type="hidden" name="currency" class="currency" value="ETH">
-                            <label class="icoForm__label">{!! trans('home/buyTokens.formEth') !!}</label>
-                            <input id="wallet" data-currency="ETH" class="wallet icoForm__input icoForm__input--pencil" type="text" name="wallet" required>
-                            <button class="icoForm__pencil icoForm__pencil--disabled" type="submit"></button>
+                            <label for="wallet" class="icoForm__label">{!! trans('home/buyTokens.formEth') !!}</label>
+                            <input id="wallet" data-currency="ETH" class="wallet wallet0 icoForm__input icoForm__input--pencil" type="text" name="wallet" required>
+                            <button id="plus" class="icoForm__pencil icoForm__pencil--disabled" type="submit"></button>
                         </div>
                         <div class="error-message wallet"></div>
                     </form>
@@ -38,8 +38,6 @@
                             <input class="icoForm__input icoForm__input--canCopy" type="text" name="ethWallet" id="ethWallet" value="{{ env('HOME_WALLET_ETH') }}"><span class="icoForm__copy"> </span>
                         </div>
                         <div class="minumudDeposit">{!! trans('home/buyTokens.minDep') !!} {{ env('MIN_PAY_AMOUNT') }}</div>
-                        {{--{{gas}}--}}
-                        <div class="setGas">{!! trans('home/buyTokens.setGas') !!} 199000</div>
                         <div class="smallText">{!! trans('home/buyTokens.ethUpdate') !!}</div>
                     </div>
                 </div>
