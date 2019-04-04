@@ -9,7 +9,7 @@
                                 <input type="hidden" name="type" class="type">
                                 <input type="hidden" name="currency" class="currency" value="ETH">
                                 <label class="icoForm__label">{!! trans('home/buyTokens.formEth') !!}</label>
-                                <input id="wallet" data-currency="ETH" class="wallet icoForm__input icoForm__input--pencil" type="text" name="wallet" required>
+                                <input id="wallet0" data-currency="ETH" class="wallet icoForm__input icoForm__input--pencil" type="text" name="wallet" required>
                                 <button class="icoForm__pencil icoForm__pencil--disabled"></button>
                             </div>
                             <div class="error-message wallet"></div>

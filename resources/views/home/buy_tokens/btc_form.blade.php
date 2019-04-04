@@ -10,7 +10,7 @@
                             <input type="hidden" name="type" class="type" value="to">
                             <label class="icoForm__label">{!! trans('home/buyTokens.formBtc') !!}</label>
                             <input id="wallet1" data-currency="ETH" class="wallet icoForm__input icoForm__input--pencil" type="text" name="wallet" required>
-                            <button class="icoForm__pencil icoForm__pencil--disabled" type="submit"></button>
+                            <button id="plus1"  class="icoForm__pencil icoForm__pencil--disabled" type="submit"></button>
                         </div>
                         <div class="error-message wallet"></div>
                     </form>
@@ -22,7 +22,7 @@
                             <input type="hidden" name="type" class="type" value="from">
                             <label class="icoForm__label">{!! trans('home/buyTokens.formBtcEth') !!}</label>
                             <input id="wallet2" data-currency="BTC"  class="wallet icoForm__input icoForm__input--pencil" type="text" name="wallet" required disabled>
-                            <button class="icoForm__pencil icoForm__pencil--disabled" type="submit"></button>
+                            <button id="plus2" class="icoForm__pencil icoForm__pencil--disabled" type="submit"></button>
                         </div>
                         <div class="error-message wallet"></div>
                     </form>

@@ -65466,7 +65466,7 @@ exports = module.exports = __webpack_require__(5)(false);
 
 
 // module
-exports.push([module.i, "\n.verification .modal[data-v-a002bb2e] {\n  z-index: 100;\n}\n.verification .modal-background[data-v-a002bb2e] {\n  background-color: rgba(255, 255, 255, 0.4);\n}\n.verification .modal-content[data-v-a002bb2e] {\n  -webkit-box-shadow: 0px 0px 70px #E0E0E0;\n          box-shadow: 0px 0px 70px #E0E0E0;\n}\n.verification .modal__header[data-v-a002bb2e] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  padding: 10px;\n}\n.verification .modal__header-user[data-v-a002bb2e] {\n  margin: 0;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n.verification .modal__header-user div[data-v-a002bb2e] {\n    margin-right: 10px;\n    border-radius: 50%;\n    overflow: hidden;\n}\n.verification .modal-close[data-v-a002bb2e] {\n  width: 40px;\n  height: 40px;\n  position: relative;\n  top: auto;\n  right: 0;\n}\n.verification .modal-close[data-v-a002bb2e]::before, .verification .modal-close[data-v-a002bb2e]::after {\n    background: black;\n}\n.verification .modal__main[data-v-a002bb2e] {\n  min-height: 400px;\n}\n.verification .swiper-container[data-v-a002bb2e] {\n  height: 400px;\n}\n.verification .swiper-slide[data-v-a002bb2e] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n.verification .modal__footer[data-v-a002bb2e] {\n  margin: 0 auto;\n  width: 300px;\n  padding: 30px 0;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n}\n.swiper-button-next[data-v-a002bb2e], .swiper-button-prev[data-v-a002bb2e] {\n  z-index: 110;\n}\n", ""]);
+exports.push([module.i, "\n.verification .modal[data-v-a002bb2e] {\n  z-index: 100;\n}\n.verification .modal-background[data-v-a002bb2e] {\n  background-color: rgba(255, 255, 255, 0.4);\n}\n.verification .modal-content[data-v-a002bb2e] {\n  -webkit-box-shadow: 0px 0px 70px #E0E0E0;\n          box-shadow: 0px 0px 70px #E0E0E0;\n}\n.verification .modal__header[data-v-a002bb2e] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  padding: 10px;\n}\n.verification .modal__header-user[data-v-a002bb2e] {\n  margin: 0;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n.verification .modal__header-user div[data-v-a002bb2e] {\n    margin-right: 10px;\n    border-radius: 50%;\n    overflow: hidden;\n}\n.verification .modal-close[data-v-a002bb2e] {\n  width: 40px;\n  height: 40px;\n  position: relative;\n  top: auto;\n  right: 0;\n}\n.verification .modal-close[data-v-a002bb2e]::before, .verification .modal-close[data-v-a002bb2e]::after {\n    background: black;\n}\n.verification .modal__main[data-v-a002bb2e] {\n  min-height: 400px;\n}\n.verification .swiper-container[data-v-a002bb2e] {\n  height: 400px;\n}\n.verification .swiper-slide[data-v-a002bb2e] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n.verification .modal__footer[data-v-a002bb2e] {\n  margin: 0 auto;\n  width: 300px;\n  padding: 30px 0;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n}\n.swiper-button-next[data-v-a002bb2e], .swiper-button-prev[data-v-a002bb2e] {\n  z-index: 110;\n}\n.apply-btn[data-v-a002bb2e], .return-btn[data-v-a002bb2e] {\n  border: none;\n  width: 60px;\n  margin-bottom: 5px;\n  padding: 5px 0;\n}\n.apply-btn[data-v-a002bb2e]:hover {\n  background: #2fa360;\n  cursor: pointer;\n}\n.return-btn[data-v-a002bb2e]:hover {\n  background: #bd4147;\n  cursor: pointer;\n}\n", ""]);
 
 // exports
 
@@ -74182,7 +74182,7 @@ var render = function() {
                 "div",
                 {
                   staticClass:
-                    "dataTable__cell dataTable__cell--head dataTable__cell--lt"
+                    "dataTable__cell dataTable__cell--head dataTable__cell--mid"
                 },
                 [_vm._v("Photo")]
               ),
@@ -74248,16 +74248,7 @@ var render = function() {
                 "div",
                 {
                   staticClass:
-                    "dataTable__cell dataTable__cell--head dataTable__cell--lt"
-                },
-                [_vm._v("Verified photos")]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "dataTable__cell dataTable__cell--head dataTable__cell--lt"
+                    "dataTable__cell dataTable__cell--head dataTable__cell--mid"
                 },
                 [_vm._v("KYC")]
               )
@@ -74267,7 +74258,7 @@ var render = function() {
               return _c("div", { staticClass: "dataTable__item" }, [
                 _c(
                   "div",
-                  { staticClass: "dataTable__cell dataTable__cell--lt" },
+                  { staticClass: "dataTable__cell dataTable__cell--mid" },
                   [
                     _c("img", {
                       staticStyle: {
@@ -74295,167 +74286,51 @@ var render = function() {
                   [_vm._v(_vm._s(investor.email))]
                 ),
                 _vm._v(" "),
+                investor.confirmed
+                  ? _c(
+                      "div",
+                      { staticClass: "dataTable__cell dataTable__cell--mid" },
+                      [_c("p", [_vm._v("Confirmed")])]
+                    )
+                  : _vm._e(),
+                _vm._v(" "),
+                !investor.confirmed
+                  ? _c(
+                      "div",
+                      { staticClass: "dataTable__cell dataTable__cell--mid" },
+                      [
+                        _c(
+                          "button",
+                          {
+                            staticClass: "apply-btn",
+                            on: {
+                              click: function($event) {
+                                _vm.applyKyc(investor.id, key)
+                              }
+                            }
+                          },
+                          [_vm._v("Apply")]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "button",
+                          {
+                            staticClass: "return-btn",
+                            on: {
+                              click: function($event) {
+                                _vm.returnKyc(investor.id, key)
+                              }
+                            }
+                          },
+                          [_vm._v("Return")]
+                        )
+                      ]
+                    )
+                  : _vm._e(),
+                _vm._v(" "),
                 _c(
                   "div",
                   { staticClass: "dataTable__cell dataTable__cell--mid" },
-                  [
-                    _vm._v(
-                      _vm._s(investor.confirmed ? "Confirmed" : "Not confirmed")
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "dataTable__cell dataTable__cell--lt" },
-                  [
-                    _c(
-                      "button",
-                      {
-                        staticClass: "btn",
-                        on: {
-                          click: function($event) {
-                            _vm.showModal(investor.id)
-                          }
-                        }
-                      },
-                      [_vm._v("Docs")]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      { staticClass: "modal", attrs: { id: investor.id } },
-                      [
-                        _c("div", { staticClass: "modal-background" }),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "modal-content" }, [
-                          _c("header", { staticClass: "modal__header" }, [
-                            _c("div", { staticClass: "modal__header-user" }, [
-                              _c("div", [
-                                _c("img", {
-                                  staticStyle: {
-                                    "max-width": "75px",
-                                    "max-height": "75px"
-                                  },
-                                  attrs: {
-                                    src: investor.img
-                                      ? _vm.currentUrl +
-                                        "/storage/" +
-                                        investor.img
-                                      : _vm.currentUrl + "/img/avatar.png"
-                                  }
-                                })
-                              ]),
-                              _vm._v(" "),
-                              _c("span", [_vm._v(_vm._s(investor.name))])
-                            ]),
-                            _vm._v(" "),
-                            _c("button", {
-                              staticClass: "modal-close is-large",
-                              attrs: { "aria-label": "close" },
-                              on: {
-                                click: function($event) {
-                                  _vm.hideModal(investor.id)
-                                }
-                              }
-                            })
-                          ]),
-                          _vm._v(" "),
-                          _c(
-                            "main",
-                            { staticClass: "modal__main" },
-                            [
-                              _c(
-                                "swiper",
-                                {
-                                  ref: "awesomeSwiperA",
-                                  refInFor: true,
-                                  attrs: { options: _vm.swiperOptionA }
-                                },
-                                [
-                                  _vm._l(investor.personal.documents, function(
-                                    item,
-                                    i
-                                  ) {
-                                    return _c("swiper-slide", { key: i }, [
-                                      _c("img", {
-                                        staticStyle: {
-                                          "max-height": "100%",
-                                          "max-width": "100%"
-                                        },
-                                        attrs: {
-                                          src:
-                                            _vm.currentUrl +
-                                            "/storage/document/" +
-                                            item.img,
-                                          alt: "Photo"
-                                        }
-                                      })
-                                    ])
-                                  }),
-                                  _vm._v(" "),
-                                  _c("div", {
-                                    staticClass: "swiper-pagination",
-                                    attrs: { slot: "pagination" },
-                                    slot: "pagination"
-                                  }),
-                                  _vm._v(" "),
-                                  _c("div", {
-                                    staticClass: "swiper-button-prev",
-                                    attrs: { slot: "button-prev" },
-                                    slot: "button-prev"
-                                  }),
-                                  _vm._v(" "),
-                                  _c("div", {
-                                    staticClass: "swiper-button-next",
-                                    attrs: { slot: "button-next" },
-                                    slot: "button-next"
-                                  })
-                                ],
-                                2
-                              )
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          !investor.confirmed
-                            ? _c("footer", { staticClass: "modal__footer" }, [
-                                _c(
-                                  "button",
-                                  {
-                                    staticClass: "btn",
-                                    on: {
-                                      click: function($event) {
-                                        _vm.applyKyc(investor.id, key)
-                                      }
-                                    }
-                                  },
-                                  [_vm._v("Apply")]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "button",
-                                  {
-                                    staticClass: "btn",
-                                    on: {
-                                      click: function($event) {
-                                        _vm.returnKyc(investor.id, key)
-                                      }
-                                    }
-                                  },
-                                  [_vm._v("Return")]
-                                )
-                              ])
-                            : _vm._e()
-                        ])
-                      ]
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "dataTable__cell dataTable__cell--lt" },
                   [
                     _c(
                       "button",
