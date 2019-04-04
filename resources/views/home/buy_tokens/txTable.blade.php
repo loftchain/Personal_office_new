@@ -9,7 +9,6 @@
                         <th>{!! trans('home/buyTokens.tableTransDate') !!}</th>
                         <th>{!! trans('home/buyTokens.tableTransCurrency') !!}</th>
                         <th>{!! trans('home/buyTokens.tableTransAmount') !!}</th>
-                        <th>{!! trans('home/buyTokens.tableTransToken') !!}</th>
                         <th>{!! trans('home/buyTokens.tableTransStatus') !!}</th>
                         <th>{!! trans('home/buyTokens.tableAction') !!}</th>
                     </tr>
@@ -18,7 +17,6 @@
                             <td>{{ $transaction->date }}</td>
                             <td>{{ $transaction->currency }}</td>
                             <td>{{ $transaction->amount }}</td>
-                            <td>{{ $transaction->amount_tokens }}</td>
                             <td>{{ $transaction->status === 'true' ? 'success' : 'fail' }}</td>
                             <td>
                                 <i class="up-btn trans-{{ $transaction->id }} fa fa-chevron-up" dataid="{{ $transaction->id }}" style="cursor: pointer"></i>

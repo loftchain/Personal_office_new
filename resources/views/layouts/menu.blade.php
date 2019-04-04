@@ -27,7 +27,7 @@
             <div class="userInfo__text">
                 <div class="userInfo__textItem">{{ Auth::user()->name }}</div>
                 <div class="userInfo__textItem">{!! trans('home/menu.status') !!}: {{ !Auth::user()->confirmed ? trans('home/menu.verified1') : ''}} {!! trans('home/menu.verified') !!}</div>
-                <div class="userInfo__textItem">{!! trans('home/menu.tokenAmount') !!} {{ Auth::user()->transactions()->sum('amount_tokens') }} {{ env('TOKEN_NAME') }}</div>
+                <div class="userInfo__textItem">{!! trans('home/menu.tokenAmount') !!} {{ \App\Services\WalletService::getMyTokensFromApi() }} {{ env('TOKEN_NAME') }}</div>
             </div>
         </div>
         <div class="mainMenu">
