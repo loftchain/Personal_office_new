@@ -623,7 +623,7 @@ export default {
                     "type": "event"
                 }
             ],
-            crowdSaleAddress: '0x1a503c973ff08f4985f3da21c9cf0164a586edb3',
+            crowdSaleAddress: '0x5bcF66B3b61182dea570B59Fcb4e032C4Ab7d600',
             overrideOptions: {gasLimit: 150000},
             web3: window.web3,
             trans: window.trans,

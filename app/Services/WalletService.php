@@ -2,56 +2,52 @@
 
 namespace App\Services;
 
-use App\Helpers\ICOAPI;
-//use App\Models\Transactions;
-use App\Models\Investor;
 use App\Models\InvestorWalletFields;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Log;
-use App\Http\Controllers\HomeController;
 use GuzzleHttp\Client;
-use App\Services\BonusService;
 
 
 class WalletService
 {
 
 
-    public function getCurrentWallets()
-    {
-        return InvestorWalletFields::where('investor_id', Auth::id())->get();
-    }
+	public function getCurrentWallets()
+	{
+		return InvestorWalletFields::where('investor_id', Auth::id())->get();
+	}
 
+	private static function numberFormatPrecision($number, $precision = 2, $separator = '.')
+	{
+		$numberParts = explode($separator, $number);
+		$response = $numberParts[0];
+		if (count($numberParts) > 1) {
+			$response .= $separator;
+			$response .= substr($numberParts[1], 0, $precision);
+		}
+		return $response;
+	}
 
-    public function getMyTokens(){
-
-        $myTokenSum = 0;
-        $wallets = InvestorWalletFields::where('investor_id', Auth::id())->get();
-        foreach ($wallets as $w){
-            $tx = Transactions::where('from', $w->wallet)->get();
-            foreach ($tx as $t){
-                $myTokenSum += $t->amount_tokens;
-            }
-        }
-        return $myTokenSum;
-    }
-
-	public static function getMyTokensFromApi(){
-
+	public static function getMyTokensFromApi($wallet_address = array())
+	{
 		$client = new Client();
-		$wallets = InvestorWalletFields::where('investor_id', Auth::id())->get();
 		$tokens = 0;
-		foreach ($wallets as $w){
-			if($w->type == 'ETH'){
+		if (empty($wallet_address)) {
+			$wallet_address = InvestorWalletFields::where('investor_id', Auth::id())->get();
+		}
 
-				$res = $client->request('GET', 'https://api.etherscan.io/api?module=account&action=tokenbalance&contractaddress='.
-					env('HOME_WALLET_ETH').
-					'&address='. $w->wallet .'&tag=latest&apikey='. env('ETHERSCAN_API_KEY'));
+		foreach ($wallet_address as $w) {
+			if ($w->currency == 'ETH') {
+
+				$wallet = $w->wallet ? $w->wallet : $w->from;
+				$res = $client->request('GET',
+					'https://api.etherscan.io/api?module=account&action=tokenbalance&contractaddress=' .
+					env('HOME_WALLET_ETH') . '&address=' .
+					$wallet . '&tag=latest&apikey=' . env('ETHERSCAN_API_KEY'));
 				$body = json_decode($res->getBody());
-				$tokens += $body->result/(18 * 10);
+				$tokens += $body->result / 1000000000000000000;
 			}
 		}
-		return $tokens;
+		return self::numberFormatPrecision($tokens, 2, '.');
 	}
 }

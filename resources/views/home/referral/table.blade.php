@@ -4,11 +4,10 @@
             <th class="referral__cell referral__cell--person referral__cell--th">{!! trans('home/referrals.tableRef') !!}</th>
             <th class="referral__cell referral__cell--bonus referral__cell--th">{!! trans('home/referrals.tableBonus') !!}</th>
         </tr>
-
         @forelse($referrals as $referral)
             <tr>
                 <td class="referral__cell referral__cell--person">{{ $referral->email }}</td>
-                <td class="referral__cell referral__cell--bonus">{{ $referral->transactions->sum('amount_tokens') * 0.1 }}</td>
+                <td class="referral__cell referral__cell--bonus">{{ $referral->referralTokens }}</td>
             </tr>
         @empty
             <tr>
