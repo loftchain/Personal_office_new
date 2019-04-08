@@ -19,7 +19,6 @@
                                 <div class="cryptoSelector">
                                     <button class="cryptoSelector__item" id="buttonEth">Ethereum</button>
                                     <button class="cryptoSelector__item" id="buttonBtc">Bitcoin</button>
-                                    {{--<button class="cryptoSelector__item" id="buttonPay">Changelly</button>--}}
                                 </div>
                             </div>
                         </div>
@@ -33,9 +32,6 @@
                 </div>
                 <div id="blockBtc" class="blockHolder blockHolder--token blockHolder--hide">
                     @include('home.buy_tokens.btc_form')
-                </div>
-                <div id="blockPay" class="blockHolder blockHolder--token blockHolder--hide">
-                    @include('home.buy_tokens.changelly')
                 </div>
                 @if(Auth::user()->wallets()->first())
                     <div class="blockHolder" id="txTable">
@@ -51,6 +47,5 @@
         @include('_js.js_wallet')
         @include('_js.js_copy_to_clipboard')
         @include('_js.js_transactions')
-        @include('_js.js_current_time')
     @endpush
 @endsection

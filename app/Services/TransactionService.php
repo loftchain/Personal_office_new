@@ -91,7 +91,6 @@ class TransactionService
 		$db = [];
 		$rates = $this->bonusService->getLatestCurrencies();
 		foreach ($tx as $t) {
-			$date = Carbon::parse($t->date)->format('Y-m-d h:i:s');
 			if ($t->status === 'true') {
 				TempTransaction::create([
 					'transaction_id' => $t->txId,
@@ -99,7 +98,7 @@ class TransactionService
 					'amount' => $t->amount,
 					'currency' => $t->currency,
 					'from' => $t->from,
-					'date' => $date
+					'date' => $t->date
 				]);
 			}
 			$txTimestamp = strtotime($t->date);
@@ -117,7 +116,7 @@ class TransactionService
 					'amount' => $t->amount,
 					'amount_tokens' => $this->countTokens($rates, $t->amount, $t->date, $t->currency, $t->from),
 					'info' => $info,
-					'date' => $date
+					'date' => $t->date
 				];
 
 				for ($i = 0; $i < count($db); $i++) {

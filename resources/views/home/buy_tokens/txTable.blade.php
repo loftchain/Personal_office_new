@@ -14,7 +14,7 @@
                     </tr>
                     @forelse($transactions as $transaction)
                         <tr class="{{ $transaction->status == 'true' ? "dataTable__success" : 'dataTable__error' }} tr-tx-table">
-                            <td>{{ $transaction->date }}</td>
+                            <td>{{ date('d-m-Y H:i', $transaction->date) . ' UTC'}}</td>
                             <td>{{ $transaction->currency }}</td>
                             <td>{{ $transaction->amount }}</td>
                             <td>{{ $transaction->status === 'true' ? 'success' : 'fail' }}</td>
