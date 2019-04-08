@@ -17,6 +17,14 @@ class WalletService
 		return InvestorWalletFields::where('investor_id', Auth::id())->get();
 	}
 
+	public function deleteCurrentWallets()
+	{
+		$wallets = $this->getCurrentWallets();
+		$wallets->delete();
+		$wallets->save();
+		return response()->json(['success_wallet_restore' => 'good']);
+	}
+
 	private static function numberFormatPrecision($number, $precision = 2, $separator = '.')
 	{
 		$numberParts = explode($separator, $number);

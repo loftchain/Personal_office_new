@@ -6,11 +6,17 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use App\Services\WalletService;
+
+
 
 class SettingsController extends Controller
 {
-    public function __construct()
+		protected $walletService;
+
+    public function __construct(WalletService $walletService)
     {
+    	  $this->walletService = $walletService;
         $this->middleware('auth');
     }
 
@@ -39,5 +45,10 @@ class SettingsController extends Controller
         $local_path = config('filesystems.disks.local.root') . DIRECTORY_SEPARATOR . 'uploads/' .  $path;
 
         return response()->file($local_path);
+    }
+
+    public function restoreWallets()
+    {
+	    return $this->walletService->deleteCurrentWallets();
     }
 }

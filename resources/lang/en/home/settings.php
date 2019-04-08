@@ -7,6 +7,7 @@ return [
     'email' => 'Email',
     'changeEmail' => 'Change e-mail',
     'changePassword' => 'Change password',
+    'restoreWallets' => 'Restore wallets',
 
     //form password
     'formPasswordOld' => 'Old password',

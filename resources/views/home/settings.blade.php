@@ -37,8 +37,9 @@
                                                     </div>
                                                 </form>
                                                 <div class="settingsActions">
-                                                    {{--<a class="settingsActions__link jsChangeEmail" href="#">{!! trans('home/settings.changeEmail') !!}</a>--}}
-                                                    {{--<a class="settingsActions__link jsChangePassword" href="#">{!! trans('home/settings.changePassword') !!}</a>--}}
+                                                  <form action="{{ route('home.restore.wallets') }}" method="post">
+                                                    <button type="submit" class="btn btn--small">{!! trans('home/settings.restoreWallets') !!}</button>
+                                                  </form>
                                                     <div class="settingsActions__langSelector">
                                                        @include('modals.lang_selector')
                                                     </div>
