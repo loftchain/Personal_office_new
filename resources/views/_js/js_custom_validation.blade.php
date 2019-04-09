@@ -162,8 +162,8 @@
                 case !$.isEmptyObject(data.goto2):
                     window.location.replace("{{ route('root') }}");
                     break;
-                case !$.isEmptyObject(data.wallet):
-                    console.log('test error')
+                case !$.isEmptyObject(data.success_wallet_restore):
+                    v.showMessage('{!! trans('home/settings.walletRestored') !!}', v.bg.success);
                     break;
                 case !$.isEmptyObject(data.wallet_added):
                     v.showMessage('{!! trans('home/buyTokens.walletAdded') !!}', v.bg.success);

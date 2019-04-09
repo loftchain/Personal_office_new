@@ -12711,7 +12711,7 @@ select {
   font-size: 14px;
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
-  color: #F2C94C;
+  color: #fd9f0e;
   margin: 7px 0;
 }
 
@@ -12739,6 +12739,19 @@ select {
   color: #ffffff;
 }
 
+.settingsActions__clear_wallets_btn {
+  border: none;
+  outline: none;
+  color: #fd9f0e;
+  cursor: pointer;
+  background: white;
+}
+
+.settingsActions__clear_wallets_btn:hover {
+  background: #BDBDBD;
+  color: white;
+}
+
 .basicBlock--settings {
   min-width: 66%;
 }
@@ -12756,6 +12769,7 @@ select {
 .settings__button-language {
   font-size: 14px;
   font-weight: 300;
+  color: #fd9f0e;
 }
 
 .modalMessage {

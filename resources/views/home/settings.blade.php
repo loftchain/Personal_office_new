@@ -37,9 +37,11 @@
                                                     </div>
                                                 </form>
                                                 <div class="settingsActions">
-                                                  <form action="{{ route('home.restore.wallets') }}" method="post">
-                                                    <button type="submit" class="btn btn--small">{!! trans('home/settings.restoreWallets') !!}</button>
-                                                  </form>
+                                                  @if(Auth::user()->wallets()->first())
+                                                    <form action="{{ route('home.restore.wallets') }}" method="get">
+                                                      <button type="submit" class="settingsActions__clear_wallets_btn">{!! trans('home/settings.restoreWallets') !!}</button>
+                                                    </form>
+                                                  @endif
                                                     <div class="settingsActions__langSelector">
                                                        @include('modals.lang_selector')
                                                     </div>

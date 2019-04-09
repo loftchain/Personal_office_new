@@ -7,6 +7,8 @@ return [
     'email' => 'Eメール',
     'changeEmail' => '電子メールを変更する',
     'changePassword' => 'パスワードを変更する',
+		'restoreWallets' => 'クリア財布',
+		'walletRestored' => '財布はクリアされました。 これで値を正しく追加できます。',
 
     //form password
     'formPasswordOld' => '以前のパスワード',

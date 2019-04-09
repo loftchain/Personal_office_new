@@ -50,7 +50,7 @@ Route::group(['prefix' => 'home', 'as' => 'home.', 'middleware' => ['auth', 'isE
     Route::get('/description_view/{currency}', 'TokensController@description_view')->name('description_view');
     Route::get('/referrals', 'ReferralController@index')->name('referral');
     Route::post('/settings/avatar/upload', 'SettingsController@uploadAvatar')->name('settings.upload.avatar');
-		Route::post('/restore/wallets', 'SettingsController@restoreWallets')->name('restore.wallets');
+		Route::get('/restore/wallets', 'SettingsController@restoreWallets')->name('restore.wallets');
 
 });
 

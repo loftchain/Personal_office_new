@@ -7,6 +7,8 @@ return [
     'email' => '電子郵件',
     'changeEmail' => '更改電子郵件',
     'changePassword' => '更改密碼',
+		'restoreWallets' => '清除錢包',
+		'walletRestored' => '錢包已被清理。 現在您可以正確添加值。',
 
     //form password
     'formPasswordOld' => '舊密碼',

@@ -3,7 +3,7 @@
 <script src="{{ asset('js/jquery/jquery.min.js') }}"></script>
 <script src="{{ asset('js/jquery/jquery.js') }}"></script>
 <script src="{{ asset('js/jquery/jquery.ui.widget.js') }}"></script>
-{{--<script src="{{ asset('js/jquery/jquery.fileupload.js') }}"></script>--}}
+<script src="{{ asset('js/jquery/jquery.fileupload.js') }}"></script>
 <script src="{{ asset('js/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <script src="{{ asset('js/bootstrap/js/bootstrap-notify.min.js') }}"></script>
 <script src="{{ asset('js/owl-carousel/owl.carousel.min.js') }}"></script>
@@ -24,7 +24,6 @@
 @include('_js.js_loader_cloak')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
 @include('_js.js_menu_toggle')
-
 @if(isset($data) && \Illuminate\Support\Facades\Route::current()->getName() == 'home.index')
     @include('_js.js_chart')
     @include('_js.js_widget')

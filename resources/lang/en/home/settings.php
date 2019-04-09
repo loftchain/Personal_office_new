@@ -7,7 +7,8 @@ return [
     'email' => 'Email',
     'changeEmail' => 'Change e-mail',
     'changePassword' => 'Change password',
-    'restoreWallets' => 'Restore wallets',
+    'restoreWallets' => 'Clear wallet fields',
+    'walletRestored' => 'Wallets have been cleared. Now you can add values correctly.',
 
     //form password
     'formPasswordOld' => 'Old password',

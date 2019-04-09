@@ -19,9 +19,7 @@ class WalletService
 
 	public function deleteCurrentWallets()
 	{
-		$wallets = $this->getCurrentWallets();
-		$wallets->delete();
-		$wallets->save();
+		InvestorWalletFields::where('investor_id', Auth::id())->delete();
 		return response()->json(['success_wallet_restore' => 'good']);
 	}
 

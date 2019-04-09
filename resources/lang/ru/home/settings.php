@@ -7,6 +7,8 @@ return [
     'email' => 'Почта',
     'changeEmail' => 'Изменить e-mail',
     'changePassword' => 'Изменить пароль',
+		'restoreWallets' => 'Очистить кошельки',
+		'walletRestored' => 'Кошельки успешно очищены. Теперь Вы можете ввести их повторно.',
 
     //form password
     'formPasswordOld' => 'Старый пароль',

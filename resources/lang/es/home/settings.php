@@ -7,6 +7,8 @@ return [
     'email' => 'Email',
     'changeEmail' => 'Cambiar e-mail',
     'changePassword' => 'Cambia la contraseña',
+		'restoreWallets' => 'Carteras transparentes',
+		'walletRestored' => 'Las carteras se han borrado. Ahora puedes agregar valores correctamente.',
 
     //form password
     'formPasswordOld' => 'Contraseña anterior',

@@ -43,7 +43,7 @@
     line-height: normal;
     font-size: 14px;
     text-decoration-line: underline;
-    color: $yellow3;
+    color: $yellow7;
     margin: 7px 0;
   }
   &__langSelector {
@@ -67,6 +67,19 @@
     background: $yellow3;
     color: $white;
   }
+
+  &__clear_wallets_btn{
+    border: none;
+    outline: none;
+    color: $yellow7;
+    cursor: pointer;
+    background: white;
+  }
+
+  &__clear_wallets_btn:hover{
+    background: $grey2;
+    color:white;
+  }
 }
 
 .basicBlock--settings {
@@ -83,4 +96,5 @@
 .settings__button-language {
   font-size: 14px;
   font-weight: 300;
+  color: $yellow7;
 }
