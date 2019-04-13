@@ -8,6 +8,7 @@ use App\Models\Transaction;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use GuzzleHttp\Client;
+use Illuminate\Support\Facades\Log;
 
 class TransactionService
 {
@@ -54,7 +55,26 @@ class TransactionService
 		return $tokenAmount + $bonus;
 	}
 
-	public function countTokens($rates, $amount, $date, $currency, $wallet)
+	public function convertHexToDec($data)
+	{
+		$hex = substr($data, 2);
+		return $this->walletService->numberFormatPrecision((hexdec($hex))/1000000000000000000);
+	}
+
+	public function grabEthEvents()
+	{
+		$final = [];
+		$client = new Client();
+		$res = $client->request('GET', 'https://api.etherscan.io/api?module=logs&action=getLogs&fromBlock=7462753&toBlock=latest&address='. env('HOME_WALLET_ETH') .'&apikey=' . env('ETHERSCAN_API_KEY'));
+		$body = json_decode($res->getBody());
+		foreach ($body->result as $br){
+			if (count($br->topics) == 3){
+				$final[] = ['tokenAmount' => $this->convertHexToDec($br->data), 'transaction_id' => $br->transactionHash];
+			}
+		}
+		return $final;
+	}
+	public function countTokens($rates, $amount, $date, $currency, $txId)
 	{
 		$dateArr = [];
 		$totalTokenAmount = 0;
@@ -64,22 +84,18 @@ class TransactionService
 			}
 		}
 
-		$closestDate = $this->getClosest((int)strtotime($date), $dateArr);
-		foreach ($rates as $r) {
-			if ((int)strtotime($r->timestamp) == $closestDate) {
-				switch ($currency) {
-					case 'ETH':
-						if ($r->pair === 'ETH/USD') {
-							$totalTokenAmount = $this->sumBonusAndTokens($amount, $r->price);
-						}
-						break;
-					case 'BTC':
-						if ($r->pair === 'BTC/USD') {
-							$totalTokenAmount = $this->sumBonusAndTokens($amount, $r->price);
-						}
-						break;
+		if ($currency == 'ETH') {
+			$this->grabEthEvents();
+		} else {
+			$closestDate = $this->getClosest((int)strtotime($date), $dateArr);
+			foreach ($rates as $r) {
+				if ((int)strtotime($r->timestamp) == $closestDate) {
+					if ($r->pair === 'BTC/USD') {
+						$totalTokenAmount = $this->sumBonusAndTokens($amount, $r->price);
+					}
 				}
-			}
+		}
+
 		}
 
 		return round($totalTokenAmount, 2);
@@ -114,7 +130,7 @@ class TransactionService
 					'currency' => $t->currency,
 					'from' => $t->from,
 					'amount' => $t->amount,
-					'amount_tokens' => $this->countTokens($rates, $t->amount, $t->date, $t->currency, $t->from),
+					'amount_tokens' => $this->countTokens($rates, $t->amount, $t->date, $t->currency, $t->txId),
 					'info' => $info,
 					'date' => $t->date
 				];

@@ -23,7 +23,7 @@ class WalletService
 		return response()->json(['success_wallet_restore' => 'good']);
 	}
 
-	private static function numberFormatPrecision($number, $precision = 2, $separator = '.')
+	public function numberFormatPrecision($number, $precision = 2, $separator = '.')
 	{
 		$numberParts = explode($separator, $number);
 		$response = $numberParts[0];
@@ -34,7 +34,7 @@ class WalletService
 		return $response;
 	}
 
-	public static function getMyTokensFromApi($wallet_address = array())
+	public function getMyTokensFromApi($wallet_address = array())
 	{
 		$client = new Client();
 		$tokens = 0;
@@ -54,6 +54,6 @@ class WalletService
 				$tokens += $body->result / 1000000000000000000;
 			}
 		}
-		return self::numberFormatPrecision($tokens, 2, '.');
+		return $this->numberFormatPrecision($tokens, 2, '.');
 	}
 }

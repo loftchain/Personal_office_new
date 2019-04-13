@@ -20,7 +20,6 @@ class ReferralService
 
 	public function storeRefsToDbForAdmin()
 	{
-		InvestorReferralFields::truncate();
 
 		$recountedReferrals = [];
 
@@ -34,11 +33,17 @@ class ReferralService
 			->get();
 
 		foreach ($referrals as $referral) {
-			$tokensSum = $this->walletService->getMyTokensFromApi($referral->transactions) * 0.1;
-			$investorWallet = InvestorWalletFields::where('investor_id', $referral->referred_by)->whereIn('type', ['to', 'from_to'])->first()->wallet;
 
-			$recountedReferrals[$referral->referred_by]['tokens'][] = $tokensSum;
-			$recountedReferrals[$referral->referred_by]['wallet'] = $investorWallet;
+
+
+//			foreach($referral->transactions as $rt) {
+//				$tokensSum = $this->walletService->getMyTokensFromApi($referral->transactions) * 0.1;
+//				$investorWallet = InvestorWalletFields::where('investor_id', $referral->referred_by)->whereIn('type', ['to', 'from_to'])->first()->wallet;
+//				$recountedReferrals[$referral->referred_by]['tokens'][] = $tokensSum;
+//				$recountedReferrals[$referral->referred_by]['wallet'] = $investorWallet;
+//				$recountedReferrals[$referral->referred_by]['transaction_id'] = $rt->transaction_id;
+//			}
+
 		}
 
 		foreach ($recountedReferrals as $key => $item) {
