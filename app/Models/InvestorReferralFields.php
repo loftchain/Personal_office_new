@@ -10,7 +10,8 @@ class InvestorReferralFields extends Model
         'investor_id',
         'wallet_to',
         'tokens',
-        'tokens_referred_by'
+        'tokens_referred_by',
+        'transaction_id'
     ];
 
     public function investor()

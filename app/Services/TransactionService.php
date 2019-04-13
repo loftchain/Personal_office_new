@@ -58,22 +58,23 @@ class TransactionService
 	public function convertHexToDec($data)
 	{
 		$hex = substr($data, 2);
-		return $this->walletService->numberFormatPrecision((hexdec($hex))/1000000000000000000);
+		return number_format(((hexdec($hex)) / 1000000000000000000), 2, '.', '');
 	}
 
 	public function grabEthEvents()
 	{
 		$final = [];
 		$client = new Client();
-		$res = $client->request('GET', 'https://api.etherscan.io/api?module=logs&action=getLogs&fromBlock=7462753&toBlock=latest&address='. env('HOME_WALLET_ETH') .'&apikey=' . env('ETHERSCAN_API_KEY'));
+		$res = $client->request('GET', 'https://api.etherscan.io/api?module=logs&action=getLogs&fromBlock=7462753&toBlock=latest&address=' . env('HOME_WALLET_ETH') . '&apikey=' . env('ETHERSCAN_API_KEY'));
 		$body = json_decode($res->getBody());
-		foreach ($body->result as $br){
-			if (count($br->topics) == 3){
+		foreach ($body->result as $br) {
+			if (count($br->topics) == 3) {
 				$final[] = ['tokenAmount' => $this->convertHexToDec($br->data), 'transaction_id' => $br->transactionHash];
 			}
 		}
 		return $final;
 	}
+
 	public function countTokens($rates, $amount, $date, $currency, $txId)
 	{
 		$dateArr = [];
@@ -83,22 +84,24 @@ class TransactionService
 				$dateArr[] = (int)strtotime($r->timestamp);
 			}
 		}
-
 		if ($currency == 'ETH') {
-			$this->grabEthEvents();
+			$ethTokens = $this->grabEthEvents();
+			foreach ($ethTokens as $et) {
+				if ($txId == $et['transaction_id']) {
+					$totalTokenAmount = $et['tokenAmount'];
+				}
+			}
 		} else {
 			$closestDate = $this->getClosest((int)strtotime($date), $dateArr);
 			foreach ($rates as $r) {
 				if ((int)strtotime($r->timestamp) == $closestDate) {
 					if ($r->pair === 'BTC/USD') {
-						$totalTokenAmount = $this->sumBonusAndTokens($amount, $r->price);
+						$totalTokenAmount = $this->walletService->numberFormatPrecision($this->sumBonusAndTokens($amount, $r->price));
 					}
 				}
+			}
 		}
-
-		}
-
-		return round($totalTokenAmount, 2);
+		return $totalTokenAmount;
 	}
 
 	public function storeTx()
