@@ -64286,6 +64286,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
               case 0:
                 _context.next = 2;
                 return __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get('history/get').then(function (res) {
+                  _this2.totalPages = res.data.length;
                   _this2.histories = res.data;
                 });
 
@@ -75296,11 +75297,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
                                     _this2.totalPages = res.data.length;
                                     _this2.transactions = res.data;
                                     res.data.map(function (item, key) {
-                                        var momentDate = __WEBPACK_IMPORTED_MODULE_2_moment___default()(item.date),
-                                            dateOffset = new Date().getTimezoneOffset() / 60;
-
-                                        momentDate.hour(momentDate.hour() - dateOffset);
-                                        _this2.transactions[key].date = momentDate.format('YYYY-MM-DD HH:mm:ss');
+                                        _this2.transactions[key].date = __WEBPACK_IMPORTED_MODULE_2_moment___default.a.unix(item.date).utcOffset(0, false).format('DD/MM/YYYY HH:mm');
                                     });
                                 });
 
@@ -76114,89 +76111,6 @@ var render = function() {
                     )
                   ]
                 )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "helpBar__checked-confirm" }, [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.checkedSend,
-                      expression: "checkedSend"
-                    }
-                  ],
-                  attrs: { type: "checkbox", value: "0", checked: "" },
-                  domProps: {
-                    checked: Array.isArray(_vm.checkedSend)
-                      ? _vm._i(_vm.checkedSend, "0") > -1
-                      : _vm.checkedSend
-                  },
-                  on: {
-                    click: _vm.checkBoxClick,
-                    change: function($event) {
-                      var $$a = _vm.checkedSend,
-                        $$el = $event.target,
-                        $$c = $$el.checked ? true : false
-                      if (Array.isArray($$a)) {
-                        var $$v = "0",
-                          $$i = _vm._i($$a, $$v)
-                        if ($$el.checked) {
-                          $$i < 0 && (_vm.checkedSend = $$a.concat([$$v]))
-                        } else {
-                          $$i > -1 &&
-                            (_vm.checkedSend = $$a
-                              .slice(0, $$i)
-                              .concat($$a.slice($$i + 1)))
-                        }
-                      } else {
-                        _vm.checkedSend = $$c
-                      }
-                    }
-                  }
-                }),
-                _vm._v("  Not sent\n          "),
-                _c("br"),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.checkedSend,
-                      expression: "checkedSend"
-                    }
-                  ],
-                  attrs: { type: "checkbox", value: "1", checked: "" },
-                  domProps: {
-                    checked: Array.isArray(_vm.checkedSend)
-                      ? _vm._i(_vm.checkedSend, "1") > -1
-                      : _vm.checkedSend
-                  },
-                  on: {
-                    click: _vm.checkBoxClick,
-                    change: function($event) {
-                      var $$a = _vm.checkedSend,
-                        $$el = $event.target,
-                        $$c = $$el.checked ? true : false
-                      if (Array.isArray($$a)) {
-                        var $$v = "1",
-                          $$i = _vm._i($$a, $$v)
-                        if ($$el.checked) {
-                          $$i < 0 && (_vm.checkedSend = $$a.concat([$$v]))
-                        } else {
-                          $$i > -1 &&
-                            (_vm.checkedSend = $$a
-                              .slice(0, $$i)
-                              .concat($$a.slice($$i + 1)))
-                        }
-                      } else {
-                        _vm.checkedSend = $$c
-                      }
-                    }
-                  }
-                }),
-                _vm._v("  Sent\n        ")
               ])
             ])
           ])

@@ -699,7 +699,7 @@ export default {
             });
 
             if(data.status === true) {
-                this.sortedItems[key].send = 'true'
+                this.sortedItems[key].send = 'true';
                 v.showMessage('Tokens successfully posted.', v.bg.success);
             }
 

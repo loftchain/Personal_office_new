@@ -662,11 +662,7 @@ export default {
                     this.totalPages = res.data.length;
                     this.transactions = res.data;
                     res.data.map((item, key) => {
-                        let momentDate = moment(item.date),
-                            dateOffset = new Date().getTimezoneOffset() / 60;
-
-                        momentDate.hour(momentDate.hour() - dateOffset);
-                        this.transactions[key].date = momentDate.format('YYYY-MM-DD HH:mm:ss');
+                        this.transactions[key].date = moment.unix(item.date).utcOffset(0, false).format('DD/MM/YYYY HH:mm');
                     });
                 });
         },

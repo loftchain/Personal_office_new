@@ -46,6 +46,7 @@ export default {
     async getHistories() {
       await axios.get('history/get')
         .then(res => {
+            this.totalPages = res.data.length;
             this.histories = res.data;
         });
     },
