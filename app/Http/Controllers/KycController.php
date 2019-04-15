@@ -17,7 +17,7 @@ class KycController extends Controller
             'phone' => 'required|numeric',
             'zip' => 'required|min:3|max:15',
             'address' => 'required|min:3|max:50',
-            'telegram' => 'nullable|regex:(^([a-zA-Z_]+)(\d+)?$)',
+            'telegram' => 'nullable|max:50',
             'day' => 'required',
             'month' => 'required',
             'year' => 'required',
