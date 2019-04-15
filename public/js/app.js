@@ -64154,7 +64154,7 @@ var content = __webpack_require__(172);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(6)("b66925d6", content, false, {});
+var update = __webpack_require__(6)("3e09b622", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -65149,7 +65149,7 @@ var render = function() {
               }
             },
             [
-              _vm._v("\n        Investor ID\n        "),
+              _vm._v("\r\n        Investor ID\r\n        "),
               _c("i", { staticClass: "fas fa-arrow-down" }),
               _vm._v(" "),
               _c("i", { staticClass: "fas fa-arrow-up" })
@@ -65166,7 +65166,7 @@ var render = function() {
               }
             },
             [
-              _vm._v("\n        Action\n        "),
+              _vm._v("\r\n        Action\r\n        "),
               _c("i", { staticClass: "fas fa-arrow-down" }),
               _vm._v(" "),
               _c("i", { staticClass: "fas fa-arrow-up" })
@@ -65183,7 +65183,7 @@ var render = function() {
               }
             },
             [
-              _vm._v("\n        Old info\n        "),
+              _vm._v("\r\n        Old info\r\n        "),
               _c("i", { staticClass: "fas fa-arrow-down" }),
               _vm._v(" "),
               _c("i", { staticClass: "fas fa-arrow-up" })
@@ -65200,7 +65200,7 @@ var render = function() {
               }
             },
             [
-              _vm._v("\n        New info\n        "),
+              _vm._v("\r\n        New info\r\n        "),
               _c("i", { staticClass: "fas fa-arrow-down" }),
               _vm._v(" "),
               _c("i", { staticClass: "fas fa-arrow-up" })
@@ -65217,7 +65217,7 @@ var render = function() {
               }
             },
             [
-              _vm._v("\n        Date\n        "),
+              _vm._v("\r\n        Date\r\n        "),
               _c("i", { staticClass: "fas fa-arrow-down" }),
               _vm._v(" "),
               _c("i", { staticClass: "fas fa-arrow-up" })
@@ -65231,9 +65231,9 @@ var render = function() {
             _vm._v(" "),
             _c("td", [
               _vm._v(
-                "\n        " +
+                "\r\n        " +
                   _vm._s(_vm.renameAction(history.action)) +
-                  "\n      "
+                  "\r\n      "
               )
             ]),
             _vm._v(" "),
@@ -65443,7 +65443,7 @@ var content = __webpack_require__(180);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(6)("0da1004f", content, false, {});
+var update = __webpack_require__(6)("6684f1a2", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -74200,7 +74200,7 @@ var render = function() {
                   }
                 },
                 [
-                  _vm._v("\n            Investor ID\n            "),
+                  _vm._v("\r\n            Investor ID\r\n            "),
                   _c("i", { staticClass: "fas fa-arrow-down" }),
                   _vm._v(" "),
                   _c("i", { staticClass: "fas fa-arrow-up" })
@@ -74219,7 +74219,7 @@ var render = function() {
                   }
                 },
                 [
-                  _vm._v("\n            E-mail\n            "),
+                  _vm._v("\r\n            E-mail\r\n            "),
                   _c("i", { staticClass: "fas fa-arrow-down" }),
                   _vm._v(" "),
                   _c("i", { staticClass: "fas fa-arrow-up" })
@@ -74238,7 +74238,7 @@ var render = function() {
                   }
                 },
                 [
-                  _vm._v("\n            Confirmed\n            "),
+                  _vm._v("\r\n            Confirmed\r\n            "),
                   _c("i", { staticClass: "fas fa-arrow-down" }),
                   _vm._v(" "),
                   _c("i", { staticClass: "fas fa-arrow-up" })
@@ -74554,7 +74554,7 @@ var render = function() {
                 }
               }
             }),
-            _vm._v("  Not confirmed\n          "),
+            _vm._v("  Not confirmed\r\n          "),
             _c("br"),
             _vm._v(" "),
             _c("input", {
@@ -74596,7 +74596,7 @@ var render = function() {
                 }
               }
             }),
-            _vm._v("  Confirmed\n        ")
+            _vm._v("  Confirmed\r\n        ")
           ])
         ])
       ])
@@ -74712,7 +74712,7 @@ var content = __webpack_require__(191);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(6)("3f9dd760", content, false, {});
+var update = __webpack_require__(6)("6097f770", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -75697,7 +75697,7 @@ var render = function() {
                       }
                     },
                     [
-                      _vm._v("\n            Investor ID\n            "),
+                      _vm._v("\r\n            Investor ID\r\n            "),
                       _c("i", { staticClass: "fas fa-arrow-down" }),
                       _vm._v(" "),
                       _c("i", { staticClass: "fas fa-arrow-up" })
@@ -75716,7 +75716,7 @@ var render = function() {
                       }
                     },
                     [
-                      _vm._v("\n            Currency\n            "),
+                      _vm._v("\r\n            Currency\r\n            "),
                       _c("i", { staticClass: "fas fa-arrow-down" }),
                       _vm._v(" "),
                       _c("i", { staticClass: "fas fa-arrow-up" })
@@ -75735,7 +75735,7 @@ var render = function() {
                       }
                     },
                     [
-                      _vm._v("\n            Amount\n            "),
+                      _vm._v("\r\n            Amount\r\n            "),
                       _c("i", { staticClass: "fas fa-arrow-down" }),
                       _vm._v(" "),
                       _c("i", { staticClass: "fas fa-arrow-up" })
@@ -75754,7 +75754,7 @@ var render = function() {
                       }
                     },
                     [
-                      _vm._v("\n            Status\n            "),
+                      _vm._v("\r\n            Status\r\n            "),
                       _c("i", { staticClass: "fas fa-arrow-down" }),
                       _vm._v(" "),
                       _c("i", { staticClass: "fas fa-arrow-up" })
@@ -75773,7 +75773,7 @@ var render = function() {
                       }
                     },
                     [
-                      _vm._v("\n            Date\n            "),
+                      _vm._v("\r\n            Date\r\n            "),
                       _c("i", { staticClass: "fas fa-arrow-down" }),
                       _vm._v(" "),
                       _c("i", { staticClass: "fas fa-arrow-up" })
@@ -75786,7 +75786,7 @@ var render = function() {
                       staticClass:
                         "dataTable__cell dataTable__cell--head dataTable__cell--mid"
                     },
-                    [_vm._v("\n            Info\n          ")]
+                    [_vm._v("\r\n            Info\r\n          ")]
                   )
                 ]),
                 _vm._v(" "),
@@ -75797,9 +75797,9 @@ var render = function() {
                       { staticClass: "dataTable__cell dataTable__cell--lt" },
                       [
                         _vm._v(
-                          "\n            " +
+                          "\r\n            " +
                             _vm._s(transaction.investor_id) +
-                            "\n          "
+                            "\r\n          "
                         )
                       ]
                     ),
@@ -75931,7 +75931,7 @@ var render = function() {
                                     _vm._v(
                                       " " +
                                         _vm._s(transaction.from) +
-                                        "\n                "
+                                        "\r\n                "
                                     )
                                   ])
                             })
@@ -76161,7 +76161,7 @@ var staticRenderFns = [
               target: "_blank"
             }
           },
-          [_vm._v("\n          Mozilla Firefox\n        ")]
+          [_vm._v("\r\n          Mozilla Firefox\r\n        ")]
         )
       ]),
       _vm._v(" "),
@@ -76176,7 +76176,7 @@ var staticRenderFns = [
               target: "_blank"
             }
           },
-          [_vm._v("\n          Google Chrome\n        ")]
+          [_vm._v("\r\n          Google Chrome\r\n        ")]
         )
       ])
     ])
@@ -76253,7 +76253,7 @@ var content = __webpack_require__(197);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(6)("06e0a160", content, false, {});
+var update = __webpack_require__(6)("0fa4a4b0", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -77163,7 +77163,7 @@ var render = function() {
                     }
                   }
                 }),
-                _vm._v("  Not sent\n          "),
+                _vm._v("  Not sent\r\n          "),
                 _c("br"),
                 _vm._v(" "),
                 _c("input", {
@@ -77204,7 +77204,7 @@ var render = function() {
                     }
                   }
                 }),
-                _vm._v("  Sent\n        ")
+                _vm._v("  Sent\r\n        ")
               ])
             ])
           ])
@@ -77245,7 +77245,7 @@ var staticRenderFns = [
               target: "_blank"
             }
           },
-          [_vm._v("\n          Mozilla Firefox\n        ")]
+          [_vm._v("\r\n          Mozilla Firefox\r\n        ")]
         )
       ]),
       _vm._v(" "),
@@ -77260,7 +77260,7 @@ var staticRenderFns = [
               target: "_blank"
             }
           },
-          [_vm._v("\n          Google Chrome\n        ")]
+          [_vm._v("\r\n          Google Chrome\r\n        ")]
         )
       ])
     ])
