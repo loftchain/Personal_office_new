@@ -15,9 +15,11 @@ return [
     'ico_from' => 'from',
     'ico_till' => 'till',
     'ico_finished' => 'ico is finished',
-    'ico_stage0_start' => 'pre-ico starts at',
+    'ico_stage0_start' => 'ico/ieo starts at ',
     'ico_bonus' => 'Bonus',
     'ico_noBonus' => 'no bonus',
+    'onwards' => '<br>onwards',
+    'exchange' => 'Listing in an Exchange',
 
     'ico_card_to' => 'to',
     'ico_card_sep' => 'sep',

@@ -15,9 +15,11 @@ return [
     'ico_from' => 'から',
     'ico_till' => 'まで',
     'ico_finished' => 'イコが完成しました',
-    'ico_stage0_start' => 'pre-icoが始まる',
+    'ico_stage0_start' => 'ico/ieo が始まる',
     'ico_bonus' => 'ボーナス',
     'ico_noBonus' => 'ボーナスなし',
+    'onwards' => '<br>以降',
+    'exchange' => '取引所への掲載',
 
     'ico_card_to' => 'に',
     'ico_card_sep' => '長月',

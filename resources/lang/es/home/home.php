@@ -15,9 +15,11 @@ return [
     'ico_from' => 'desde',
     'ico_till' => 'hasta que',
     'ico_finished' => 'ico esta terminado',
-    'ico_stage0_start' => 'pre-ico comienza en',
+    'ico_stage0_start' => 'ico/ieo comienza en',
     'ico_bonus' => 'Prima',
     'ico_noBonus' => 'sin bonificación',
+    'onwards' => '<br>adelante',
+    'exchange' => 'Listado en un intercambio',
 
     'ico_card_to' => 'a',
     'ico_card_sep' => 'sep',

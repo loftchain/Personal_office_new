@@ -15,9 +15,11 @@ return [
     'ico_from' => 'от',
     'ico_till' => 'до',
     'ico_finished' => 'ico закончен',
-    'ico_stage0_start' => 'pre-ico начинается с',
+    'ico_stage0_start' => 'ico/ieo начинается с',
     'ico_bonus' => 'Бонус',
     'ico_noBonus' => 'нет бонуса',
+    'onwards' => '<br>и далее',
+    'exchange' => 'Листинг на бирже',
 
     'ico_card_to' => 'до',
     'ico_card_sep' => 'сен',

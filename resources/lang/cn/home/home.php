@@ -15,9 +15,11 @@ return [
     'ico_from' => '從',
     'ico_till' => '直到',
     'ico_finished' => 'ico已經完成',
-    'ico_stage0_start' => 'pre-ico開始於',
+    'ico_stage0_start' => 'ico/ieo 開始於',
     'ico_bonus' => '獎金',
     'ico_noBonus' => '沒有獎金',
+    'onwards' => '<br>向前',
+    'exchange' => '在Exchange中列出',
 
     'ico_card_to' => '至',
     'ico_card_sep' => '九月',
