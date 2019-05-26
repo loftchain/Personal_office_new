@@ -2,7 +2,7 @@
 
 return [
     'buyTokens' => 'Purchase of tokens',
-    'chooseTokens' => 'Choose which currency you will be using to purchase MCL Tokens',
+    'chooseTokens' => 'Choose which currency you will be using to purchase '. env('TOKEN_NAME') .' Tokens',
     'minDep' => 'Minimum deposit amount: ',
     'setGas' => 'Set GAS:',
     'ethUpdate' => 'Information updates every minute',
@@ -26,8 +26,8 @@ return [
     'tableAction' => 'Action',
 
     //form
-    'formEth' => 'ETH wallet for investing and receiving tokens',
-    'formBtcEth' => 'Enter your BTC wallet for investment',
+    'formEth' => 'First, enter you ETH wallet for investing and receiving tokens<br><small>then you`ll see further payment information</small>',
+    'formBtcEth' => 'Enter your BTC wallet for investment<br><small>then you`ll see further payment information</small>',
     'formBtc' => 'Enter ETH wallet to get tokens',
 
     //formPayPal
@@ -39,4 +39,9 @@ return [
 
     //qr
     'qrHover' => 'hover and zoom',
+
+    //calc
+    'calcInvestmentsTitle' => 'Calculate your investments',
+    'currentBonus' => 'Current bonus: ',
+    'volatility' => 'prices may slightly differ from the actual ones due to high volatility',
 ];

@@ -74,3 +74,32 @@
   font-size: 14px;
   font-weight: 300;
 }
+
+.calculation-wrapper {
+    @extend %fc;
+    width: 100%;
+
+    &__left, &__right {
+        .formControl{
+            width: 90%;
+        }
+
+        .icoForm__input{
+            margin-bottom: 0.5rem;
+        }
+
+        .icoForm__label{
+           font-weight: 500;
+        }
+    }
+
+    &__left{
+        @extend %fsbc;
+        width: 100%;
+    }
+
+    &__right{
+        @extend %fsbc;
+        width: 100%;
+    }
+}

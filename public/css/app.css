@@ -1,6 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Rubik:300,400,500,700&subset=cyrillic);@charset "UTF-8";
 
-.cloak {
+.cloak,
+.calculation-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -10,6 +11,23 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.calculation-wrapper__left,
+.calculation-wrapper__right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 @-webkit-keyframes sk-foldCubeAngle {
@@ -12078,6 +12096,33 @@ select {
   margin-top: 5px;
   font-size: 14px;
   font-weight: 300;
+}
+
+.calculation-wrapper {
+  width: 100%;
+}
+
+.calculation-wrapper__left .formControl,
+.calculation-wrapper__right .formControl {
+  width: 90%;
+}
+
+.calculation-wrapper__left .icoForm__input,
+.calculation-wrapper__right .icoForm__input {
+  margin-bottom: 0.5rem;
+}
+
+.calculation-wrapper__left .icoForm__label,
+.calculation-wrapper__right .icoForm__label {
+  font-weight: 500;
+}
+
+.calculation-wrapper__left {
+  width: 100%;
+}
+
+.calculation-wrapper__right {
+  width: 100%;
 }
 
 .timer {

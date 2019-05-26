@@ -11,16 +11,24 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
+use App\Http\Controllers\Api\DataController;
+use App\Services\BonusService;
+use App\Services\WidgetService;
+
+
 
 class TokensController extends Controller
 {
     protected $walletService;
+    protected $bonusService;
+    protected $widgetService;
 
-    public function __construct(WalletService $walletService)
+    public function __construct(WalletService $walletService, BonusService $bonusService, WidgetService $widgetService)
     {
         $this->walletService = $walletService;
+        $this->bonusService = $bonusService;
+        $this->widgetService = $widgetService;
 
     }
 
@@ -30,11 +38,13 @@ class TokensController extends Controller
         $transactions = $investor->transactions()->paginate(10);
         $personal = $investor->personal()->first();
         $walletTo = $investor->wallets()->where('type', 'to')->first();
+        $calcData = DataController::calcData($this->widgetService, $this->bonusService);
 
         return view('home.buyTokens', [
             'transactions' => $transactions,
             'personal' => $personal,
-            'walletTo' => $walletTo
+            'walletTo' => $walletTo,
+            'calcData' => $calcData
         ]);
     }
 

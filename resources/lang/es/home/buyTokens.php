@@ -2,7 +2,7 @@
 
 return [
     'buyTokens' => 'Compra de fichas',
-    'chooseTokens' => 'Elija qué moneda utilizará para comprar tokens MCL',
+    'chooseTokens' => 'Elija qué moneda utilizará para comprar tokens'. env('TOKEN_NAME'),
     'minDep' => '\'Monto mínimo de depósito: ',
     'setGas' => 'Set GAS:',
     'ethUpdate' => 'Información actualizada a cada minuto',
@@ -26,8 +26,8 @@ return [
     'tableAction' => 'Acción',
 
     //form
-    'formEth' => 'Cartera ETH para invertir y recibir fichas.',
-    'formBtcEth' => 'Ingrese su billetera BTC para inversión',
+    'formEth' => 'Primero, ingrese la billetera ETH para invertir y recibir fichas.<br><small>entonces verás la información de pago</small>',
+    'formBtcEth' => 'Ingrese su billetera BTC para inversión<br><small>entonces verás la información de pago</small>',
     'formBtc' => 'Entra en la billetera ETH para conseguir fichas.',
 
     //formPayPal
@@ -39,4 +39,9 @@ return [
 
     //qr
     'qrHover' => 'flotar y hacer zoom',
+
+    //calc
+    'calcInvestmentsTitle' => 'Calcula tus inversiones',
+    'currentBonus' => 'Bono actual: ',
+    'volatility' => 'Los precios pueden diferir ligeramente de los reales debido a la alta volatilidad.',
 ];

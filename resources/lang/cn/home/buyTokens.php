@@ -2,7 +2,7 @@
 
 return [
     'buyTokens' => '購買代幣',
-    'chooseTokens' => '選擇您將用於購買MCL代幣的貨幣',
+    'chooseTokens' => '選擇您將用於購買'. env('TOKEN_NAME') .'代幣的貨幣',
     'minDep' => '最低存款金額: ',
     'setGas' => '設置GAS:',
     'ethUpdate' => '信息每分鐘更新一次',
@@ -26,8 +26,8 @@ return [
     'tableAction' => '行動',
 
     //form
-    'formEth' => '用於投資和接收代幣的ETH錢包',
-    'formBtcEth' => '輸入您的BTC錢包進行投資',
+    'formEth' => '首先，输入ETH钱包用于投资和接收代币<br><small>然后你会看到付款信息</small>',
+    'formBtcEth' => '輸入您的BTC錢包進行投資<br><small>然后你会看到付款信息</small>',
     'formBtc' => '輸入ETH錢包以獲取令牌',
 
     //formPayPal
@@ -39,4 +39,9 @@ return [
 
     //qr
     'qrHover' => '懸停和縮放',
+
+    //calc
+    'calcInvestmentsTitle' => '计算您的投资',
+    'currentBonus' => '目前的奖金： ',
+    'volatility' => '由于高波动性，价格可能与实际价格略有不同',
 ];

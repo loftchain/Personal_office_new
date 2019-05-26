@@ -2,7 +2,7 @@
 
 return [
     'buyTokens' => 'トークンの購入',
-    'chooseTokens' => 'MCLトークンの購入に使用する通貨を選択してください',
+    'chooseTokens' => env('TOKEN_NAME') .'トークンの購入に使用する通貨を選択してください',
     'minDep' => '最低入金額： ',
     'setGas' => 'Set GAS:',
     'ethUpdate' => '情報は毎分更新されます',
@@ -26,8 +26,8 @@ return [
     'tableAction' => 'アクション',
 
     //form
-    'formEth' => 'トークンの投資と受け取りのためのETHウォレット',
-    'formBtcEth' => '投資のBTCウォレットを入力してください',
+    'formEth' => 'まず、トークンの投資と受け取りにETHウォレットを入力してください<br> <small>それからあなたは支払い情報を見るでしょう</small>',
+    'formBtcEth' => '投資のBTCウォレットを入力してください<br> <small>それからあなたは支払い情報を見るでしょう</small>',
     'formBtc' => 'ETHウォレットを入力してトークンを取得する',
 
     //formPayPal
@@ -39,4 +39,9 @@ return [
 
     //qr
     'qrHover' => 'ホバーとズーム',
+
+    //calc
+    'calcInvestmentsTitle' => '投資額を計算する',
+    'currentBonus' => '現在のボーナス： ',
+    'volatility' => '高いボラティリティのために価格は実際のものとわずかに異なるかもしれません',
 ];
