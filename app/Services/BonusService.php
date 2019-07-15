@@ -75,7 +75,7 @@ class BonusService
                     $stageData['stageEnd'] = \DateTime::createFromFormat('U', env('2_BONUS_1m_END'))->format('d.m.Y');
                     $stageData['timerBegin'] = env('1_BONUS_3m_END');
                     $stageData['timerEnd'] = env('2_BONUS_1m_END');
-                    $stageData['stageBegin'] = \DateTime::createFromFormat('U', env('1_BONUS_3m_END'))->format('d.m.Y');
+                    $stageData['stageBegin'] = \DateTime::createFromFormat('U', env('1_BONUS_1m_END'))->format('d.m.Y');
                     $stageData['bonus'] = 25;
                     $stageData['currentPrice'] = 0.14;
                     break;
