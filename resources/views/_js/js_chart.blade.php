@@ -82,7 +82,7 @@
     $('.percentBar').each(function (key, elem) {
         var percent = $(elem).data('percent');
         $(elem).find('.percentBar__fill').css('width', percent + '%');
-        $(elem).find('.percentBar__marker').css('left', percent + '%');
+        $(elem).find('.percentBar__marker').css('left', '2%');
         $(elem).find('.percentBar__number').text(percent + '%');
         if (percent < 50) {
             $(elem).find('.percentBar__number').css('color', '#BDBDBD');
